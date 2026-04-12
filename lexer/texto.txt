@@ -1,0 +1,34 @@
+struct rdw211__WellboreMarkerSet {
+        /** Sequence of elements 'rdw212:Aliases' of XML schema type 'rdw212:ObjectAlias' stored in dynamic array rdw212__Aliases of length __sizeAliases */
+        int __sizeAliases;
+        struct rdw212__ObjectAlias *rdw212__Aliases;
+        /** Required element 'rdw212:Citation' of XML schema type 'rdw212:Citation' */
+        struct rdw212__Citation *rdw212__Citation;
+        /** Optional element 'rdw212:Existence' of XML schema type 'rdw212:ExistenceKindExt' */
+        char *rdw212__Existence;
+        /** Optional element 'rdw212:ObjectVersionReason' of XML schema type 'rdw212:String2000' */
+        char *rdw212__ObjectVersionReason;
+        /** Sequence of elements 'rdw212:BusinessActivityHistory' of XML schema type 'rdw212:String64' stored in dynamic array rdw212__BusinessActivityHistory of length __sizeBusinessActivityHistory */
+        int __sizeBusinessActivityHistory;
+        char **rdw212__BusinessActivityHistory;
+        /** Optional element 'rdw212:OSDUIntegration' of XML schema type 'rdw212:OSDUIntegration' */
+        struct rdw212__OSDUIntegration *rdw212__OSDUIntegration;
+        /** Optional element 'rdw212:CustomData' of XML schema type 'rdw212:CustomData' */
+        struct rdw212__CustomData *rdw212__CustomData;
+        /** Sequence of elements 'rdw212:ExtensionNameValue' of XML schema type 'rdw212:ExtensionNameValue' stored in dynamic array rdw212__ExtensionNameValue of length __sizeExtensionNameValue */
+        int __sizeExtensionNameValue;
+        struct rdw212__ExtensionNameValue *rdw212__ExtensionNameValue;
+        /** Required attribute 'uuid' of XML schema type 'rdw212:UuidString' */
+        char *uuid;
+        /** Required attribute 'schemaVersion' of XML schema type 'rdw212:String64' */
+        char *schemaVersion;
+        /** Optional attribute 'objectVersion' of XML schema type 'rdw212:String64' */
+        char *objectVersion;
+        /** Required element 'rdw211:MarkerSetInterval' of XML schema type 'rdw212:MdInterval' */
+        struct rdw212__MdInterval *MarkerSetInterval;
+        /** Optional element 'rdw211:Wellbore' of XML schema type 'rdw212:DataObjectReference' */
+        struct rdw212__DataObjectReference *Wellbore;
+        /** Sequence of elements 'rdw211:FormationMarker' of XML schema type 'rdw211:WellboreMarker' stored in dynamic array FormationMarker of length __sizeFormationMarker */
+        int __sizeFormationMarker;
+        struct rdw211__WellboreMarker *FormationMarker;
+};

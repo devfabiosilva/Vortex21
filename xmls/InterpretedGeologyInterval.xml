@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <rdw211:InterpretedGeologyInterval uid="" objectVersion="">
+   <rdw212:Creation xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:Creation>
+   <rdw212:LastUpdate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:LastUpdate>
+   <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+    <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+    <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+    <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+    <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+    <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+    <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+   </rdw212:ExtensionNameValue>
+   <rdw212:MdInterval xsi:type="rdw212:MdInterval">
+    <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+    <rdw212:MdMin xsi:type="xsd:double">0.0</rdw212:MdMin>
+    <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
+    <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+    <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw212:Datum>
+   </rdw212:MdInterval>
+   <rdw211:GeochronologicalUnit xsi:type="rdw211:GeochronologicalUnit" authority="" kind="eon"></rdw211:GeochronologicalUnit>
+   <rdw211:LithostratigraphicUnit xsi:type="rdw211:LithostratigraphicUnit" authority="" kind="group"></rdw211:LithostratigraphicUnit>
+   <rdw211:InterpretedLithology xsi:type="rdw211:InterpretedIntervalLithology" uid="">
+    <rdw211:Kind xsi:type="rdw212:LithologyKindExt"></rdw211:Kind>
+    <rdw211:Citation xsi:type="rdw212:Citation">
+     <rdw212:Title xsi:type="rdw212:String256"></rdw212:Title>
+     <rdw212:Originator xsi:type="rdw212:String64"></rdw212:Originator>
+     <rdw212:Creation xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:Creation>
+     <rdw212:Format xsi:type="rdw212:String2000"></rdw212:Format>
+     <rdw212:Editor xsi:type="rdw212:String64"></rdw212:Editor>
+     <rdw212:LastUpdate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:LastUpdate>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     <rdw212:EditorHistory xsi:type="rdw212:String64"></rdw212:EditorHistory>
+     <rdw212:DescriptiveKeywords xsi:type="rdw212:String2000"></rdw212:DescriptiveKeywords>
+    </rdw211:Citation>
+    <rdw211:CodeLith xsi:type="rdw212:String64"></rdw211:CodeLith>
+    <rdw211:Color xsi:type="rdw212:String64"></rdw211:Color>
+    <rdw211:Texture xsi:type="rdw212:String64"></rdw211:Texture>
+    <rdw211:Hardness xsi:type="rdw212:String64"></rdw211:Hardness>
+    <rdw211:Compaction xsi:type="rdw212:String64"></rdw211:Compaction>
+    <rdw211:SizeGrain xsi:type="rdw212:String64"></rdw211:SizeGrain>
+    <rdw211:Roundness xsi:type="rdw212:String64"></rdw211:Roundness>
+    <rdw211:Sorting xsi:type="rdw212:String64"></rdw211:Sorting>
+    <rdw211:Sphericity xsi:type="rdw212:String64"></rdw211:Sphericity>
+    <rdw211:MatrixCement xsi:type="rdw212:MatrixCementKind">ankerite</rdw211:MatrixCement>
+    <rdw211:PorosityVisible xsi:type="rdw212:String64"></rdw211:PorosityVisible>
+    <rdw211:PorosityFabric xsi:type="rdw212:String64"></rdw211:PorosityFabric>
+    <rdw211:Permeability xsi:type="rdw212:String64"></rdw211:Permeability>
+    <rdw211:Qualifier xsi:type="rdw211:LithologyQualifier" uid="">
+     <rdw211:Kind xsi:type="rdw212:LithologyQualifierKindExt"></rdw211:Kind>
+     <rdw211:MdInterval xsi:type="rdw212:MdInterval">
+      <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+      <rdw212:MdMin xsi:type="xsd:double">0.0</rdw212:MdMin>
+      <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
+      <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+      <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+       <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+       <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+       <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+        <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+        <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+        <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+        <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+        <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+       </rdw212:ExtensionNameValue>
+      </rdw212:Datum>
+     </rdw211:MdInterval>
+     <rdw211:Abundance xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:Abundance>
+     <rdw211:Description xsi:type="rdw212:String2000"></rdw211:Description>
+    </rdw211:Qualifier>
+   </rdw211:InterpretedLithology>
+  </rdw211:InterpretedGeologyInterval>
+

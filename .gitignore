@@ -1,6 +1,17 @@
 # Prerequisites
 *.d
 
+draft/
+meu_programa
+test.xml
+perf_test_bench.sh
+perf_test
+receita.txt
+perf.data
+test_perf
+wrappers/java/target/
+*.jar
+
 # Object files
 *.o
 *.ko

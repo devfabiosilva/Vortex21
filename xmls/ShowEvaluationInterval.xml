@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <rdw211:ShowEvaluationInterval uid="" objectVersion="">
+   <rdw212:Creation xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:Creation>
+   <rdw212:LastUpdate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:LastUpdate>
+   <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+    <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+    <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+    <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+    <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+    <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+    <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+   </rdw212:ExtensionNameValue>
+   <rdw212:MdInterval xsi:type="rdw212:MdInterval">
+    <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+    <rdw212:MdMin xsi:type="xsd:double">0.0</rdw212:MdMin>
+    <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
+    <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+    <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw212:Datum>
+   </rdw212:MdInterval>
+   <rdw211:ShowFluid xsi:type="rdw211:ShowFluid">gas</rdw211:ShowFluid>
+   <rdw211:ShowRating xsi:type="rdw211:ShowRating">none</rdw211:ShowRating>
+   <rdw211:BottomsUpTime xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:BottomsUpTime>
+  </rdw211:ShowEvaluationInterval>
+
