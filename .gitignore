@@ -10,6 +10,7 @@ receita.txt
 perf.data
 test_perf
 wrappers/java/target/
+wrappers/java/.idea/
 *.jar
 
 # Object files
