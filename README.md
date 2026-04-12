@@ -22,14 +22,15 @@ Vortex21 follows a "Write Once, Run Everywhere" philosophy at the native level. 
 
 Vortex21 is architected to minimize overhead and maximize consistency:
 
-    1- The Native Core (The "Vortex"): Handles the heavy lifting—XML schema validation, BSON serialization, and the specialized AutoDetect mode.
+- The Native Core (The "Vortex"): Handles the heavy lifting—XML schema validation, BSON serialization, and the specialized AutoDetect mode.
 
-    2- Zero-Copy Design: Where supported (like Java's DirectByteBuffer or Node.js Buffers), the engine interacts directly with memory to avoid costly data duplication.
+- Zero-Copy Design: Where supported (like Java's DirectByteBuffer or Node.js Buffers), the engine interacts directly with memory to avoid costly data duplication.
 
-    3- Standardized Exception Handling: Whether you are in a try-catch block in Java or checking a Result in Rust, the underlying error handling provides consistent error codes and diagnostic messages across all languages.
+- Standardized Exception Handling: Whether you are in a try-catch block in Java or checking a Result in Rust, the underlying error handling provides consistent error codes and diagnostic messages across all languages.
 
 ## Project Vision
 
 To provide the energy industry with a single, reliable, and lightning-fast tool that bridges the gap between low-level sensor data and high-level application logic, regardless of the programming language chosen.
 
+_The core parsing logic is based on the optimization techniques described [here](https://www.linkedin.com/posts/devfabiosilva_witsml-etp-osdu-activity-7444730290482315264-WCb5/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC4WCXQBKw6A3l9SOV1M9CWPXZOWL20H8b8)_
 
