@@ -13,6 +13,10 @@ wrappers/java/target/
 wrappers/java/.idea/
 *.jar
 
+# C third-party libraries
+third-party/mongo-c-driver/
+include/bson/
+
 # Object files
 *.o
 *.ko
