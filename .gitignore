@@ -15,7 +15,7 @@ wrappers/java/.idea/
 
 # C third-party libraries
 third-party/mongo-c-driver/
-include/bson/
+core/include/bson
 
 # Object files
 *.o
