@@ -2808,6 +2808,15 @@ public class W21ParserLoader {
         this.jniReadFromByteBuffer(this.bbXml, this.bbXml.limit());
     }
 
+    /**
+     * Loads and parses a WITSML file using <b>Auto-Detect</b> mode.
+     * <p>This is a convenience method that clears the previous parser state and
+     * automatically identifies the WITSML object type contained within the file.</p>
+     *
+     * @param path The path to the WITSML XML file.
+     * @throws IOException If an I/O error occurs.
+     * @throws W21Exception If the native engine fails to validate or parse the document.
+     */
     private void prepareReadFile(String path) throws IOException {
         try (RandomAccessFile file = new RandomAccessFile(path, "r");
              FileChannel channel = file.getChannel()) {
@@ -2827,6 +2836,22 @@ public class W21ParserLoader {
         readFromFile(path, W21Object.AUTODETECT);
     }
 
+    /**
+     * Loads a WITSML file into memory, recycles the native parser state, and executes
+     * the parsing logic for a specific object type.
+     * * <p>The process follows these steps:</p>
+     * <ol>
+     * <li>Reads the file into a dedicated {@code DirectByteBuffer}.</li>
+     * <li>Calls {@code jniW21Recycle()} to ensure the native C engine is cleared of previous data.</li>
+     * <li>Dispatches the buffer to the corresponding native JNI read method based on the {@code inputObject}.</li>
+     * </ol>
+     *
+     * @param path The path to the WITSML XML file.
+     * @param inputObject The specific {@link W21Object} type to parse (e.g., Well, Trajectory, or AUTODETECT).
+     * @throws IOException If an I/O error occurs during file reading.
+     * @throws W21Exception If the native C engine encounters a validation error,
+     * schema mismatch, or parsing failure.
+     */
     public void readFromFile(String path, W21Object inputObject) throws IOException, W21Exception {
         prepareReadFile(path);
         this.jniW21Recycle();
@@ -3000,6 +3025,22 @@ public class W21ParserLoader {
         BYTE_ARRAY, // save/send
     }
 
+    /**
+     * Converts the previously parsed and validated WITSML 2.1 native C structure
+     * into a JSON representation.
+     * * <p>Similar to {@link #parse(W21OutputType)}, this method manages the transition
+     * from the native C-struct to a Java-accessible format, specifically targeting
+     * standard JSON. It utilizes the native engine's JSON serialization capabilities.</p>
+     * * @param type The desired JSON output format (Standard String or Byte Array).
+     * <ul>
+     * <li>{@code JSON_STRING}: Returns a UTF-8 encoded {@link String}.</li>
+     * <li>{@code BYTE_ARRAY}: Returns the raw JSON bytes, useful for high-performance
+     * IO or custom decoding.</li>
+     * </ul>
+     * @return An {@link Object} (either {@code String} or {@code byte[]}) containing the JSON data.
+     * @throws W21Exception If the native JSON engine fails or state mismatch occurs.
+     * @throws Exception For encoding or memory access issues.
+     */
     public Object parseJson(W21OutputJsonType type) throws Exception {
         boolean isAlreadyParsed = false;
 
@@ -3031,6 +3072,7 @@ public class W21ParserLoader {
                     break;
                 case CuttingsGeology:
                     this.jniParseJsonCuttingsGeology();
+                    break;
                 case CuttingsGeologyInterval:
                     this.jniParseJsonCuttingsGeologyInterval();
                     break;
@@ -3114,6 +3156,7 @@ public class W21ParserLoader {
                     break;
                 case Target:
                     this.jniParseJsonTarget();
+                    break;
                 case ToolErrorModel:
                     this.jniParseJsonToolErrorModel();
                     break;
@@ -3275,6 +3318,25 @@ public class W21ParserLoader {
         WellCompletion
     }
 
+    /**
+     * Orchestrates the conversion from the native C-struct to the desired Java BSON output.
+     * * <p>This method performs a state-aware execution:</p>
+     * <ul>
+     * <li><b>Step 1:</b> Invokes the specific native parsing logic based on the {@code inputObject} type
+     * (e.g., Well, Trajectory, BhaRun).</li>
+     * <li><b>Step 2:</b> If the object was already parsed in a previous call (handled by error code 4090),
+     * it reuses the existing BSON buffer.</li>
+     * <li><b>Step 3:</b> Manages native memory access through a safe read-lock session
+     * ({@code jniBeginRead} / {@code jniEndRead}).</li>
+     * <li><b>Step 4:</b> Decodes the native BSON stream into either a raw {@code byte[]}
+     * or a structured {@code BsonDocument}.</li>
+     * </ul>
+     *
+     * @param type The requested output format (BSON Object or Byte Array).
+     * @return The converted WITSML 2.1 data as an {@link Object} (castable to {@code byte[]} or {@code BsonDocument}).
+     * @throws W21Exception If native parsing fails or if the gSOAP engine encounters validation errors.
+     * @throws Exception For unexpected I/O or BSON decoding issues.
+     */
     public Object parse(W21OutputType type) throws Exception {
         boolean isAlreadyParsed = false;
         try {
@@ -3305,6 +3367,7 @@ public class W21ParserLoader {
                     break;
                 case CuttingsGeology:
                     this.jniParseCuttingsGeology();
+                    break;
                 case CuttingsGeologyInterval:
                     this.jniParseCuttingsGeologyInterval();
                     break;
@@ -3316,6 +3379,7 @@ public class W21ParserLoader {
                     break;
                 case DrillReport:
                     this.jniParseDrillReport();
+                    break;
                 case ErrorTerm:
                     this.jniParseErrorTerm();
                     break;
