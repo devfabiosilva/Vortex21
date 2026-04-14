@@ -1,12 +1,9 @@
 package org.w21parser;
 
 import org.bson.BsonDocument;
-import org.bson.RawBsonDocument;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.concurrent.atomic.AtomicReference;
 
 public class W21ParserLoaderTest {
 
