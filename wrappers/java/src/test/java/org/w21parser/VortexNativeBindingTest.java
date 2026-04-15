@@ -35,7 +35,7 @@ public class VortexNativeBindingTest {
     }
 
     @Test
-    public void validateErrorCodesContract() throws W21Exception, IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public void validateErrorCodesContractTest() throws W21Exception, IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         // Tests if JNI_W21_BSON_OBJECT_ALREADY_PARSED = 4090 for native BSON alloc'd and
         // JNI_W21_JSON_STRING_ALREADY_PARSED = 4091 JSON string alloc'd is returned from C code
         // when parsed object is already allocated
