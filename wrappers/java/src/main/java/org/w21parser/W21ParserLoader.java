@@ -2797,7 +2797,11 @@ public class W21ParserLoader {
         return this;
     }
 
-    public void readFromStream(String xml) throws IllegalStateException, W21Exception {
+    public void readFromStream(String xml) throws W21Exception {
+        readFromStream(xml, W21Object.AUTODETECT);
+    }
+
+    public void readFromStream(String xml, W21Object inputObject) throws W21Exception {
         int len = xml.length();
         if (len > this.bbXml.capacity())
             this.bbXml = ByteBuffer.allocateDirect(len);
@@ -2805,7 +2809,7 @@ public class W21ParserLoader {
         encoder.encode(CharBuffer.wrap(xml), this.bbXml, true);
         this.bbXml.flip();
         this.jniW21Recycle();
-        this.jniReadFromByteBuffer(this.bbXml, this.bbXml.limit());
+        prepareReadFromByteBuffer(inputObject);
     }
 
     /**
@@ -2836,25 +2840,7 @@ public class W21ParserLoader {
         readFromFile(path, W21Object.AUTODETECT);
     }
 
-    /**
-     * Loads a WITSML file into memory, recycles the native parser state, and executes
-     * the parsing logic for a specific object type.
-     * * <p>The process follows these steps:</p>
-     * <ol>
-     * <li>Reads the file into a dedicated {@code DirectByteBuffer}.</li>
-     * <li>Calls {@code jniW21Recycle()} to ensure the native C engine is cleared of previous data.</li>
-     * <li>Dispatches the buffer to the corresponding native JNI read method based on the {@code inputObject}.</li>
-     * </ol>
-     *
-     * @param path The path to the WITSML XML file.
-     * @param inputObject The specific {@link W21Object} type to parse (e.g., Well, Trajectory, or AUTODETECT).
-     * @throws IOException If an I/O error occurs during file reading.
-     * @throws W21Exception If the native C engine encounters a validation error,
-     * schema mismatch, or parsing failure.
-     */
-    public void readFromFile(String path, W21Object inputObject) throws IOException, W21Exception {
-        prepareReadFile(path);
-        this.jniW21Recycle();
+    private void prepareReadFromByteBuffer(W21Object inputObject) throws W21Exception {
         switch (this.inputObject = inputObject) {
             case AUTODETECT:
                 this.jniReadFromByteBuffer(bbXml , bbXml.limit());
@@ -3018,6 +3004,28 @@ public class W21ParserLoader {
             case WellCompletion:
                 this.jniReadWellCompletionFromByteBuffer(bbXml, bbXml.limit());
         }
+    }
+
+    /**
+     * Loads a WITSML file into memory, recycles the native parser state, and executes
+     * the parsing logic for a specific object type.
+     * * <p>The process follows these steps:</p>
+     * <ol>
+     * <li>Reads the file into a dedicated {@code DirectByteBuffer}.</li>
+     * <li>Calls {@code jniW21Recycle()} to ensure the native C engine is cleared of previous data.</li>
+     * <li>Dispatches the buffer to the corresponding native JNI read method based on the {@code inputObject}.</li>
+     * </ol>
+     *
+     * @param path The path to the WITSML XML file.
+     * @param inputObject The specific {@link W21Object} type to parse (e.g., Well, Trajectory, or AUTODETECT).
+     * @throws IOException If an I/O error occurs during file reading.
+     * @throws W21Exception If the native C engine encounters a validation error,
+     * schema mismatch, or parsing failure.
+     */
+    public void readFromFile(String path, W21Object inputObject) throws IOException, W21Exception {
+        prepareReadFile(path);
+        this.jniW21Recycle();
+        prepareReadFromByteBuffer(inputObject);
     }
 
     public enum W21OutputJsonType {

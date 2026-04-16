@@ -262,6 +262,75 @@ public class VortexNativeBindingTest {
     }
 
     @Test
+    public void memoryBoundaryInByteBufferTest() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, W21Exception {
+        Method jniMethod = W21ParserLoader.class.getDeclaredMethod("jniReadOpsReportFromByteBuffer", ByteBuffer.class, long.class);
+        jniMethod.setAccessible(true);
+        //JNI_W21_DIRECT_BUFFER_INPUT_BUFFER 4064
+        assertJniError(
+                jniMethod, this.parser1,
+                "JNI should reject null byte buffer",
+                4064,
+                null,
+                0
+        );
+
+        ByteBuffer bb = ByteBuffer.allocateDirect(0);
+
+        //JNI_W21_DIRECT_BUFFER_INPUT_BUFFER_INVALID_SIZE 4065
+        assertJniError(
+                jniMethod, this.parser1,
+                "JNI should reject empty byte buffer",
+                4065,
+                bb,
+                0
+        );
+
+        bb = ByteBuffer.allocateDirect(1);
+        //JNI_W21_DIRECT_BUFFER_INPUT_BUFFER_INVALID_SIZE 4065
+        assertJniError(
+                jniMethod, this.parser1,
+                "JNI should reject byte buffer with invalid size (buffer overflow)",
+                4065,
+                bb,
+                bb.limit()*2
+        );
+
+        try {
+            this.parser1.readFromStream("<InvalidXml />");
+            fail("Could not execute an invalid stream");
+        } catch (W21Exception e) {
+            //SOAP_TAG_MISMATCH 3
+            if (e.error != 3)
+                throw e;
+        }
+
+        try {
+            this.parser1.readFromStream("text here");
+            fail("Could not execute an invalid text stream");
+        } catch (W21Exception e) {
+            //SOAP_END_TAG 53
+            if (e.error != 53)
+                throw e;
+        }
+
+        try {
+            this.parser1.readFromStream("");
+            fail("Could not execute an invalid EMPTY stream");
+        } catch (W21Exception e) {
+            //JNI_W21_DIRECT_BUFFER_INPUT_BUFFER_INVALID_SIZE 4065
+            if (e.error != 4065)
+                throw e;
+        }
+
+        try {
+            this.parser1.readFromStream(null);
+            fail("Could not execute an invalid NULL stream");
+        } catch (NullPointerException e) {
+            logger.warn("Test NPE guard. PASS", e);
+        }
+    }
+
+    @Test
     public void validateInitializationTest() throws Exception {
         Method jniMethod = W21ParserLoader.class.getDeclaredMethod("jniInit", long.class, long.class, boolean.class);
         jniMethod.setAccessible(true);
