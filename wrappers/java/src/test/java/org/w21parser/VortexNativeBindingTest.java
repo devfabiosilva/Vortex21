@@ -2,6 +2,8 @@ package org.w21parser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -15,13 +17,15 @@ import static org.junit.Assert.*;
 
 public class VortexNativeBindingTest {
 
-    private W21ParserLoader parser1, parser2 = null;
+    private static final Logger logger = LoggerFactory.getLogger(W21ParserLoader.class);
+    private W21ParserLoader parser1;
+    private W21ParserLoader parser2 = null;
     private int expectedCloseStatusParser1 = 0;
     private int expectedCloseStatusParser2 = 0;
 
     @Before
     public void setUp() throws Exception {
-        parser1 = W21ParserLoader.begin().withInputRulesValidator().withInputWitsmlStrict().withResourceStats().withIgnoreInputWitsmlNS().build();
+        this.parser1 = W21ParserLoader.begin().withInputRulesValidator().withInputWitsmlStrict().withResourceStats().withIgnoreInputWitsmlNS().build();
     }
 
     @After
@@ -42,6 +46,10 @@ public class VortexNativeBindingTest {
         }
     }
 
+    private String fromPath(String object) {
+        return "TestFiles/xmls/strict_valid/" + object + ".xml";
+    }
+
     @Test
     public void validateErrorCodesContractTest() throws W21Exception, IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         // Tests if JNI_W21_BSON_OBJECT_ALREADY_PARSED = 4090 for native BSON alloc'd and
@@ -51,7 +59,7 @@ public class VortexNativeBindingTest {
         // On loading document and CPU/Memory statistics:
         // Test if JNI_W21_RESOURCE_STAT_NOT_FINISHED_CORRECTLY_OR_NOT_PARSED = 4074 for BSON not parsed or finished
         // Test if JNI_W21_RESOURCE_STAT_JSON_NOT_FINISHED_CORRECTLY_OR_NOT_PARSED = 4075 for JSON not parsed or finished
-        parser1.readFromFile("TestFiles/xmls/strict_valid/BhaRun.xml");
+        parser1.readFromFile(fromPath("BhaRun"));
 
         Method jniMethodStat1 = W21ParserLoader.class.getDeclaredMethod("jniStatParseTotalCycles");
         jniMethodStat1.setAccessible(true);
@@ -155,12 +163,102 @@ public class VortexNativeBindingTest {
         return (T) field.get(instance);
     }
 
+    private void setPrivateField(Object instance, String fieldName, Object value) throws Exception {
+        Field field = instance.getClass().getDeclaredField(fieldName);
+        field.setAccessible(true);
+        field.set(instance, value);
+    }
+
     private String getStringFromByteBuffer(ByteBuffer bb){
         bb.rewind();
         byte[] bytes = new byte[bb.remaining()];
         bb.get(bytes);
 
         return new String(bytes, StandardCharsets.UTF_8);
+    }
+
+    @Test
+    public void memoryBoundaryTest() throws Exception {
+        // This test try to manipulate and test access violation in C pointer.
+        // Please, ignore message from JNI such as:
+        //[w21parser] jniParse unexpected: Unable to load C pointer at jni_get_handler: 4043. Ignoring ...
+        //[w21parser] jniClose: Unexpected error. Unable to close this instance. jni_get_handler error: 4043. Memory may be leaked. Try later
+        //[w21parser] jniParseJson unexpected: Unable to load C pointer at jni_get_handler: 4044. Ignoring ...
+        //[w21parser] jniParseJson unexpected: Unable to load C pointer at jni_get_handler: 4043. Ignoring ...
+        //[w21parser] jniParseJson unexpected: locker not found or not initialized
+        // Ignore messages above. These messages are expected because we are violating C memory access
+        // simulating attack or wrong use. This test SHOULD PASS without crash your VM :)
+
+        logger.warn("============================ BEGIN CONTROLLED JNI ACCESS VIOLATION TEST ============================");
+        logger.warn("THIS TEST TRY TO MANIPULATE AND TEST MEMORY ACCESS VIOLATION IN C POINTER.\nPlease, ignore message from JNI [w21parser] below");
+
+        long oldJniHandler = getPrivateField(this.parser1, "jniHandler");
+        assertTrue("jniHandler must be mapped (NOT NULL C pointer)", oldJniHandler != 0);
+
+        long oldJniHandlerCheck = getPrivateField(this.parser1, "jniHandlerCheck");
+        assertTrue("jniHandlerCheck must be NOT ZERO", oldJniHandlerCheck != 0);
+
+        this.parser1.readFromFile(fromPath("BhaRun"));
+
+        // Access violation intentional in C pointer. JNI SHOULD detect such violation without crash VM
+        setPrivateField(this.parser1, "jniHandler", oldJniHandler + 1);
+
+        try {
+            this.parser1.parse(W21ParserLoader.W21OutputType.BSON);
+            fail("parser1.parse() should not execute/access C memory access violation");
+        } catch (W21Exception e) {
+            //JNI_W21_ERROR_GET_HANDLER_CHECK_ERROR 4043
+            assertEquals("JNI contract violated: Error code JNI_W21_ERROR_GET_HANDLER_CHECK_ERROR changed in C code", 4043, e.error);
+        } finally {
+            setPrivateField(this.parser1, "jniHandler", oldJniHandler);
+        }
+
+        // Access violation in C pointer checker. JNI SHOULD NOT execute/close/access invalid allocated instance
+        setPrivateField(this.parser1, "jniHandlerCheck", oldJniHandlerCheck + 1);
+
+        assertEquals("parser1.close() should not close an invalid check or memory", 4043, this.parser1.close());
+
+        setPrivateField(this.parser1, "jniHandlerCheck", oldJniHandlerCheck);
+
+        setPrivateField(this.parser1, "jniHandler", 0);
+
+        try {
+            this.parser1.parseJson(W21ParserLoader.W21OutputJsonType.JSON_STRING);
+            fail("parser1.parseJson() could not try to access C NULL pointer");
+        } catch (W21Exception e) {
+            // JNI_W21_ERROR_GET_HANDLER_INCONSISTENT 4044
+            assertEquals("JNI contract violated: Error code JNI_W21_ERROR_GET_HANDLER_INCONSISTENT changed in C code", 4044, e.error);
+        } finally {
+            setPrivateField(this.parser1, "jniHandler", oldJniHandler);
+        }
+
+        setPrivateField(this.parser1, "jniHandlerCheck", 0);
+
+        try {
+            this.parser1.parseJson(W21ParserLoader.W21OutputJsonType.BYTE_ARRAY);
+            fail("parser1.parseJson() could not try to access C pointer with invalid check");
+        } catch (W21Exception e) {
+            // JNI_W21_ERROR_GET_HANDLER_CHECK_ERROR 4043
+            assertEquals("JNI contract violated: Error code JNI_W21_ERROR_GET_HANDLER_INCONSISTENT changed in C code", 4043, e.error);
+        } finally {
+            setPrivateField(this.parser1, "jniHandlerCheck", oldJniHandlerCheck);
+        }
+
+        setPrivateField(this.parser1, "jniHandler", 0);
+        setPrivateField(this.parser1, "jniHandlerCheck", 0);
+
+        try {
+            this.parser1.parseJson(W21ParserLoader.W21OutputJsonType.BYTE_ARRAY);
+            fail("parser1.parseJson() could not try to access C pointer with null pointer");
+        } catch (Exception e) {
+            assertEquals("Invalid message from jniParseJson", "jniParseJson unexpected: locker not found or not initialized. Unable to execute", e.getMessage());
+        } finally {
+            setPrivateField(this.parser1, "jniHandlerCheck", oldJniHandlerCheck);
+            setPrivateField(this.parser1, "jniHandler", oldJniHandler);
+        }
+
+        logger.warn("IGNORE MESSAGES ABOVE. THESE MESSAGES ARE EXPECTED BECAUSE WE ARE TRYING TO VIOLATE C MEMORY ACCESS SIMULATING ATTACK OR WRONG USE. This test SHOULD PASS without crash your VM :)");
+        logger.warn("============================= END CONTROLLED JNI ACCESS VIOLATION TEST =============================");
     }
 
     @Test
