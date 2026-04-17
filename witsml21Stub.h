@@ -30454,14 +30454,14 @@ struct cw21rd__WellboreContract {
 #define SOAP_TYPE_cw21rd__WellContract (2320)
 /* complex XML schema type 'cw21rd:WellContract': */
 struct cw21rd__WellContract {
-        /** Required element 'Well' of XML schema type 'rdw211:Wellbore' */
-        struct rdw211__Wellbore *Well;
+        /** Required element 'Well' of XML schema type 'rdw211:Well' */
+        struct rdw211__Well *Well;
 };
 #endif
 
 /* client/test.h:66244 */
 #ifndef SOAP_TYPE_cw21rd__TubularContract
-#define SOAP_TYPE_cw21rd__TubularContract (2321)
+#define SOAP_TYPE_cw21rd__TubularContract (2322)
 /* complex XML schema type 'cw21rd:TubularContract': */
 struct cw21rd__TubularContract {
         /** Required element 'Tubular' of XML schema type 'rdw211:Tubular' */
@@ -30471,7 +30471,7 @@ struct cw21rd__TubularContract {
 
 /* client/test.h:66248 */
 #ifndef SOAP_TYPE_cw21rd__CementJobEvaluationContract
-#define SOAP_TYPE_cw21rd__CementJobEvaluationContract (2323)
+#define SOAP_TYPE_cw21rd__CementJobEvaluationContract (2324)
 /* complex XML schema type 'cw21rd:CementJobEvaluationContract': */
 struct cw21rd__CementJobEvaluationContract {
         /** Required element 'CementJobEvaluation' of XML schema type 'rdw211:CementJobEvaluation' */
@@ -30481,7 +30481,7 @@ struct cw21rd__CementJobEvaluationContract {
 
 /* client/test.h:66252 */
 #ifndef SOAP_TYPE_cw21rd__WellboreGeometryContract
-#define SOAP_TYPE_cw21rd__WellboreGeometryContract (2325)
+#define SOAP_TYPE_cw21rd__WellboreGeometryContract (2326)
 /* complex XML schema type 'cw21rd:WellboreGeometryContract': */
 struct cw21rd__WellboreGeometryContract {
         /** Required element 'WellboreGeometry' of XML schema type 'rdw211:WellboreGeometry' */
@@ -30491,7 +30491,7 @@ struct cw21rd__WellboreGeometryContract {
 
 /* client/test.h:66256 */
 #ifndef SOAP_TYPE_cw21rd__WellboreGeometrySectionContract
-#define SOAP_TYPE_cw21rd__WellboreGeometrySectionContract (2327)
+#define SOAP_TYPE_cw21rd__WellboreGeometrySectionContract (2328)
 /* complex XML schema type 'cw21rd:WellboreGeometrySectionContract': */
 struct cw21rd__WellboreGeometrySectionContract {
         /** Required element 'WellboreGeometrySection' of XML schema type 'rdw211:WellboreGeometrySection' */
@@ -30501,7 +30501,7 @@ struct cw21rd__WellboreGeometrySectionContract {
 
 /* client/test.h:66260 */
 #ifndef SOAP_TYPE_cw21rd__RigUtilizationContract
-#define SOAP_TYPE_cw21rd__RigUtilizationContract (2329)
+#define SOAP_TYPE_cw21rd__RigUtilizationContract (2330)
 /* complex XML schema type 'cw21rd:RigUtilizationContract': */
 struct cw21rd__RigUtilizationContract {
         /** Required element 'RigUtilization' of XML schema type 'rdw211:RigUtilization' */
@@ -30511,7 +30511,7 @@ struct cw21rd__RigUtilizationContract {
 
 /* client/test.h:66264 */
 #ifndef SOAP_TYPE_cw21rd__ChannelKindContract
-#define SOAP_TYPE_cw21rd__ChannelKindContract (2331)
+#define SOAP_TYPE_cw21rd__ChannelKindContract (2332)
 /* complex XML schema type 'cw21rd:ChannelKindContract': */
 struct cw21rd__ChannelKindContract {
         /** Required element 'ChannelKind' of XML schema type 'rdw211:ChannelKind' */
@@ -30521,7 +30521,7 @@ struct cw21rd__ChannelKindContract {
 
 /* client/test.h:66268 */
 #ifndef SOAP_TYPE_cw21rd__ChannelKindDictionaryContract
-#define SOAP_TYPE_cw21rd__ChannelKindDictionaryContract (2333)
+#define SOAP_TYPE_cw21rd__ChannelKindDictionaryContract (2334)
 /* complex XML schema type 'cw21rd:ChannelKindDictionaryContract': */
 struct cw21rd__ChannelKindDictionaryContract {
         /** Required element 'ChannelKindDictionary' of XML schema type 'rdw211:ChannelKindDictionary' */
@@ -30531,7 +30531,7 @@ struct cw21rd__ChannelKindDictionaryContract {
 
 /* client/test.h:66272 */
 #ifndef SOAP_TYPE_cw21rd__LoggingToolKindContract
-#define SOAP_TYPE_cw21rd__LoggingToolKindContract (2335)
+#define SOAP_TYPE_cw21rd__LoggingToolKindContract (2336)
 /* complex XML schema type 'cw21rd:LoggingToolKindContract': */
 struct cw21rd__LoggingToolKindContract {
         /** Required element 'LoggingToolKind' of XML schema type 'rdw211:LoggingToolKind' */
@@ -30541,7 +30541,7 @@ struct cw21rd__LoggingToolKindContract {
 
 /* client/test.h:66276 */
 #ifndef SOAP_TYPE_cw21rd__LoggingToolKindDictionaryContract
-#define SOAP_TYPE_cw21rd__LoggingToolKindDictionaryContract (2337)
+#define SOAP_TYPE_cw21rd__LoggingToolKindDictionaryContract (2338)
 /* complex XML schema type 'cw21rd:LoggingToolKindDictionaryContract': */
 struct cw21rd__LoggingToolKindDictionaryContract {
         /** Required element 'LoggingToolKindDictionary' of XML schema type 'rdw211:LoggingToolKindDictionary' */
@@ -30551,7 +30551,7 @@ struct cw21rd__LoggingToolKindDictionaryContract {
 
 /* client/test.h:66280 */
 #ifndef SOAP_TYPE_cw21rd__MudLogReportContract
-#define SOAP_TYPE_cw21rd__MudLogReportContract (2339)
+#define SOAP_TYPE_cw21rd__MudLogReportContract (2340)
 /* complex XML schema type 'cw21rd:MudLogReportContract': */
 struct cw21rd__MudLogReportContract {
         /** Required element 'MudLogReport' of XML schema type 'rdw211:MudLogReport' */
@@ -30561,7 +30561,7 @@ struct cw21rd__MudLogReportContract {
 
 /* client/test.h:66284 */
 #ifndef SOAP_TYPE_cw21rd__MudlogReportIntervalContract
-#define SOAP_TYPE_cw21rd__MudlogReportIntervalContract (2341)
+#define SOAP_TYPE_cw21rd__MudlogReportIntervalContract (2342)
 /* complex XML schema type 'cw21rd:MudlogReportIntervalContract': */
 struct cw21rd__MudlogReportIntervalContract {
         /** Required element 'MudlogReportInterval' of XML schema type 'rdw211:MudlogReportInterval' */
@@ -30571,7 +30571,7 @@ struct cw21rd__MudlogReportIntervalContract {
 
 /* client/test.h:66288 */
 #ifndef SOAP_TYPE_cw21rd__CuttingsGeologyContract
-#define SOAP_TYPE_cw21rd__CuttingsGeologyContract (2343)
+#define SOAP_TYPE_cw21rd__CuttingsGeologyContract (2344)
 /* complex XML schema type 'cw21rd:CuttingsGeologyContract': */
 struct cw21rd__CuttingsGeologyContract {
         /** Required element 'CuttingsGeology' of XML schema type 'rdw211:CuttingsGeology' */
@@ -30581,7 +30581,7 @@ struct cw21rd__CuttingsGeologyContract {
 
 /* client/test.h:66292 */
 #ifndef SOAP_TYPE_cw21rd__CuttingsGeologyIntervalContract
-#define SOAP_TYPE_cw21rd__CuttingsGeologyIntervalContract (2345)
+#define SOAP_TYPE_cw21rd__CuttingsGeologyIntervalContract (2346)
 /* complex XML schema type 'cw21rd:CuttingsGeologyIntervalContract': */
 struct cw21rd__CuttingsGeologyIntervalContract {
         /** Required element 'CuttingsGeologyInterval' of XML schema type 'rdw211:CuttingsGeologyInterval' */
@@ -30591,7 +30591,7 @@ struct cw21rd__CuttingsGeologyIntervalContract {
 
 /* client/test.h:66296 */
 #ifndef SOAP_TYPE_cw21rd__InterpretedGeologyContract
-#define SOAP_TYPE_cw21rd__InterpretedGeologyContract (2347)
+#define SOAP_TYPE_cw21rd__InterpretedGeologyContract (2348)
 /* complex XML schema type 'cw21rd:InterpretedGeologyContract': */
 struct cw21rd__InterpretedGeologyContract {
         /** Required element 'InterpretedGeology' of XML schema type 'rdw211:InterpretedGeology' */
@@ -30601,7 +30601,7 @@ struct cw21rd__InterpretedGeologyContract {
 
 /* client/test.h:66300 */
 #ifndef SOAP_TYPE_cw21rd__InterpretedGeologyIntervalContract
-#define SOAP_TYPE_cw21rd__InterpretedGeologyIntervalContract (2349)
+#define SOAP_TYPE_cw21rd__InterpretedGeologyIntervalContract (2350)
 /* complex XML schema type 'cw21rd:InterpretedGeologyIntervalContract': */
 struct cw21rd__InterpretedGeologyIntervalContract {
         /** Required element 'InterpretedGeologyInterval' of XML schema type 'rdw211:InterpretedGeologyInterval' */
@@ -30611,7 +30611,7 @@ struct cw21rd__InterpretedGeologyIntervalContract {
 
 /* client/test.h:66304 */
 #ifndef SOAP_TYPE_cw21rd__ShowEvaluationContract
-#define SOAP_TYPE_cw21rd__ShowEvaluationContract (2351)
+#define SOAP_TYPE_cw21rd__ShowEvaluationContract (2352)
 /* complex XML schema type 'cw21rd:ShowEvaluationContract': */
 struct cw21rd__ShowEvaluationContract {
         /** Required element 'ShowEvaluation' of XML schema type 'rdw211:ShowEvaluation' */
@@ -30621,7 +30621,7 @@ struct cw21rd__ShowEvaluationContract {
 
 /* client/test.h:66308 */
 #ifndef SOAP_TYPE_cw21rd__ShowEvaluationIntervalContract
-#define SOAP_TYPE_cw21rd__ShowEvaluationIntervalContract (2353)
+#define SOAP_TYPE_cw21rd__ShowEvaluationIntervalContract (2354)
 /* complex XML schema type 'cw21rd:ShowEvaluationIntervalContract': */
 struct cw21rd__ShowEvaluationIntervalContract {
         /** Required element 'ShowEvaluationInterval' of XML schema type 'rdw211:ShowEvaluationInterval' */
@@ -30631,7 +30631,7 @@ struct cw21rd__ShowEvaluationIntervalContract {
 
 /* client/test.h:66312 */
 #ifndef SOAP_TYPE_cw21rd__WellboreGeologyContract
-#define SOAP_TYPE_cw21rd__WellboreGeologyContract (2355)
+#define SOAP_TYPE_cw21rd__WellboreGeologyContract (2356)
 /* complex XML schema type 'cw21rd:WellboreGeologyContract': */
 struct cw21rd__WellboreGeologyContract {
         /** Required element 'WellboreGeology' of XML schema type 'rdw211:WellboreGeology' */
@@ -30641,7 +30641,7 @@ struct cw21rd__WellboreGeologyContract {
 
 /* client/test.h:66316 */
 #ifndef SOAP_TYPE_cw21rd__ChannelContract
-#define SOAP_TYPE_cw21rd__ChannelContract (2357)
+#define SOAP_TYPE_cw21rd__ChannelContract (2358)
 /* complex XML schema type 'cw21rd:ChannelContract': */
 struct cw21rd__ChannelContract {
         /** Required element 'Channel' of XML schema type 'rdw211:Channel' */
@@ -30651,7 +30651,7 @@ struct cw21rd__ChannelContract {
 
 /* client/test.h:66320 */
 #ifndef SOAP_TYPE_cw21rd__ChannelSetContract
-#define SOAP_TYPE_cw21rd__ChannelSetContract (2359)
+#define SOAP_TYPE_cw21rd__ChannelSetContract (2360)
 /* complex XML schema type 'cw21rd:ChannelSetContract': */
 struct cw21rd__ChannelSetContract {
         /** Required element 'ChannelSet' of XML schema type 'rdw211:ChannelSet' */
@@ -30661,7 +30661,7 @@ struct cw21rd__ChannelSetContract {
 
 /* client/test.h:66324 */
 #ifndef SOAP_TYPE_cw21rd__TrajectoryContract
-#define SOAP_TYPE_cw21rd__TrajectoryContract (2361)
+#define SOAP_TYPE_cw21rd__TrajectoryContract (2362)
 /* complex XML schema type 'cw21rd:TrajectoryContract': */
 struct cw21rd__TrajectoryContract {
         /** Required element 'Trajectory' of XML schema type 'rdw211:Trajectory' */
@@ -30671,7 +30671,7 @@ struct cw21rd__TrajectoryContract {
 
 /* client/test.h:66328 */
 #ifndef SOAP_TYPE_cw21rd__TrajectoryStationContract
-#define SOAP_TYPE_cw21rd__TrajectoryStationContract (2363)
+#define SOAP_TYPE_cw21rd__TrajectoryStationContract (2364)
 /* complex XML schema type 'cw21rd:TrajectoryStationContract': */
 struct cw21rd__TrajectoryStationContract {
         /** Required element 'TrajectoryStation' of XML schema type 'rdw211:TrajectoryStation' */
@@ -30681,7 +30681,7 @@ struct cw21rd__TrajectoryStationContract {
 
 /* client/test.h:66332 */
 #ifndef SOAP_TYPE_cw21rd__TargetContract
-#define SOAP_TYPE_cw21rd__TargetContract (2365)
+#define SOAP_TYPE_cw21rd__TargetContract (2366)
 /* complex XML schema type 'cw21rd:TargetContract': */
 struct cw21rd__TargetContract {
         /** Required element 'Target' of XML schema type 'rdw211:Target' */
@@ -30691,7 +30691,7 @@ struct cw21rd__TargetContract {
 
 /* client/test.h:66336 */
 #ifndef SOAP_TYPE_cw21rd__ErrorTermContract
-#define SOAP_TYPE_cw21rd__ErrorTermContract (2367)
+#define SOAP_TYPE_cw21rd__ErrorTermContract (2368)
 /* complex XML schema type 'cw21rd:ErrorTermContract': */
 struct cw21rd__ErrorTermContract {
         /** Required element 'ErrorTerm' of XML schema type 'rdw211:ErrorTerm' */
@@ -30701,7 +30701,7 @@ struct cw21rd__ErrorTermContract {
 
 /* client/test.h:66340 */
 #ifndef SOAP_TYPE_cw21rd__ErrorTermDictionaryContract
-#define SOAP_TYPE_cw21rd__ErrorTermDictionaryContract (2369)
+#define SOAP_TYPE_cw21rd__ErrorTermDictionaryContract (2370)
 /* complex XML schema type 'cw21rd:ErrorTermDictionaryContract': */
 struct cw21rd__ErrorTermDictionaryContract {
         /** Required element 'ErrorTermDictionary' of XML schema type 'rdw211:ErrorTermDictionary' */
@@ -30711,7 +30711,7 @@ struct cw21rd__ErrorTermDictionaryContract {
 
 /* client/test.h:66344 */
 #ifndef SOAP_TYPE_cw21rd__ToolErrorModelContract
-#define SOAP_TYPE_cw21rd__ToolErrorModelContract (2371)
+#define SOAP_TYPE_cw21rd__ToolErrorModelContract (2372)
 /* complex XML schema type 'cw21rd:ToolErrorModelContract': */
 struct cw21rd__ToolErrorModelContract {
         /** Required element 'ToolErrorModel' of XML schema type 'rdw211:ToolErrorModel' */
@@ -30721,7 +30721,7 @@ struct cw21rd__ToolErrorModelContract {
 
 /* client/test.h:66348 */
 #ifndef SOAP_TYPE_cw21rd__ToolErrorModelDictionaryContract
-#define SOAP_TYPE_cw21rd__ToolErrorModelDictionaryContract (2373)
+#define SOAP_TYPE_cw21rd__ToolErrorModelDictionaryContract (2374)
 /* complex XML schema type 'cw21rd:ToolErrorModelDictionaryContract': */
 struct cw21rd__ToolErrorModelDictionaryContract {
         /** Required element 'ToolErrorModelDictionary' of XML schema type 'rdw211:ToolErrorModelDictionary' */
@@ -30731,7 +30731,7 @@ struct cw21rd__ToolErrorModelDictionaryContract {
 
 /* client/test.h:66352 */
 #ifndef SOAP_TYPE_cw21rd__WeightingFunctionContract
-#define SOAP_TYPE_cw21rd__WeightingFunctionContract (2375)
+#define SOAP_TYPE_cw21rd__WeightingFunctionContract (2376)
 /* complex XML schema type 'cw21rd:WeightingFunctionContract': */
 struct cw21rd__WeightingFunctionContract {
         /** Required element 'WeightingFunction' of XML schema type 'rdw211:WeightingFunction' */
@@ -30741,7 +30741,7 @@ struct cw21rd__WeightingFunctionContract {
 
 /* client/test.h:66356 */
 #ifndef SOAP_TYPE_cw21rd__WeightingFunctionDictionaryContract
-#define SOAP_TYPE_cw21rd__WeightingFunctionDictionaryContract (2377)
+#define SOAP_TYPE_cw21rd__WeightingFunctionDictionaryContract (2378)
 /* complex XML schema type 'cw21rd:WeightingFunctionDictionaryContract': */
 struct cw21rd__WeightingFunctionDictionaryContract {
         /** Required element 'WeightingFunctionDictionary' of XML schema type 'rdw211:WeightingFunctionDictionary' */
@@ -30751,7 +30751,7 @@ struct cw21rd__WeightingFunctionDictionaryContract {
 
 /* client/test.h:66360 */
 #ifndef SOAP_TYPE_cw21rd__SurveyProgramContract
-#define SOAP_TYPE_cw21rd__SurveyProgramContract (2379)
+#define SOAP_TYPE_cw21rd__SurveyProgramContract (2380)
 /* complex XML schema type 'cw21rd:SurveyProgramContract': */
 struct cw21rd__SurveyProgramContract {
         /** Required element 'SurveyProgram' of XML schema type 'rdw211:SurveyProgram' */
@@ -30761,7 +30761,7 @@ struct cw21rd__SurveyProgramContract {
 
 /* client/test.h:66364 */
 #ifndef SOAP_TYPE_cw21rd__PPFGChannelContract
-#define SOAP_TYPE_cw21rd__PPFGChannelContract (2381)
+#define SOAP_TYPE_cw21rd__PPFGChannelContract (2382)
 /* complex XML schema type 'cw21rd:PPFGChannelContract': */
 struct cw21rd__PPFGChannelContract {
         /** Required element 'PPFGChannel' of XML schema type 'rdw211:PPFGChannel' */
@@ -30771,7 +30771,7 @@ struct cw21rd__PPFGChannelContract {
 
 /* client/test.h:66368 */
 #ifndef SOAP_TYPE_cw21rd__PPFGChannelSetContract
-#define SOAP_TYPE_cw21rd__PPFGChannelSetContract (2383)
+#define SOAP_TYPE_cw21rd__PPFGChannelSetContract (2384)
 /* complex XML schema type 'cw21rd:PPFGChannelSetContract': */
 struct cw21rd__PPFGChannelSetContract {
         /** Required element 'PPFGChannelSet' of XML schema type 'rdw211:PPFGChannelSet' */
@@ -30781,7 +30781,7 @@ struct cw21rd__PPFGChannelSetContract {
 
 /* client/test.h:66372 */
 #ifndef SOAP_TYPE_cw21rd__RiskContract
-#define SOAP_TYPE_cw21rd__RiskContract (2385)
+#define SOAP_TYPE_cw21rd__RiskContract (2386)
 /* complex XML schema type 'cw21rd:RiskContract': */
 struct cw21rd__RiskContract {
         /** Required element 'Risk' of XML schema type 'rdw211:Risk' */
@@ -30791,7 +30791,7 @@ struct cw21rd__RiskContract {
 
 /* client/test.h:66376 */
 #ifndef SOAP_TYPE_cw21rd__StimJobContract
-#define SOAP_TYPE_cw21rd__StimJobContract (2387)
+#define SOAP_TYPE_cw21rd__StimJobContract (2388)
 /* complex XML schema type 'cw21rd:StimJobContract': */
 struct cw21rd__StimJobContract {
         /** Required element 'StimJob' of XML schema type 'rdw211:StimJob' */
@@ -30801,7 +30801,7 @@ struct cw21rd__StimJobContract {
 
 /* client/test.h:66380 */
 #ifndef SOAP_TYPE_cw21rd__StimJobStageContract
-#define SOAP_TYPE_cw21rd__StimJobStageContract (2389)
+#define SOAP_TYPE_cw21rd__StimJobStageContract (2390)
 /* complex XML schema type 'cw21rd:StimJobStageContract': */
 struct cw21rd__StimJobStageContract {
         /** Required element 'StimJobStage' of XML schema type 'rdw211:StimJobStage' */
@@ -30811,7 +30811,7 @@ struct cw21rd__StimJobStageContract {
 
 /* client/test.h:66384 */
 #ifndef SOAP_TYPE_cw21rd__StimPerforationClusterContract
-#define SOAP_TYPE_cw21rd__StimPerforationClusterContract (2391)
+#define SOAP_TYPE_cw21rd__StimPerforationClusterContract (2392)
 /* complex XML schema type 'cw21rd:StimPerforationClusterContract': */
 struct cw21rd__StimPerforationClusterContract {
         /** Required element 'StimPerforationCluster' of XML schema type 'rdw211:StimPerforationCluster' */
@@ -30821,7 +30821,7 @@ struct cw21rd__StimPerforationClusterContract {
 
 /* client/test.h:66388 */
 #ifndef SOAP_TYPE_cw21rd__WellboreMarkerContract
-#define SOAP_TYPE_cw21rd__WellboreMarkerContract (2393)
+#define SOAP_TYPE_cw21rd__WellboreMarkerContract (2394)
 /* complex XML schema type 'cw21rd:WellboreMarkerContract': */
 struct cw21rd__WellboreMarkerContract {
         /** Required element 'WellboreMarker' of XML schema type 'rdw211:WellboreMarker' */
@@ -30831,7 +30831,7 @@ struct cw21rd__WellboreMarkerContract {
 
 /* client/test.h:66392 */
 #ifndef SOAP_TYPE_cw21rd__WellboreMarkerSetContract
-#define SOAP_TYPE_cw21rd__WellboreMarkerSetContract (2395)
+#define SOAP_TYPE_cw21rd__WellboreMarkerSetContract (2396)
 /* complex XML schema type 'cw21rd:WellboreMarkerSetContract': */
 struct cw21rd__WellboreMarkerSetContract {
         /** Required element 'WellboreMarkerSet' of XML schema type 'rdw211:WellboreMarkerSet' */
@@ -30841,7 +30841,7 @@ struct cw21rd__WellboreMarkerSetContract {
 
 /* client/test.h:66396 */
 #ifndef SOAP_TYPE_cw21rd__WellCompletionContract
-#define SOAP_TYPE_cw21rd__WellCompletionContract (2397)
+#define SOAP_TYPE_cw21rd__WellCompletionContract (2398)
 /* complex XML schema type 'cw21rd:WellCompletionContract': */
 struct cw21rd__WellCompletionContract {
         /** Required element 'WellCompletion' of XML schema type 'rdw211:WellCompletion' */
@@ -30851,7 +30851,7 @@ struct cw21rd__WellCompletionContract {
 
 /* client/test.h:66400 */
 #ifndef SOAP_TYPE_cw21rd__WellboreCompletionContract
-#define SOAP_TYPE_cw21rd__WellboreCompletionContract (2399)
+#define SOAP_TYPE_cw21rd__WellboreCompletionContract (2400)
 /* complex XML schema type 'cw21rd:WellboreCompletionContract': */
 struct cw21rd__WellboreCompletionContract {
         /** Required element 'WellboreCompletion' of XML schema type 'rdw211:WellboreCompletion' */
@@ -30861,7 +30861,7 @@ struct cw21rd__WellboreCompletionContract {
 
 /* client/test.h:66404 */
 #ifndef SOAP_TYPE_cw21rd__DownholeComponentContract
-#define SOAP_TYPE_cw21rd__DownholeComponentContract (2401)
+#define SOAP_TYPE_cw21rd__DownholeComponentContract (2402)
 /* complex XML schema type 'cw21rd:DownholeComponentContract': */
 struct cw21rd__DownholeComponentContract {
         /** Optional element 'DownholeComponent' of XML schema type 'rdw211:DownholeComponent' */
@@ -30871,7 +30871,7 @@ struct cw21rd__DownholeComponentContract {
 
 /* client/test.h:66408 */
 #ifndef SOAP_TYPE_cw21rd__WellCMLedgerContract
-#define SOAP_TYPE_cw21rd__WellCMLedgerContract (2403)
+#define SOAP_TYPE_cw21rd__WellCMLedgerContract (2404)
 /* complex XML schema type 'cw21rd:WellCMLedgerContract': */
 struct cw21rd__WellCMLedgerContract {
         /** Required element 'WellCMLedger' of XML schema type 'rdw211:WellCMLedger' */
@@ -30881,7 +30881,7 @@ struct cw21rd__WellCMLedgerContract {
 
 /* client/test.h:66421 */
 #ifndef SOAP_TYPE_cw21rd__AutoDetectContract
-#define SOAP_TYPE_cw21rd__AutoDetectContract (2405)
+#define SOAP_TYPE_cw21rd__AutoDetectContract (2406)
 /* complex XML schema type 'cw21rd:AutoDetectContract': */
 struct cw21rd__AutoDetectContract {
         /** Optional element 'BhaRun' of XML schema type 'rdw211:BhaRun' */
@@ -35172,217 +35172,217 @@ typedef struct rdw212__GraphicalInformationSet _rdw212__GraphicalInformationSet;
 
 /* struct cw21rd__AutoDetectContract has binding name 'cw21rd__AutoDetectContract' for type 'cw21rd:AutoDetectContract' */
 #ifndef SOAP_TYPE_cw21rd__AutoDetectContract
-#define SOAP_TYPE_cw21rd__AutoDetectContract (2405)
+#define SOAP_TYPE_cw21rd__AutoDetectContract (2406)
 #endif
 
 /* struct cw21rd__WellCMLedgerContract has binding name 'cw21rd__WellCMLedgerContract' for type 'cw21rd:WellCMLedgerContract' */
 #ifndef SOAP_TYPE_cw21rd__WellCMLedgerContract
-#define SOAP_TYPE_cw21rd__WellCMLedgerContract (2403)
+#define SOAP_TYPE_cw21rd__WellCMLedgerContract (2404)
 #endif
 
 /* struct cw21rd__DownholeComponentContract has binding name 'cw21rd__DownholeComponentContract' for type 'cw21rd:DownholeComponentContract' */
 #ifndef SOAP_TYPE_cw21rd__DownholeComponentContract
-#define SOAP_TYPE_cw21rd__DownholeComponentContract (2401)
+#define SOAP_TYPE_cw21rd__DownholeComponentContract (2402)
 #endif
 
 /* struct cw21rd__WellboreCompletionContract has binding name 'cw21rd__WellboreCompletionContract' for type 'cw21rd:WellboreCompletionContract' */
 #ifndef SOAP_TYPE_cw21rd__WellboreCompletionContract
-#define SOAP_TYPE_cw21rd__WellboreCompletionContract (2399)
+#define SOAP_TYPE_cw21rd__WellboreCompletionContract (2400)
 #endif
 
 /* struct cw21rd__WellCompletionContract has binding name 'cw21rd__WellCompletionContract' for type 'cw21rd:WellCompletionContract' */
 #ifndef SOAP_TYPE_cw21rd__WellCompletionContract
-#define SOAP_TYPE_cw21rd__WellCompletionContract (2397)
+#define SOAP_TYPE_cw21rd__WellCompletionContract (2398)
 #endif
 
 /* struct cw21rd__WellboreMarkerSetContract has binding name 'cw21rd__WellboreMarkerSetContract' for type 'cw21rd:WellboreMarkerSetContract' */
 #ifndef SOAP_TYPE_cw21rd__WellboreMarkerSetContract
-#define SOAP_TYPE_cw21rd__WellboreMarkerSetContract (2395)
+#define SOAP_TYPE_cw21rd__WellboreMarkerSetContract (2396)
 #endif
 
 /* struct cw21rd__WellboreMarkerContract has binding name 'cw21rd__WellboreMarkerContract' for type 'cw21rd:WellboreMarkerContract' */
 #ifndef SOAP_TYPE_cw21rd__WellboreMarkerContract
-#define SOAP_TYPE_cw21rd__WellboreMarkerContract (2393)
+#define SOAP_TYPE_cw21rd__WellboreMarkerContract (2394)
 #endif
 
 /* struct cw21rd__StimPerforationClusterContract has binding name 'cw21rd__StimPerforationClusterContract' for type 'cw21rd:StimPerforationClusterContract' */
 #ifndef SOAP_TYPE_cw21rd__StimPerforationClusterContract
-#define SOAP_TYPE_cw21rd__StimPerforationClusterContract (2391)
+#define SOAP_TYPE_cw21rd__StimPerforationClusterContract (2392)
 #endif
 
 /* struct cw21rd__StimJobStageContract has binding name 'cw21rd__StimJobStageContract' for type 'cw21rd:StimJobStageContract' */
 #ifndef SOAP_TYPE_cw21rd__StimJobStageContract
-#define SOAP_TYPE_cw21rd__StimJobStageContract (2389)
+#define SOAP_TYPE_cw21rd__StimJobStageContract (2390)
 #endif
 
 /* struct cw21rd__StimJobContract has binding name 'cw21rd__StimJobContract' for type 'cw21rd:StimJobContract' */
 #ifndef SOAP_TYPE_cw21rd__StimJobContract
-#define SOAP_TYPE_cw21rd__StimJobContract (2387)
+#define SOAP_TYPE_cw21rd__StimJobContract (2388)
 #endif
 
 /* struct cw21rd__RiskContract has binding name 'cw21rd__RiskContract' for type 'cw21rd:RiskContract' */
 #ifndef SOAP_TYPE_cw21rd__RiskContract
-#define SOAP_TYPE_cw21rd__RiskContract (2385)
+#define SOAP_TYPE_cw21rd__RiskContract (2386)
 #endif
 
 /* struct cw21rd__PPFGChannelSetContract has binding name 'cw21rd__PPFGChannelSetContract' for type 'cw21rd:PPFGChannelSetContract' */
 #ifndef SOAP_TYPE_cw21rd__PPFGChannelSetContract
-#define SOAP_TYPE_cw21rd__PPFGChannelSetContract (2383)
+#define SOAP_TYPE_cw21rd__PPFGChannelSetContract (2384)
 #endif
 
 /* struct cw21rd__PPFGChannelContract has binding name 'cw21rd__PPFGChannelContract' for type 'cw21rd:PPFGChannelContract' */
 #ifndef SOAP_TYPE_cw21rd__PPFGChannelContract
-#define SOAP_TYPE_cw21rd__PPFGChannelContract (2381)
+#define SOAP_TYPE_cw21rd__PPFGChannelContract (2382)
 #endif
 
 /* struct cw21rd__SurveyProgramContract has binding name 'cw21rd__SurveyProgramContract' for type 'cw21rd:SurveyProgramContract' */
 #ifndef SOAP_TYPE_cw21rd__SurveyProgramContract
-#define SOAP_TYPE_cw21rd__SurveyProgramContract (2379)
+#define SOAP_TYPE_cw21rd__SurveyProgramContract (2380)
 #endif
 
 /* struct cw21rd__WeightingFunctionDictionaryContract has binding name 'cw21rd__WeightingFunctionDictionaryContract' for type 'cw21rd:WeightingFunctionDictionaryContract' */
 #ifndef SOAP_TYPE_cw21rd__WeightingFunctionDictionaryContract
-#define SOAP_TYPE_cw21rd__WeightingFunctionDictionaryContract (2377)
+#define SOAP_TYPE_cw21rd__WeightingFunctionDictionaryContract (2378)
 #endif
 
 /* struct cw21rd__WeightingFunctionContract has binding name 'cw21rd__WeightingFunctionContract' for type 'cw21rd:WeightingFunctionContract' */
 #ifndef SOAP_TYPE_cw21rd__WeightingFunctionContract
-#define SOAP_TYPE_cw21rd__WeightingFunctionContract (2375)
+#define SOAP_TYPE_cw21rd__WeightingFunctionContract (2376)
 #endif
 
 /* struct cw21rd__ToolErrorModelDictionaryContract has binding name 'cw21rd__ToolErrorModelDictionaryContract' for type 'cw21rd:ToolErrorModelDictionaryContract' */
 #ifndef SOAP_TYPE_cw21rd__ToolErrorModelDictionaryContract
-#define SOAP_TYPE_cw21rd__ToolErrorModelDictionaryContract (2373)
+#define SOAP_TYPE_cw21rd__ToolErrorModelDictionaryContract (2374)
 #endif
 
 /* struct cw21rd__ToolErrorModelContract has binding name 'cw21rd__ToolErrorModelContract' for type 'cw21rd:ToolErrorModelContract' */
 #ifndef SOAP_TYPE_cw21rd__ToolErrorModelContract
-#define SOAP_TYPE_cw21rd__ToolErrorModelContract (2371)
+#define SOAP_TYPE_cw21rd__ToolErrorModelContract (2372)
 #endif
 
 /* struct cw21rd__ErrorTermDictionaryContract has binding name 'cw21rd__ErrorTermDictionaryContract' for type 'cw21rd:ErrorTermDictionaryContract' */
 #ifndef SOAP_TYPE_cw21rd__ErrorTermDictionaryContract
-#define SOAP_TYPE_cw21rd__ErrorTermDictionaryContract (2369)
+#define SOAP_TYPE_cw21rd__ErrorTermDictionaryContract (2370)
 #endif
 
 /* struct cw21rd__ErrorTermContract has binding name 'cw21rd__ErrorTermContract' for type 'cw21rd:ErrorTermContract' */
 #ifndef SOAP_TYPE_cw21rd__ErrorTermContract
-#define SOAP_TYPE_cw21rd__ErrorTermContract (2367)
+#define SOAP_TYPE_cw21rd__ErrorTermContract (2368)
 #endif
 
 /* struct cw21rd__TargetContract has binding name 'cw21rd__TargetContract' for type 'cw21rd:TargetContract' */
 #ifndef SOAP_TYPE_cw21rd__TargetContract
-#define SOAP_TYPE_cw21rd__TargetContract (2365)
+#define SOAP_TYPE_cw21rd__TargetContract (2366)
 #endif
 
 /* struct cw21rd__TrajectoryStationContract has binding name 'cw21rd__TrajectoryStationContract' for type 'cw21rd:TrajectoryStationContract' */
 #ifndef SOAP_TYPE_cw21rd__TrajectoryStationContract
-#define SOAP_TYPE_cw21rd__TrajectoryStationContract (2363)
+#define SOAP_TYPE_cw21rd__TrajectoryStationContract (2364)
 #endif
 
 /* struct cw21rd__TrajectoryContract has binding name 'cw21rd__TrajectoryContract' for type 'cw21rd:TrajectoryContract' */
 #ifndef SOAP_TYPE_cw21rd__TrajectoryContract
-#define SOAP_TYPE_cw21rd__TrajectoryContract (2361)
+#define SOAP_TYPE_cw21rd__TrajectoryContract (2362)
 #endif
 
 /* struct cw21rd__ChannelSetContract has binding name 'cw21rd__ChannelSetContract' for type 'cw21rd:ChannelSetContract' */
 #ifndef SOAP_TYPE_cw21rd__ChannelSetContract
-#define SOAP_TYPE_cw21rd__ChannelSetContract (2359)
+#define SOAP_TYPE_cw21rd__ChannelSetContract (2360)
 #endif
 
 /* struct cw21rd__ChannelContract has binding name 'cw21rd__ChannelContract' for type 'cw21rd:ChannelContract' */
 #ifndef SOAP_TYPE_cw21rd__ChannelContract
-#define SOAP_TYPE_cw21rd__ChannelContract (2357)
+#define SOAP_TYPE_cw21rd__ChannelContract (2358)
 #endif
 
 /* struct cw21rd__WellboreGeologyContract has binding name 'cw21rd__WellboreGeologyContract' for type 'cw21rd:WellboreGeologyContract' */
 #ifndef SOAP_TYPE_cw21rd__WellboreGeologyContract
-#define SOAP_TYPE_cw21rd__WellboreGeologyContract (2355)
+#define SOAP_TYPE_cw21rd__WellboreGeologyContract (2356)
 #endif
 
 /* struct cw21rd__ShowEvaluationIntervalContract has binding name 'cw21rd__ShowEvaluationIntervalContract' for type 'cw21rd:ShowEvaluationIntervalContract' */
 #ifndef SOAP_TYPE_cw21rd__ShowEvaluationIntervalContract
-#define SOAP_TYPE_cw21rd__ShowEvaluationIntervalContract (2353)
+#define SOAP_TYPE_cw21rd__ShowEvaluationIntervalContract (2354)
 #endif
 
 /* struct cw21rd__ShowEvaluationContract has binding name 'cw21rd__ShowEvaluationContract' for type 'cw21rd:ShowEvaluationContract' */
 #ifndef SOAP_TYPE_cw21rd__ShowEvaluationContract
-#define SOAP_TYPE_cw21rd__ShowEvaluationContract (2351)
+#define SOAP_TYPE_cw21rd__ShowEvaluationContract (2352)
 #endif
 
 /* struct cw21rd__InterpretedGeologyIntervalContract has binding name 'cw21rd__InterpretedGeologyIntervalContract' for type 'cw21rd:InterpretedGeologyIntervalContract' */
 #ifndef SOAP_TYPE_cw21rd__InterpretedGeologyIntervalContract
-#define SOAP_TYPE_cw21rd__InterpretedGeologyIntervalContract (2349)
+#define SOAP_TYPE_cw21rd__InterpretedGeologyIntervalContract (2350)
 #endif
 
 /* struct cw21rd__InterpretedGeologyContract has binding name 'cw21rd__InterpretedGeologyContract' for type 'cw21rd:InterpretedGeologyContract' */
 #ifndef SOAP_TYPE_cw21rd__InterpretedGeologyContract
-#define SOAP_TYPE_cw21rd__InterpretedGeologyContract (2347)
+#define SOAP_TYPE_cw21rd__InterpretedGeologyContract (2348)
 #endif
 
 /* struct cw21rd__CuttingsGeologyIntervalContract has binding name 'cw21rd__CuttingsGeologyIntervalContract' for type 'cw21rd:CuttingsGeologyIntervalContract' */
 #ifndef SOAP_TYPE_cw21rd__CuttingsGeologyIntervalContract
-#define SOAP_TYPE_cw21rd__CuttingsGeologyIntervalContract (2345)
+#define SOAP_TYPE_cw21rd__CuttingsGeologyIntervalContract (2346)
 #endif
 
 /* struct cw21rd__CuttingsGeologyContract has binding name 'cw21rd__CuttingsGeologyContract' for type 'cw21rd:CuttingsGeologyContract' */
 #ifndef SOAP_TYPE_cw21rd__CuttingsGeologyContract
-#define SOAP_TYPE_cw21rd__CuttingsGeologyContract (2343)
+#define SOAP_TYPE_cw21rd__CuttingsGeologyContract (2344)
 #endif
 
 /* struct cw21rd__MudlogReportIntervalContract has binding name 'cw21rd__MudlogReportIntervalContract' for type 'cw21rd:MudlogReportIntervalContract' */
 #ifndef SOAP_TYPE_cw21rd__MudlogReportIntervalContract
-#define SOAP_TYPE_cw21rd__MudlogReportIntervalContract (2341)
+#define SOAP_TYPE_cw21rd__MudlogReportIntervalContract (2342)
 #endif
 
 /* struct cw21rd__MudLogReportContract has binding name 'cw21rd__MudLogReportContract' for type 'cw21rd:MudLogReportContract' */
 #ifndef SOAP_TYPE_cw21rd__MudLogReportContract
-#define SOAP_TYPE_cw21rd__MudLogReportContract (2339)
+#define SOAP_TYPE_cw21rd__MudLogReportContract (2340)
 #endif
 
 /* struct cw21rd__LoggingToolKindDictionaryContract has binding name 'cw21rd__LoggingToolKindDictionaryContract' for type 'cw21rd:LoggingToolKindDictionaryContract' */
 #ifndef SOAP_TYPE_cw21rd__LoggingToolKindDictionaryContract
-#define SOAP_TYPE_cw21rd__LoggingToolKindDictionaryContract (2337)
+#define SOAP_TYPE_cw21rd__LoggingToolKindDictionaryContract (2338)
 #endif
 
 /* struct cw21rd__LoggingToolKindContract has binding name 'cw21rd__LoggingToolKindContract' for type 'cw21rd:LoggingToolKindContract' */
 #ifndef SOAP_TYPE_cw21rd__LoggingToolKindContract
-#define SOAP_TYPE_cw21rd__LoggingToolKindContract (2335)
+#define SOAP_TYPE_cw21rd__LoggingToolKindContract (2336)
 #endif
 
 /* struct cw21rd__ChannelKindDictionaryContract has binding name 'cw21rd__ChannelKindDictionaryContract' for type 'cw21rd:ChannelKindDictionaryContract' */
 #ifndef SOAP_TYPE_cw21rd__ChannelKindDictionaryContract
-#define SOAP_TYPE_cw21rd__ChannelKindDictionaryContract (2333)
+#define SOAP_TYPE_cw21rd__ChannelKindDictionaryContract (2334)
 #endif
 
 /* struct cw21rd__ChannelKindContract has binding name 'cw21rd__ChannelKindContract' for type 'cw21rd:ChannelKindContract' */
 #ifndef SOAP_TYPE_cw21rd__ChannelKindContract
-#define SOAP_TYPE_cw21rd__ChannelKindContract (2331)
+#define SOAP_TYPE_cw21rd__ChannelKindContract (2332)
 #endif
 
 /* struct cw21rd__RigUtilizationContract has binding name 'cw21rd__RigUtilizationContract' for type 'cw21rd:RigUtilizationContract' */
 #ifndef SOAP_TYPE_cw21rd__RigUtilizationContract
-#define SOAP_TYPE_cw21rd__RigUtilizationContract (2329)
+#define SOAP_TYPE_cw21rd__RigUtilizationContract (2330)
 #endif
 
 /* struct cw21rd__WellboreGeometrySectionContract has binding name 'cw21rd__WellboreGeometrySectionContract' for type 'cw21rd:WellboreGeometrySectionContract' */
 #ifndef SOAP_TYPE_cw21rd__WellboreGeometrySectionContract
-#define SOAP_TYPE_cw21rd__WellboreGeometrySectionContract (2327)
+#define SOAP_TYPE_cw21rd__WellboreGeometrySectionContract (2328)
 #endif
 
 /* struct cw21rd__WellboreGeometryContract has binding name 'cw21rd__WellboreGeometryContract' for type 'cw21rd:WellboreGeometryContract' */
 #ifndef SOAP_TYPE_cw21rd__WellboreGeometryContract
-#define SOAP_TYPE_cw21rd__WellboreGeometryContract (2325)
+#define SOAP_TYPE_cw21rd__WellboreGeometryContract (2326)
 #endif
 
 /* struct cw21rd__CementJobEvaluationContract has binding name 'cw21rd__CementJobEvaluationContract' for type 'cw21rd:CementJobEvaluationContract' */
 #ifndef SOAP_TYPE_cw21rd__CementJobEvaluationContract
-#define SOAP_TYPE_cw21rd__CementJobEvaluationContract (2323)
+#define SOAP_TYPE_cw21rd__CementJobEvaluationContract (2324)
 #endif
 
 /* struct cw21rd__TubularContract has binding name 'cw21rd__TubularContract' for type 'cw21rd:TubularContract' */
 #ifndef SOAP_TYPE_cw21rd__TubularContract
-#define SOAP_TYPE_cw21rd__TubularContract (2321)
+#define SOAP_TYPE_cw21rd__TubularContract (2322)
 #endif
 
 /* struct cw21rd__WellContract has binding name 'cw21rd__WellContract' for type 'cw21rd:WellContract' */
@@ -40130,219 +40130,219 @@ typedef struct rdw212__GraphicalInformationSet _rdw212__GraphicalInformationSet;
 #define SOAP_TYPE_PointerToSOAP_ENV__Code (2409)
 #endif
 
-/* struct rdw211__Well * has binding name 'PointerTo_rdw211__Well' for type '' */
-#ifndef SOAP_TYPE_PointerTo_rdw211__Well
-#define SOAP_TYPE_PointerTo_rdw211__Well (2406)
-#endif
-
 /* struct rdw211__WellCMLedger * has binding name 'PointerTo_rdw211__WellCMLedger' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__WellCMLedger
-#define SOAP_TYPE_PointerTo_rdw211__WellCMLedger (2404)
+#define SOAP_TYPE_PointerTo_rdw211__WellCMLedger (2405)
 #endif
 
 /* struct rdw211__DownholeComponent * has binding name 'PointerTo_rdw211__DownholeComponent' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__DownholeComponent
-#define SOAP_TYPE_PointerTo_rdw211__DownholeComponent (2402)
+#define SOAP_TYPE_PointerTo_rdw211__DownholeComponent (2403)
 #endif
 
 /* struct rdw211__WellboreCompletion * has binding name 'PointerTo_rdw211__WellboreCompletion' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__WellboreCompletion
-#define SOAP_TYPE_PointerTo_rdw211__WellboreCompletion (2400)
+#define SOAP_TYPE_PointerTo_rdw211__WellboreCompletion (2401)
 #endif
 
 /* struct rdw211__WellCompletion * has binding name 'PointerTo_rdw211__WellCompletion' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__WellCompletion
-#define SOAP_TYPE_PointerTo_rdw211__WellCompletion (2398)
+#define SOAP_TYPE_PointerTo_rdw211__WellCompletion (2399)
 #endif
 
 /* struct rdw211__WellboreMarkerSet * has binding name 'PointerTo_rdw211__WellboreMarkerSet' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__WellboreMarkerSet
-#define SOAP_TYPE_PointerTo_rdw211__WellboreMarkerSet (2396)
+#define SOAP_TYPE_PointerTo_rdw211__WellboreMarkerSet (2397)
 #endif
 
 /* struct rdw211__WellboreMarker * has binding name 'PointerTo_rdw211__WellboreMarker' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__WellboreMarker
-#define SOAP_TYPE_PointerTo_rdw211__WellboreMarker (2394)
+#define SOAP_TYPE_PointerTo_rdw211__WellboreMarker (2395)
 #endif
 
 /* struct rdw211__StimPerforationCluster * has binding name 'PointerTo_rdw211__StimPerforationCluster' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__StimPerforationCluster
-#define SOAP_TYPE_PointerTo_rdw211__StimPerforationCluster (2392)
+#define SOAP_TYPE_PointerTo_rdw211__StimPerforationCluster (2393)
 #endif
 
 /* struct rdw211__StimJobStage * has binding name 'PointerTo_rdw211__StimJobStage' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__StimJobStage
-#define SOAP_TYPE_PointerTo_rdw211__StimJobStage (2390)
+#define SOAP_TYPE_PointerTo_rdw211__StimJobStage (2391)
 #endif
 
 /* struct rdw211__StimJob * has binding name 'PointerTo_rdw211__StimJob' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__StimJob
-#define SOAP_TYPE_PointerTo_rdw211__StimJob (2388)
+#define SOAP_TYPE_PointerTo_rdw211__StimJob (2389)
 #endif
 
 /* struct rdw211__Risk * has binding name 'PointerTo_rdw211__Risk' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__Risk
-#define SOAP_TYPE_PointerTo_rdw211__Risk (2386)
+#define SOAP_TYPE_PointerTo_rdw211__Risk (2387)
 #endif
 
 /* struct rdw211__PPFGChannelSet * has binding name 'PointerTo_rdw211__PPFGChannelSet' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__PPFGChannelSet
-#define SOAP_TYPE_PointerTo_rdw211__PPFGChannelSet (2384)
+#define SOAP_TYPE_PointerTo_rdw211__PPFGChannelSet (2385)
 #endif
 
 /* struct rdw211__PPFGChannel * has binding name 'PointerTo_rdw211__PPFGChannel' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__PPFGChannel
-#define SOAP_TYPE_PointerTo_rdw211__PPFGChannel (2382)
+#define SOAP_TYPE_PointerTo_rdw211__PPFGChannel (2383)
 #endif
 
 /* struct rdw211__SurveyProgram * has binding name 'PointerTo_rdw211__SurveyProgram' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__SurveyProgram
-#define SOAP_TYPE_PointerTo_rdw211__SurveyProgram (2380)
+#define SOAP_TYPE_PointerTo_rdw211__SurveyProgram (2381)
 #endif
 
 /* struct rdw211__WeightingFunctionDictionary * has binding name 'PointerTo_rdw211__WeightingFunctionDictionary' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__WeightingFunctionDictionary
-#define SOAP_TYPE_PointerTo_rdw211__WeightingFunctionDictionary (2378)
+#define SOAP_TYPE_PointerTo_rdw211__WeightingFunctionDictionary (2379)
 #endif
 
 /* struct rdw211__WeightingFunction * has binding name 'PointerTo_rdw211__WeightingFunction' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__WeightingFunction
-#define SOAP_TYPE_PointerTo_rdw211__WeightingFunction (2376)
+#define SOAP_TYPE_PointerTo_rdw211__WeightingFunction (2377)
 #endif
 
 /* struct rdw211__ToolErrorModelDictionary * has binding name 'PointerTo_rdw211__ToolErrorModelDictionary' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__ToolErrorModelDictionary
-#define SOAP_TYPE_PointerTo_rdw211__ToolErrorModelDictionary (2374)
+#define SOAP_TYPE_PointerTo_rdw211__ToolErrorModelDictionary (2375)
 #endif
 
 /* struct rdw211__ToolErrorModel * has binding name 'PointerTo_rdw211__ToolErrorModel' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__ToolErrorModel
-#define SOAP_TYPE_PointerTo_rdw211__ToolErrorModel (2372)
+#define SOAP_TYPE_PointerTo_rdw211__ToolErrorModel (2373)
 #endif
 
 /* struct rdw211__ErrorTermDictionary * has binding name 'PointerTo_rdw211__ErrorTermDictionary' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__ErrorTermDictionary
-#define SOAP_TYPE_PointerTo_rdw211__ErrorTermDictionary (2370)
+#define SOAP_TYPE_PointerTo_rdw211__ErrorTermDictionary (2371)
 #endif
 
 /* struct rdw211__ErrorTerm * has binding name 'PointerTo_rdw211__ErrorTerm' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__ErrorTerm
-#define SOAP_TYPE_PointerTo_rdw211__ErrorTerm (2368)
+#define SOAP_TYPE_PointerTo_rdw211__ErrorTerm (2369)
 #endif
 
 /* struct rdw211__Target * has binding name 'PointerTo_rdw211__Target' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__Target
-#define SOAP_TYPE_PointerTo_rdw211__Target (2366)
+#define SOAP_TYPE_PointerTo_rdw211__Target (2367)
 #endif
 
 /* struct rdw211__TrajectoryStation * has binding name 'PointerTo_rdw211__TrajectoryStation' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__TrajectoryStation
-#define SOAP_TYPE_PointerTo_rdw211__TrajectoryStation (2364)
+#define SOAP_TYPE_PointerTo_rdw211__TrajectoryStation (2365)
 #endif
 
 /* struct rdw211__Trajectory * has binding name 'PointerTo_rdw211__Trajectory' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__Trajectory
-#define SOAP_TYPE_PointerTo_rdw211__Trajectory (2362)
+#define SOAP_TYPE_PointerTo_rdw211__Trajectory (2363)
 #endif
 
 /* struct rdw211__ChannelSet * has binding name 'PointerTo_rdw211__ChannelSet' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__ChannelSet
-#define SOAP_TYPE_PointerTo_rdw211__ChannelSet (2360)
+#define SOAP_TYPE_PointerTo_rdw211__ChannelSet (2361)
 #endif
 
 /* struct rdw211__Channel * has binding name 'PointerTo_rdw211__Channel' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__Channel
-#define SOAP_TYPE_PointerTo_rdw211__Channel (2358)
+#define SOAP_TYPE_PointerTo_rdw211__Channel (2359)
 #endif
 
 /* struct rdw211__WellboreGeology * has binding name 'PointerTo_rdw211__WellboreGeology' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__WellboreGeology
-#define SOAP_TYPE_PointerTo_rdw211__WellboreGeology (2356)
+#define SOAP_TYPE_PointerTo_rdw211__WellboreGeology (2357)
 #endif
 
 /* struct rdw211__ShowEvaluationInterval * has binding name 'PointerTo_rdw211__ShowEvaluationInterval' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__ShowEvaluationInterval
-#define SOAP_TYPE_PointerTo_rdw211__ShowEvaluationInterval (2354)
+#define SOAP_TYPE_PointerTo_rdw211__ShowEvaluationInterval (2355)
 #endif
 
 /* struct rdw211__ShowEvaluation * has binding name 'PointerTo_rdw211__ShowEvaluation' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__ShowEvaluation
-#define SOAP_TYPE_PointerTo_rdw211__ShowEvaluation (2352)
+#define SOAP_TYPE_PointerTo_rdw211__ShowEvaluation (2353)
 #endif
 
 /* struct rdw211__InterpretedGeologyInterval * has binding name 'PointerTo_rdw211__InterpretedGeologyInterval' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__InterpretedGeologyInterval
-#define SOAP_TYPE_PointerTo_rdw211__InterpretedGeologyInterval (2350)
+#define SOAP_TYPE_PointerTo_rdw211__InterpretedGeologyInterval (2351)
 #endif
 
 /* struct rdw211__InterpretedGeology * has binding name 'PointerTo_rdw211__InterpretedGeology' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__InterpretedGeology
-#define SOAP_TYPE_PointerTo_rdw211__InterpretedGeology (2348)
+#define SOAP_TYPE_PointerTo_rdw211__InterpretedGeology (2349)
 #endif
 
 /* struct rdw211__CuttingsGeologyInterval * has binding name 'PointerTo_rdw211__CuttingsGeologyInterval' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__CuttingsGeologyInterval
-#define SOAP_TYPE_PointerTo_rdw211__CuttingsGeologyInterval (2346)
+#define SOAP_TYPE_PointerTo_rdw211__CuttingsGeologyInterval (2347)
 #endif
 
 /* struct rdw211__CuttingsGeology * has binding name 'PointerTo_rdw211__CuttingsGeology' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__CuttingsGeology
-#define SOAP_TYPE_PointerTo_rdw211__CuttingsGeology (2344)
+#define SOAP_TYPE_PointerTo_rdw211__CuttingsGeology (2345)
 #endif
 
 /* struct rdw211__MudlogReportInterval * has binding name 'PointerTo_rdw211__MudlogReportInterval' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__MudlogReportInterval
-#define SOAP_TYPE_PointerTo_rdw211__MudlogReportInterval (2342)
+#define SOAP_TYPE_PointerTo_rdw211__MudlogReportInterval (2343)
 #endif
 
 /* struct rdw211__MudLogReport * has binding name 'PointerTo_rdw211__MudLogReport' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__MudLogReport
-#define SOAP_TYPE_PointerTo_rdw211__MudLogReport (2340)
+#define SOAP_TYPE_PointerTo_rdw211__MudLogReport (2341)
 #endif
 
 /* struct rdw211__LoggingToolKindDictionary * has binding name 'PointerTo_rdw211__LoggingToolKindDictionary' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__LoggingToolKindDictionary
-#define SOAP_TYPE_PointerTo_rdw211__LoggingToolKindDictionary (2338)
+#define SOAP_TYPE_PointerTo_rdw211__LoggingToolKindDictionary (2339)
 #endif
 
 /* struct rdw211__LoggingToolKind * has binding name 'PointerTo_rdw211__LoggingToolKind' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__LoggingToolKind
-#define SOAP_TYPE_PointerTo_rdw211__LoggingToolKind (2336)
+#define SOAP_TYPE_PointerTo_rdw211__LoggingToolKind (2337)
 #endif
 
 /* struct rdw211__ChannelKindDictionary * has binding name 'PointerTo_rdw211__ChannelKindDictionary' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__ChannelKindDictionary
-#define SOAP_TYPE_PointerTo_rdw211__ChannelKindDictionary (2334)
+#define SOAP_TYPE_PointerTo_rdw211__ChannelKindDictionary (2335)
 #endif
 
 /* struct rdw211__ChannelKind * has binding name 'PointerTo_rdw211__ChannelKind' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__ChannelKind
-#define SOAP_TYPE_PointerTo_rdw211__ChannelKind (2332)
+#define SOAP_TYPE_PointerTo_rdw211__ChannelKind (2333)
 #endif
 
 /* struct rdw211__RigUtilization * has binding name 'PointerTo_rdw211__RigUtilization' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__RigUtilization
-#define SOAP_TYPE_PointerTo_rdw211__RigUtilization (2330)
+#define SOAP_TYPE_PointerTo_rdw211__RigUtilization (2331)
 #endif
 
 /* struct rdw211__WellboreGeometrySection * has binding name 'PointerTo_rdw211__WellboreGeometrySection' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__WellboreGeometrySection
-#define SOAP_TYPE_PointerTo_rdw211__WellboreGeometrySection (2328)
+#define SOAP_TYPE_PointerTo_rdw211__WellboreGeometrySection (2329)
 #endif
 
 /* struct rdw211__WellboreGeometry * has binding name 'PointerTo_rdw211__WellboreGeometry' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__WellboreGeometry
-#define SOAP_TYPE_PointerTo_rdw211__WellboreGeometry (2326)
+#define SOAP_TYPE_PointerTo_rdw211__WellboreGeometry (2327)
 #endif
 
 /* struct rdw211__CementJobEvaluation * has binding name 'PointerTo_rdw211__CementJobEvaluation' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__CementJobEvaluation
-#define SOAP_TYPE_PointerTo_rdw211__CementJobEvaluation (2324)
+#define SOAP_TYPE_PointerTo_rdw211__CementJobEvaluation (2325)
 #endif
 
 /* struct rdw211__Tubular * has binding name 'PointerTo_rdw211__Tubular' for type '' */
 #ifndef SOAP_TYPE_PointerTo_rdw211__Tubular
-#define SOAP_TYPE_PointerTo_rdw211__Tubular (2322)
+#define SOAP_TYPE_PointerTo_rdw211__Tubular (2323)
+#endif
+
+/* struct rdw211__Well * has binding name 'PointerTo_rdw211__Well' for type '' */
+#ifndef SOAP_TYPE_PointerTo_rdw211__Well
+#define SOAP_TYPE_PointerTo_rdw211__Well (2321)
 #endif
 
 /* struct rdw211__Wellbore * has binding name 'PointerTo_rdw211__Wellbore' for type '' */
