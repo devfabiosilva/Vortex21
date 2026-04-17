@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <rdw211:WellCompletion uuid="" schemaVersion="" objectVersion="">
+  <rdw211:WellCompletion uuid="fe6fa849-f89a-d2d3-a456-426614174f00" schemaVersion="" objectVersion="">
    <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
     <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
     <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>
@@ -72,7 +72,7 @@
    <rdw211:E_P_RightsID xsi:type="rdw212:String64"></rdw211:E_P_RightsID>
    <rdw211:CurrentStatus xsi:type="rdw211:CompletionStatus">active</rdw211:CurrentStatus>
    <rdw211:StatusDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:StatusDate>
-   <rdw211:StatusHistory xsi:type="rdw211:CompletionStatusHistory" uid="">
+   <rdw211:StatusHistory xsi:type="rdw211:CompletionStatusHistory" uid="fe6fa849-f89a-d2d3-a456-426614174f01">
     <rdw211:Status xsi:type="rdw211:CompletionStatus">active</rdw211:Status>
     <rdw211:StartDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:StartDate>
     <rdw211:EndDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:EndDate>
@@ -82,9 +82,9 @@
      <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
      <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
      <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">fe6fa849-f89a-d2d3-a456-426614174f05</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml30.a</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -101,9 +101,9 @@
     <rdw211:Comment xsi:type="rdw212:String2000"></rdw211:Comment>
    </rdw211:StatusHistory>
    <rdw211:Well xsi:type="rdw212:DataObjectReference">
-    <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+    <rdw212:Uuid xsi:type="rdw212:UuidString">fe6fa849-f89a-d2d3-a456-426614174f06</rdw212:Uuid>
     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml59.c</rdw212:QualifiedType>
     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>

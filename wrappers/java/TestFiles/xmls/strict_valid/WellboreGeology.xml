@@ -1,4 +1,4 @@
-  <rdw211:WellboreGeology uuid="" schemaVersion="" objectVersion="">
+  <rdw211:WellboreGeology uuid="CB9fa849-e89a-d2d3-a456-426614174700" schemaVersion="" objectVersion="">
    <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
     <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
     <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>
@@ -70,9 +70,9 @@
     <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-426614174800</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml59.a</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -87,9 +87,9 @@
     </rdw212:Datum>
    </rdw211:MdInterval>
    <rdw211:Wellbore xsi:type="rdw212:DataObjectReference">
-    <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+    <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-426614174800</rdw212:Uuid>
     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml59.b</rdw212:QualifiedType>
     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -102,7 +102,7 @@
      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
     </rdw212:ExtensionNameValue>
    </rdw211:Wellbore>
-   <rdw211:CuttingsGeology xsi:type="rdw211:CuttingsGeology" uuid="" schemaVersion="" objectVersion="">
+   <rdw211:CuttingsGeology xsi:type="rdw211:CuttingsGeology" uuid="CB9fa849-e89a-d2d3-a456-426614174701" schemaVersion="" objectVersion="">
     <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
      <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
      <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>
@@ -171,9 +171,9 @@
     <rdw212:Index xsi:type="rdw212:GrowingObjectIndex">
      <rdw212:IndexKind xsi:type="rdw212:DataIndexKind">measured depth</rdw212:IndexKind>
      <rdw212:IndexPropertyKind xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-426614174802</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml59.c</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -189,9 +189,9 @@
      <rdw212:Uom xsi:type="rdw212:UnitOfMeasureExt"></rdw212:Uom>
      <rdw212:Direction xsi:type="rdw212:IndexDirection">decreasing</rdw212:Direction>
      <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-426614174803</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml59.d</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -211,9 +211,9 @@
      <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
      <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
      <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-426614174804</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.a</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -227,7 +227,7 @@
       </rdw212:ExtensionNameValue>
      </rdw212:Datum>
     </rdw212:MdInterval>
-    <rdw211:CuttingsGeologyInterval xsi:type="rdw211:CuttingsGeologyInterval" uid="" objectVersion="">
+    <rdw211:CuttingsGeologyInterval xsi:type="rdw211:CuttingsGeologyInterval" uid="CB9fa849-e89a-d2d3-a456-426614174702" objectVersion="">
      <rdw212:Creation xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:Creation>
      <rdw212:LastUpdate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:LastUpdate>
      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
@@ -244,9 +244,9 @@
       <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
       <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
       <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-       <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+       <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-426614174805</rdw212:Uuid>
        <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-       <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+       <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.b</rdw212:QualifiedType>
        <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -272,7 +272,7 @@
      <rdw211:CleaningMethod xsi:type="rdw212:String64"></rdw211:CleaningMethod>
      <rdw211:DryingMethod xsi:type="rdw212:String64"></rdw211:DryingMethod>
      <rdw211:BottomsUpTime xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:BottomsUpTime>
-     <rdw211:CuttingsIntervalLithology xsi:type="rdw211:CuttingsIntervalLithology" uid="">
+     <rdw211:CuttingsIntervalLithology xsi:type="rdw211:CuttingsIntervalLithology" uid="CB9fa849-e89a-d2d3-a456-426614174703">
       <rdw211:Kind xsi:type="rdw212:LithologyKindExt"></rdw211:Kind>
       <rdw211:LithPc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:LithPc>
       <rdw211:Citation xsi:type="rdw212:Citation">
@@ -299,7 +299,7 @@
       <rdw211:PorosityVisible xsi:type="rdw212:String64"></rdw211:PorosityVisible>
       <rdw211:PorosityFabric xsi:type="rdw212:String64"></rdw211:PorosityFabric>
       <rdw211:Permeability xsi:type="rdw212:String64"></rdw211:Permeability>
-      <rdw211:Shows xsi:type="rdw211:CuttingsIntervalShow" uid="">
+      <rdw211:Shows xsi:type="rdw211:CuttingsIntervalShow" uid="CB9fa849-e89a-d2d3-a456-426614174704">
        <rdw211:Citation xsi:type="rdw212:Citation">
         <rdw212:Title xsi:type="rdw212:String256"></rdw212:Title>
         <rdw212:Originator xsi:type="rdw212:String64"></rdw212:Originator>
@@ -334,7 +334,7 @@
        <rdw211:Odor xsi:type="rdw212:String64"></rdw211:Odor>
        <rdw211:CuttingFluid xsi:type="rdw212:String64"></rdw211:CuttingFluid>
       </rdw211:Shows>
-      <rdw211:Qualifier xsi:type="rdw211:LithologyQualifier" uid="">
+      <rdw211:Qualifier xsi:type="rdw211:LithologyQualifier" uid="CB9fa849-e89a-d2d3-a456-426614174705">
        <rdw211:Kind xsi:type="rdw212:LithologyQualifierKindExt"></rdw211:Kind>
        <rdw211:MdInterval xsi:type="rdw212:MdInterval">
         <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
@@ -342,9 +342,9 @@
         <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
         <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
         <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-         <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+         <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-426614174806</rdw212:Uuid>
          <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-         <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+         <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.c</rdw212:QualifiedType>
          <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
          <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
         </rdw212:Datum>
@@ -355,9 +355,9 @@
      </rdw211:CuttingsIntervalLithology>
     </rdw211:CuttingsGeologyInterval>
     <rdw211:Wellbore xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-426614174807</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.d</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -371,7 +371,7 @@
      </rdw212:ExtensionNameValue>
     </rdw211:Wellbore>
    </rdw211:CuttingsGeology>
-   <rdw211:InterpretedGeology xsi:type="rdw211:InterpretedGeology" uuid="" schemaVersion="" objectVersion="">
+   <rdw211:InterpretedGeology xsi:type="rdw211:InterpretedGeology" uuid="CB9fa849-e89a-d2d3-a456-426614174706" schemaVersion="" objectVersion="">
     <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
      <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
      <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>
@@ -440,9 +440,9 @@
     <rdw212:Index xsi:type="rdw212:GrowingObjectIndex">
      <rdw212:IndexKind xsi:type="rdw212:DataIndexKind">measured depth</rdw212:IndexKind>
      <rdw212:IndexPropertyKind xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-426614174808</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.e</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -458,9 +458,9 @@
      <rdw212:Uom xsi:type="rdw212:UnitOfMeasureExt"></rdw212:Uom>
      <rdw212:Direction xsi:type="rdw212:IndexDirection">decreasing</rdw212:Direction>
      <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-426614174809</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.f</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -480,9 +480,9 @@
      <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
      <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
      <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-42661417480a</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.g</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -496,7 +496,7 @@
       </rdw212:ExtensionNameValue>
      </rdw212:Datum>
     </rdw212:MdInterval>
-    <rdw211:InterpretedGeologyInterval xsi:type="rdw211:InterpretedGeologyInterval" uid="" objectVersion="">
+    <rdw211:InterpretedGeologyInterval xsi:type="rdw211:InterpretedGeologyInterval" uid="CB9fa849-e89a-d2d3-a456-426614174707" objectVersion="">
      <rdw212:Creation xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:Creation>
      <rdw212:LastUpdate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:LastUpdate>
      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
@@ -513,9 +513,9 @@
       <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
       <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
       <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-       <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+       <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-42661417480b</rdw212:Uuid>
        <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-       <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+       <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.h</rdw212:QualifiedType>
        <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -531,7 +531,7 @@
      </rdw212:MdInterval>
      <rdw211:GeochronologicalUnit xsi:type="rdw211:GeochronologicalUnit" authority="" kind="eon"></rdw211:GeochronologicalUnit>
      <rdw211:LithostratigraphicUnit xsi:type="rdw211:LithostratigraphicUnit" authority="" kind="group"></rdw211:LithostratigraphicUnit>
-     <rdw211:InterpretedLithology xsi:type="rdw211:InterpretedIntervalLithology" uid="">
+     <rdw211:InterpretedLithology xsi:type="rdw211:InterpretedIntervalLithology" uid="CB9fa849-e89a-d2d3-a456-426614174708">
       <rdw211:Kind xsi:type="rdw212:LithologyKindExt"></rdw211:Kind>
       <rdw211:Citation xsi:type="rdw212:Citation">
        <rdw212:Title xsi:type="rdw212:String256"></rdw212:Title>
@@ -557,7 +557,7 @@
       <rdw211:PorosityVisible xsi:type="rdw212:String64"></rdw211:PorosityVisible>
       <rdw211:PorosityFabric xsi:type="rdw212:String64"></rdw211:PorosityFabric>
       <rdw211:Permeability xsi:type="rdw212:String64"></rdw211:Permeability>
-      <rdw211:Qualifier xsi:type="rdw211:LithologyQualifier" uid="">
+      <rdw211:Qualifier xsi:type="rdw211:LithologyQualifier" uid="CB9fa849-e89a-d2d3-a456-426614174709">
        <rdw211:Kind xsi:type="rdw212:LithologyQualifierKindExt"></rdw211:Kind>
        <rdw211:MdInterval xsi:type="rdw212:MdInterval">
         <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
@@ -565,9 +565,9 @@
         <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
         <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
         <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-         <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+         <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-42661417480c</rdw212:Uuid>
          <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-         <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+         <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.i</rdw212:QualifiedType>
          <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
          <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
         </rdw212:Datum>
@@ -578,9 +578,9 @@
      </rdw211:InterpretedLithology>
     </rdw211:InterpretedGeologyInterval>
     <rdw211:Wellbore xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-42661417480d</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.j</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -594,7 +594,7 @@
      </rdw212:ExtensionNameValue>
     </rdw211:Wellbore>
    </rdw211:InterpretedGeology>
-   <rdw211:ShowEvaluation xsi:type="rdw211:ShowEvaluation" uuid="" schemaVersion="" objectVersion="">
+   <rdw211:ShowEvaluation xsi:type="rdw211:ShowEvaluation" uuid="CB9fa849-e89a-d2d3-a456-42661417470a" schemaVersion="" objectVersion="">
     <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
      <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
      <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>
@@ -663,9 +663,9 @@
     <rdw212:Index xsi:type="rdw212:GrowingObjectIndex">
      <rdw212:IndexKind xsi:type="rdw212:DataIndexKind">measured depth</rdw212:IndexKind>
      <rdw212:IndexPropertyKind xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-42661417480e</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.k</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -681,9 +681,9 @@
      <rdw212:Uom xsi:type="rdw212:UnitOfMeasureExt"></rdw212:Uom>
      <rdw212:Direction xsi:type="rdw212:IndexDirection">decreasing</rdw212:Direction>
      <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-42661417480f</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.l</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -703,9 +703,9 @@
      <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
      <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
      <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-426614174810</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.m</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -719,7 +719,7 @@
       </rdw212:ExtensionNameValue>
      </rdw212:Datum>
     </rdw212:MdInterval>
-    <rdw211:ShowEvaluationInterval xsi:type="rdw211:ShowEvaluationInterval" uid="" objectVersion="">
+    <rdw211:ShowEvaluationInterval xsi:type="rdw211:ShowEvaluationInterval" uid="CB9fa849-e89a-d2d3-a456-42661417470b" objectVersion="">
      <rdw212:Creation xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:Creation>
      <rdw212:LastUpdate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:LastUpdate>
      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
@@ -736,9 +736,9 @@
       <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
       <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
       <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-       <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+       <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-426614174811</rdw212:Uuid>
        <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-       <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+       <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.n</rdw212:QualifiedType>
        <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -757,9 +757,9 @@
      <rdw211:BottomsUpTime xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:BottomsUpTime>
     </rdw211:ShowEvaluationInterval>
     <rdw211:Wellbore xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">CB9fa849-e89a-d2d3-a456-426614174812</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml65.o</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>

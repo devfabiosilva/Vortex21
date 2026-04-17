@@ -2,7 +2,6 @@ package org.w21parser;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -86,7 +85,6 @@ public class Vortex21StrictValidationTest {
         assertEquals("Parser 1 close method must return " + this.expectedCloseStatusParser1, this.expectedCloseStatusParser1, this.parser1.close());
     }
 
-    @Ignore
     @Test
     public void validateStrinctFieldsInAutoDetectMode() throws IOException, W21Exception {
         assertEquals("Total objects must be 53", 53, witsml21List.size());

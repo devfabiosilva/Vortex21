@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-  <rdw211:RigUtilization uuid="" schemaVersion="" objectVersion="">
+  <rdw211:RigUtilization uuid="df3e456f-ef9f-12d3-a456-426f1417bfe0" schemaVersion="" objectVersion="">
    <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
     <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
     <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>
@@ -71,9 +71,9 @@
    <rdw211:StartHoleDepth xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:StartHoleDepth>
    <rdw211:EndHoleDepth xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:EndHoleDepth>
    <rdw211:Datum xsi:type="rdw212:DataObjectReference">
-    <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+    <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfe0</rdw212:Uuid>
     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.a</rdw212:QualifiedType>
     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -135,9 +135,9 @@
    <rdw211:Flares xsi:type="rdw212:String64"></rdw211:Flares>
    <rdw211:Bop xsi:type="rdw211:Bop">
     <rdw211:Manufacturer xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfe1</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.b</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -153,16 +153,16 @@
     <rdw211:Model xsi:type="rdw212:String64"></rdw211:Model>
     <rdw211:DTimInstall xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimInstall>
     <rdw211:DTimRemove xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimRemove>
-    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="">
+    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="df3e456f-ef9f-12d3-a456-426f1417bfe1">
      <rdw211:Name xsi:type="rdw212:String64"></rdw211:Name>
      <rdw211:NumberingScheme xsi:type="rdw211:NameTagNumberingScheme">ANSI/AIM-BC10</rdw211:NumberingScheme>
      <rdw211:Technology xsi:type="rdw211:NameTagTechnology">intrinsic</rdw211:Technology>
      <rdw211:Location xsi:type="rdw211:NameTagLocation">body</rdw211:Location>
      <rdw211:InstallationDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:InstallationDate>
      <rdw211:InstallationCompany xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfe2</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.c</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -215,7 +215,7 @@
     <rdw211:DescControlManifold xsi:type="rdw212:String2000"></rdw211:DescControlManifold>
     <rdw211:TypeChokeManifold xsi:type="rdw212:String64"></rdw211:TypeChokeManifold>
     <rdw211:PresChokeManifold xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresChokeManifold>
-    <rdw211:BopComponent xsi:type="rdw211:BopComponent" uid="">
+    <rdw211:BopComponent xsi:type="rdw211:BopComponent" uid="df3e456f-ef9f-12d3-a456-426f1417bfe3">
      <rdw211:TypeBopComp xsi:type="rdw211:BopType">annular preventer</rdw211:TypeBopComp>
      <rdw211:DescComp xsi:type="rdw212:String64"></rdw211:DescComp>
      <rdw211:IdPassThru xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:IdPassThru>
@@ -234,15 +234,15 @@
      </rdw211:ExtensionNameValue>
     </rdw211:BopComponent>
    </rdw211:Bop>
-   <rdw211:Pit xsi:type="rdw211:Pit" uid="">
+   <rdw211:Pit xsi:type="rdw211:Pit" uid="df3e456f-ef9f-12d3-a456-426f1417bfe4">
     <rdw211:Index xsi:type="xsd:long">0</rdw211:Index>
     <rdw211:DTimInstall xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimInstall>
     <rdw211:DTimRemove xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimRemove>
     <rdw211:CapMx xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:CapMx>
     <rdw211:Owner xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfe3</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.d</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -257,16 +257,16 @@
     </rdw211:Owner>
     <rdw211:TypePit xsi:type="rdw211:PitType">bulk</rdw211:TypePit>
     <rdw211:IsActive xsi:type="xsd:boolean">false</rdw211:IsActive>
-    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="">
+    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="df3e456f-ef9f-12d3-a456-426f1417bfe5">
      <rdw211:Name xsi:type="rdw212:String64"></rdw211:Name>
      <rdw211:NumberingScheme xsi:type="rdw211:NameTagNumberingScheme">ANSI/AIM-BC10</rdw211:NumberingScheme>
      <rdw211:Technology xsi:type="rdw211:NameTagTechnology">intrinsic</rdw211:Technology>
      <rdw211:Location xsi:type="rdw211:NameTagLocation">body</rdw211:Location>
      <rdw211:InstallationDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:InstallationDate>
      <rdw211:InstallationCompany xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfe4</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.e</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -299,12 +299,12 @@
      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
     </rdw211:ExtensionNameValue>
    </rdw211:Pit>
-   <rdw211:Pump xsi:type="rdw211:MudPump" uid="">
+   <rdw211:Pump xsi:type="rdw211:MudPump" uid="df3e456f-ef9f-12d3-a456-426f1417bfe6">
     <rdw211:Index xsi:type="xsd:long">0</rdw211:Index>
     <rdw211:Manufacturer xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfe5</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.f</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -321,9 +321,9 @@
     <rdw211:DTimInstall xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimInstall>
     <rdw211:DTimRemove xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimRemove>
     <rdw211:Owner xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfe6</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.g</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -350,16 +350,16 @@
     <rdw211:PresDamp xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresDamp>
     <rdw211:VolDamp xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:VolDamp>
     <rdw211:PowMechMx xsi:type="rdw212:PowerMeasure" uom="W">0.0</rdw211:PowMechMx>
-    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="">
+    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="df3e456f-ef9f-12d3-a456-426f1417bfe7">
      <rdw211:Name xsi:type="rdw212:String64"></rdw211:Name>
      <rdw211:NumberingScheme xsi:type="rdw211:NameTagNumberingScheme">ANSI/AIM-BC10</rdw211:NumberingScheme>
      <rdw211:Technology xsi:type="rdw211:NameTagTechnology">intrinsic</rdw211:Technology>
      <rdw211:Location xsi:type="rdw211:NameTagLocation">body</rdw211:Location>
      <rdw211:InstallationDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:InstallationDate>
      <rdw211:InstallationCompany xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfe7</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.h</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -392,11 +392,11 @@
      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
     </rdw211:ExtensionNameValue>
    </rdw211:Pump>
-   <rdw211:Centrifuge xsi:type="rdw211:Centrifuge" uid="">
+   <rdw211:Centrifuge xsi:type="rdw211:Centrifuge" uid="df3e456f-ef9f-12d3-a456-426f1417bfe8">
     <rdw211:Manufacturer xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfe8</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.i</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -415,9 +415,9 @@
     <rdw211:Type xsi:type="rdw212:String64"></rdw211:Type>
     <rdw211:CapFlow xsi:type="rdw212:VolumePerTimeMeasure" uom="">0.0</rdw211:CapFlow>
     <rdw211:Owner xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfe9</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.j</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -430,16 +430,16 @@
       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
      </rdw212:ExtensionNameValue>
     </rdw211:Owner>
-    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="">
+    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="df3e456f-ef9f-12d3-a456-426f1417bfe9">
      <rdw211:Name xsi:type="rdw212:String64"></rdw211:Name>
      <rdw211:NumberingScheme xsi:type="rdw211:NameTagNumberingScheme">ANSI/AIM-BC10</rdw211:NumberingScheme>
      <rdw211:Technology xsi:type="rdw211:NameTagTechnology">intrinsic</rdw211:Technology>
      <rdw211:Location xsi:type="rdw211:NameTagLocation">body</rdw211:Location>
      <rdw211:InstallationDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:InstallationDate>
      <rdw211:InstallationCompany xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfea</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.k</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -472,11 +472,11 @@
      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
     </rdw211:ExtensionNameValue>
    </rdw211:Centrifuge>
-   <rdw211:Hydrocyclone xsi:type="rdw211:Hydrocyclone" uid="">
+   <rdw211:Hydrocyclone xsi:type="rdw211:Hydrocyclone" uid="df3e456f-ef9f-12d3-a456-426f1417bfe9">
     <rdw211:Manufacturer xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfeb</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.l</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -495,9 +495,9 @@
     <rdw211:Type xsi:type="rdw212:String64"></rdw211:Type>
     <rdw211:DescCone xsi:type="rdw212:String64"></rdw211:DescCone>
     <rdw211:Owner xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfec</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.m</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -510,16 +510,16 @@
       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
      </rdw212:ExtensionNameValue>
     </rdw211:Owner>
-    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="">
+    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="df3e456f-ef9f-12d3-a456-426f1417bfea">
      <rdw211:Name xsi:type="rdw212:String64"></rdw211:Name>
      <rdw211:NumberingScheme xsi:type="rdw211:NameTagNumberingScheme">ANSI/AIM-BC10</rdw211:NumberingScheme>
      <rdw211:Technology xsi:type="rdw211:NameTagTechnology">intrinsic</rdw211:Technology>
      <rdw211:Location xsi:type="rdw211:NameTagLocation">body</rdw211:Location>
      <rdw211:InstallationDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:InstallationDate>
      <rdw211:InstallationCompany xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfed</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.n</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -552,11 +552,11 @@
      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
     </rdw211:ExtensionNameValue>
    </rdw211:Hydrocyclone>
-   <rdw211:Degasser xsi:type="rdw211:Degasser" uid="">
+   <rdw211:Degasser xsi:type="rdw211:Degasser" uid="df3e456f-ef9f-12d3-a456-426f1417bfeb">
     <rdw211:Manufacturer xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfee</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.o</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -574,9 +574,9 @@
     <rdw211:DTimRemove xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimRemove>
     <rdw211:Type xsi:type="rdw212:String64"></rdw211:Type>
     <rdw211:Owner xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cfef</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.p</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -602,16 +602,16 @@
     <rdw211:CapBlowdown xsi:type="rdw212:VolumePerTimeMeasure" uom="">0.0</rdw211:CapBlowdown>
     <rdw211:PresRating xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresRating>
     <rdw211:TempRating xsi:type="rdw212:ThermodynamicTemperatureMeasure" uom="K">0.0</rdw211:TempRating>
-    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="">
+    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="df3e456f-ef9f-12d3-a456-426f1417bfec">
      <rdw211:Name xsi:type="rdw212:String64"></rdw211:Name>
      <rdw211:NumberingScheme xsi:type="rdw211:NameTagNumberingScheme">ANSI/AIM-BC10</rdw211:NumberingScheme>
      <rdw211:Technology xsi:type="rdw211:NameTagTechnology">intrinsic</rdw211:Technology>
      <rdw211:Location xsi:type="rdw211:NameTagLocation">body</rdw211:Location>
      <rdw211:InstallationDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:InstallationDate>
      <rdw211:InstallationCompany xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cff0</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.q</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -683,12 +683,12 @@
     <rdw211:HtTopStk xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:HtTopStk>
     <rdw211:HtFlange xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:HtFlange>
    </rdw211:SurfaceEquipment>
-   <rdw211:Shaker xsi:type="rdw211:Shaker" uid="">
+   <rdw211:Shaker xsi:type="rdw211:Shaker" uid="df3e456f-ef9f-12d3-a456-426f1417bfed">
     <rdw211:Name xsi:type="rdw212:String64"></rdw211:Name>
     <rdw211:Manufacturer xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cff1</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.r</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -711,9 +711,9 @@
     <rdw211:MudCleaner xsi:type="xsd:boolean">false</rdw211:MudCleaner>
     <rdw211:CapFlow xsi:type="rdw212:VolumePerTimeMeasure" uom="">0.0</rdw211:CapFlow>
     <rdw211:Owner xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cff1</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.s</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -727,16 +727,16 @@
      </rdw212:ExtensionNameValue>
     </rdw211:Owner>
     <rdw211:SizeMeshMn xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:SizeMeshMn>
-    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="">
+    <rdw211:NameTag xsi:type="rdw211:NameTag" uid="df3e456f-ef9f-12d3-a456-426f1417bfef">
      <rdw211:Name xsi:type="rdw212:String64"></rdw211:Name>
      <rdw211:NumberingScheme xsi:type="rdw211:NameTagNumberingScheme">ANSI/AIM-BC10</rdw211:NumberingScheme>
      <rdw211:Technology xsi:type="rdw211:NameTagTechnology">intrinsic</rdw211:Technology>
      <rdw211:Location xsi:type="rdw211:NameTagLocation">body</rdw211:Location>
      <rdw211:InstallationDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:InstallationDate>
      <rdw211:InstallationCompany xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cff2</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.t</rdw212:QualifiedType>
       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -770,9 +770,9 @@
     </rdw211:ExtensionNameValue>
    </rdw211:Shaker>
    <rdw211:Wellbore xsi:type="rdw212:DataObjectReference">
-    <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+    <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cff3</rdw212:Uuid>
     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.u</rdw212:QualifiedType>
     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -786,9 +786,9 @@
     </rdw212:ExtensionNameValue>
    </rdw211:Wellbore>
    <rdw211:BhaRun xsi:type="rdw212:DataObjectReference">
-    <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+    <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cff4</rdw212:Uuid>
     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.v</rdw212:QualifiedType>
     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -802,9 +802,9 @@
     </rdw212:ExtensionNameValue>
    </rdw211:BhaRun>
    <rdw211:Rig xsi:type="rdw212:DataObjectReference">
-    <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+    <rdw212:Uuid xsi:type="rdw212:UuidString">df3e456f-ef9f-12d3-a456-426f1417cff5</rdw212:Uuid>
     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom84.w</rdw212:QualifiedType>
     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>

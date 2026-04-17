@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 public class VortexNativeBindingTest {
 
-    private static final Logger logger = LoggerFactory.getLogger(W21ParserLoader.class);
+    private static final Logger logger = LoggerFactory.getLogger(VortexNativeBindingTest.class);
     private W21ParserLoader parser1;
     private W21ParserLoader parser2 = null;
     private int expectedCloseStatusParser1 = 0;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <rdw211:WeightingFunctionDictionary uuid="" schemaVersion="" objectVersion="">
+  <rdw211:WeightingFunctionDictionary uuid="9B7fa849-e89a-d2d3-a456-426614174601" schemaVersion="" objectVersion="">
    <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
     <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
     <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>
@@ -64,7 +64,7 @@
     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
    </rdw212:ExtensionNameValue>
-   <rdw211:WeightingFunction xsi:type="rdw211:WeightingFunction" uuid="" schemaVersion="" objectVersion="">
+   <rdw211:WeightingFunction xsi:type="rdw211:WeightingFunction" uuid="9B7fa849-e89a-d2d3-a456-426614174602" schemaVersion="" objectVersion="">
     <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
      <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
      <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>
@@ -153,7 +153,7 @@
      <rdw211:GyroAxis xsi:type="rdw211:GyroAxisCombination">z</rdw211:GyroAxis>
     </rdw211:ContinuousAzimuthFormula>
    </rdw211:WeightingFunction>
-   <rdw211:WeightingFunction xsi:type="rdw211:WeightingFunction" uuid="" schemaVersion="" objectVersion="">
+   <rdw211:WeightingFunction xsi:type="rdw211:WeightingFunction" uuid="9B7fa849-e89a-d2d3-a456-426614174603" schemaVersion="" objectVersion="">
     <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
      <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
      <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>

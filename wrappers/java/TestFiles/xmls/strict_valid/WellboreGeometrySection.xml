@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <rdw211:WellboreGeometrySection uid="" objectVersion="">
+  <rdw211:WellboreGeometrySection uid="Cd9fa849-e89a-d2d3-a456-426614174a00" objectVersion="">
    <rdw212:Creation xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:Creation>
    <rdw212:LastUpdate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:LastUpdate>
    <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
@@ -16,9 +16,9 @@
     <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">Cd9fa849-e89a-d2d3-a456-426614174a01</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml62.a</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -39,9 +39,9 @@
     <rdw212:TvdMax xsi:type="xsd:double">0.0</rdw212:TvdMax>
     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">Cd9fa849-e89a-d2d3-a456-426614174a02</rdw212:Uuid>
      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml62.b</rdw212:QualifiedType>
      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
@@ -63,9 +63,9 @@
    <rdw211:DiaDrift xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DiaDrift>
    <rdw211:FactFric xsi:type="xsd:double">0.0</rdw211:FactFric>
    <rdw211:BhaRun xsi:type="rdw212:DataObjectReference">
-    <rdw212:Uuid xsi:type="rdw212:UuidString"></rdw212:Uuid>
+    <rdw212:Uuid xsi:type="rdw212:UuidString">Cd9fa849-e89a-d2d3-a456-426614174a03</rdw212:Uuid>
     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType"></rdw212:QualifiedType>
+    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml62.c</rdw212:QualifiedType>
     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>

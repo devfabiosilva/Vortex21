@@ -1,4 +1,4 @@
-  <rdw211:WeightingFunction uuid="" schemaVersion="" objectVersion="">
+  <rdw211:WeightingFunction uuid="9B7fa849-e89a-d2d3-a456-426614174600" schemaVersion="" objectVersion="">
    <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
     <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
     <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>
