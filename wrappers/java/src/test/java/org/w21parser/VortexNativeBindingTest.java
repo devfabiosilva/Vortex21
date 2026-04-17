@@ -46,7 +46,7 @@ public class VortexNativeBindingTest {
         }
     }
 
-    private String fromPath(String object) {
+    public static String fromPath(String object) {
         return "TestFiles/xmls/strict_valid/" + object + ".xml";
     }
 

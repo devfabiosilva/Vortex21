@@ -1,0 +1,1842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <rdw211:DrillReport uuid="523e4567-e89b-12d3-a456-426614174000" schemaVersion="1" objectVersion="2">
+   <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
+    <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
+    <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>
+    <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    <rdw212:EffectiveDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:EffectiveDateTime>
+    <rdw212:TerminationDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:TerminationDateTime>
+   </rdw212:Aliases>
+   <rdw212:Citation xsi:type="rdw212:Citation">
+    <rdw212:Title xsi:type="rdw212:String256"></rdw212:Title>
+    <rdw212:Originator xsi:type="rdw212:String64"></rdw212:Originator>
+    <rdw212:Creation xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:Creation>
+    <rdw212:Format xsi:type="rdw212:String2000"></rdw212:Format>
+    <rdw212:Editor xsi:type="rdw212:String64"></rdw212:Editor>
+    <rdw212:LastUpdate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:LastUpdate>
+    <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    <rdw212:EditorHistory xsi:type="rdw212:String64"></rdw212:EditorHistory>
+    <rdw212:DescriptiveKeywords xsi:type="rdw212:String2000"></rdw212:DescriptiveKeywords>
+   </rdw212:Citation>
+   <rdw212:Existence xsi:type="rdw212:ExistenceKindExt"></rdw212:Existence>
+   <rdw212:ObjectVersionReason xsi:type="rdw212:String2000"></rdw212:ObjectVersionReason>
+   <rdw212:BusinessActivityHistory xsi:type="rdw212:String64"></rdw212:BusinessActivityHistory>
+   <rdw212:OSDUIntegration xsi:type="rdw212:OSDUIntegration">
+    <rdw212:LineageAssertions xsi:type="rdw212:OSDULineageAssertion">
+     <rdw212:ID xsi:type="rdw212:String256"></rdw212:ID>
+     <rdw212:LineageRelationshipKind xsi:type="rdw212:OSDULineageRelationshipKind">direct</rdw212:LineageRelationshipKind>
+    </rdw212:LineageAssertions>
+    <rdw212:OwnerGroup xsi:type="rdw212:String256"></rdw212:OwnerGroup>
+    <rdw212:ViewerGroup xsi:type="rdw212:String256"></rdw212:ViewerGroup>
+    <rdw212:LegalTags xsi:type="rdw212:String256"></rdw212:LegalTags>
+    <rdw212:OSDUGeoJSON xsi:type="xsd:string"></rdw212:OSDUGeoJSON>
+    <rdw212:WGS84Latitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw212:WGS84Latitude>
+    <rdw212:WGS84Longitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw212:WGS84Longitude>
+    <rdw212:WGS84LocationMetadata xsi:type="rdw212:OSDUSpatialLocationIntegration">
+     <rdw212:SpatialLocationCoordinatesDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:SpatialLocationCoordinatesDate>
+     <rdw212:QuantitativeAccuracyBand xsi:type="rdw212:String64"></rdw212:QuantitativeAccuracyBand>
+     <rdw212:QualitativeSpatialAccuracyType xsi:type="rdw212:String64"></rdw212:QualitativeSpatialAccuracyType>
+     <rdw212:CoordinateQualityCheckPerformedBy xsi:type="rdw212:String64"></rdw212:CoordinateQualityCheckPerformedBy>
+     <rdw212:CoordinateQualityCheckDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:CoordinateQualityCheckDateTime>
+     <rdw212:CoordinateQualityCheckRemark xsi:type="rdw212:String256"></rdw212:CoordinateQualityCheckRemark>
+     <rdw212:AppliedOperation xsi:type="rdw212:String256"></rdw212:AppliedOperation>
+    </rdw212:WGS84LocationMetadata>
+    <rdw212:Field xsi:type="rdw212:String64"></rdw212:Field>
+    <rdw212:Country xsi:type="rdw212:String64"></rdw212:Country>
+    <rdw212:State xsi:type="rdw212:String64"></rdw212:State>
+    <rdw212:County xsi:type="rdw212:String64"></rdw212:County>
+    <rdw212:City xsi:type="rdw212:String64"></rdw212:City>
+    <rdw212:Region xsi:type="rdw212:String64"></rdw212:Region>
+    <rdw212:District xsi:type="rdw212:String64"></rdw212:District>
+    <rdw212:Block xsi:type="rdw212:String64"></rdw212:Block>
+    <rdw212:Prospect xsi:type="rdw212:String64"></rdw212:Prospect>
+    <rdw212:Play xsi:type="rdw212:String64"></rdw212:Play>
+    <rdw212:Basin xsi:type="rdw212:String64"></rdw212:Basin>
+   </rdw212:OSDUIntegration>
+   <rdw212:CustomData xsi:type="rdw212:CustomData">
+    <!-- extensibility element(s) -->
+   </rdw212:CustomData>
+   <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+    <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+    <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+    <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+    <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+    <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+    <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+   </rdw212:ExtensionNameValue>
+   <rdw211:DTimStart xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimStart>
+   <rdw211:DTimEnd xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimEnd>
+   <rdw211:VersionKind xsi:type="rdw211:OpsReportVersion">preliminary</rdw211:VersionKind>
+   <rdw211:CreateDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:CreateDate>
+   <rdw211:Datum xsi:type="rdw212:DataObjectReference">
+    <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174001</rdw212:Uuid>
+    <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml21.BhaRun</rdw212:QualifiedType>
+    <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+    <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+    <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw212:ExtensionNameValue>
+   </rdw211:Datum>
+   <rdw211:BitRecord xsi:type="rdw211:BitRecord" uid="">
+    <rdw211:NumBit xsi:type="rdw212:String64"></rdw211:NumBit>
+    <rdw211:DiaBit xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DiaBit>
+    <rdw211:DiaPassThru xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DiaPassThru>
+    <rdw211:DiaPilot xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DiaPilot>
+    <rdw211:Manufacturer xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174000</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml39.BhaRun</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:Manufacturer>
+    <rdw211:TypeBit xsi:type="rdw211:BitType">diamond</rdw211:TypeBit>
+    <rdw211:CodeMfg xsi:type="rdw212:String64"></rdw211:CodeMfg>
+    <rdw211:CodeIADC xsi:type="rdw212:String64"></rdw211:CodeIADC>
+    <rdw211:CondInitInner xsi:type="rdw211:IadcIntegerCode">0</rdw211:CondInitInner>
+    <rdw211:CondInitOuter xsi:type="rdw211:IadcIntegerCode">0</rdw211:CondInitOuter>
+    <rdw211:CondInitDull xsi:type="rdw211:BitDullCode">BC</rdw211:CondInitDull>
+    <rdw211:CondInitLocation xsi:type="rdw212:String64"></rdw211:CondInitLocation>
+    <rdw211:CondInitBearing xsi:type="rdw211:IadcBearingWearCode">0</rdw211:CondInitBearing>
+    <rdw211:CondInitGauge xsi:type="rdw212:String64"></rdw211:CondInitGauge>
+    <rdw211:CondInitOther xsi:type="rdw212:String64"></rdw211:CondInitOther>
+    <rdw211:CondInitReason xsi:type="rdw211:BitReasonPulled">BHA</rdw211:CondInitReason>
+    <rdw211:CondFinalInner xsi:type="rdw211:IadcIntegerCode">0</rdw211:CondFinalInner>
+    <rdw211:CondFinalOuter xsi:type="rdw211:IadcIntegerCode">0</rdw211:CondFinalOuter>
+    <rdw211:CondFinalDull xsi:type="rdw211:BitDullCode">BC</rdw211:CondFinalDull>
+    <rdw211:CondFinalLocation xsi:type="rdw212:String64"></rdw211:CondFinalLocation>
+    <rdw211:CondFinalBearing xsi:type="rdw211:IadcBearingWearCode">0</rdw211:CondFinalBearing>
+    <rdw211:CondFinalGauge xsi:type="rdw212:String64"></rdw211:CondFinalGauge>
+    <rdw211:CondFinalOther xsi:type="rdw212:String64"></rdw211:CondFinalOther>
+    <rdw211:CondFinalReason xsi:type="rdw211:BitReasonPulled">BHA</rdw211:CondFinalReason>
+    <rdw211:Drive xsi:type="rdw212:String64"></rdw211:Drive>
+    <rdw211:BitClass xsi:type="rdw212:String64"></rdw211:BitClass>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+    <rdw211:Cost xsi:type="rdw212:Cost" currency="">0.0</rdw211:Cost>
+   </rdw211:BitRecord>
+   <rdw211:WellboreInfo xsi:type="rdw211:DrillReportWellboreInfo">
+    <rdw211:DTimSpud xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimSpud>
+    <rdw211:DTimPreSpud xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimPreSpud>
+    <rdw211:DateDrillComplete xsi:type="xsd:date">1999-12-31</rdw211:DateDrillComplete>
+    <rdw211:Operator xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174001</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">resqml57.CementJob</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:Operator>
+    <rdw211:DrillContractor xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174002</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml32.custom</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:DrillContractor>
+    <rdw211:Rig xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174003</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom21.custom</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:Rig>
+   </rdw211:WellboreInfo>
+   <rdw211:StatusInfo xsi:type="rdw211:DrillReportStatusInfo" uid="">
+    <rdw211:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTim>
+    <rdw211:Md xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174004</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml13.abc</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:Md>
+    <rdw211:Tvd xsi:type="rdw212:AbstractVerticalDepth">
+     <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174005</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml89.Drill</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:Tvd>
+    <rdw211:MdPlugTop xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174006</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml90.18</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdPlugTop>
+    <rdw211:DiaHole xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DiaHole>
+    <rdw211:MdDiaHoleStart xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174007</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml14.log</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdDiaHoleStart>
+    <rdw211:DiaPilot xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DiaPilot>
+    <rdw211:MdDiaPilotPlan xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174008</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml55.test</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdDiaPilotPlan>
+    <rdw211:TvdDiaPilotPlan xsi:type="rdw212:AbstractVerticalDepth">
+     <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174009</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml11.abc</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:TvdDiaPilotPlan>
+    <rdw211:TypeWellbore xsi:type="rdw211:WellboreType">bypass</rdw211:TypeWellbore>
+    <rdw211:MdKickoff xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-42661417400a</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom10.test</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdKickoff>
+    <rdw211:TvdKickoff xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-42661417400b</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml65.ml</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:TvdKickoff>
+    <rdw211:StrengthForm xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:StrengthForm>
+    <rdw211:MdStrengthForm xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-42661417400c</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom11.test</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdStrengthForm>
+    <rdw211:TvdStrengthForm xsi:type="rdw212:AbstractVerticalDepth">
+     <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-42661417400d</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom12.test</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:TvdStrengthForm>
+    <rdw211:DiaCsgLast xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DiaCsgLast>
+    <rdw211:MdCsgLast xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-42661417400e</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml15.a</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdCsgLast>
+    <rdw211:TvdCsgLast xsi:type="rdw212:AbstractVerticalDepth">
+     <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-42661417400f</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml30.StimJob</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:TvdCsgLast>
+    <rdw211:PresTestType xsi:type="rdw211:PresTestType">leak off test</rdw211:PresTestType>
+    <rdw211:MdPlanned xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174010</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml40.123</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdPlanned>
+    <rdw211:DistDrill xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DistDrill>
+    <rdw211:Sum24Hr xsi:type="rdw212:String2000"></rdw211:Sum24Hr>
+    <rdw211:Forecast24Hr xsi:type="rdw212:String2000"></rdw211:Forecast24Hr>
+    <rdw211:RopCurrent xsi:type="rdw212:LengthPerTimeMeasure" uom="1000 ft/h">0.0</rdw211:RopCurrent>
+    <rdw211:RigUtilization xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174011</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml12.09</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:RigUtilization>
+    <rdw211:ETimStart xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:ETimStart>
+    <rdw211:ETimSpud xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:ETimSpud>
+    <rdw211:ETimLoc xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:ETimLoc>
+    <rdw211:ETimDrill xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:ETimDrill>
+    <rdw211:RopAv xsi:type="rdw212:LengthPerTimeMeasure" uom="1000 ft/h">0.0</rdw211:RopAv>
+    <rdw211:Supervisor xsi:type="rdw212:String64"></rdw211:Supervisor>
+    <rdw211:Engineer xsi:type="rdw212:String64"></rdw211:Engineer>
+    <rdw211:Geologist xsi:type="rdw212:String64"></rdw211:Geologist>
+    <rdw211:ETimDrillRot xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:ETimDrillRot>
+    <rdw211:ETimDrillSlid xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:ETimDrillSlid>
+    <rdw211:ETimCirc xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:ETimCirc>
+    <rdw211:ETimReam xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:ETimReam>
+    <rdw211:ETimHold xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:ETimHold>
+    <rdw211:ETimSteering xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:ETimSteering>
+    <rdw211:DistDrillRot xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DistDrillRot>
+    <rdw211:DistDrillSlid xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DistDrillSlid>
+    <rdw211:DistReam xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DistReam>
+    <rdw211:DistHold xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DistHold>
+    <rdw211:DistSteering xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DistSteering>
+    <rdw211:NumPob xsi:type="xsd:long">0</rdw211:NumPob>
+    <rdw211:NumContract xsi:type="xsd:long">0</rdw211:NumContract>
+    <rdw211:NumOperator xsi:type="xsd:long">0</rdw211:NumOperator>
+    <rdw211:NumService xsi:type="xsd:long">0</rdw211:NumService>
+    <rdw211:NumAFE xsi:type="rdw212:String64"></rdw211:NumAFE>
+    <rdw211:ConditionHole xsi:type="rdw212:String64"></rdw211:ConditionHole>
+    <rdw211:TvdLot xsi:type="rdw212:AbstractVerticalDepth">
+     <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174012</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">resqml88.Test</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:TvdLot>
+    <rdw211:PresLotEmw xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:PresLotEmw>
+    <rdw211:PresKickTol xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresKickTol>
+    <rdw211:VolKickTol xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:VolKickTol>
+    <rdw211:Maasp xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:Maasp>
+    <rdw211:Tubular xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174100</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">resqml10.Bitcoin</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:Tubular>
+    <rdw211:ParentWellbore xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174101</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom17.test1</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:ParentWellbore>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+    <rdw211:ElevKelly xsi:type="rdw212:AbstractElevation">
+     <rdw212:Elevation xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:Elevation>
+    </rdw211:ElevKelly>
+    <rdw211:CostDay xsi:type="rdw212:Cost" currency="">0.0</rdw211:CostDay>
+    <rdw211:CostDayMud xsi:type="rdw212:Cost" currency="">0.0</rdw211:CostDayMud>
+   </rdw211:StatusInfo>
+   <rdw211:Fluid xsi:type="rdw211:Fluid" uid="">
+    <rdw211:Type xsi:type="rdw212:String64"></rdw211:Type>
+    <rdw211:LocationSample xsi:type="rdw212:String64"></rdw211:LocationSample>
+    <rdw211:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTim>
+    <rdw211:Md xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174102</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom20.k</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:Md>
+    <rdw211:Tvd xsi:type="rdw212:AbstractVerticalDepth">
+     <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174103</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom36.test</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:Tvd>
+    <rdw211:Ecd xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:Ecd>
+    <rdw211:KickToleranceVolume xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:KickToleranceVolume>
+    <rdw211:KickToleranceIntensity xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:KickToleranceIntensity>
+    <rdw211:TempFlowLine xsi:type="rdw212:ThermodynamicTemperatureMeasure" uom="K">0.0</rdw211:TempFlowLine>
+    <rdw211:PresBopRating xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresBopRating>
+    <rdw211:MudClass xsi:type="rdw211:MudClass">oil-based</rdw211:MudClass>
+    <rdw211:Density xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:Density>
+    <rdw211:VisFunnel xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:VisFunnel>
+    <rdw211:TempVis xsi:type="rdw212:ThermodynamicTemperatureMeasure" uom="K">0.0</rdw211:TempVis>
+    <rdw211:Pv xsi:type="rdw212:DynamicViscosityMeasure" uom="P">0.0</rdw211:Pv>
+    <rdw211:Yp xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:Yp>
+    <rdw211:Gel3Sec xsi:type="rdw212:PressureMeasureExt" uom="">0.0</rdw211:Gel3Sec>
+    <rdw211:Gel6Sec xsi:type="rdw212:PressureMeasureExt" uom="">0.0</rdw211:Gel6Sec>
+    <rdw211:Gel10Sec xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:Gel10Sec>
+    <rdw211:Gel10Min xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:Gel10Min>
+    <rdw211:Gel30Min xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:Gel30Min>
+    <rdw211:FilterCakeLtlp xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:FilterCakeLtlp>
+    <rdw211:FiltrateLtlp xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:FiltrateLtlp>
+    <rdw211:TempHthp xsi:type="rdw212:ThermodynamicTemperatureMeasure" uom="K">0.0</rdw211:TempHthp>
+    <rdw211:PresHthp xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresHthp>
+    <rdw211:FiltrateHthp xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:FiltrateHthp>
+    <rdw211:FilterCakeHthp xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:FilterCakeHthp>
+    <rdw211:SolidsPc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:SolidsPc>
+    <rdw211:WaterPc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:WaterPc>
+    <rdw211:OilPc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:OilPc>
+    <rdw211:SandPc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:SandPc>
+    <rdw211:SolidsLowGravPc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:SolidsLowGravPc>
+    <rdw211:SolidsLowGrav xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:SolidsLowGrav>
+    <rdw211:SolidsCalcPc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:SolidsCalcPc>
+    <rdw211:BaritePc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:BaritePc>
+    <rdw211:Lcm xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:Lcm>
+    <rdw211:Mbt xsi:type="rdw212:CationExchangeCapacityMeasureExt" uom="">0.0</rdw211:Mbt>
+    <rdw211:Ph xsi:type="xsd:double">0.0</rdw211:Ph>
+    <rdw211:TempPh xsi:type="rdw212:ThermodynamicTemperatureMeasure" uom="K">0.0</rdw211:TempPh>
+    <rdw211:Pm xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:Pm>
+    <rdw211:PmFiltrate xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:PmFiltrate>
+    <rdw211:Mf xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:Mf>
+    <rdw211:AlkalinityP1 xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:AlkalinityP1>
+    <rdw211:AlkalinityP2 xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:AlkalinityP2>
+    <rdw211:Chloride xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:Chloride>
+    <rdw211:Calcium xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:Calcium>
+    <rdw211:Magnesium xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:Magnesium>
+    <rdw211:Potassium xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:Potassium>
+    <rdw211:BrinePc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:BrinePc>
+    <rdw211:BrineDensity xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:BrineDensity>
+    <rdw211:BrineClass xsi:type="rdw211:BrineClassExt"></rdw211:BrineClass>
+    <rdw211:Lime xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:Lime>
+    <rdw211:ElectStab xsi:type="rdw212:ElectricPotentialDifferenceMeasure" uom="V">0.0</rdw211:ElectStab>
+    <rdw211:CalciumChloridePc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:CalciumChloridePc>
+    <rdw211:CalciumChloride xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:CalciumChloride>
+    <rdw211:Company xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174104</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml57.mem</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:Company>
+    <rdw211:Engineer xsi:type="rdw212:String64"></rdw211:Engineer>
+    <rdw211:Asg xsi:type="rdw212:MassPerMassMeasure" uom="%">0.0</rdw211:Asg>
+    <rdw211:SolidsHiGravPc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:SolidsHiGravPc>
+    <rdw211:SolidsHiGrav xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:SolidsHiGrav>
+    <rdw211:Polymer xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:Polymer>
+    <rdw211:PolyType xsi:type="rdw212:String64"></rdw211:PolyType>
+    <rdw211:SolCorPc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:SolCorPc>
+    <rdw211:OilCtg xsi:type="rdw212:MassPerMassMeasure" uom="%">0.0</rdw211:OilCtg>
+    <rdw211:OilCtgDry xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:OilCtgDry>
+    <rdw211:HardnessCa xsi:type="rdw212:MassPerMassMeasure" uom="%">0.0</rdw211:HardnessCa>
+    <rdw211:Sulfide xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:Sulfide>
+    <rdw211:AverageCuttingSize xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:AverageCuttingSize>
+    <rdw211:Carbonate xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:Carbonate>
+    <rdw211:Iron xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:Iron>
+    <rdw211:MetalRecovered xsi:type="rdw212:MassMeasure" uom="g">0.0</rdw211:MetalRecovered>
+    <rdw211:Turbidity xsi:type="xsd:double">0.0</rdw211:Turbidity>
+    <rdw211:OilGrease xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:OilGrease>
+    <rdw211:Salt xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:Salt>
+    <rdw211:SaltPc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:SaltPc>
+    <rdw211:Tct xsi:type="rdw212:ThermodynamicTemperatureMeasure" uom="K">0.0</rdw211:Tct>
+    <rdw211:WaterPhaseSalinity xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:WaterPhaseSalinity>
+    <rdw211:WholeMudCalcium xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:WholeMudCalcium>
+    <rdw211:WholeMudChloride xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:WholeMudChloride>
+    <rdw211:ZincOxide xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:ZincOxide>
+    <rdw211:SodiumChloride xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:SodiumChloride>
+    <rdw211:SodiumChloridePc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:SodiumChloridePc>
+    <rdw211:PptSpurtLoss xsi:type="rdw212:VolumeMeasureExt" uom="">0.0</rdw211:PptSpurtLoss>
+    <rdw211:PptPressure xsi:type="rdw212:PressureMeasureExt" uom="">0.0</rdw211:PptPressure>
+    <rdw211:PptTemperature xsi:type="rdw212:ThermodynamicTemperatureMeasureExt" uom="">0.0</rdw211:PptTemperature>
+    <rdw211:Comments xsi:type="rdw212:String2000"></rdw211:Comments>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+    <rdw211:Rheometer xsi:type="rdw211:Rheometer" uid="">
+     <rdw211:TempRheom xsi:type="rdw212:ThermodynamicTemperatureMeasure" uom="K">0.0</rdw211:TempRheom>
+     <rdw211:PresRheom xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresRheom>
+     <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw211:ExtensionNameValue>
+     <rdw211:Viscosity xsi:type="rdw211:RheometerViscosity" uid="">
+      <rdw211:Speed xsi:type="rdw212:AngularVelocityMeasure" uom="dega/h">0.0</rdw211:Speed>
+      <rdw211:Viscosity xsi:type="xsd:double">0.0</rdw211:Viscosity>
+     </rdw211:Viscosity>
+    </rdw211:Rheometer>
+   </rdw211:Fluid>
+   <rdw211:PorePressure xsi:type="rdw211:DrillReportPorePressure" uid="">
+    <rdw211:ReadingKind xsi:type="rdw211:ReadingKind">measured</rdw211:ReadingKind>
+    <rdw211:EquivalentMudWeight xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:EquivalentMudWeight>
+    <rdw211:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTim>
+    <rdw211:Md xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174105</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml30.eml</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:Md>
+    <rdw211:Tvd xsi:type="rdw212:AbstractVerticalDepth">
+     <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174106</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml20.80</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:Tvd>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+   </rdw211:PorePressure>
+   <rdw211:ExtendedReport xsi:type="rdw211:TimestampedCommentString" dTim="2026-01-05T19:39:47Z"></rdw211:ExtendedReport>
+   <rdw211:SurveyStations xsi:type="rdw211:DrillReportSurveyStationReport">
+    <rdw211:AcquisitionRemark xsi:type="rdw212:String2000"></rdw211:AcquisitionRemark>
+    <rdw211:MagDeclUsed xsi:type="rdw212:PlaneAngleMeasureExt" uom="">0.0</rdw211:MagDeclUsed>
+    <rdw211:MdMaxExtrapolated xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174107</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom19.dis</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdMaxExtrapolated>
+    <rdw211:MdMaxMeasured xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174108</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom28.k</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdMaxMeasured>
+    <rdw211:MdTieOn xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174109</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom81.20</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdTieOn>
+    <rdw211:NominalCalcAlgorithm xsi:type="rdw211:TrajStnCalcAlgorithmExt"></rdw211:NominalCalcAlgorithm>
+    <rdw211:NominalTypeSurveyTool xsi:type="rdw211:TypeSurveyToolExt"></rdw211:NominalTypeSurveyTool>
+    <rdw211:NominalTypeTrajStation xsi:type="rdw211:TrajStationTypeExt"></rdw211:NominalTypeTrajStation>
+    <rdw211:TrajectoryOSDUIntegration xsi:type="rdw211:TrajectoryOSDUIntegration">
+     <rdw211:ActiveIndicator xsi:type="xsd:boolean">false</rdw211:ActiveIndicator>
+     <rdw211:AppliedOperation xsi:type="rdw212:String256"></rdw211:AppliedOperation>
+     <rdw211:IntermediaryServiceCompany xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417410a</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml54.y</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw211:IntermediaryServiceCompany>
+     <rdw211:SurveyToolType xsi:type="rdw212:String256"></rdw211:SurveyToolType>
+     <rdw211:TrajectoryVersion xsi:type="rdw212:String64"></rdw211:TrajectoryVersion>
+    </rdw211:TrajectoryOSDUIntegration>
+    <rdw211:GridConUsed xsi:type="rdw212:PlaneAngleMeasureExt" uom="">0.0</rdw211:GridConUsed>
+    <rdw211:GridScaleFactorUsed xsi:type="rdw212:LengthPerLengthMeasureExt" uom="">0.0</rdw211:GridScaleFactorUsed>
+    <rdw211:AziVertSect xsi:type="rdw212:PlaneAngleMeasureExt" uom="">0.0</rdw211:AziVertSect>
+    <rdw211:DispNsVertSectOrig xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw211:DispNsVertSectOrig>
+    <rdw211:DispEwVertSectOrig xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw211:DispEwVertSectOrig>
+    <rdw211:AziRef xsi:type="rdw212:NorthReferenceKind">astronomic north</rdw211:AziRef>
+    <rdw211:DrillReportSurveyStation xsi:type="rdw211:DrillReportSurveyStation" uid="">
+     <rdw211:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTim>
+     <rdw211:Md xsi:type="rdw212:MeasuredDepth">
+      <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+      <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+       <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417410b</rdw212:Uuid>
+       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+       <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml77.12</rdw212:QualifiedType>
+       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+       <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+        <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+        <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+        <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+        <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+        <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+       </rdw212:ExtensionNameValue>
+      </rdw212:Datum>
+     </rdw211:Md>
+     <rdw211:Tvd xsi:type="rdw212:AbstractVerticalDepth">
+      <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+      <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+       <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417410c</rdw212:Uuid>
+       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+       <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml85.k</rdw212:QualifiedType>
+       <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+       <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+       <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+       <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+        <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+        <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+        <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+        <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+        <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+       </rdw212:ExtensionNameValue>
+      </rdw212:Trajectory>
+     </rdw211:Tvd>
+     <rdw211:Incl xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:Incl>
+     <rdw211:Azi xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:Azi>
+     <rdw211:VertSect xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:VertSect>
+     <rdw211:Dls xsi:type="rdw212:AnglePerLengthMeasure" uom="0.01 dega/ft">0.0</rdw211:Dls>
+     <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw211:ExtensionNameValue>
+     <rdw211:Location xsi:type="rdw212:Abstract2dPosition">
+     </rdw211:Location>
+    </rdw211:DrillReportSurveyStation>
+   </rdw211:SurveyStations>
+   <rdw211:DrillActivity xsi:type="rdw211:DrillActivity" uid="">
+    <rdw211:DTimStart xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimStart>
+    <rdw211:ProprietaryCode xsi:type="rdw212:NameStruct" authority=""></rdw211:ProprietaryCode>
+    <rdw211:DTimEnd xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimEnd>
+    <rdw211:Duration xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:Duration>
+    <rdw211:Md xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417410d</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml88.y</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:Md>
+    <rdw211:Tvd xsi:type="rdw212:AbstractVerticalDepth">
+     <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417410e</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml11.b</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:Tvd>
+    <rdw211:Phase xsi:type="rdw212:String64"></rdw211:Phase>
+    <rdw211:ActivityCode xsi:type="rdw211:DrillActivityCode">abandonment</rdw211:ActivityCode>
+    <rdw211:DetailActivity xsi:type="rdw212:String64"></rdw211:DetailActivity>
+    <rdw211:TypeActivityClass xsi:type="rdw211:DrillActivityClassType">planned</rdw211:TypeActivityClass>
+    <rdw211:ActivityMdInterval xsi:type="rdw212:MdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:MdMin xsi:type="xsd:double">0.0</rdw212:MdMin>
+     <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417410f</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml90.00</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:ActivityMdInterval>
+    <rdw211:ActivityTvdInterval xsi:type="rdw212:AbstractTvdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:TvdMin xsi:type="xsd:double">0.0</rdw212:TvdMin>
+     <rdw212:TvdMax xsi:type="xsd:double">0.0</rdw212:TvdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174110</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml91.00</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:ActivityTvdInterval>
+    <rdw211:BitMdInterval xsi:type="rdw212:MdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:MdMin xsi:type="xsd:double">0.0</rdw212:MdMin>
+     <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174111</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml76.r</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:BitMdInterval>
+    <rdw211:State xsi:type="rdw212:String64"></rdw211:State>
+    <rdw211:StateDetailActivity xsi:type="rdw211:StateDetailActivity">injury</rdw211:StateDetailActivity>
+    <rdw211:Operator xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174112</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml71.1</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:Operator>
+    <rdw211:Optimum xsi:type="xsd:boolean">false</rdw211:Optimum>
+    <rdw211:Productive xsi:type="xsd:boolean">false</rdw211:Productive>
+    <rdw211:ItemState xsi:type="rdw211:ItemState">actual</rdw211:ItemState>
+    <rdw211:Comments xsi:type="rdw212:String2000"></rdw211:Comments>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+    <rdw211:BhaRun xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174113</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom18.dis</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:BhaRun>
+    <rdw211:Tubular xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174114</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml77.1</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:Tubular>
+   </rdw211:DrillActivity>
+   <rdw211:LogInfo xsi:type="rdw211:DrillReportLogInfo" uid="">
+    <rdw211:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTim>
+    <rdw211:RunNumber xsi:type="rdw212:String64"></rdw211:RunNumber>
+    <rdw211:ServiceCompany xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174115</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml67.12</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:ServiceCompany>
+    <rdw211:LoggedMdInterval xsi:type="rdw212:MdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:MdMin xsi:type="xsd:double">0.0</rdw212:MdMin>
+     <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174116</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml54.12</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:LoggedMdInterval>
+    <rdw211:LoggedTvdInterval xsi:type="rdw212:AbstractTvdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:TvdMin xsi:type="xsd:double">0.0</rdw212:TvdMin>
+     <rdw212:TvdMax xsi:type="xsd:double">0.0</rdw212:TvdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174117</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom40.y</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:LoggedTvdInterval>
+    <rdw211:Tool xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174118</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml51.j</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:Tool>
+    <rdw211:MdTempTool xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174119</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml90.eml</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdTempTool>
+    <rdw211:TvdTempTool xsi:type="rdw212:AbstractVerticalDepth">
+     <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417411a</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml99.1</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:TvdTempTool>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+    <rdw211:BottomHoleTemperature xsi:type="rdw211:AbstractBottomHoleTemperature">
+     <rdw211:BottomHoleTemperature xsi:type="rdw212:ThermodynamicTemperatureMeasure" uom="K">0.0</rdw211:BottomHoleTemperature>
+    </rdw211:BottomHoleTemperature>
+   </rdw211:LogInfo>
+   <rdw211:CoreInfo xsi:type="rdw211:DrillReportCoreInfo" uid="">
+    <rdw211:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTim>
+    <rdw211:CoreNumber xsi:type="rdw212:String64"></rdw211:CoreNumber>
+    <rdw211:CoredMdInterval xsi:type="rdw212:MdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:MdMin xsi:type="xsd:double">0.0</rdw212:MdMin>
+     <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417411b</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml99.2007</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:CoredMdInterval>
+    <rdw211:CoredTvdInterval xsi:type="rdw212:AbstractTvdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:TvdMin xsi:type="xsd:double">0.0</rdw212:TvdMin>
+     <rdw212:TvdMax xsi:type="xsd:double">0.0</rdw212:TvdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417411c</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml54.2005</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:CoredTvdInterval>
+    <rdw211:LenRecovered xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:LenRecovered>
+    <rdw211:RecoverPc xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:RecoverPc>
+    <rdw211:LenBarrel xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:LenBarrel>
+    <rdw211:InnerBarrelType xsi:type="rdw211:InnerBarrelType">undifferentiated</rdw211:InnerBarrelType>
+    <rdw211:CoreDescription xsi:type="rdw212:String2000"></rdw211:CoreDescription>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+   </rdw211:CoreInfo>
+   <rdw211:WellTestInfo xsi:type="rdw211:DrillReportWellTestInfo" uid="">
+    <rdw211:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTim>
+    <rdw211:TestType xsi:type="rdw211:WellTestType">drill stem test</rdw211:TestType>
+    <rdw211:TestNumber xsi:type="xsd:long">0</rdw211:TestNumber>
+    <rdw211:TestMdInterval xsi:type="rdw212:MdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:MdMin xsi:type="xsd:double">0.0</rdw212:MdMin>
+     <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417411d</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml32.1m</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:TestMdInterval>
+    <rdw211:TestTvdInterval xsi:type="rdw212:AbstractTvdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:TvdMin xsi:type="xsd:double">0.0</rdw212:TvdMin>
+     <rdw212:TvdMax xsi:type="xsd:double">0.0</rdw212:TvdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417411e</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">resqml76.7</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:TestTvdInterval>
+    <rdw211:ChokeOrificeSize xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:ChokeOrificeSize>
+    <rdw211:DensityOil xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:DensityOil>
+    <rdw211:DensityWater xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:DensityWater>
+    <rdw211:DensityGas xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:DensityGas>
+    <rdw211:FlowRateOil xsi:type="rdw212:VolumePerTimeMeasure" uom="">0.0</rdw211:FlowRateOil>
+    <rdw211:FlowRateWater xsi:type="rdw212:VolumePerTimeMeasure" uom="">0.0</rdw211:FlowRateWater>
+    <rdw211:FlowRateGas xsi:type="rdw212:VolumePerTimeMeasure" uom="">0.0</rdw211:FlowRateGas>
+    <rdw211:PresShutIn xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresShutIn>
+    <rdw211:PresFlowing xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresFlowing>
+    <rdw211:PresBottom xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresBottom>
+    <rdw211:GasOilRatio xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:GasOilRatio>
+    <rdw211:WaterOilRatio xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:WaterOilRatio>
+    <rdw211:Chloride xsi:type="rdw212:MassPerMassMeasure" uom="%">0.0</rdw211:Chloride>
+    <rdw211:CarbonDioxide xsi:type="rdw212:MassPerMassMeasure" uom="%">0.0</rdw211:CarbonDioxide>
+    <rdw211:HydrogenSulfide xsi:type="rdw212:MassPerMassMeasure" uom="%">0.0</rdw211:HydrogenSulfide>
+    <rdw211:VolOilTotal xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:VolOilTotal>
+    <rdw211:VolGasTotal xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:VolGasTotal>
+    <rdw211:VolWaterTotal xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:VolWaterTotal>
+    <rdw211:VolOilStored xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:VolOilStored>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+   </rdw211:WellTestInfo>
+   <rdw211:FormTestInfo xsi:type="rdw211:DrillReportFormTestInfo" uid="">
+    <rdw211:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTim>
+    <rdw211:Md xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417411f</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml31.disc</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:Md>
+    <rdw211:Tvd xsi:type="rdw212:AbstractVerticalDepth">
+     <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174120</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom32.6</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:Tvd>
+    <rdw211:PresPore xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresPore>
+    <rdw211:GoodSeal xsi:type="xsd:boolean">false</rdw211:GoodSeal>
+    <rdw211:MdSample xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174121</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom60.mil</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdSample>
+    <rdw211:DominateComponent xsi:type="rdw212:String64"></rdw211:DominateComponent>
+    <rdw211:DensityHC xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:DensityHC>
+    <rdw211:VolumeSample xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:VolumeSample>
+    <rdw211:Description xsi:type="rdw212:String2000"></rdw211:Description>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+   </rdw211:FormTestInfo>
+   <rdw211:LithShowInfo xsi:type="rdw211:DrillReportLithShowInfo" uid="">
+    <rdw211:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTim>
+    <rdw211:ShowMdInterval xsi:type="rdw212:MdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:MdMin xsi:type="xsd:double">0.0</rdw212:MdMin>
+     <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174122</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml55.disc</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:ShowMdInterval>
+    <rdw211:ShowTvdInterval xsi:type="rdw212:AbstractTvdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:TvdMin xsi:type="xsd:double">0.0</rdw212:TvdMin>
+     <rdw212:TvdMax xsi:type="xsd:double">0.0</rdw212:TvdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174123</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml60.test</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:ShowTvdInterval>
+    <rdw211:Show xsi:type="rdw212:String2000"></rdw211:Show>
+    <rdw211:Lithology xsi:type="rdw212:String2000"></rdw211:Lithology>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+   </rdw211:LithShowInfo>
+   <rdw211:EquipFailureInfo xsi:type="rdw211:DrillReportEquipFailureInfo" uid="">
+    <rdw211:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTim>
+    <rdw211:Md xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174124</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml54.mil</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:Md>
+    <rdw211:Tvd xsi:type="rdw212:AbstractVerticalDepth">
+     <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174125</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml58.Drill</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:Tvd>
+    <rdw211:EquipClass xsi:type="rdw212:String64"></rdw211:EquipClass>
+    <rdw211:ETimMissProduction xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:ETimMissProduction>
+    <rdw211:DTimRepair xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimRepair>
+    <rdw211:Description xsi:type="rdw212:String2000"></rdw211:Description>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+   </rdw211:EquipFailureInfo>
+   <rdw211:ControlIncidentInfo xsi:type="rdw211:DrillReportControlIncidentInfo" uid="">
+    <rdw211:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTim>
+    <rdw211:MdInflow xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174126</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml50.We</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdInflow>
+    <rdw211:TvdInflow xsi:type="rdw212:AbstractVerticalDepth">
+     <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174127</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml35.9wellbore</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:TvdInflow>
+    <rdw211:Phase xsi:type="rdw212:String64"></rdw211:Phase>
+    <rdw211:ActivityCode xsi:type="rdw211:DrillActivityCode">abandonment</rdw211:ActivityCode>
+    <rdw211:DetailActivity xsi:type="rdw212:String64"></rdw211:DetailActivity>
+    <rdw211:ETimLost xsi:type="rdw212:TimeMeasure" uom="a">0.0</rdw211:ETimLost>
+    <rdw211:DTimRegained xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimRegained>
+    <rdw211:DiaBit xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DiaBit>
+    <rdw211:MdBit xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174128</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml41.wellbore</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdBit>
+    <rdw211:WtMud xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:WtMud>
+    <rdw211:PorePressure xsi:type="rdw212:MassPerVolumeMeasure" uom="">0.0</rdw211:PorePressure>
+    <rdw211:DiaCsgLast xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DiaCsgLast>
+    <rdw211:MdCsgLast xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174129</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml40.Well</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdCsgLast>
+    <rdw211:VolMudGained xsi:type="rdw212:VolumeMeasure" uom="">0.0</rdw211:VolMudGained>
+    <rdw211:PresShutInCasing xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresShutInCasing>
+    <rdw211:PresShutInDrill xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresShutInDrill>
+    <rdw211:IncidentType xsi:type="rdw211:WellControlIncidentType">shallow gas kick</rdw211:IncidentType>
+    <rdw211:KillingType xsi:type="rdw211:WellKillingProcedureType">drillers method</rdw211:KillingType>
+    <rdw211:Formation xsi:type="rdw212:String2000"></rdw211:Formation>
+    <rdw211:TempBottom xsi:type="rdw212:ThermodynamicTemperatureMeasure" uom="K">0.0</rdw211:TempBottom>
+    <rdw211:PresMaxChoke xsi:type="rdw212:PressureMeasure" uom="">0.0</rdw211:PresMaxChoke>
+    <rdw211:Description xsi:type="rdw212:String2000"></rdw211:Description>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+    <rdw211:ProprietaryCode xsi:type="rdw212:NameStruct" authority=""></rdw211:ProprietaryCode>
+   </rdw211:ControlIncidentInfo>
+   <rdw211:StratInfo xsi:type="rdw211:DrillReportStratInfo" uid="">
+    <rdw211:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTim>
+    <rdw211:MdTop xsi:type="rdw212:MeasuredDepth">
+     <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417412a</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom88.ga</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:MdTop>
+    <rdw211:TvdTop xsi:type="rdw212:AbstractVerticalDepth">
+     <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417412b</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom53.dis</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:TvdTop>
+    <rdw211:Description xsi:type="rdw212:String2000"></rdw211:Description>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+   </rdw211:StratInfo>
+   <rdw211:PerfInfo xsi:type="rdw211:DrillReportPerfInfo" uid="">
+    <rdw211:DTimOpen xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimOpen>
+    <rdw211:DTimClose xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimClose>
+    <rdw211:PerforationMdInterval xsi:type="rdw212:MdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:MdMin xsi:type="xsd:double">0.0</rdw212:MdMin>
+     <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417412c</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom13.mem</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:PerforationMdInterval>
+    <rdw211:PerforationTvdInterval xsi:type="rdw212:AbstractTvdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:TvdMin xsi:type="xsd:double">0.0</rdw212:TvdMin>
+     <rdw212:TvdMax xsi:type="xsd:double">0.0</rdw212:TvdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417412d</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom11.i</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:PerforationTvdInterval>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+   </rdw211:PerfInfo>
+   <rdw211:GasReadingInfo xsi:type="rdw211:DrillReportGasReadingInfo" uid="">
+    <rdw211:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTim>
+    <rdw211:ReadingType xsi:type="rdw211:GasPeakType">circulating background gas</rdw211:ReadingType>
+    <rdw211:GasReadingMdInterval xsi:type="rdw212:MdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:MdMin xsi:type="xsd:double">0.0</rdw212:MdMin>
+     <rdw212:MdMax xsi:type="xsd:double">0.0</rdw212:MdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417412e</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom77.9</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Datum>
+    </rdw211:GasReadingMdInterval>
+    <rdw211:GasReadingTvdInterval xsi:type="rdw212:AbstractTvdInterval">
+     <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
+     <rdw212:TvdMin xsi:type="xsd:double">0.0</rdw212:TvdMin>
+     <rdw212:TvdMax xsi:type="xsd:double">0.0</rdw212:TvdMax>
+     <rdw212:Uom xsi:type="rdw212:LengthUomExt"></rdw212:Uom>
+     <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-42661417412f</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom44.disc</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+       <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+       <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+       <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+       <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+       <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      </rdw212:ExtensionNameValue>
+     </rdw212:Trajectory>
+    </rdw211:GasReadingTvdInterval>
+    <rdw211:GasHigh xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:GasHigh>
+    <rdw211:GasLow xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:GasLow>
+    <rdw211:Meth xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:Meth>
+    <rdw211:Eth xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:Eth>
+    <rdw211:Prop xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:Prop>
+    <rdw211:Ibut xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:Ibut>
+    <rdw211:Nbut xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:Nbut>
+    <rdw211:Ipent xsi:type="rdw212:VolumePerVolumeMeasure" uom="">0.0</rdw211:Ipent>
+    <rdw211:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw211:ExtensionNameValue>
+   </rdw211:GasReadingInfo>
+   <rdw211:Wellbore xsi:type="rdw212:DataObjectReference">
+    <rdw212:Uuid xsi:type="rdw212:UuidString">523e4567-e89b-12d3-a456-426614174130</rdw212:Uuid>
+    <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom39.test</rdw212:QualifiedType>
+    <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+    <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+    <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw212:ExtensionNameValue>
+   </rdw211:Wellbore>
+  </rdw211:DrillReport>
+

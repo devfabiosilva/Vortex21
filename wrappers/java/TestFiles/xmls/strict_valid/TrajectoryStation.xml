@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <rdw211:TrajectoryStation uid="1ffe4567-e89b-12d3-a456-426614174000" objectVersion="">
+   <rdw212:Creation xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:Creation>
+   <rdw212:LastUpdate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:LastUpdate>
+   <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+    <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+    <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+    <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+    <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+    <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+    <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+   </rdw212:ExtensionNameValue>
+   <rdw212:Md xsi:type="rdw212:MeasuredDepth">
+    <rdw212:MeasuredDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:MeasuredDepth>
+    <rdw212:Datum xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">1ffe4567-e89b-12d3-a456-426614174001</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">resqml54.v</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw212:Datum>
+   </rdw212:Md>
+   <rdw211:Closure xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:Closure>
+   <rdw211:ClosureDirection xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:ClosureDirection>
+   <rdw211:DispLatitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:DispLatitude>
+   <rdw211:DispLongitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:DispLongitude>
+   <rdw211:OriginalLatitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:OriginalLatitude>
+   <rdw211:OriginalLongitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:OriginalLongitude>
+   <rdw211:TrajectoryStationOSDUIntegration xsi:type="rdw211:TrajectoryStationOSDUIntegration">
+    <rdw211:Easting xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw211:Easting>
+    <rdw211:Northing xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw211:Northing>
+    <rdw211:RadiusOfUncertainty xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:RadiusOfUncertainty>
+   </rdw211:TrajectoryStationOSDUIntegration>
+   <rdw211:TrueClosure xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:TrueClosure>
+   <rdw211:TrueClosureDirection xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:TrueClosureDirection>
+   <rdw211:WGS84Latitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:WGS84Latitude>
+   <rdw211:WGS84Longitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:WGS84Longitude>
+   <rdw211:ManuallyEntered xsi:type="xsd:boolean">false</rdw211:ManuallyEntered>
+   <rdw211:Target xsi:type="rdw212:DataObjectReference">
+    <rdw212:Uuid xsi:type="rdw212:UuidString">1ffe4567-e89b-12d3-a456-426614174002</rdw212:Uuid>
+    <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml76.k</rdw212:QualifiedType>
+    <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+    <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+    <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw212:ExtensionNameValue>
+   </rdw211:Target>
+   <rdw211:DTimStn xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimStn>
+   <rdw211:TypeTrajStation xsi:type="rdw211:TrajStationType">azimuth on plane</rdw211:TypeTrajStation>
+   <rdw211:TypeSurveyTool xsi:type="rdw211:TypeSurveyTool">gyroscopic inertial</rdw211:TypeSurveyTool>
+   <rdw211:CalcAlgorithm xsi:type="rdw211:TrajStnCalcAlgorithm">average angle</rdw211:CalcAlgorithm>
+   <rdw211:Tvd xsi:type="rdw212:AbstractVerticalDepth">
+    <rdw212:VerticalDepth xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:VerticalDepth>
+    <rdw212:Trajectory xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">1ffe4567-e89b-12d3-a456-426614174003</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml12.c</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw212:Trajectory>
+   </rdw211:Tvd>
+   <rdw211:Incl xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:Incl>
+   <rdw211:Azi xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:Azi>
+   <rdw211:Mtf xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:Mtf>
+   <rdw211:Gtf xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:Gtf>
+   <rdw211:DispNs xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DispNs>
+   <rdw211:DispEw xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DispEw>
+   <rdw211:VertSect xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:VertSect>
+   <rdw211:Dls xsi:type="rdw212:AnglePerLengthMeasure" uom="0.01 dega/ft">0.0</rdw211:Dls>
+   <rdw211:RateTurn xsi:type="rdw212:AnglePerLengthMeasure" uom="0.01 dega/ft">0.0</rdw211:RateTurn>
+   <rdw211:RateBuild xsi:type="rdw212:AnglePerLengthMeasure" uom="0.01 dega/ft">0.0</rdw211:RateBuild>
+   <rdw211:MdDelta xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:MdDelta>
+   <rdw211:TvdDelta xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:TvdDelta>
+   <rdw211:GravTotalUncert xsi:type="rdw212:LinearAccelerationMeasure" uom="cm/s2">0.0</rdw211:GravTotalUncert>
+   <rdw211:DipAngleUncert xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:DipAngleUncert>
+   <rdw211:MagTotalUncert xsi:type="rdw212:MagneticFluxDensityMeasure" uom="T">0.0</rdw211:MagTotalUncert>
+   <rdw211:GravAccelCorUsed xsi:type="xsd:boolean">false</rdw211:GravAccelCorUsed>
+   <rdw211:MagXAxialCorUsed xsi:type="xsd:boolean">false</rdw211:MagXAxialCorUsed>
+   <rdw211:SagCorUsed xsi:type="xsd:boolean">false</rdw211:SagCorUsed>
+   <rdw211:MagDrlstrCorUsed xsi:type="xsd:boolean">false</rdw211:MagDrlstrCorUsed>
+   <rdw211:InfieldRefCorUsed xsi:type="xsd:boolean">false</rdw211:InfieldRefCorUsed>
+   <rdw211:InterpolatedInfieldRefCorUsed xsi:type="xsd:boolean">false</rdw211:InterpolatedInfieldRefCorUsed>
+   <rdw211:InHoleRefCorUsed xsi:type="xsd:boolean">false</rdw211:InHoleRefCorUsed>
+   <rdw211:AxialMagInterferenceCorUsed xsi:type="xsd:boolean">false</rdw211:AxialMagInterferenceCorUsed>
+   <rdw211:CosagCorUsed xsi:type="xsd:boolean">false</rdw211:CosagCorUsed>
+   <rdw211:MSACorUsed xsi:type="xsd:boolean">false</rdw211:MSACorUsed>
+   <rdw211:GravTotalFieldReference xsi:type="rdw212:LinearAccelerationMeasure" uom="cm/s2">0.0</rdw211:GravTotalFieldReference>
+   <rdw211:MagTotalFieldReference xsi:type="rdw212:MagneticFluxDensityMeasure" uom="T">0.0</rdw211:MagTotalFieldReference>
+   <rdw211:MagDipAngleReference xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:MagDipAngleReference>
+   <rdw211:MagModelUsed xsi:type="rdw212:String64"></rdw211:MagModelUsed>
+   <rdw211:MagModelValid xsi:type="rdw212:String64"></rdw211:MagModelValid>
+   <rdw211:GeoModelUsed xsi:type="rdw212:String64"></rdw211:GeoModelUsed>
+   <rdw211:StatusTrajStation xsi:type="rdw211:TrajStationStatus">open</rdw211:StatusTrajStation>
+   <rdw211:RawData xsi:type="rdw211:StnTrajRawData">
+    <rdw211:GravAxialRaw xsi:type="rdw212:LinearAccelerationMeasure" uom="cm/s2">0.0</rdw211:GravAxialRaw>
+    <rdw211:GravTran1Raw xsi:type="rdw212:LinearAccelerationMeasure" uom="cm/s2">0.0</rdw211:GravTran1Raw>
+    <rdw211:GravTran2Raw xsi:type="rdw212:LinearAccelerationMeasure" uom="cm/s2">0.0</rdw211:GravTran2Raw>
+    <rdw211:MagAxialRaw xsi:type="rdw212:MagneticFluxDensityMeasure" uom="T">0.0</rdw211:MagAxialRaw>
+    <rdw211:MagTran1Raw xsi:type="rdw212:MagneticFluxDensityMeasure" uom="T">0.0</rdw211:MagTran1Raw>
+    <rdw211:MagTran2Raw xsi:type="rdw212:MagneticFluxDensityMeasure" uom="T">0.0</rdw211:MagTran2Raw>
+   </rdw211:RawData>
+   <rdw211:CorUsed xsi:type="rdw211:StnTrajCorUsed">
+    <rdw211:GravAxialAccelCor xsi:type="rdw212:LinearAccelerationMeasure" uom="cm/s2">0.0</rdw211:GravAxialAccelCor>
+    <rdw211:GravTran1AccelCor xsi:type="rdw212:LinearAccelerationMeasure" uom="cm/s2">0.0</rdw211:GravTran1AccelCor>
+    <rdw211:GravTran2AccelCor xsi:type="rdw212:LinearAccelerationMeasure" uom="cm/s2">0.0</rdw211:GravTran2AccelCor>
+    <rdw211:MagAxialDrlstrCor xsi:type="rdw212:MagneticFluxDensityMeasure" uom="T">0.0</rdw211:MagAxialDrlstrCor>
+    <rdw211:MagTran1DrlstrCor xsi:type="rdw212:MagneticFluxDensityMeasure" uom="T">0.0</rdw211:MagTran1DrlstrCor>
+    <rdw211:MagTran2DrlstrCor xsi:type="rdw212:MagneticFluxDensityMeasure" uom="T">0.0</rdw211:MagTran2DrlstrCor>
+    <rdw211:MagTran1MSACor xsi:type="rdw212:MagneticFluxDensityMeasure" uom="T">0.0</rdw211:MagTran1MSACor>
+    <rdw211:MagTran2MSACor xsi:type="rdw212:MagneticFluxDensityMeasure" uom="T">0.0</rdw211:MagTran2MSACor>
+    <rdw211:MagAxialMSACor xsi:type="rdw212:MagneticFluxDensityMeasure" uom="T">0.0</rdw211:MagAxialMSACor>
+    <rdw211:SagIncCor xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:SagIncCor>
+    <rdw211:SagAziCor xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:SagAziCor>
+    <rdw211:StnMagDeclUsed xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:StnMagDeclUsed>
+    <rdw211:StnGridConUsed xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:StnGridConUsed>
+    <rdw211:StnGridScaleFactorUsed xsi:type="rdw212:LengthPerLengthMeasure" uom="%">0.0</rdw211:StnGridScaleFactorUsed>
+    <rdw211:DirSensorOffset xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:DirSensorOffset>
+   </rdw211:CorUsed>
+   <rdw211:Valid xsi:type="rdw211:StnTrajValid">
+    <rdw211:MagTotalFieldCalc xsi:type="rdw212:MagneticFluxDensityMeasure" uom="T">0.0</rdw211:MagTotalFieldCalc>
+    <rdw211:MagDipAngleCalc xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw211:MagDipAngleCalc>
+    <rdw211:GravTotalFieldCalc xsi:type="rdw212:LinearAccelerationMeasure" uom="cm/s2">0.0</rdw211:GravTotalFieldCalc>
+   </rdw211:Valid>
+   <rdw211:MatrixCov xsi:type="rdw211:StnTrajMatrixCov">
+    <rdw211:VarianceNN xsi:type="rdw212:AreaMeasure" uom="b">0.0</rdw211:VarianceNN>
+    <rdw211:VarianceNE xsi:type="rdw212:AreaMeasure" uom="b">0.0</rdw211:VarianceNE>
+    <rdw211:VarianceNVert xsi:type="rdw212:AreaMeasure" uom="b">0.0</rdw211:VarianceNVert>
+    <rdw211:VarianceEE xsi:type="rdw212:AreaMeasure" uom="b">0.0</rdw211:VarianceEE>
+    <rdw211:VarianceEVert xsi:type="rdw212:AreaMeasure" uom="b">0.0</rdw211:VarianceEVert>
+    <rdw211:VarianceVertVert xsi:type="rdw212:AreaMeasure" uom="b">0.0</rdw211:VarianceVertVert>
+    <rdw211:BiasN xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:BiasN>
+    <rdw211:BiasE xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:BiasE>
+    <rdw211:BiasVert xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:BiasVert>
+    <rdw211:Sigma xsi:type="xsd:double">0.0</rdw211:Sigma>
+   </rdw211:MatrixCov>
+   <rdw211:Location xsi:type="rdw212:AbstractPosition">
+   </rdw211:Location>
+   <rdw211:SourceStation xsi:type="rdw211:SourceTrajectoryStation">
+    <rdw211:StationReference xsi:type="rdw212:ComponentReference">
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom79.c</rdw212:QualifiedType>
+     <rdw212:Uid xsi:type="rdw212:String64"></rdw212:Uid>
+     <rdw212:Name xsi:type="rdw212:String2000"></rdw212:Name>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+    </rdw211:StationReference>
+    <rdw211:Trajectory xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">1ffe4567-e89b-12d3-a456-426614174004</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom10.b</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:Trajectory>
+   </rdw211:SourceStation>
+   <rdw211:ToolErrorModel xsi:type="rdw212:DataObjectReference">
+    <rdw212:Uuid xsi:type="rdw212:UuidString">1ffe4567-e89b-12d3-a456-426614174005</rdw212:Uuid>
+    <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+    <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml11.a</rdw212:QualifiedType>
+    <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
+    <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
+    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+    <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    </rdw212:ExtensionNameValue>
+   </rdw211:ToolErrorModel>
+  </rdw211:TrajectoryStation>
+
