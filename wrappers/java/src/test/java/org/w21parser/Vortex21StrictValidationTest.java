@@ -86,6 +86,24 @@ public class Vortex21StrictValidationTest {
     }
 
     @Test
+    public void validateStrinctObjects() throws IOException, W21Exception {
+        for (W21ParserLoader.W21Object object : witsml21List) {
+            String objectName = object.toString();
+            String fullObjectNamePath = fromPath(objectName);
+            logger.info("Load and validate from file \"{}\" in AutoDetect mode", fullObjectNamePath);
+            try {
+                parser1.readFromFile(fullObjectNamePath, object);
+            } catch (W21Exception e) {
+                logger.error("Witsml 2.1 error code: {}\n", e.error);
+                logger.error("Main message: \n{}\n", e.getMessage());
+                logger.error("Fault String: \n{}\n", e.getFaultstring());
+                logger.error("Fault String XML: \n{}\n", e.getXMLfaultdetail());
+                throw e;
+            }
+        }
+    }
+
+    @Test
     public void validateStrinctFieldsInAutoDetectMode() throws IOException, W21Exception {
         assertEquals("Total objects must be 53", 53, witsml21List.size());
         for (W21ParserLoader.W21Object object : witsml21List) {
