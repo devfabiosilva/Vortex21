@@ -120,4 +120,18 @@ public class BhaRunTest {
 
         assertEquals("Key DescriptiveKeywords in @123", citation.asDocument().get("DescriptiveKeywords").asString().getValue());
     }
+
+    @Test
+    public void miscTest() throws Exception {
+        BsonDocument bhaRunObj = (BsonDocument) navigate(bhaRunDocument, "BhaRun");
+
+        assertEquals("Existence test", bhaRunObj.get("Existence").asString().getValue());
+        assertEquals("Object version reason", bhaRunObj.get("ObjectVersionReason").asString().getValue());
+
+        BsonArray businessActivityHistory = (BsonArray) bhaRunObj.get("BusinessActivityHistory");
+
+        assertEquals(2, businessActivityHistory.size());
+        assertEquals("Business Activity History 1", businessActivityHistory.get(0).asString().getValue());
+        assertEquals("Business Activity History 2", businessActivityHistory.get(1).asString().getValue());
+    }
 }

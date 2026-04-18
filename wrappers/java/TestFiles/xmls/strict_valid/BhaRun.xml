@@ -32,13 +32,13 @@
       <EditorHistory>Editor History 3</EditorHistory>
       <abc:DescriptiveKeywords>Key DescriptiveKeywords in @123</abc:DescriptiveKeywords>
      </abc:Citation>
-     <Existence>Teste</Existence>
-     <ObjectVersionReason>abcdef</ObjectVersionReason>
-     <BusinessActivityHistory>asdef</BusinessActivityHistory>
-     <BusinessActivityHistory>def</BusinessActivityHistory>
-     <!--CustomData>
-     	<a><b>a</b><a>
-     </CustomData-->
+     <Existence>Existence test</Existence>
+     <ObjectVersionReason>Object version reason</ObjectVersionReason>
+     <BusinessActivityHistory>Business Activity History 1</BusinessActivityHistory>
+     <BusinessActivityHistory>Business Activity History 2</BusinessActivityHistory>
+<!--     <abc:CustomData>-->
+<!--      <a>abc</a>-->
+<!--     </abc:CustomData>-->
      <ExtensionNameValue>
       <Name>Name in Extension</Name>
       <Value uom="uom test">teste</Value>
