@@ -47,7 +47,7 @@ public class BhaRunTest {
     public void setUp() throws Exception {
         this.parser1 = W21ParserLoader.begin().withInputRulesValidator().withInputWitsmlStrict().withResourceStats().withIgnoreInputWitsmlNS().build();
         try {
-            this.parser1.readFromFile(fromPath("BhaRun"));
+            this.parser1.readFromFile(fromPath("BhaRun"), W21ParserLoader.W21Object.BhaRun);
         } catch (W21Exception e) {
             logger.error("Main message: {}", e.getMessage());
             logger.error("Fault detail: {}", e.getFaultstring());
@@ -133,5 +133,123 @@ public class BhaRunTest {
         assertEquals(2, businessActivityHistory.size());
         assertEquals("Business Activity History 1", businessActivityHistory.get(0).asString().getValue());
         assertEquals("Business Activity History 2", businessActivityHistory.get(1).asString().getValue());
+
+        BsonArray extensionNameValues = (BsonArray) navigate(bhaRunObj, "ExtensionNameValue");
+
+        assertEquals(4, extensionNameValues.size());
+
+        BsonDocument extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+
+        assertEquals("Name in Extension", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("uom test", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("test 1 in Value", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("mass", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2025-12-30T09:19:34Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals("Descrição (UTF-8 in Portuguese)", navigate(extensionNameValue, "Description"));
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(1);
+
+        assertEquals("#### Name in Extension 1 ####", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("uom test2", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("test 2 in Value", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("length per mass", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2025-07-27T09:19:44Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals("Description 2", navigate(extensionNameValue, "Description"));
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(2);
+
+        assertEquals("#### Name in Extension 2 ####", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("uom test3", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("test 3 in Value", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("unitless", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2025-10-30T19:21:54Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals("Description in this Extension Name Value", navigate(extensionNameValue, "Description"));
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(3);
+
+        assertEquals("q", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("r", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("absorbed dose", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2025-10-30T00:09:34Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(1600, ((BsonValue)navigate(extensionNameValue, "Index")).asInt64().getValue());
+        assertEquals("s", navigate(extensionNameValue, "Description"));
+    }
+
+    @Test
+    public void osduIntegrationTest() throws Exception {
+        BsonDocument osduIntegration = (BsonDocument) navigate(bhaRunDocument, "BhaRun", "OSDUIntegration");
+
+        BsonArray lineageAssertions = (BsonArray) navigate(osduIntegration, "LineageAssertions");
+
+        assertEquals(3, lineageAssertions.size());
+
+        BsonDocument lineageAssertion = (BsonDocument)lineageAssertions.get(0);
+
+        assertEquals("601", navigate(lineageAssertion,  "ID"));
+        assertEquals("direct", navigate(lineageAssertion,  "LineageRelationshipKind"));
+
+        lineageAssertion = (BsonDocument)lineageAssertions.get(1);
+
+        assertEquals("602ID", navigate(lineageAssertion,  "ID"));
+        assertEquals("indirect", navigate(lineageAssertion,  "LineageRelationshipKind"));
+
+        lineageAssertion = (BsonDocument)lineageAssertions.get(2);
+
+        assertEquals("603ID", navigate(lineageAssertion,  "ID"));
+        assertEquals("reference", navigate(lineageAssertion,  "LineageRelationshipKind"));
+
+        BsonArray ownerGroupArray = (BsonArray) navigate(osduIntegration, "OwnerGroup");
+
+        assertEquals(2, ownerGroupArray.size());
+
+        assertEquals("ownerGroup1", ((BsonString)navigate(ownerGroupArray, 0)).getValue());
+        assertEquals("ownerGroup2", ((BsonString)navigate(ownerGroupArray, 1)).getValue());
+
+        BsonArray viewerGroupArray = (BsonArray) navigate(osduIntegration, "ViewerGroup");
+
+        assertEquals(2, viewerGroupArray.size());
+
+        assertEquals("ViewerGroup1", ((BsonString)navigate(viewerGroupArray, 0)).getValue());
+        assertEquals("ViewerGroup2", ((BsonString)navigate(viewerGroupArray, 1)).getValue());
+
+        BsonArray legalTags = (BsonArray)navigate(osduIntegration, "LegalTags");
+
+        assertEquals(2, legalTags.size());
+
+        assertEquals("LegalTag1", ((BsonString)legalTags.get(0)).getValue());
+        assertEquals("LegalTag2", ((BsonString)legalTags.get(1)).getValue());
+
+        assertEquals("{\"test\":123}", navigate(osduIntegration, "OSDUGeoJSON"));
+
+        BsonDocument wGS84Latitude = (BsonDocument) navigate(osduIntegration, "WGS84Latitude");
+
+        assertEquals("0.001 seca", navigate(wGS84Latitude, "#attributes", "uom"));
+        assertEquals(-1.234, ((BsonDouble)navigate(wGS84Latitude, "#value")).getValue(), 1E-6);
+
+        BsonDocument wGS84Longitude = (BsonDocument) navigate(osduIntegration, "WGS84Longitude");
+        assertEquals("urad", navigate(wGS84Longitude, "#attributes", "uom"));
+        assertEquals(5.678E4, ((BsonDouble)navigate(wGS84Longitude, "#value")).getValue(), 1E-6);
+
+
+        BsonDocument wGS84LocationMetadata = (BsonDocument) navigate(osduIntegration, "WGS84LocationMetadata");
+        assertEquals(DateUtils.toTimestamp("2025-09-30T00:09:34Z"), ((BsonDateTime)navigate(wGS84LocationMetadata, "SpatialLocationCoordinatesDate")).asDateTime().getValue());
+        assertEquals("g", navigate(wGS84LocationMetadata,"QuantitativeAccuracyBand"));
+        assertEquals("h", navigate(wGS84LocationMetadata,"QualitativeSpatialAccuracyType"));
+        assertEquals("i", navigate(wGS84LocationMetadata,"CoordinateQualityCheckPerformedBy"));
+        assertEquals(DateUtils.toTimestamp("2025-11-30T10:09:34Z"), ((BsonDateTime)navigate(wGS84LocationMetadata, "CoordinateQualityCheckDateTime")).asDateTime().getValue());
+
+        BsonArray coordinateQualityCheckRemarkArray = (BsonArray) navigate(wGS84LocationMetadata,"CoordinateQualityCheckRemark");
+
+        assertEquals(2, coordinateQualityCheckRemarkArray.size());
+        assertEquals("j", coordinateQualityCheckRemarkArray.get(0).asString().getValue());
+        assertEquals("k", coordinateQualityCheckRemarkArray.get(1).asString().getValue());
+
+        BsonArray appliedOperationArray = (BsonArray) navigate(wGS84LocationMetadata,"AppliedOperation");
+
+        assertEquals(3, appliedOperationArray.size());
+        assertEquals("l", appliedOperationArray.get(0).asString().getValue());
+        assertEquals("m", appliedOperationArray.get(1).asString().getValue());
+        assertEquals("n", appliedOperationArray.get(2).asString().getValue());
     }
 }

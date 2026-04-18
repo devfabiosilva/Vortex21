@@ -1,17 +1,17 @@
 <?xml version=\"1.0\" encoding=\"UTF-8\"?>
-    <def:BhaRun
+    <BhaRun
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     xmlns:def="http://www.energistics.org/energyml/data/witsmlv2"
     xmlns:abc="http://www.energistics.org/energyml/data/commonv2"
     uuid="123e4567-e89b-12d3-a456-426614174000" schemaVersion="2.1" objectVersion="2.11">
-     <Aliases authority="abc test">
+     <abc:Aliases authority="abc test">
       <Identifier>identifier</Identifier>
       <IdentifierKind>identifier kind test</IdentifierKind>
       <Description>description test</Description>
       <EffectiveDateTime>2025-12-30T00:11:44Z</EffectiveDateTime>
       <TerminationDateTime>2025-12-30T00:09:34Z</TerminationDateTime>
-     </Aliases>
+     </abc:Aliases>
      <Aliases authority="ABC">
       <Identifier>IDENTIFIER</Identifier>
       <IdentifierKind>identifier KIND TEST</IdentifierKind>
@@ -36,42 +36,60 @@
      <ObjectVersionReason>Object version reason</ObjectVersionReason>
      <BusinessActivityHistory>Business Activity History 1</BusinessActivityHistory>
      <BusinessActivityHistory>Business Activity History 2</BusinessActivityHistory>
-<!--     <abc:CustomData>-->
-<!--      <a>abc</a>-->
-<!--     </abc:CustomData>-->
      <ExtensionNameValue>
       <Name>Name in Extension</Name>
-      <Value uom="uom test">teste</Value>
+      <Value uom="uom test">test 1 in Value</Value>
       <MeasureClass>mass</MeasureClass>
       <DTim>2025-12-30T09:19:34Z</DTim>
-      <Description>Descrição</Description>
+      <Description>Descrição (UTF-8 in Portuguese)</Description>
      </ExtensionNameValue>
      <ExtensionNameValue>
-      <Name>#### Name in Extension ####</Name>
-      <Value uom="uom test2">teste2</Value>
-      <MeasureClass>mass</MeasureClass>
-      <DTim>2025-09-30T09:19:34Z</DTim>
-      <Description>Descrição2</Description>
+      <Name>#### Name in Extension 1 ####</Name>
+      <Value uom="uom test2">test 2 in Value</Value>
+      <MeasureClass>length per mass</MeasureClass>
+      <DTim>2025-07-27T09:19:44Z</DTim>
+      <Description>Description 2</Description>
+     </ExtensionNameValue>
+     <ExtensionNameValue>
+      <Name>#### Name in Extension 2 ####</Name>
+      <Value uom="uom test3">test 3 in Value</Value>
+      <MeasureClass>unitless</MeasureClass>
+      <DTim>2025-10-30T19:21:54Z</DTim>
+      <Description>Description in this Extension Name Value</Description>
      </ExtensionNameValue>
      <OSDUIntegration>
       <LineageAssertions>
        <ID>601</ID>
        <LineageRelationshipKind>direct</LineageRelationshipKind>
       </LineageAssertions>
-      <OwnerGroup>c</OwnerGroup>
-      <ViewerGroup>d</ViewerGroup>
-      <LegalTags>e</LegalTags>
-      <OSDUGeoJSON>f</OSDUGeoJSON>
-      <WGS84Latitude uom="0.001 seca">0.0</WGS84Latitude>
-      <WGS84Longitude uom="0.001 seca">0.0</WGS84Longitude>
+      <LineageAssertions>
+       <ID>602ID</ID>
+       <LineageRelationshipKind>indirect</LineageRelationshipKind>
+      </LineageAssertions>
+      <LineageAssertions>
+       <ID>603ID</ID>
+       <LineageRelationshipKind>reference</LineageRelationshipKind>
+      </LineageAssertions>
+      <OwnerGroup>ownerGroup1</OwnerGroup>
+      <OwnerGroup>ownerGroup2</OwnerGroup>
+      <ViewerGroup>ViewerGroup1</ViewerGroup>
+      <ViewerGroup>ViewerGroup2</ViewerGroup>
+      <LegalTags>LegalTag1</LegalTags>
+      <LegalTags>LegalTag2</LegalTags>
+      <OSDUGeoJSON>{"test":123}</OSDUGeoJSON>
+      <WGS84Latitude uom="0.001 seca">-1.234</WGS84Latitude>
+      <WGS84Longitude uom="urad">5.678E4</WGS84Longitude>
       <WGS84LocationMetadata>
-       <SpatialLocationCoordinatesDate>2025-12-30T00:09:34Z</SpatialLocationCoordinatesDate>
+       <SpatialLocationCoordinatesDate>2025-09-30T00:09:34Z</SpatialLocationCoordinatesDate>
        <QuantitativeAccuracyBand>g</QuantitativeAccuracyBand>
        <QualitativeSpatialAccuracyType>h</QualitativeSpatialAccuracyType>
        <CoordinateQualityCheckPerformedBy>i</CoordinateQualityCheckPerformedBy>
-       <CoordinateQualityCheckDateTime>2025-12-30T00:09:34Z</CoordinateQualityCheckDateTime>
+       <CoordinateQualityCheckDateTime>2025-11-30T10:09:34Z</CoordinateQualityCheckDateTime>
        <CoordinateQualityCheckRemark>j</CoordinateQualityCheckRemark>
-       <AppliedOperation>k</AppliedOperation>
+       <CoordinateQualityCheckRemark>k</CoordinateQualityCheckRemark>
+       <AppliedOperation>l</AppliedOperation>
+       <AppliedOperation>m</AppliedOperation>
+       <AppliedOperation>n</AppliedOperation>
       </WGS84LocationMetadata>
       <Field>l</Field>
       <Country>Brazil</Country>
@@ -86,31 +104,34 @@
       <Basin>base</Basin>
      </OSDUIntegration>
      <CustomData>
-     	<b>Teste</b>
+     	<b>Custom data Test 1 as string</b>
+        <c atr="mycustomattr">
+         <d>Complex Custom Data</d>
+        </c>
      </CustomData>
      <ExtensionNameValue>
       <Name>q</Name>
       <Value uom="">r</Value>
       <MeasureClass>absorbed dose</MeasureClass>
-      <DTim>2025-12-30T00:09:34Z</DTim>
+      <DTim>2025-10-30T00:09:34Z</DTim>
       <Index>1600</Index>
       <Description>s</Description>
      </ExtensionNameValue>
-     <rdw211:DTimStart>2025-12-30T00:09:34Z</rdw211:DTimStart>
-     <rdw211:DTimStop>2025-12-30T00:09:34Z</rdw211:DTimStop>
-     <rdw211:DTimStartDrilling>2025-12-30T00:09:34Z</rdw211:DTimStartDrilling>
-     <rdw211:DTimStopDrilling>2025-12-30T00:09:34Z</rdw211:DTimStopDrilling>
-     <rdw211:PlanDogleg uom="0.01 dega/ft">0.0</rdw211:PlanDogleg>
-     <rdw211:ActDogleg uom="0.01 dega/ft">87</rdw211:ActDogleg>
-     <rdw211:ActDoglegMx uom="0.01 dega/ft">0.0</rdw211:ActDoglegMx>
-     <rdw211:BhaRunStatus>final</rdw211:BhaRunStatus>
-     <rdw211:NumBitRun>-2</rdw211:NumBitRun>
-     <rdw211:NumStringRun>17</rdw211:NumStringRun>
-     <rdw211:ReasonTrip>aa</rdw211:ReasonTrip>
-     <rdw211:ObjectiveBha>bb</rdw211:ObjectiveBha>
-     <rdw211:DrillingParams uid="">
-      <rdw211:ETimOpBit uom="a">0.0</rdw211:ETimOpBit>
-      <rdw211:MdHoleStart>
+     <DTimStart>2025-12-30T00:09:34Z</DTimStart>
+     <DTimStop>2025-12-30T00:09:34Z</DTimStop>
+     <DTimStartDrilling>2025-12-30T00:09:34Z</DTimStartDrilling>
+     <DTimStopDrilling>2025-12-30T00:09:34Z</DTimStopDrilling>
+     <PlanDogleg uom="0.01 dega/ft">0.0</PlanDogleg>
+     <ActDogleg uom="0.01 dega/ft">87</ActDogleg>
+     <ActDoglegMx uom="0.01 dega/ft">0.0</ActDoglegMx>
+     <BhaRunStatus>final</BhaRunStatus>
+     <NumBitRun>-2</NumBitRun>
+     <NumStringRun>17</NumStringRun>
+     <ReasonTrip>aa</ReasonTrip>
+     <ObjectiveBha>bb</ObjectiveBha>
+     <DrillingParams uid="">
+      <ETimOpBit uom="a">0.0</ETimOpBit>
+      <MdHoleStart>
        <MeasuredDepth uom="">0.0</MeasuredDepth>
        <Datum>
         <Uuid>123e4567-e89b-12d3-a456-426614174001</Uuid>
@@ -125,8 +146,8 @@
          <Description>y</Description>
         </ExtensionNameValue>
        </Datum>
-      </rdw211:MdHoleStart>
-      <rdw211:MdHoleStop>
+      </MdHoleStart>
+      <MdHoleStop>
        <MeasuredDepth uom="">0.0</MeasuredDepth>
        <Datum>
         <Uuid>123e4567-e89b-12d3-a456-426614174002</Uuid>
@@ -141,71 +162,71 @@
          <Description>E</Description>
         </ExtensionNameValue>
        </Datum>
-      </rdw211:MdHoleStop>
-      <rdw211:HkldRot uom="N">0.0</rdw211:HkldRot>
-      <rdw211:OverPull uom="N">0.0</rdw211:OverPull>
-      <rdw211:SlackOff uom="N">0.0</rdw211:SlackOff>
-      <rdw211:HkldUp uom="N">0.0</rdw211:HkldUp>
-      <rdw211:HkldDn uom="N">0.0</rdw211:HkldDn>
-      <rdw211:TqOnBotAv uom="J">0.0</rdw211:TqOnBotAv>
-      <rdw211:TqOnBotMx uom="J">0.0</rdw211:TqOnBotMx>
-      <rdw211:TqOnBotMn uom="J">0.0</rdw211:TqOnBotMn>
-      <rdw211:TqOffBotAv uom="J">0.0</rdw211:TqOffBotAv>
-      <rdw211:TqDhAv uom="J">0.0</rdw211:TqDhAv>
-      <rdw211:WtAboveJar uom="N">0.0</rdw211:WtAboveJar>
-      <rdw211:WtBelowJar uom="N">0.0</rdw211:WtBelowJar>
-      <rdw211:WtMud uom="">0.0</rdw211:WtMud>
-      <rdw211:FlowratePumpAv uom="">0.0</rdw211:FlowratePumpAv>
-      <rdw211:FlowratePumpMx uom="">0.0</rdw211:FlowratePumpMx>
-      <rdw211:FlowratePumpMn uom="">0.0</rdw211:FlowratePumpMn>
-      <rdw211:VelNozzleAv uom="1000 ft/h">0.0</rdw211:VelNozzleAv>
-      <rdw211:PowBit uom="W">0.0</rdw211:PowBit>
-      <rdw211:PresDropBit uom="">0.0</rdw211:PresDropBit>
-      <rdw211:CTimHold uom="a">0.0</rdw211:CTimHold>
-      <rdw211:CTimSteering uom="a">0.0</rdw211:CTimSteering>
-      <rdw211:CTimDrillRot uom="a">0.0</rdw211:CTimDrillRot>
-      <rdw211:CTimDrillSlid uom="a">0.0</rdw211:CTimDrillSlid>
-      <rdw211:CTimCirc uom="a">0.0</rdw211:CTimCirc>
-      <rdw211:CTimReam uom="a">0.0</rdw211:CTimReam>
-      <rdw211:DistDrillRot uom="m">0.0</rdw211:DistDrillRot>
-      <rdw211:DistDrillSlid uom="m">0.0</rdw211:DistDrillSlid>
-      <rdw211:DistReam uom="m">0.0</rdw211:DistReam>
-      <rdw211:DistHold uom="m">0.0</rdw211:DistHold>
-      <rdw211:DistSteering uom="m">0.0</rdw211:DistSteering>
-      <rdw211:RpmAv uom="dega/h">0.0</rdw211:RpmAv>
-      <rdw211:RpmMx uom="dega/h">0.0</rdw211:RpmMx>
-      <rdw211:RpmMn uom="dega/h">0.0</rdw211:RpmMn>
-      <rdw211:RpmAvDh uom="dega/h">0.0</rdw211:RpmAvDh>
-      <rdw211:RopAv uom="1000 ft/h">0.0</rdw211:RopAv>
-      <rdw211:RopMx uom="1000 ft/h">0.0</rdw211:RopMx>
-      <rdw211:RopMn uom="1000 ft/h">0.0</rdw211:RopMn>
-      <rdw211:WobAv uom="N">0.0</rdw211:WobAv>
-      <rdw211:WobMx uom="N">0.0</rdw211:WobMx>
-      <rdw211:WobMn uom="N">0.0</rdw211:WobMn>
-      <rdw211:WobAvDh uom="N">0.0</rdw211:WobAvDh>
-      <rdw211:ReasonTrip>F</rdw211:ReasonTrip>
-      <rdw211:ObjectiveBha>G</rdw211:ObjectiveBha>
-      <rdw211:AziTop uom="0.001 seca">0.0</rdw211:AziTop>
-      <rdw211:AziBottom uom="0.001 seca">0.0</rdw211:AziBottom>
-      <rdw211:InclStart uom="0.001 seca">0.0</rdw211:InclStart>
-      <rdw211:InclMx uom="0.001 seca">0.0</rdw211:InclMx>
-      <rdw211:InclMn uom="0.001 seca">0.0</rdw211:InclMn>
-      <rdw211:InclStop uom="0.001 seca">0.0</rdw211:InclStop>
-      <rdw211:TempMudDhMx uom="K">0.0</rdw211:TempMudDhMx>
-      <rdw211:PresPumpAv uom="">0.0</rdw211:PresPumpAv>
-      <rdw211:FlowrateBit uom="">0.0</rdw211:FlowrateBit>
-      <rdw211:MudClass>oil-based</rdw211:MudClass>
-      <rdw211:MudSubClass>aerated mud</rdw211:MudSubClass>
-      <rdw211:Comments>H</rdw211:Comments>
-      <rdw211:ExtensionNameValue>
+      </MdHoleStop>
+      <HkldRot uom="N">0.0</HkldRot>
+      <OverPull uom="N">0.0</OverPull>
+      <SlackOff uom="N">0.0</SlackOff>
+      <HkldUp uom="N">0.0</HkldUp>
+      <HkldDn uom="N">0.0</HkldDn>
+      <TqOnBotAv uom="J">0.0</TqOnBotAv>
+      <TqOnBotMx uom="J">0.0</TqOnBotMx>
+      <TqOnBotMn uom="J">0.0</TqOnBotMn>
+      <TqOffBotAv uom="J">0.0</TqOffBotAv>
+      <TqDhAv uom="J">0.0</TqDhAv>
+      <WtAboveJar uom="N">0.0</WtAboveJar>
+      <WtBelowJar uom="N">0.0</WtBelowJar>
+      <WtMud uom="">0.0</WtMud>
+      <FlowratePumpAv uom="">0.0</FlowratePumpAv>
+      <FlowratePumpMx uom="">0.0</FlowratePumpMx>
+      <FlowratePumpMn uom="">0.0</FlowratePumpMn>
+      <VelNozzleAv uom="1000 ft/h">0.0</VelNozzleAv>
+      <PowBit uom="W">0.0</PowBit>
+      <PresDropBit uom="">0.0</PresDropBit>
+      <CTimHold uom="a">0.0</CTimHold>
+      <CTimSteering uom="a">0.0</CTimSteering>
+      <CTimDrillRot uom="a">0.0</CTimDrillRot>
+      <CTimDrillSlid uom="a">0.0</CTimDrillSlid>
+      <CTimCirc uom="a">0.0</CTimCirc>
+      <CTimReam uom="a">0.0</CTimReam>
+      <DistDrillRot uom="m">0.0</DistDrillRot>
+      <DistDrillSlid uom="m">0.0</DistDrillSlid>
+      <DistReam uom="m">0.0</DistReam>
+      <DistHold uom="m">0.0</DistHold>
+      <DistSteering uom="m">0.0</DistSteering>
+      <RpmAv uom="dega/h">0.0</RpmAv>
+      <RpmMx uom="dega/h">0.0</RpmMx>
+      <RpmMn uom="dega/h">0.0</RpmMn>
+      <RpmAvDh uom="dega/h">0.0</RpmAvDh>
+      <RopAv uom="1000 ft/h">0.0</RopAv>
+      <RopMx uom="1000 ft/h">0.0</RopMx>
+      <RopMn uom="1000 ft/h">0.0</RopMn>
+      <WobAv uom="N">0.0</WobAv>
+      <WobMx uom="N">0.0</WobMx>
+      <WobMn uom="N">0.0</WobMn>
+      <WobAvDh uom="N">0.0</WobAvDh>
+      <ReasonTrip>F</ReasonTrip>
+      <ObjectiveBha>G</ObjectiveBha>
+      <AziTop uom="0.001 seca">0.0</AziTop>
+      <AziBottom uom="0.001 seca">0.0</AziBottom>
+      <InclStart uom="0.001 seca">0.0</InclStart>
+      <InclMx uom="0.001 seca">0.0</InclMx>
+      <InclMn uom="0.001 seca">0.0</InclMn>
+      <InclStop uom="0.001 seca">0.0</InclStop>
+      <TempMudDhMx uom="K">0.0</TempMudDhMx>
+      <PresPumpAv uom="">0.0</PresPumpAv>
+      <FlowrateBit uom="">0.0</FlowrateBit>
+      <MudClass>oil-based</MudClass>
+      <MudSubClass>aerated mud</MudSubClass>
+      <Comments>H</Comments>
+      <ExtensionNameValue>
        <Name>D</Name>
        <Value uom="">E</Value>
        <MeasureClass>absorbed dose</MeasureClass>
        <DTim>2025-12-30T00:09:34Z</DTim>
        <Index>0</Index>
        <Description>F</Description>
-      </rdw211:ExtensionNameValue>
-      <rdw211:Tubular>
+      </ExtensionNameValue>
+      <Tubular>
        <Uuid>123e4567-e89b-12d3-a456-426614174003</Uuid>
        <ObjectVersion>G</ObjectVersion>
        <QualifiedType>resqml40.xy</QualifiedType>
@@ -220,8 +241,8 @@
         <Index>0</Index>
         <Description>K</Description>
        </ExtensionNameValue>
-      </rdw211:Tubular>
-     </rdw211:DrillingParams>
+      </Tubular>
+     </DrillingParams>
      <def:Wellbore>
       <abc:Uuid>123e4567-e89b-12d3-a456-426614174005</abc:Uuid>
       <abc:ObjectVersion>L</abc:ObjectVersion>
@@ -238,7 +259,7 @@
        <abc:Description>Q</abc:Description>
       </abc:ExtensionNameValue>
      </def:Wellbore>
-     <rdw211:Tubular>
+     <Tubular>
       <Uuid>123e4567-e89b-12d3-a456-426614174003</Uuid>
       <ObjectVersion>R</ObjectVersion>
       <QualifiedType>eml71.BhaRun</QualifiedType>
@@ -253,6 +274,6 @@
        <Index>0</Index>
        <Description>V</Description>
       </ExtensionNameValue>
-     </rdw211:Tubular>
-    </def:BhaRun>
+     </Tubular>
+    </BhaRun>
 
