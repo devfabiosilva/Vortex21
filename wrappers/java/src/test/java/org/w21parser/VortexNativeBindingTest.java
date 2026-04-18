@@ -179,15 +179,14 @@ public class VortexNativeBindingTest {
 
     @Test
     public void memoryBoundaryTest() throws Exception {
-        // This test try to manipulate and test access violation in C pointer.
-        // Please, ignore message from JNI such as:
+        // Ignore messages below. These messages are expected because we are violating C memory access
+        // simulating attack or wrong use. This test SHOULD PASS without crash your Java VM :)
         //[w21parser] jniParse unexpected: Unable to load C pointer at jni_get_handler: 4043. Ignoring ...
         //[w21parser] jniClose: Unexpected error. Unable to close this instance. jni_get_handler error: 4043. Memory may be leaked. Try later
         //[w21parser] jniParseJson unexpected: Unable to load C pointer at jni_get_handler: 4044. Ignoring ...
         //[w21parser] jniParseJson unexpected: Unable to load C pointer at jni_get_handler: 4043. Ignoring ...
         //[w21parser] jniParseJson unexpected: locker not found or not initialized
-        // Ignore messages above. These messages are expected because we are violating C memory access
-        // simulating attack or wrong use. This test SHOULD PASS without crash your VM :)
+        // This test try to manipulate and test access violation in C pointer.
 
         logger.warn("============================ BEGIN CONTROLLED JNI ACCESS VIOLATION TEST ============================");
         logger.warn("THIS TEST TRY TO MANIPULATE AND TEST MEMORY ACCESS VIOLATION IN C POINTER.\nPlease, ignore message from JNI [w21parser] below");
@@ -200,7 +199,7 @@ public class VortexNativeBindingTest {
 
         this.parser1.readFromFile(fromPath("BhaRun"));
 
-        // Access violation intentional in C pointer. JNI SHOULD detect such violation without crash VM
+        // intentional access violation in C pointer. JNI SHOULD detect such violation without crash Java VM
         setPrivateField(this.parser1, "jniHandler", oldJniHandler + 1);
 
         try {
@@ -434,7 +433,7 @@ public class VortexNativeBindingTest {
         //JNI_W21_ERROR_INIT_ALREADY_CLOSED 4033
         this.expectedCloseStatusParser2 = 4033;
 
-        assertEquals("parser2.close() must return 0", 0, this.parser2.close());
+        assertEquals("parser2.close() must return 0 (C object free success)", 0, this.parser2.close());
 
         jniHandler = getPrivateField(this.parser2, "jniHandler");
         assertEquals("jniHandler must be set to zero (NULL C pointer) after parser2.close() call", 0, jniHandler);

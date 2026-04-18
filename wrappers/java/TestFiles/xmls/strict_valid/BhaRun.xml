@@ -4,30 +4,32 @@
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     xmlns:def="http://www.energistics.org/energyml/data/witsmlv2"
     xmlns:abc="http://www.energistics.org/energyml/data/commonv2"
-    uuid="123e4567-e89b-12d3-a456-426614174000" schemaVersion="2.1" objectVersion="2.1">
-     <Aliases authority="abc">
+    uuid="123e4567-e89b-12d3-a456-426614174000" schemaVersion="2.1" objectVersion="2.11">
+     <Aliases authority="abc test">
       <Identifier>identifier</Identifier>
       <IdentifierKind>identifier kind test</IdentifierKind>
-      <Description>desctiption test</Description>
-      <EffectiveDateTime>2025-12-30T00:09:34Z</EffectiveDateTime>
+      <Description>description test</Description>
+      <EffectiveDateTime>2025-12-30T00:11:44Z</EffectiveDateTime>
       <TerminationDateTime>2025-12-30T00:09:34Z</TerminationDateTime>
      </Aliases>
      <Aliases authority="ABC">
       <Identifier>IDENTIFIER</Identifier>
       <IdentifierKind>identifier KIND TEST</IdentifierKind>
       <Description>DESCRIPTION TEST</Description>
-      <EffectiveDateTime>2024-12-30T00:09:34Z</EffectiveDateTime>
-      <TerminationDateTime>2024-12-30T00:09:34Z</TerminationDateTime>
+      <EffectiveDateTime>2025-12-30T20:10:34Z</EffectiveDateTime>
+      <TerminationDateTime>2024-12-30T01:01:38Z</TerminationDateTime>
      </Aliases>
      <abc:Citation>
-      <abc:Title>Titulo</abc:Title>
+      <abc:Title>Citation Title</abc:Title>
       <abc:Originator>a</abc:Originator>
-      <abc:Creation>2025-12-30T00:09:34Z</abc:Creation>
+      <abc:Creation>2025-12-30T14:19:54Z</abc:Creation>
       <abc:Format>b</abc:Format>
       <abc:Editor>EDITOR IN CITATION</abc:Editor>
-      <abc:LastUpdate>2025-12-30T00:09:34Z</abc:LastUpdate>
+      <abc:LastUpdate>2025-12-30T08:32:34Z</abc:LastUpdate>
       <abc:Description>Description in Citation</abc:Description>
-      <abc:EditorHistory>Editor History</abc:EditorHistory>
+      <abc:EditorHistory>Editor History 1</abc:EditorHistory>
+      <abc:EditorHistory>Editor History 2</abc:EditorHistory>
+      <EditorHistory>Editor History 3</EditorHistory>
       <abc:DescriptiveKeywords>Key DescriptiveKeywords in @123</abc:DescriptiveKeywords>
      </abc:Citation>
      <Existence>Teste</Existence>
