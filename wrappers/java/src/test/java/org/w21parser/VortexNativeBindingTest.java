@@ -20,7 +20,7 @@ public class VortexNativeBindingTest {
     private static final Logger logger = LoggerFactory.getLogger(VortexNativeBindingTest.class);
     private W21ParserLoader parser1;
     private W21ParserLoader parser2 = null;
-    private int expectedCloseStatusParser1 = 0;
+    private final int expectedCloseStatusParser1 = 0;
     private int expectedCloseStatusParser2 = 0;
 
     @Before
@@ -259,6 +259,54 @@ public class VortexNativeBindingTest {
 
         logger.warn("IGNORE MESSAGES ABOVE. THESE MESSAGES ARE EXPECTED BECAUSE WE ARE TRYING TO VIOLATE C MEMORY ACCESS SIMULATING ATTACK OR WRONG USE. This test SHOULD PASS without crash your VM :)");
         logger.warn("============================= END CONTROLLED JNI ACCESS VIOLATION TEST =============================");
+    }
+
+    @Test
+    public void jniShouldNotExecuteUninitializedCInstance() {
+        this.parser2 = new W21ParserLoader();
+
+        // This test try to manipulate and test access violation in C pointer.
+        // Please, ignore message from JNI such as:
+        // [w21parser] jniInGetObjectName unexpected: locker not found or not initialized
+        //
+        logger.warn("This test try to manipulate and test access violation in C pointer. Ignore JNI messages");
+        try {
+            this.parser2.getInputObjectName();
+            fail("parser2.getInputObjectName() should return Exception");
+        } catch (Exception e) {
+            assertEquals("jniInGetObjectName unexpected: locker not found or not initialized. Unable to execute", e.getMessage());
+        }
+
+        try {
+            this.parser2.parseJson(W21ParserLoader.W21OutputJsonType.JSON_STRING);
+            fail("JNI Could not try to parse JSON object with uninitialized C instance");
+        } catch (Exception e) {
+            assertEquals("jniParseJson unexpected: locker not found or not initialized. Unable to execute", e.getMessage());
+        }
+
+        try {
+            this.parser2.parse(W21ParserLoader.W21OutputType.BSON_BYTE_ARRAY);
+            fail("JNI Could not try to parse object with uninitialized C instance");
+        } catch (Exception e) {
+            assertEquals("jniParse unexpected: locker not found or not initialized. Unable to execute", e.getMessage());
+        }
+
+        try {
+            this.parser2.readFromFile(fromPath("BhaRun"));
+            fail("JNI Could not try to read file object with uninitialized C instance");
+        } catch (Exception e) {
+            assertEquals("jniW21Recycle unexpected: locker not found or not initialized. Unable to execute", e.getMessage());
+        }
+
+        try {
+            this.parser2.readFromStream("string");
+            fail("JNI Could not try to read stream object with uninitialized C instance");
+        } catch (Exception e) {
+            assertEquals("jniW21Recycle unexpected: locker not found or not initialized. Unable to execute", e.getMessage());
+        }
+
+        //JNI_W21_ERROR_INIT_ALREADY_CLOSED 4033
+        this.expectedCloseStatusParser2 = 4033;
     }
 
     @Test

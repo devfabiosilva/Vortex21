@@ -129,6 +129,9 @@ public class W21ParserLoader {
     private native void jniInputRulesValidatorEnable() throws W21Exception;
     private native void jniInputRulesValidatorDisable();
 
+    public String getInputObjectName() throws W21Exception {
+        return this.jniInGetObjectName();
+    }
     /**
      * Reads and parses a WITSML 2.1 document from a memory buffer using <b>AutoDetect</b> mode.
      * * <p>This native method identifies the underlying WITSML object type automatically

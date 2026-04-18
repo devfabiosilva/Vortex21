@@ -90,9 +90,10 @@ public class Vortex21StrictValidationTest {
         for (W21ParserLoader.W21Object object : witsml21List) {
             String objectName = object.toString();
             String fullObjectNamePath = fromPath(objectName);
-            logger.info("Load and validate from file \"{}\" in AutoDetect mode", fullObjectNamePath);
+            logger.info("Load and validate from file \"{}\" in normal mode", fullObjectNamePath);
             try {
                 parser1.readFromFile(fullObjectNamePath, object);
+                assertEquals(objectName, parser1.getInputObjectName());
             } catch (W21Exception e) {
                 logger.error("Witsml 2.1 error code: {}\n", e.error);
                 logger.error("Main message: \n{}\n", e.getMessage());
@@ -112,6 +113,7 @@ public class Vortex21StrictValidationTest {
             logger.info("Load and validate from file \"{}\" in AutoDetect mode", fullObjectNamePath);
             try {
                 parser1.readFromFile(fullObjectNamePath);
+                assertEquals(objectName, parser1.getInputObjectName());
             } catch (W21Exception e) {
                 logger.error("Witsml 2.1 error code: {}\n", e.error);
                 logger.error("Main message: \n{}\n", e.getMessage());
