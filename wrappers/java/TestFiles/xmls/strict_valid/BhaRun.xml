@@ -91,17 +91,17 @@
        <AppliedOperation>m</AppliedOperation>
        <AppliedOperation>n</AppliedOperation>
       </WGS84LocationMetadata>
-      <Field>l</Field>
+      <Field>Field</Field>
       <Country>Brazil</Country>
       <State>Rio de Janeiro</State>
-      <County>m</County>
+      <County>County field</County>
       <City>Duque de Caxias</City>
       <Region>ABC</Region>
-      <District>Duque de Caxias</District>
-      <Block>n</Block>
-      <Prospect>o</Prospect>
-      <Play>p</Play>
-      <Basin>base</Basin>
+      <District>Nova Campinas</District>
+      <Block>Block field</Block>
+      <Prospect>Prospect field</Prospect>
+      <Play>Play field</Play>
+      <Basin>basin field</Basin>
      </OSDUIntegration>
      <CustomData>
      	<b>Custom data Test 1 as string</b>
@@ -117,24 +117,144 @@
       <Index>1600</Index>
       <Description>s</Description>
      </ExtensionNameValue>
-     <DTimStart>2025-12-30T00:09:34Z</DTimStart>
-     <DTimStop>2025-12-30T00:09:34Z</DTimStop>
-     <DTimStartDrilling>2025-12-30T00:09:34Z</DTimStartDrilling>
-     <DTimStopDrilling>2025-12-30T00:09:34Z</DTimStopDrilling>
-     <PlanDogleg uom="0.01 dega/ft">0.0</PlanDogleg>
-     <ActDogleg uom="0.01 dega/ft">87</ActDogleg>
-     <ActDoglegMx uom="0.01 dega/ft">0.0</ActDoglegMx>
-     <BhaRunStatus>final</BhaRunStatus>
+     <DTimStart>2025-12-30T20:09:34Z</DTimStart>
+     <DTimStop>2025-12-30T00:17:36Z</DTimStop>
+     <DTimStartDrilling>2025-08-30T01:09:34Z</DTimStartDrilling>
+     <DTimStopDrilling>2025-06-30T00:09:34Z</DTimStopDrilling>
+     <PlanDogleg uom="0.01 dega/ft">7.0</PlanDogleg>
+     <ActDogleg uom="rev/m">87.0</ActDogleg>
+     <ActDoglegMx uom="1/30 dega/m">1.06</ActDoglegMx>
+     <BhaRunStatus>plan</BhaRunStatus>
      <NumBitRun>-2</NumBitRun>
-     <NumStringRun>17</NumStringRun>
+     <NumStringRun>1234567890</NumStringRun>
      <ReasonTrip>aa</ReasonTrip>
      <ObjectiveBha>bb</ObjectiveBha>
-     <DrillingParams uid="">
+     <DrillingParams uid="required string 64 A">
+      <ETimOpBit uom="wk">-.89</ETimOpBit>
+      <MdHoleStart>
+       <MeasuredDepth uom="ua">150.</MeasuredDepth>
+       <Datum>
+        <Uuid>123e4567-e89b-12d3-a456-426614174001</Uuid>
+        <ObjectVersion>t</ObjectVersion>
+        <QualifiedType>witsml21.BhaRun123</QualifiedType>
+        <Title>v</Title>
+        <EnergisticsUri>http://www.example.com/schema/anyURI</EnergisticsUri>
+        <LocatorUrl>http://www.example.com/schema/anyURIB</LocatorUrl>
+        <LocatorUrl>http://www.example.com/schema/anyURIC</LocatorUrl>
+        <ExtensionNameValue>
+         <Name>w</Name>
+         <Value uom="testUom1">x</Value>
+         <Description>y</Description>
+        </ExtensionNameValue>
+        <ExtensionNameValue>
+         <Name>w A</Name>
+         <Value uom="abc">xyz</Value>
+         <Description>description in datum extension name value</Description>
+        </ExtensionNameValue>
+       </Datum>
+      </MdHoleStart>
+      <MdHoleStop>
+       <MeasuredDepth uom="">69.8159</MeasuredDepth>
+       <Datum>
+        <Uuid>123e4567-e89b-12d3-a456-426614174002</Uuid>
+        <ObjectVersion>z</ObjectVersion>
+        <QualifiedType>custom21.ABC123</QualifiedType>
+        <Title>B</Title>
+        <EnergisticsUri>http://www.example.com/schema/anyURI</EnergisticsUri>
+        <LocatorUrl>http://www.example.com/schema/anyURI</LocatorUrl>
+        <ExtensionNameValue>
+         <Name>C</Name>
+         <Value uom="">D</Value>
+         <Description>E</Description>
+        </ExtensionNameValue>
+       </Datum>
+      </MdHoleStop>
+      <HkldRot uom="10 kN">6.81</HkldRot>
+      <OverPull uom="tonf[UK]">17.001</OverPull>
+      <SlackOff uom="N">0.0</SlackOff>
+      <HkldUp uom="mN">nan</HkldUp>
+      <HkldDn uom="pdl">inf</HkldDn>
+      <TqOnBotAv uom="pdl.ft">-inf</TqOnBotAv>
+      <TqOnBotMx uom="J">-0.0</TqOnBotMx>
+      <TqOnBotMn uom="J">0.0</TqOnBotMn>
+      <TqOffBotAv uom="J">0.0</TqOffBotAv>
+      <TqDhAv uom="J">0.0</TqDhAv>
+      <WtAboveJar uom="N">0.0</WtAboveJar>
+      <WtBelowJar uom="N">0.0</WtBelowJar>
+      <WtMud uom="">0.0</WtMud>
+      <FlowratePumpAv uom="">0.0</FlowratePumpAv>
+      <FlowratePumpMx uom="">0.0</FlowratePumpMx>
+      <FlowratePumpMn uom="">0.0</FlowratePumpMn>
+      <VelNozzleAv uom="1000 ft/h">0.0</VelNozzleAv>
+      <PowBit uom="W">0.0</PowBit>
+      <PresDropBit uom="">0.0</PresDropBit>
+      <CTimHold uom="a">0.0</CTimHold>
+      <CTimSteering uom="a">0.0</CTimSteering>
+      <CTimDrillRot uom="a">0.0</CTimDrillRot>
+      <CTimDrillSlid uom="a">0.0</CTimDrillSlid>
+      <CTimCirc uom="a">0.0</CTimCirc>
+      <CTimReam uom="a">0.0</CTimReam>
+      <DistDrillRot uom="m">0.0</DistDrillRot>
+      <DistDrillSlid uom="m">0.0</DistDrillSlid>
+      <DistReam uom="m">0.0</DistReam>
+      <DistHold uom="m">0.0</DistHold>
+      <DistSteering uom="m">0.0</DistSteering>
+      <RpmAv uom="dega/h">0.0</RpmAv>
+      <RpmMx uom="dega/h">0.0</RpmMx>
+      <RpmMn uom="dega/h">0.0</RpmMn>
+      <RpmAvDh uom="dega/h">0.0</RpmAvDh>
+      <RopAv uom="1000 ft/h">0.0</RopAv>
+      <RopMx uom="1000 ft/h">0.0</RopMx>
+      <RopMn uom="1000 ft/h">0.0</RopMn>
+      <WobAv uom="N">0.0</WobAv>
+      <WobMx uom="N">0.0</WobMx>
+      <WobMn uom="N">0.0</WobMn>
+      <WobAvDh uom="N">0.0</WobAvDh>
+      <ReasonTrip>F</ReasonTrip>
+      <ObjectiveBha>G</ObjectiveBha>
+      <AziTop uom="0.001 seca">0.0</AziTop>
+      <AziBottom uom="0.001 seca">0.0</AziBottom>
+      <InclStart uom="0.001 seca">0.0</InclStart>
+      <InclMx uom="0.001 seca">0.0</InclMx>
+      <InclMn uom="0.001 seca">0.0</InclMn>
+      <InclStop uom="0.001 seca">0.0</InclStop>
+      <TempMudDhMx uom="K">0.0</TempMudDhMx>
+      <PresPumpAv uom="">0.0</PresPumpAv>
+      <FlowrateBit uom="">0.0</FlowrateBit>
+      <MudClass>oil-based</MudClass>
+      <MudSubClass>aerated mud</MudSubClass>
+      <Comments>H</Comments>
+      <ExtensionNameValue>
+       <Name>D</Name>
+       <Value uom="">E</Value>
+       <MeasureClass>absorbed dose</MeasureClass>
+       <DTim>2025-12-30T00:09:34Z</DTim>
+       <Index>0</Index>
+       <Description>F</Description>
+      </ExtensionNameValue>
+      <Tubular>
+       <Uuid>123e4567-e89b-12d3-a456-426614174003</Uuid>
+       <ObjectVersion>G</ObjectVersion>
+       <QualifiedType>resqml40.xy</QualifiedType>
+       <Title>H</Title>
+       <EnergisticsUri>http://www.example.com/schema/anyURI</EnergisticsUri>
+       <LocatorUrl>http://www.example.com/schema/anyURI</LocatorUrl>
+       <ExtensionNameValue>
+        <Name>I</Name>
+        <Value uom="">J</Value>
+        <MeasureClass>absorbed dose</MeasureClass>
+        <DTim>2025-12-30T00:09:34Z</DTim>
+        <Index>0</Index>
+        <Description>K</Description>
+       </ExtensionNameValue>
+      </Tubular>
+     </DrillingParams>
+     <DrillingParams uid="required string 64 B">
       <ETimOpBit uom="a">0.0</ETimOpBit>
       <MdHoleStart>
        <MeasuredDepth uom="">0.0</MeasuredDepth>
        <Datum>
-        <Uuid>123e4567-e89b-12d3-a456-426614174001</Uuid>
+        <Uuid>123e4567-e89b-12d3-a456-42661417400A</Uuid>
         <ObjectVersion>t</ObjectVersion>
         <QualifiedType>witsml21.BhaRun123</QualifiedType>
         <Title>v</Title>
