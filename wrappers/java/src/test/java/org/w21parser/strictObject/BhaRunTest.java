@@ -253,7 +253,6 @@ public class BhaRunTest {
         assertEquals("urad", navigate(wGS84Longitude, "#attributes", "uom"));
         assertEquals(5.678E4, ((BsonDouble)navigate(wGS84Longitude, "#value")).getValue(), 1E-6);
 
-
         BsonDocument wGS84LocationMetadata = (BsonDocument) navigate(osduIntegration, "WGS84LocationMetadata");
         assertEquals(DateUtils.toTimestamp("2025-09-30T00:09:34Z"), ((BsonDateTime)navigate(wGS84LocationMetadata, "SpatialLocationCoordinatesDate")).asDateTime().getValue());
         assertEquals("g", navigate(wGS84LocationMetadata,"QuantitativeAccuracyBand"));
@@ -365,5 +364,165 @@ public class BhaRunTest {
         //assertEquals(0.0, ((BsonDouble)navigate(drillingParam, "TqOnBotMx", "#value")).getValue(), 1E-6);
         // IEEE 754 Standard below
         assertEquals("-0.0 value test failed: IEEE 754 Standard wrong. Was expected -0.0", 0, Double.compare(-0.0, ((BsonDouble)navigate(drillingParam, "TqOnBotMx", "#value")).getValue()));
+
+        assertEquals("N.m", navigate(drillingParam, "TqOnBotMn", "#attributes", "uom"));
+        assertEquals(1.0, ((BsonDouble)navigate(drillingParam, "TqOnBotMn", "#value")).getValue(), 1E-6);
+
+        assertEquals("dN.m", navigate(drillingParam, "TqOffBotAv", "#attributes", "uom"));
+        assertEquals(-1.0, ((BsonDouble)navigate(drillingParam, "TqOffBotAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("tonf[US].ft", navigate(drillingParam, "TqDhAv", "#attributes", "uom"));
+        assertEquals(180, ((BsonDouble)navigate(drillingParam, "TqDhAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("uN", navigate(drillingParam, "WtAboveJar", "#attributes", "uom"));
+        assertEquals(1892.1187, ((BsonDouble)navigate(drillingParam, "WtAboveJar", "#value")).getValue(), 1E-6);
+
+        assertEquals("cN", navigate(drillingParam, "WtBelowJar", "#attributes", "uom"));
+        assertEquals(-180.01, ((BsonDouble)navigate(drillingParam, "WtBelowJar", "#value")).getValue(), 1E-6);
+
+        assertEquals("MN", navigate(drillingParam, "WtMud", "#attributes", "uom"));
+        assertEquals(12.0, ((BsonDouble)navigate(drillingParam, "WtMud", "#value")).getValue(), 1E-6);
+
+        assertEquals("any uom here 1 (required)", navigate(drillingParam, "FlowratePumpAv", "#attributes", "uom"));
+        assertEquals(16, ((BsonDouble)navigate(drillingParam, "FlowratePumpAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("any uom here 2 (required)", navigate(drillingParam, "FlowratePumpMx", "#attributes", "uom"));
+        assertEquals(17, ((BsonDouble)navigate(drillingParam, "FlowratePumpMx", "#value")).getValue(), 1E-6);
+
+        assertEquals("any uom here 3 (required)", navigate(drillingParam, "FlowratePumpMn", "#attributes", "uom"));
+        assertEquals(18.181, ((BsonDouble)navigate(drillingParam, "FlowratePumpMn", "#value")).getValue(), 1E-6);
+
+        assertEquals("1000 ft/h", navigate(drillingParam, "VelNozzleAv", "#attributes", "uom"));
+        assertEquals(2, ((BsonDouble)navigate(drillingParam, "VelNozzleAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("kW", navigate(drillingParam, "PowBit", "#attributes", "uom"));
+        assertEquals(5, ((BsonDouble)navigate(drillingParam, "PowBit", "#value")).getValue(), 1E-6);
+
+        assertEquals("any uom here 4 (required)", navigate(drillingParam, "PresDropBit", "#attributes", "uom"));
+        assertEquals(160.09, ((BsonDouble)navigate(drillingParam, "PresDropBit", "#value")).getValue(), 1E-6);
+
+        assertEquals("1/2 ms", navigate(drillingParam, "CTimHold", "#attributes", "uom"));
+        assertEquals(0.8, ((BsonDouble)navigate(drillingParam, "CTimHold", "#value")).getValue(), 1E-6);
+
+        assertEquals("1/2 ms", navigate(drillingParam, "CTimHold", "#attributes", "uom"));
+        assertEquals(0.8, ((BsonDouble)navigate(drillingParam, "CTimHold", "#value")).getValue(), 1E-6);
+
+        assertEquals("Ga[t]", navigate(drillingParam, "CTimSteering", "#attributes", "uom"));
+        assertEquals(-0.182, ((BsonDouble)navigate(drillingParam, "CTimSteering", "#value")).getValue(), 1E-6);
+
+        assertEquals("min", navigate(drillingParam, "CTimDrillRot", "#attributes", "uom"));
+        assertEquals(129.6, ((BsonDouble)navigate(drillingParam, "CTimDrillRot", "#value")).getValue(), 1E-6);
+
+        assertEquals("na", navigate(drillingParam, "CTimDrillSlid", "#attributes", "uom"));
+        assertEquals(1726.177, ((BsonDouble)navigate(drillingParam, "CTimDrillSlid", "#value")).getValue(), 1E-6);
+
+        assertEquals("wk", navigate(drillingParam, "CTimCirc", "#attributes", "uom"));
+        assertEquals(1889.0008, ((BsonDouble)navigate(drillingParam, "CTimCirc", "#value")).getValue(), 1E-6);
+
+        assertEquals("us", navigate(drillingParam, "CTimReam", "#attributes", "uom"));
+        assertEquals(17799.176, ((BsonDouble)navigate(drillingParam, "CTimReam", "#value")).getValue(), 1E-6);
+
+        assertEquals("yd[US]", navigate(drillingParam, "DistDrillRot", "#attributes", "uom"));
+        assertEquals(.6, ((BsonDouble)navigate(drillingParam, "DistDrillRot", "#value")).getValue(), 1E-6);
+
+        assertEquals("m", navigate(drillingParam, "DistDrillSlid", "#attributes", "uom"));
+        assertEquals(64.013, ((BsonDouble)navigate(drillingParam, "DistDrillSlid", "#value")).getValue(), 1E-6);
+
+        assertEquals("rod[US]", navigate(drillingParam, "DistReam", "#attributes", "uom"));
+        assertEquals(800.1, ((BsonDouble)navigate(drillingParam, "DistReam", "#value")).getValue(), 1E-6);
+
+        assertEquals("yd[Se]", navigate(drillingParam, "DistHold", "#attributes", "uom"));
+        assertEquals(713.009, ((BsonDouble)navigate(drillingParam, "DistHold", "#value")).getValue(), 1E-6);
+
+        assertEquals("yd[SeT]", navigate(drillingParam, "DistSteering", "#attributes", "uom"));
+        assertEquals(8.099, ((BsonDouble)navigate(drillingParam, "DistSteering", "#value")).getValue(), 1E-6);
+
+        assertEquals("dega/h", navigate(drillingParam, "RpmAv", "#attributes", "uom"));
+        assertEquals(0.891, ((BsonDouble)navigate(drillingParam, "RpmAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("rpm", navigate(drillingParam, "RpmMx", "#attributes", "uom"));
+        assertEquals(1319.109, ((BsonDouble)navigate(drillingParam, "RpmMx", "#value")).getValue(), 1E-6);
+
+        assertEquals("rad/s", navigate(drillingParam, "RpmMn", "#attributes", "uom"));
+        assertEquals(35, ((BsonDouble)navigate(drillingParam, "RpmMn", "#value")).getValue(), 1E-6);
+
+        assertEquals("rev/s", navigate(drillingParam, "RpmAvDh", "#attributes", "uom"));
+        assertEquals(89, ((BsonDouble)navigate(drillingParam, "RpmAvDh", "#value")).getValue(), 1E-6);
+
+        assertEquals("1000 ft/h", navigate(drillingParam, "RopAv", "#attributes", "uom"));
+        assertEquals(600, ((BsonDouble)navigate(drillingParam, "RopAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("knot", navigate(drillingParam, "RopMx", "#attributes", "uom"));
+        assertEquals(100, ((BsonDouble)navigate(drillingParam, "RopMx", "#value")).getValue(), 1E-6);
+
+        assertEquals("m/min", navigate(drillingParam, "RopMn", "#attributes", "uom"));
+        assertEquals(18.01, ((BsonDouble)navigate(drillingParam, "RopMn", "#value")).getValue(), 1E-6);
+
+        assertEquals("10 kN", navigate(drillingParam, "WobAv", "#attributes", "uom"));
+        assertEquals(10, ((BsonDouble)navigate(drillingParam, "WobAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("kdyne", navigate(drillingParam, "WobMx", "#attributes", "uom"));
+        assertEquals(20, ((BsonDouble)navigate(drillingParam, "WobMx", "#value")).getValue(), 1E-6);
+
+        assertEquals("Mgf", navigate(drillingParam, "WobMn", "#attributes", "uom"));
+        assertEquals(9, ((BsonDouble)navigate(drillingParam, "WobMn", "#value")).getValue(), 1E-6);
+
+        assertEquals("nN", navigate(drillingParam, "WobAvDh", "#attributes", "uom"));
+        assertEquals(1801.89, ((BsonDouble)navigate(drillingParam, "WobAvDh", "#value")).getValue(), 1E-6);
+
+        assertEquals("Text with max 2000 char", ((String)navigate(drillingParam, "ReasonTrip")).trim());
+
+        assertEquals("G", navigate(drillingParam, "ObjectiveBha"));
+
+        assertEquals("ccgr", navigate(drillingParam, "AziTop", "#attributes", "uom"));
+        assertEquals(1.2, ((BsonDouble)navigate(drillingParam, "AziTop", "#value")).getValue(), 1E-6);
+
+        assertEquals("mina", navigate(drillingParam, "AziBottom", "#attributes", "uom"));
+        assertEquals(0.2, ((BsonDouble)navigate(drillingParam, "AziBottom", "#value")).getValue(), 1E-6);
+
+        assertEquals("Mrad", navigate(drillingParam, "InclStart", "#attributes", "uom"));
+        assertEquals(.004, ((BsonDouble)navigate(drillingParam, "InclStart", "#value")).getValue(), 1E-6);
+
+        assertEquals("mrad", navigate(drillingParam, "InclMx", "#attributes", "uom"));
+        assertEquals(123.01, ((BsonDouble)navigate(drillingParam, "InclMx", "#value")).getValue(), 1E-6);
+
+        assertEquals("gon", navigate(drillingParam, "InclMn", "#attributes", "uom"));
+        assertEquals(7.1, ((BsonDouble)navigate(drillingParam, "InclMn", "#value")).getValue(), 1E-6);
+
+        assertEquals("mila", navigate(drillingParam, "InclStop", "#attributes", "uom"));
+        assertEquals(54, ((BsonDouble)navigate(drillingParam, "InclStop", "#value")).getValue(), 1E-6);
+
+        assertEquals("K", navigate(drillingParam, "TempMudDhMx", "#attributes", "uom"));
+        assertEquals(560, ((BsonDouble)navigate(drillingParam, "TempMudDhMx", "#value")).getValue(), 1E-6);
+
+        assertEquals("required uom with legacy 1", navigate(drillingParam, "PresPumpAv", "#attributes", "uom"));
+        assertEquals(1.6, ((BsonDouble)navigate(drillingParam, "PresPumpAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("required uom with legacy 2", navigate(drillingParam, "FlowrateBit", "#attributes", "uom"));
+        assertEquals(.35, ((BsonDouble)navigate(drillingParam, "FlowrateBit", "#value")).getValue(), 1E-6);
+
+        assertEquals("oil-based", navigate(drillingParam, "MudClass"));
+        assertEquals("diesel oil-based", navigate(drillingParam, "MudSubClass"));
+        assertEquals("Optional comments (max size: 2000)", ((String)navigate(drillingParam, "Comments")).trim());
+
+        extensionNameValues = (BsonArray) navigate(drillingParam, "ExtensionNameValue");
+
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument) extensionNameValues.get(0);
+
+        assertEquals("D", navigate(extensionNameValue, "Name"));
+
+        assertEquals("", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("E", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("absorbed dose", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2024-12-30T00:07:21Z"), ((BsonDateTime)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(-10, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("F", navigate(extensionNameValue, "Description"));
+
+        BsonDocument tubular = (BsonDocument) navigate(drillingParam, "Tubular");
+        assertEquals("123e4567-e89b-12d3-a456-426614174003", navigate(tubular, "Uuid"));
+        assertEquals("123.4 Any version with max 2000 chars", navigate(tubular, "ObjectVersion"));
+        assertEquals("resqml40.xy", navigate(tubular, "QualifiedType"));
     }
 }

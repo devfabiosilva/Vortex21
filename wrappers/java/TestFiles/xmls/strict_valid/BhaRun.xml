@@ -176,65 +176,69 @@
       <HkldDn uom="pdl">inf</HkldDn>
       <TqOnBotAv uom="pdl.ft">-inf</TqOnBotAv>
       <TqOnBotMx uom="J">-0.0</TqOnBotMx>
-      <TqOnBotMn uom="J">0.0</TqOnBotMn>
-      <TqOffBotAv uom="J">0.0</TqOffBotAv>
-      <TqDhAv uom="J">0.0</TqDhAv>
-      <WtAboveJar uom="N">0.0</WtAboveJar>
-      <WtBelowJar uom="N">0.0</WtBelowJar>
-      <WtMud uom="">0.0</WtMud>
-      <FlowratePumpAv uom="">0.0</FlowratePumpAv>
-      <FlowratePumpMx uom="">0.0</FlowratePumpMx>
-      <FlowratePumpMn uom="">0.0</FlowratePumpMn>
-      <VelNozzleAv uom="1000 ft/h">0.0</VelNozzleAv>
-      <PowBit uom="W">0.0</PowBit>
-      <PresDropBit uom="">0.0</PresDropBit>
-      <CTimHold uom="a">0.0</CTimHold>
-      <CTimSteering uom="a">0.0</CTimSteering>
-      <CTimDrillRot uom="a">0.0</CTimDrillRot>
-      <CTimDrillSlid uom="a">0.0</CTimDrillSlid>
-      <CTimCirc uom="a">0.0</CTimCirc>
-      <CTimReam uom="a">0.0</CTimReam>
-      <DistDrillRot uom="m">0.0</DistDrillRot>
-      <DistDrillSlid uom="m">0.0</DistDrillSlid>
-      <DistReam uom="m">0.0</DistReam>
-      <DistHold uom="m">0.0</DistHold>
-      <DistSteering uom="m">0.0</DistSteering>
-      <RpmAv uom="dega/h">0.0</RpmAv>
-      <RpmMx uom="dega/h">0.0</RpmMx>
-      <RpmMn uom="dega/h">0.0</RpmMn>
-      <RpmAvDh uom="dega/h">0.0</RpmAvDh>
-      <RopAv uom="1000 ft/h">0.0</RopAv>
-      <RopMx uom="1000 ft/h">0.0</RopMx>
-      <RopMn uom="1000 ft/h">0.0</RopMn>
-      <WobAv uom="N">0.0</WobAv>
-      <WobMx uom="N">0.0</WobMx>
-      <WobMn uom="N">0.0</WobMn>
-      <WobAvDh uom="N">0.0</WobAvDh>
-      <ReasonTrip>F</ReasonTrip>
+      <TqOnBotMn uom="N.m">1.0</TqOnBotMn>
+      <TqOffBotAv uom="dN.m">-1.0</TqOffBotAv>
+      <TqDhAv uom="tonf[US].ft">180</TqDhAv>
+      <WtAboveJar uom="uN">1892.1187</WtAboveJar>
+      <WtBelowJar uom="cN">-180.01</WtBelowJar>
+      <WtMud uom="MN">12.0</WtMud>
+      <FlowratePumpAv uom="any uom here 1 (required)">16</FlowratePumpAv>
+      <FlowratePumpMx uom="any uom here 2 (required)">17.0</FlowratePumpMx>
+      <FlowratePumpMn uom="any uom here 3 (required)">018.181</FlowratePumpMn>
+      <VelNozzleAv uom="1000 ft/h">2.0</VelNozzleAv>
+      <PowBit uom="kW">5</PowBit>
+      <PresDropBit uom="any uom here 4 (required)">160.09</PresDropBit>
+      <CTimHold uom="1/2 ms">00.80</CTimHold>
+      <CTimSteering uom="Ga[t]">-0.182</CTimSteering>
+      <CTimDrillRot uom="min">129.6</CTimDrillRot>
+      <CTimDrillSlid uom="na">1726.177</CTimDrillSlid>
+      <CTimCirc uom="wk">1889.0008</CTimCirc>
+      <CTimReam uom="us">17799.176</CTimReam>
+      <DistDrillRot uom="yd[US]">0.6</DistDrillRot>
+      <DistDrillSlid uom="m">64.013</DistDrillSlid>
+      <DistReam uom="rod[US]">800.1</DistReam>
+      <DistHold uom="yd[Se]">713.009</DistHold>
+      <DistSteering uom="yd[SeT]">8.099</DistSteering>
+      <RpmAv uom="dega/h">0.89100</RpmAv>
+      <RpmMx uom="rpm">1319.109</RpmMx>
+      <RpmMn uom="rad/s">35.0</RpmMn>
+      <RpmAvDh uom="rev/s">89.0</RpmAvDh>
+      <RopAv uom="1000 ft/h">600</RopAv>
+      <RopMx uom="knot">100.0</RopMx>
+      <RopMn uom="m/min">018.01</RopMn>
+      <WobAv uom="10 kN">10.0</WobAv>
+      <WobMx uom="kdyne">20.0</WobMx>
+      <WobMn uom="Mgf">9.0</WobMn>
+      <WobAvDh uom="nN">1801.89</WobAvDh>
+      <ReasonTrip>
+       Text with max 2000 char
+      </ReasonTrip>
       <ObjectiveBha>G</ObjectiveBha>
-      <AziTop uom="0.001 seca">0.0</AziTop>
-      <AziBottom uom="0.001 seca">0.0</AziBottom>
-      <InclStart uom="0.001 seca">0.0</InclStart>
-      <InclMx uom="0.001 seca">0.0</InclMx>
-      <InclMn uom="0.001 seca">0.0</InclMn>
-      <InclStop uom="0.001 seca">0.0</InclStop>
-      <TempMudDhMx uom="K">0.0</TempMudDhMx>
-      <PresPumpAv uom="">0.0</PresPumpAv>
-      <FlowrateBit uom="">0.0</FlowrateBit>
+      <AziTop uom="ccgr">1.2</AziTop>
+      <AziBottom uom="mina">0.2</AziBottom>
+      <InclStart uom="Mrad">0.004</InclStart>
+      <InclMx uom="mrad">123.01</InclMx>
+      <InclMn uom="gon">7.1</InclMn>
+      <InclStop uom="mila">54.0</InclStop>
+      <TempMudDhMx uom="K">560.0</TempMudDhMx>
+      <PresPumpAv uom="required uom with legacy 1">1.6</PresPumpAv>
+      <FlowrateBit uom="required uom with legacy 2">0.35</FlowrateBit>
       <MudClass>oil-based</MudClass>
-      <MudSubClass>aerated mud</MudSubClass>
-      <Comments>H</Comments>
+      <MudSubClass>diesel oil-based</MudSubClass>
+      <Comments>
+       Optional comments (max size: 2000)
+      </Comments>
       <ExtensionNameValue>
        <Name>D</Name>
        <Value uom="">E</Value>
        <MeasureClass>absorbed dose</MeasureClass>
-       <DTim>2025-12-30T00:09:34Z</DTim>
-       <Index>0</Index>
+       <DTim>2024-12-30T00:07:21Z</DTim>
+       <Index>-10</Index>
        <Description>F</Description>
       </ExtensionNameValue>
       <Tubular>
        <Uuid>123e4567-e89b-12d3-a456-426614174003</Uuid>
-       <ObjectVersion>G</ObjectVersion>
+       <ObjectVersion>123.4 Any version with max 2000 chars</ObjectVersion>
        <QualifiedType>resqml40.xy</QualifiedType>
        <Title>H</Title>
        <EnergisticsUri>http://www.example.com/schema/anyURI</EnergisticsUri>
