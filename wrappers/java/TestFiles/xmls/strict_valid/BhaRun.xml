@@ -240,34 +240,38 @@
        <Uuid>123e4567-e89b-12d3-a456-426614174003</Uuid>
        <ObjectVersion>123.4 Any version with max 2000 chars</ObjectVersion>
        <QualifiedType>resqml40.xy</QualifiedType>
-       <Title>H</Title>
-       <EnergisticsUri>http://www.example.com/schema/anyURI</EnergisticsUri>
-       <LocatorUrl>http://www.example.com/schema/anyURI</LocatorUrl>
+       <Title>Tubular title</Title>
+       <EnergisticsUri>http://www.example.com/schema/anyURITubular</EnergisticsUri>
+       <LocatorUrl>http://www.example.com/schema/anyURIBTubular</LocatorUrl>
+       <LocatorUrl>http://www.example.com/schema/anyURICTubular</LocatorUrl>
+       <LocatorUrl>http://www.example.com/schema/anyURIDTubular</LocatorUrl>
        <ExtensionNameValue>
         <Name>I</Name>
-        <Value uom="">J</Value>
-        <MeasureClass>absorbed dose</MeasureClass>
-        <DTim>2025-12-30T00:09:34Z</DTim>
-        <Index>0</Index>
-        <Description>K</Description>
+        <Value uom="Any">J</Value>
+        <MeasureClass>api neutron</MeasureClass>
+        <DTim>2025-12-30T14:09:34Z</DTim>
+        <Index>01000</Index>
+        <Description>
+         Description in Extension Name Value @ Tubular
+        </Description>
        </ExtensionNameValue>
       </Tubular>
      </DrillingParams>
      <DrillingParams uid="required string 64 B">
       <ETimOpBit uom="a">0.0</ETimOpBit>
       <MdHoleStart>
-       <MeasuredDepth uom="">0.0</MeasuredDepth>
+       <MeasuredDepth uom="">-.79</MeasuredDepth>
        <Datum>
         <Uuid>123e4567-e89b-12d3-a456-42661417400A</Uuid>
-        <ObjectVersion>t</ObjectVersion>
-        <QualifiedType>witsml21.BhaRun123</QualifiedType>
-        <Title>v</Title>
-        <EnergisticsUri>http://www.example.com/schema/anyURI</EnergisticsUri>
-        <LocatorUrl>http://www.example.com/schema/anyURI</LocatorUrl>
+        <ObjectVersion>Object version</ObjectVersion>
+        <QualifiedType>witsml21.Tubular</QualifiedType>
+        <Title>Second datum title</Title>
+        <EnergisticsUri>http://www.example.com/schema/anyURIK</EnergisticsUri>
+        <LocatorUrl>http://www.example.com/schema/anyURIL</LocatorUrl>
         <ExtensionNameValue>
-         <Name>w</Name>
-         <Value uom="">x</Value>
-         <Description>y</Description>
+         <Name>w2</Name>
+         <Value uom="testUom2">x2</Value>
+         <Description>y2</Description>
         </ExtensionNameValue>
        </Datum>
       </MdHoleStart>
@@ -287,83 +291,83 @@
         </ExtensionNameValue>
        </Datum>
       </MdHoleStop>
-      <HkldRot uom="N">0.0</HkldRot>
-      <OverPull uom="N">0.0</OverPull>
-      <SlackOff uom="N">0.0</SlackOff>
-      <HkldUp uom="N">0.0</HkldUp>
-      <HkldDn uom="N">0.0</HkldDn>
-      <TqOnBotAv uom="J">0.0</TqOnBotAv>
-      <TqOnBotMx uom="J">0.0</TqOnBotMx>
-      <TqOnBotMn uom="J">0.0</TqOnBotMn>
-      <TqOffBotAv uom="J">0.0</TqOffBotAv>
-      <TqDhAv uom="J">0.0</TqDhAv>
-      <WtAboveJar uom="N">0.0</WtAboveJar>
-      <WtBelowJar uom="N">0.0</WtBelowJar>
-      <WtMud uom="">0.0</WtMud>
-      <FlowratePumpAv uom="">0.0</FlowratePumpAv>
-      <FlowratePumpMx uom="">0.0</FlowratePumpMx>
-      <FlowratePumpMn uom="">0.0</FlowratePumpMn>
-      <VelNozzleAv uom="1000 ft/h">0.0</VelNozzleAv>
-      <PowBit uom="W">0.0</PowBit>
-      <PresDropBit uom="">0.0</PresDropBit>
-      <CTimHold uom="a">0.0</CTimHold>
-      <CTimSteering uom="a">0.0</CTimSteering>
-      <CTimDrillRot uom="a">0.0</CTimDrillRot>
-      <CTimDrillSlid uom="a">0.0</CTimDrillSlid>
-      <CTimCirc uom="a">0.0</CTimCirc>
-      <CTimReam uom="a">0.0</CTimReam>
-      <DistDrillRot uom="m">0.0</DistDrillRot>
-      <DistDrillSlid uom="m">0.0</DistDrillSlid>
-      <DistReam uom="m">0.0</DistReam>
-      <DistHold uom="m">0.0</DistHold>
-      <DistSteering uom="m">0.0</DistSteering>
-      <RpmAv uom="dega/h">0.0</RpmAv>
-      <RpmMx uom="dega/h">0.0</RpmMx>
-      <RpmMn uom="dega/h">0.0</RpmMn>
-      <RpmAvDh uom="dega/h">0.0</RpmAvDh>
-      <RopAv uom="1000 ft/h">0.0</RopAv>
-      <RopMx uom="1000 ft/h">0.0</RopMx>
-      <RopMn uom="1000 ft/h">0.0</RopMn>
-      <WobAv uom="N">0.0</WobAv>
-      <WobMx uom="N">0.0</WobMx>
-      <WobMn uom="N">0.0</WobMn>
-      <WobAvDh uom="N">0.0</WobAvDh>
-      <ReasonTrip>F</ReasonTrip>
-      <ObjectiveBha>G</ObjectiveBha>
-      <AziTop uom="0.001 seca">0.0</AziTop>
-      <AziBottom uom="0.001 seca">0.0</AziBottom>
-      <InclStart uom="0.001 seca">0.0</InclStart>
-      <InclMx uom="0.001 seca">0.0</InclMx>
-      <InclMn uom="0.001 seca">0.0</InclMn>
-      <InclStop uom="0.001 seca">0.0</InclStop>
-      <TempMudDhMx uom="K">0.0</TempMudDhMx>
-      <PresPumpAv uom="">0.0</PresPumpAv>
-      <FlowrateBit uom="">0.0</FlowrateBit>
+      <HkldRot uom="N">8.19</HkldRot>
+      <OverPull uom="TN">1.001</OverPull>
+      <SlackOff uom="pN">12.0</SlackOff>
+      <HkldUp uom="gf">67</HkldUp>
+      <HkldDn uom="ozf">541.09</HkldDn>
+      <TqOnBotAv uom="daN.m">5.0</TqOnBotAv>
+      <TqOnBotMx uom="J">0.007</TqOnBotMx>
+      <TqOnBotMn uom="pdl.ft">0.5</TqOnBotMn>
+      <TqOffBotAv uom="tonf[US].mi">-1.89</TqOffBotAv>
+      <TqDhAv uom="tonf[US].ft">0.117</TqDhAv>
+      <WtAboveJar uom="uN">570.0</WtAboveJar>
+      <WtBelowJar uom="cN">180.67</WtBelowJar>
+      <WtMud uom="MN">781.678</WtMud>
+      <FlowratePumpAv uom="any uom here 5 (required)">1.1</FlowratePumpAv>
+      <FlowratePumpMx uom="any uom here 6 (required)">1.2</FlowratePumpMx>
+      <FlowratePumpMn uom="any uom here 7 (required)">1.3</FlowratePumpMn>
+      <VelNozzleAv uom="1000 ft/h">2.6</VelNozzleAv>
+      <PowBit uom="MW">0.6</PowBit>
+      <PresDropBit uom="any uom here 8 (required)">1609</PresDropBit>
+      <CTimHold uom="1/2 ms">12.1</CTimHold>
+      <CTimSteering uom="Ga[t]">-300.20</CTimSteering>
+      <CTimDrillRot uom="min">6</CTimDrillRot>
+      <CTimDrillSlid uom="na">87.1</CTimDrillSlid>
+      <CTimCirc uom="wk">760.0</CTimCirc>
+      <CTimReam uom="ms">178999.176</CTimReam>
+      <DistDrillRot uom="m">.689</DistDrillRot>
+      <DistDrillSlid uom="km">64</DistDrillSlid>
+      <DistReam uom="rod[US]">182.7</DistReam>
+      <DistHold uom="yd[Se]">33.08</DistHold>
+      <DistSteering uom="yd[SeT]">90.01</DistSteering>
+      <RpmAv uom="dega/h">0.801</RpmAv>
+      <RpmMx uom="rpm">110.0</RpmMx>
+      <RpmMn uom="rad/s">0.1810</RpmMn>
+      <RpmAvDh uom="rev/s">879</RpmAvDh>
+      <RopAv uom="1000 ft/h">690</RopAv>
+      <RopMx uom="knot">870.0</RopMx>
+      <RopMn uom="m/min">18.7</RopMn>
+      <WobAv uom="N">8990</WobAv>
+      <WobMx uom="kdyne">7130.0</WobMx>
+      <WobMn uom="Mgf">11.81</WobMn>
+      <WobAvDh uom="MN">1.06</WobAvDh>
+      <ReasonTrip>F2</ReasonTrip>
+      <ObjectiveBha>G2</ObjectiveBha>
+      <AziTop uom="0.001 seca">1.271</AziTop>
+      <AziBottom uom="mila">41.81</AziBottom>
+      <InclStart uom="Mrad">0.017</InclStart>
+      <InclMx uom="mrad">1820.6</InclMx>
+      <InclMn uom="gon">10.0</InclMn>
+      <InclStop uom="mina">548</InclStop>
+      <TempMudDhMx uom="K">560</TempMudDhMx>
+      <PresPumpAv uom="required uom with legacy 3">1.6</PresPumpAv>
+      <FlowrateBit uom="required uom with legacy 4">19.1</FlowrateBit>
       <MudClass>oil-based</MudClass>
       <MudSubClass>aerated mud</MudSubClass>
-      <Comments>H</Comments>
+      <Comments>H2</Comments>
       <ExtensionNameValue>
-       <Name>D</Name>
-       <Value uom="">E</Value>
+       <Name>D2</Name>
+       <Value uom="aaa">E2</Value>
        <MeasureClass>absorbed dose</MeasureClass>
-       <DTim>2025-12-30T00:09:34Z</DTim>
-       <Index>0</Index>
-       <Description>F</Description>
+       <DTim>2025-09-30T01:09:34Z</DTim>
+       <Index>110</Index>
+       <Description>F2</Description>
       </ExtensionNameValue>
       <Tubular>
        <Uuid>123e4567-e89b-12d3-a456-426614174003</Uuid>
-       <ObjectVersion>G</ObjectVersion>
-       <QualifiedType>resqml40.xy</QualifiedType>
-       <Title>H</Title>
-       <EnergisticsUri>http://www.example.com/schema/anyURI</EnergisticsUri>
-       <LocatorUrl>http://www.example.com/schema/anyURI</LocatorUrl>
+       <ObjectVersion>G2</ObjectVersion>
+       <QualifiedType>resqml41.xy</QualifiedType>
+       <Title>H2</Title>
+       <EnergisticsUri>http://www.example.com/schema/anyURITubular2</EnergisticsUri>
+       <LocatorUrl>http://www.example.com/schema/anyURIBTubularB</LocatorUrl>
        <ExtensionNameValue>
-        <Name>I</Name>
-        <Value uom="">J</Value>
+        <Name>I2</Name>
+        <Value uom="bbb">J2</Value>
         <MeasureClass>absorbed dose</MeasureClass>
-        <DTim>2025-12-30T00:09:34Z</DTim>
-        <Index>0</Index>
-        <Description>K</Description>
+        <DTim>2025-12-30T22:09:34Z</DTim>
+        <Index>900</Index>
+        <Description>K2</Description>
        </ExtensionNameValue>
       </Tubular>
      </DrillingParams>

@@ -404,9 +404,6 @@ public class BhaRunTest {
         assertEquals("1/2 ms", navigate(drillingParam, "CTimHold", "#attributes", "uom"));
         assertEquals(0.8, ((BsonDouble)navigate(drillingParam, "CTimHold", "#value")).getValue(), 1E-6);
 
-        assertEquals("1/2 ms", navigate(drillingParam, "CTimHold", "#attributes", "uom"));
-        assertEquals(0.8, ((BsonDouble)navigate(drillingParam, "CTimHold", "#value")).getValue(), 1E-6);
-
         assertEquals("Ga[t]", navigate(drillingParam, "CTimSteering", "#attributes", "uom"));
         assertEquals(-0.182, ((BsonDouble)navigate(drillingParam, "CTimSteering", "#value")).getValue(), 1E-6);
 
@@ -524,5 +521,261 @@ public class BhaRunTest {
         assertEquals("123e4567-e89b-12d3-a456-426614174003", navigate(tubular, "Uuid"));
         assertEquals("123.4 Any version with max 2000 chars", navigate(tubular, "ObjectVersion"));
         assertEquals("resqml40.xy", navigate(tubular, "QualifiedType"));
+        assertEquals("Tubular title", navigate(tubular, "Title"));
+        assertEquals("http://www.example.com/schema/anyURITubular", navigate(tubular, "EnergisticsUri"));
+
+        locatorUrl = (BsonArray) navigate(tubular, "LocatorUrl");
+
+        assertEquals(3, locatorUrl.size());
+        assertEquals("http://www.example.com/schema/anyURIBTubular", ((BsonString)navigate(locatorUrl, 0)).asString().getValue());
+        assertEquals("http://www.example.com/schema/anyURICTubular", ((BsonString)navigate(locatorUrl, 1)).asString().getValue());
+        assertEquals("http://www.example.com/schema/anyURIDTubular", ((BsonString)navigate(locatorUrl, 2)).asString().getValue());
+
+        extensionNameValues = (BsonArray) navigate(tubular, "ExtensionNameValue");
+
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertEquals("I", navigate(extensionNameValue, "Name"));
+        assertEquals("Any", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("J", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("api neutron", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2025-12-30T14:09:34Z"), ((BsonDateTime)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(1000, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("Description in Extension Name Value @ Tubular", ((String)navigate(extensionNameValue, "Description")).trim());
+
+        /////part 2
+
+        drillingParam = (BsonDocument) drillingParams.get(1);
+
+        assertEquals("required string 64 B", navigate(drillingParam, "#attributes", "uid"));
+        assertEquals("a", navigate(drillingParam, "ETimOpBit", "#attributes", "uom"));
+        assertEquals(0, ((BsonDouble)navigate(drillingParam, "ETimOpBit", "#value")).getValue(), 1E-6);
+
+        mdHoleStart = (BsonDocument) navigate(drillingParam, "MdHoleStart");
+
+        assertEquals("", navigate(mdHoleStart, "MeasuredDepth", "#attributes", "uom"));
+        assertEquals(-.79, ((BsonDouble)navigate(mdHoleStart, "MeasuredDepth", "#value")).getValue(), 1E-6);
+
+        datum = (BsonDocument) navigate(mdHoleStart, "Datum");
+
+        assertEquals("123e4567-e89b-12d3-a456-42661417400A", navigate(datum, "Uuid"));
+        assertEquals("Object version", navigate(datum, "ObjectVersion"));
+        assertEquals("witsml21.Tubular", navigate(datum, "QualifiedType"));
+        assertEquals("Second datum title", navigate(datum, "Title"));
+        assertEquals("http://www.example.com/schema/anyURIK", navigate(datum, "EnergisticsUri"));
+
+        locatorUrl = (BsonArray) navigate(datum, "LocatorUrl");
+
+        assertEquals(1, locatorUrl.size());
+        assertEquals("http://www.example.com/schema/anyURIL", ((BsonString)navigate(locatorUrl, 0)).asString().getValue());
+
+        extensionNameValues = (BsonArray) navigate(datum, "ExtensionNameValue");
+
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertEquals("w2", navigate(extensionNameValue, "Name"));
+        assertEquals("testUom2", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("x2", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("y2", navigate(extensionNameValue, "Description"));
+
+        assertEquals("N", navigate(drillingParam, "HkldRot", "#attributes", "uom"));
+        assertEquals(8.19, ((BsonDouble)navigate(drillingParam, "HkldRot", "#value")).getValue(), 1E-6);
+
+        assertEquals("TN", navigate(drillingParam, "OverPull", "#attributes", "uom"));
+        assertEquals(1.001, ((BsonDouble)navigate(drillingParam, "OverPull", "#value")).getValue(), 1E-6);
+
+        assertEquals("pN", navigate(drillingParam, "SlackOff", "#attributes", "uom"));
+        assertEquals(12.0, ((BsonDouble)navigate(drillingParam, "SlackOff", "#value")).getValue(), 1E-6);
+
+        assertEquals("gf", navigate(drillingParam, "HkldUp", "#attributes", "uom"));
+        assertEquals(67, ((BsonDouble)navigate(drillingParam, "HkldUp", "#value")).getValue(), 1E-6);
+
+        assertEquals("ozf", navigate(drillingParam, "HkldDn", "#attributes", "uom"));
+        assertEquals(541.09, ((BsonDouble)navigate(drillingParam, "HkldDn", "#value")).getValue(), 1E-6);
+
+        assertEquals("daN.m", navigate(drillingParam, "TqOnBotAv", "#attributes", "uom"));
+        assertEquals(5, ((BsonDouble)navigate(drillingParam, "TqOnBotAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("J", navigate(drillingParam, "TqOnBotMx", "#attributes", "uom"));
+        assertEquals(0.007, ((BsonDouble)navigate(drillingParam, "TqOnBotMx", "#value")).getValue(), 1E-6);
+
+        assertEquals("pdl.ft", navigate(drillingParam, "TqOnBotMn", "#attributes", "uom"));
+        assertEquals(0.5, ((BsonDouble)navigate(drillingParam, "TqOnBotMn", "#value")).getValue(), 1E-6);
+
+        assertEquals("tonf[US].mi", navigate(drillingParam, "TqOffBotAv", "#attributes", "uom"));
+        assertEquals(-1.89, ((BsonDouble)navigate(drillingParam, "TqOffBotAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("tonf[US].ft", navigate(drillingParam, "TqDhAv", "#attributes", "uom"));
+        assertEquals(0.117, ((BsonDouble)navigate(drillingParam, "TqDhAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("uN", navigate(drillingParam, "WtAboveJar", "#attributes", "uom"));
+        assertEquals(570, ((BsonDouble)navigate(drillingParam, "WtAboveJar", "#value")).getValue(), 1E-6);
+
+        assertEquals("cN", navigate(drillingParam, "WtBelowJar", "#attributes", "uom"));
+        assertEquals(180.67, ((BsonDouble)navigate(drillingParam, "WtBelowJar", "#value")).getValue(), 1E-6);
+
+        assertEquals("MN", navigate(drillingParam, "WtMud", "#attributes", "uom"));
+        assertEquals(781.678, ((BsonDouble)navigate(drillingParam, "WtMud", "#value")).getValue(), 1E-6);
+
+        assertEquals("any uom here 5 (required)", navigate(drillingParam, "FlowratePumpAv", "#attributes", "uom"));
+        assertEquals(1.1, ((BsonDouble)navigate(drillingParam, "FlowratePumpAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("any uom here 6 (required)", navigate(drillingParam, "FlowratePumpMx", "#attributes", "uom"));
+        assertEquals(1.2, ((BsonDouble)navigate(drillingParam, "FlowratePumpMx", "#value")).getValue(), 1E-6);
+
+        assertEquals("any uom here 7 (required)", navigate(drillingParam, "FlowratePumpMn", "#attributes", "uom"));
+        assertEquals(1.3, ((BsonDouble)navigate(drillingParam, "FlowratePumpMn", "#value")).getValue(), 1E-6);
+
+        assertEquals("1000 ft/h", navigate(drillingParam, "VelNozzleAv", "#attributes", "uom"));
+        assertEquals(2.6, ((BsonDouble)navigate(drillingParam, "VelNozzleAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("MW", navigate(drillingParam, "PowBit", "#attributes", "uom"));
+        assertEquals(.6, ((BsonDouble)navigate(drillingParam, "PowBit", "#value")).getValue(), 1E-6);
+
+        assertEquals("any uom here 8 (required)", navigate(drillingParam, "PresDropBit", "#attributes", "uom"));
+        assertEquals(1609, ((BsonDouble)navigate(drillingParam, "PresDropBit", "#value")).getValue(), 1E-6);
+
+        assertEquals("1/2 ms", navigate(drillingParam, "CTimHold", "#attributes", "uom"));
+        assertEquals(12.1, ((BsonDouble)navigate(drillingParam, "CTimHold", "#value")).getValue(), 1E-6);
+
+        assertEquals("Ga[t]", navigate(drillingParam, "CTimSteering", "#attributes", "uom"));
+        assertEquals(-300.20, ((BsonDouble)navigate(drillingParam, "CTimSteering", "#value")).getValue(), 1E-6);
+
+        assertEquals("min", navigate(drillingParam, "CTimDrillRot", "#attributes", "uom"));
+        assertEquals(6, ((BsonDouble)navigate(drillingParam, "CTimDrillRot", "#value")).getValue(), 1E-6);
+
+        assertEquals("na", navigate(drillingParam, "CTimDrillSlid", "#attributes", "uom"));
+        assertEquals(87.1, ((BsonDouble)navigate(drillingParam, "CTimDrillSlid", "#value")).getValue(), 1E-6);
+
+        assertEquals("wk", navigate(drillingParam, "CTimCirc", "#attributes", "uom"));
+        assertEquals(760, ((BsonDouble)navigate(drillingParam, "CTimCirc", "#value")).getValue(), 1E-6);
+
+        assertEquals("ms", navigate(drillingParam, "CTimReam", "#attributes", "uom"));
+        assertEquals(178999.176, ((BsonDouble)navigate(drillingParam, "CTimReam", "#value")).getValue(), 1E-6);
+
+        assertEquals("m", navigate(drillingParam, "DistDrillRot", "#attributes", "uom"));
+        assertEquals(.689, ((BsonDouble)navigate(drillingParam, "DistDrillRot", "#value")).getValue(), 1E-6);
+
+        assertEquals("km", navigate(drillingParam, "DistDrillSlid", "#attributes", "uom"));
+        assertEquals(64, ((BsonDouble)navigate(drillingParam, "DistDrillSlid", "#value")).getValue(), 1E-6);
+
+        assertEquals("rod[US]", navigate(drillingParam, "DistReam", "#attributes", "uom"));
+        assertEquals(182.7, ((BsonDouble)navigate(drillingParam, "DistReam", "#value")).getValue(), 1E-6);
+
+        assertEquals("yd[Se]", navigate(drillingParam, "DistHold", "#attributes", "uom"));
+        assertEquals(33.08, ((BsonDouble)navigate(drillingParam, "DistHold", "#value")).getValue(), 1E-6);
+
+        assertEquals("yd[SeT]", navigate(drillingParam, "DistSteering", "#attributes", "uom"));
+        assertEquals(90.01, ((BsonDouble)navigate(drillingParam, "DistSteering", "#value")).getValue(), 1E-6);
+
+        assertEquals("dega/h", navigate(drillingParam, "RpmAv", "#attributes", "uom"));
+        assertEquals(0.801, ((BsonDouble)navigate(drillingParam, "RpmAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("rpm", navigate(drillingParam, "RpmMx", "#attributes", "uom"));
+        assertEquals(110, ((BsonDouble)navigate(drillingParam, "RpmMx", "#value")).getValue(), 1E-6);
+
+        assertEquals("rad/s", navigate(drillingParam, "RpmMn", "#attributes", "uom"));
+        assertEquals(0.1810, ((BsonDouble)navigate(drillingParam, "RpmMn", "#value")).getValue(), 1E-6);
+
+        assertEquals("rev/s", navigate(drillingParam, "RpmAvDh", "#attributes", "uom"));
+        assertEquals(879, ((BsonDouble)navigate(drillingParam, "RpmAvDh", "#value")).getValue(), 1E-6);
+
+        assertEquals("1000 ft/h", navigate(drillingParam, "RopAv", "#attributes", "uom"));
+        assertEquals(690, ((BsonDouble)navigate(drillingParam, "RopAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("knot", navigate(drillingParam, "RopMx", "#attributes", "uom"));
+        assertEquals(870.0, ((BsonDouble)navigate(drillingParam, "RopMx", "#value")).getValue(), 1E-6);
+
+        assertEquals("m/min", navigate(drillingParam, "RopMn", "#attributes", "uom"));
+        assertEquals(18.7, ((BsonDouble)navigate(drillingParam, "RopMn", "#value")).getValue(), 1E-6);
+
+        assertEquals("N", navigate(drillingParam, "WobAv", "#attributes", "uom"));
+        assertEquals(8990, ((BsonDouble)navigate(drillingParam, "WobAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("kdyne", navigate(drillingParam, "WobMx", "#attributes", "uom"));
+        assertEquals(7130.0, ((BsonDouble)navigate(drillingParam, "WobMx", "#value")).getValue(), 1E-6);
+
+        assertEquals("Mgf", navigate(drillingParam, "WobMn", "#attributes", "uom"));
+        assertEquals(11.81, ((BsonDouble)navigate(drillingParam, "WobMn", "#value")).getValue(), 1E-6);
+
+        assertEquals("MN", navigate(drillingParam, "WobAvDh", "#attributes", "uom"));
+        assertEquals(1.06, ((BsonDouble)navigate(drillingParam, "WobAvDh", "#value")).getValue(), 1E-6);
+
+        assertEquals("F2", ((String)navigate(drillingParam, "ReasonTrip")).trim());
+
+        assertEquals("G2", navigate(drillingParam, "ObjectiveBha"));
+
+        assertEquals("0.001 seca", navigate(drillingParam, "AziTop", "#attributes", "uom"));
+        assertEquals(1.271, ((BsonDouble)navigate(drillingParam, "AziTop", "#value")).getValue(), 1E-6);
+
+        assertEquals("mila", navigate(drillingParam, "AziBottom", "#attributes", "uom"));
+        assertEquals(41.81, ((BsonDouble)navigate(drillingParam, "AziBottom", "#value")).getValue(), 1E-6);
+
+        assertEquals("Mrad", navigate(drillingParam, "InclStart", "#attributes", "uom"));
+        assertEquals(0.017, ((BsonDouble)navigate(drillingParam, "InclStart", "#value")).getValue(), 1E-6);
+
+        assertEquals("mrad", navigate(drillingParam, "InclMx", "#attributes", "uom"));
+        assertEquals(1820.6, ((BsonDouble)navigate(drillingParam, "InclMx", "#value")).getValue(), 1E-6);
+
+        assertEquals("gon", navigate(drillingParam, "InclMn", "#attributes", "uom"));
+        assertEquals(10, ((BsonDouble)navigate(drillingParam, "InclMn", "#value")).getValue(), 1E-6);
+
+        assertEquals("mina", navigate(drillingParam, "InclStop", "#attributes", "uom"));
+        assertEquals(548, ((BsonDouble)navigate(drillingParam, "InclStop", "#value")).getValue(), 1E-6);
+
+        assertEquals("K", navigate(drillingParam, "TempMudDhMx", "#attributes", "uom"));
+        assertEquals(560, ((BsonDouble)navigate(drillingParam, "TempMudDhMx", "#value")).getValue(), 1E-6);
+
+        assertEquals("required uom with legacy 3", navigate(drillingParam, "PresPumpAv", "#attributes", "uom"));
+        assertEquals(1.6, ((BsonDouble)navigate(drillingParam, "PresPumpAv", "#value")).getValue(), 1E-6);
+
+        assertEquals("required uom with legacy 4", navigate(drillingParam, "FlowrateBit", "#attributes", "uom"));
+        assertEquals(19.1, ((BsonDouble)navigate(drillingParam, "FlowrateBit", "#value")).getValue(), 1E-6);
+
+        assertEquals("oil-based", navigate(drillingParam, "MudClass"));
+        assertEquals("aerated mud", navigate(drillingParam, "MudSubClass"));
+        assertEquals("H2", ((String)navigate(drillingParam, "Comments")).trim());
+
+        extensionNameValues = (BsonArray) navigate(drillingParam, "ExtensionNameValue");
+
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument) extensionNameValues.get(0);
+
+        assertEquals("D2", navigate(extensionNameValue, "Name"));
+
+        assertEquals("aaa", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("E2", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("absorbed dose", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2025-09-30T01:09:34Z"), ((BsonDateTime)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(110, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("F2", navigate(extensionNameValue, "Description"));
+
+        tubular = (BsonDocument) navigate(drillingParam, "Tubular");
+        assertEquals("123e4567-e89b-12d3-a456-426614174003", navigate(tubular, "Uuid"));
+        assertEquals("G2", navigate(tubular, "ObjectVersion"));
+        assertEquals("resqml41.xy", navigate(tubular, "QualifiedType"));
+        assertEquals("H2", navigate(tubular, "Title"));
+        assertEquals("http://www.example.com/schema/anyURITubular2", navigate(tubular, "EnergisticsUri"));
+
+        locatorUrl = (BsonArray) navigate(tubular, "LocatorUrl");
+
+        assertEquals(1, locatorUrl.size());
+        assertEquals("http://www.example.com/schema/anyURIBTubularB", ((BsonString)navigate(locatorUrl, 0)).asString().getValue());
+
+        extensionNameValues = (BsonArray) navigate(tubular, "ExtensionNameValue");
+
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertEquals("I2", navigate(extensionNameValue, "Name"));
+        assertEquals("bbb", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("J2", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("absorbed dose", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2025-12-30T22:09:34Z"), ((BsonDateTime)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(900, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("K2", ((String)navigate(extensionNameValue, "Description")));
     }
 }
