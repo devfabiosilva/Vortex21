@@ -776,6 +776,68 @@ public class BhaRunTest {
         assertEquals("absorbed dose", navigate(extensionNameValue, "MeasureClass"));
         assertEquals(DateUtils.toTimestamp("2025-12-30T22:09:34Z"), ((BsonDateTime)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
         assertEquals(900, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
-        assertEquals("K2", ((String)navigate(extensionNameValue, "Description")));
+        assertEquals("K2", navigate(extensionNameValue, "Description"));
+    }
+
+    @Test
+    public void wellboreInBhaRunTest() throws Exception {
+        BsonDocument wellbore = (BsonDocument) navigate(this.bhaRunDocument, "BhaRun", "Wellbore");
+
+        assertEquals("123e4567-e89b-12d3-a456-426614174005", navigate(wellbore, "Uuid"));
+        assertEquals("Object Version @ Wellbore", navigate(wellbore, "ObjectVersion"));
+        assertEquals("prodml11.ab", navigate(wellbore, "QualifiedType"));
+        assertEquals("Title at wellbore", navigate(wellbore, "Title"));
+        assertEquals("http://www.example.com/schema/anyURIWellbore", navigate(wellbore, "EnergisticsUri"));
+
+        BsonArray locatorUrl = (BsonArray) navigate(wellbore, "LocatorUrl");
+
+        assertEquals(1, locatorUrl.size());
+
+        assertEquals("http://www.example.com/schema/anyURIWellboreA", ((BsonString)navigate(locatorUrl.get(0))).asString().getValue());
+
+        BsonArray extensionNameValues = (BsonArray) navigate(wellbore, "ExtensionNameValue");
+
+        assertEquals(1, extensionNameValues.size());
+
+        BsonValue extensionNameValue = extensionNameValues.get(0);
+
+        assertEquals("WName", navigate(extensionNameValue, "Name"));
+        assertEquals("wUOM", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("P", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("attenuation per frequency interval", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2025-06-10T05:09:34Z"), ((BsonDateTime)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(1234567890, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("Q", navigate(extensionNameValue, "Description"));
+    }
+
+    @Test
+    public void tubularAtBhaRunTest() throws Exception {
+        BsonDocument tubular = (BsonDocument) navigate(this.bhaRunDocument, "BhaRun", "Tubular");
+
+        assertEquals("F23e4567-e89b-12d3-a456-426614174A03", navigate(tubular, "Uuid"));
+        assertEquals("&R >", navigate(tubular, "ObjectVersion"));
+        assertEquals("eml71.BhaRun", navigate(tubular, "QualifiedType"));
+        assertEquals("&ABC test A > b", navigate(tubular, "Title"));
+        assertEquals("http://www.example.com/schema/anyURITubular", navigate(tubular, "EnergisticsUri"));
+
+        BsonArray locatorUrl = (BsonArray) navigate(tubular, "LocatorUrl");
+
+        assertEquals(1, locatorUrl.size());
+        assertEquals("http://www.example.com/schema/anyURITubularA", locatorUrl.get(0).asString().getValue());
+
+        BsonArray extensionNameValues = (BsonArray) navigate(tubular, "ExtensionNameValue");
+
+        assertEquals(1, extensionNameValues.size());
+
+        BsonValue extensionNameValue = extensionNameValues.get(0);
+
+        assertEquals("Tubular extension name value", navigate(extensionNameValue, "Name"));
+
+        assertEquals("any uom", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("U", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("dipole moment", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2025-12-30T10:19:34Z"), ((BsonDateTime)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(32, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("V", navigate(extensionNameValue, "Description"));
     }
 }

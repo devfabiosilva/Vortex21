@@ -373,33 +373,33 @@
      </DrillingParams>
      <def:Wellbore>
       <abc:Uuid>123e4567-e89b-12d3-a456-426614174005</abc:Uuid>
-      <abc:ObjectVersion>L</abc:ObjectVersion>
+      <abc:ObjectVersion>Object Version @ Wellbore</abc:ObjectVersion>
       <abc:QualifiedType>prodml11.ab</abc:QualifiedType>
-      <abc:Title>N</abc:Title>
-      <abc:EnergisticsUri>http://www.example.com/schema/anyURI</abc:EnergisticsUri>
-      <abc:LocatorUrl>http://www.example.com/schema/anyURI</abc:LocatorUrl>
+      <abc:Title>Title at wellbore</abc:Title>
+      <abc:EnergisticsUri>http://www.example.com/schema/anyURIWellbore</abc:EnergisticsUri>
+      <abc:LocatorUrl>http://www.example.com/schema/anyURIWellboreA</abc:LocatorUrl>
       <abc:ExtensionNameValue>
-       <abc:Name>O</abc:Name>
-       <abc:Value uom="">P</abc:Value>
-       <abc:MeasureClass>absorbed dose</abc:MeasureClass>
-       <abc:DTim>2025-12-30T00:09:34Z</abc:DTim>
-       <abc:Index>0</abc:Index>
+       <abc:Name>WName</abc:Name>
+       <abc:Value uom="wUOM">P</abc:Value>
+       <abc:MeasureClass>attenuation per frequency interval</abc:MeasureClass>
+       <abc:DTim>2025-06-10T05:09:34Z</abc:DTim>
+       <abc:Index>1234567890</abc:Index>
        <abc:Description>Q</abc:Description>
       </abc:ExtensionNameValue>
      </def:Wellbore>
      <Tubular>
-      <Uuid>123e4567-e89b-12d3-a456-426614174003</Uuid>
-      <ObjectVersion>R</ObjectVersion>
+      <Uuid>F23e4567-e89b-12d3-a456-426614174A03</Uuid>
+      <ObjectVersion>&amp;R &gt;</ObjectVersion>
       <QualifiedType>eml71.BhaRun</QualifiedType>
-      <Title>S</Title>
-      <EnergisticsUri>http://www.example.com/schema/anyURI</EnergisticsUri>
-      <LocatorUrl>http://www.example.com/schema/anyURI</LocatorUrl>
+      <Title><![CDATA[&ABC test A > b]]></Title>
+      <EnergisticsUri>http://www.example.com/schema/anyURITubular</EnergisticsUri>
+      <LocatorUrl>http://www.example.com/schema/anyURITubularA</LocatorUrl>
       <ExtensionNameValue>
-       <Name>T</Name>
-       <Value uom="">U</Value>
-       <MeasureClass>absorbed dose</MeasureClass>
-       <DTim>2025-12-30T00:09:34Z</DTim>
-       <Index>0</Index>
+       <Name>Tubular extension name value</Name>
+       <Value uom="any uom">U</Value>
+       <MeasureClass>dipole moment</MeasureClass>
+       <DTim>2025-12-30T10:19:34Z</DTim>
+       <Index>32</Index>
        <Description>V</Description>
       </ExtensionNameValue>
      </Tubular>
