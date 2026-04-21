@@ -217,6 +217,7 @@ public class BhaRunTest {
 
         BsonArray lineageAssertions = (BsonArray) navigate(osduIntegration, "LineageAssertions");
 
+        assertNotNull(lineageAssertions);
         assertEquals(3, lineageAssertions.size());
 
         BsonDocument lineageAssertion = (BsonDocument)lineageAssertions.get(0);
@@ -236,6 +237,7 @@ public class BhaRunTest {
 
         BsonArray ownerGroupArray = (BsonArray) navigate(osduIntegration, "OwnerGroup");
 
+        assertNotNull(ownerGroupArray);
         assertEquals(2, ownerGroupArray.size());
 
         assertEquals("ownerGroup1", ((BsonString)navigate(ownerGroupArray, 0)).getValue());
@@ -243,6 +245,7 @@ public class BhaRunTest {
 
         BsonArray viewerGroupArray = (BsonArray) navigate(osduIntegration, "ViewerGroup");
 
+        assertNotNull(viewerGroupArray);
         assertEquals(2, viewerGroupArray.size());
 
         assertEquals("ViewerGroup1", ((BsonString)navigate(viewerGroupArray, 0)).getValue());
@@ -250,6 +253,7 @@ public class BhaRunTest {
 
         BsonArray legalTags = (BsonArray)navigate(osduIntegration, "LegalTags");
 
+        assertNotNull(legalTags);
         assertEquals(2, legalTags.size());
 
         assertEquals("LegalTag1", ((BsonString)legalTags.get(0)).getValue());
@@ -275,12 +279,14 @@ public class BhaRunTest {
 
         BsonArray coordinateQualityCheckRemarkArray = (BsonArray) navigate(wGS84LocationMetadata,"CoordinateQualityCheckRemark");
 
+        assertNotNull(coordinateQualityCheckRemarkArray);
         assertEquals(2, coordinateQualityCheckRemarkArray.size());
         assertEquals("j", coordinateQualityCheckRemarkArray.get(0).asString().getValue());
         assertEquals("k", coordinateQualityCheckRemarkArray.get(1).asString().getValue());
 
         BsonArray appliedOperationArray = (BsonArray) navigate(wGS84LocationMetadata,"AppliedOperation");
 
+        assertNotNull(appliedOperationArray);
         assertEquals(3, appliedOperationArray.size());
         assertEquals("l", appliedOperationArray.get(0).asString().getValue());
         assertEquals("m", appliedOperationArray.get(1).asString().getValue());

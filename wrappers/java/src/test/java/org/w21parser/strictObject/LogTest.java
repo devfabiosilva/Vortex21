@@ -1,8 +1,6 @@
 package org.w21parser.strictObject;
 
-import org.bson.BsonArray;
-import org.bson.BsonDocument;
-import org.bson.BsonValue;
+import org.bson.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -99,5 +97,96 @@ public class LogTest {
         assertEquals("Short 64 char editor history in Log Citation 10", editorHistory.get(9).asString().getValue());
 
         assertEquals("Key DescriptiveKeywords in @1234", citation.asDocument().get("DescriptiveKeywords").asString().getValue());
+    }
+
+    @Test
+    public void logMiscTest() throws Exception {
+        BsonValue log = (BsonValue) navigate(this.logDocument, "Log");
+
+        assertEquals("log existence", navigate(log, "Existence"));
+        assertEquals("string 2000 char object version reason", navigate(log, "ObjectVersionReason"));
+        assertEquals("Business activity history", navigate(log, "BusinessActivityHistory"));
+    }
+
+    @Test
+    public void osduIntegrationTest() throws Exception {
+        BsonDocument osduIntegration = (BsonDocument) navigate(this.logDocument, "Log", "OSDUIntegration");
+
+        BsonArray lineageAssertions = (BsonArray) navigate(osduIntegration, "LineageAssertions");
+
+        assertNotNull(lineageAssertions);
+        assertEquals(1, lineageAssertions.size());
+
+        BsonDocument lineageAssertion = (BsonDocument)lineageAssertions.get(0);
+
+        assertEquals("602 ID STRING", navigate(lineageAssertion,  "ID"));
+        assertEquals("reference", navigate(lineageAssertion,  "LineageRelationshipKind"));
+
+        BsonArray ownerGroupArray = (BsonArray) navigate(osduIntegration, "OwnerGroup");
+
+        assertNotNull(ownerGroupArray);
+        assertEquals(1, ownerGroupArray.size());
+
+        assertEquals("ownerGroup1", ((BsonString)navigate(ownerGroupArray, 0)).getValue());
+
+        BsonArray viewerGroupArray = (BsonArray) navigate(osduIntegration, "ViewerGroup");
+
+        assertNotNull(viewerGroupArray);
+        assertEquals(2, viewerGroupArray.size());
+
+        assertEquals("ViewerGroup1", ((BsonString)navigate(viewerGroupArray, 0)).getValue());
+        assertEquals("ViewerGroup2", ((BsonString)navigate(viewerGroupArray, 1)).getValue());
+
+        BsonArray legalTags = (BsonArray)navigate(osduIntegration, "LegalTags");
+
+        assertNotNull(legalTags);
+        assertEquals(3, legalTags.size());
+
+        assertEquals("LegalTag1", ((BsonString)legalTags.get(0)).getValue());
+        assertEquals("LegalTag2", ((BsonString)legalTags.get(1)).getValue());
+        assertEquals("LegalTag3", ((BsonString)legalTags.get(2)).getValue());
+
+        assertEquals("{\"test\":123456}", navigate(osduIntegration, "OSDUGeoJSON"));
+
+        BsonDocument wGS84Latitude = (BsonDocument) navigate(osduIntegration, "WGS84Latitude");
+
+        assertEquals("0.001 seca", navigate(wGS84Latitude, "#attributes", "uom"));
+        assertEquals(-1.234, ((BsonDouble)navigate(wGS84Latitude, "#value")).getValue(), 1E-6);
+
+        BsonDocument wGS84Longitude = (BsonDocument) navigate(osduIntegration, "WGS84Longitude");
+        assertEquals("urad", navigate(wGS84Longitude, "#attributes", "uom"));
+        assertEquals(5.678E4, ((BsonDouble)navigate(wGS84Longitude, "#value")).getValue(), 1E-6);
+
+        BsonDocument wGS84LocationMetadata = (BsonDocument) navigate(osduIntegration, "WGS84LocationMetadata");
+        assertEquals(DateUtils.toTimestamp("2025-09-30T00:09:34Z"), ((BsonDateTime)navigate(wGS84LocationMetadata, "SpatialLocationCoordinatesDate")).asDateTime().getValue());
+        assertEquals("g", navigate(wGS84LocationMetadata,"QuantitativeAccuracyBand"));
+        assertEquals("h", navigate(wGS84LocationMetadata,"QualitativeSpatialAccuracyType"));
+        assertEquals("i", navigate(wGS84LocationMetadata,"CoordinateQualityCheckPerformedBy"));
+        assertEquals(DateUtils.toTimestamp("2025-11-30T10:09:34Z"), ((BsonDateTime)navigate(wGS84LocationMetadata, "CoordinateQualityCheckDateTime")).asDateTime().getValue());
+
+        BsonArray coordinateQualityCheckRemarkArray = (BsonArray) navigate(wGS84LocationMetadata,"CoordinateQualityCheckRemark");
+
+        assertNotNull(coordinateQualityCheckRemarkArray);
+        assertEquals(2, coordinateQualityCheckRemarkArray.size());
+        assertEquals("j", coordinateQualityCheckRemarkArray.get(0).asString().getValue());
+        assertEquals("k", coordinateQualityCheckRemarkArray.get(1).asString().getValue());
+
+        BsonArray appliedOperationArray = (BsonArray) navigate(wGS84LocationMetadata,"AppliedOperation");
+
+        assertNotNull(appliedOperationArray);
+        assertEquals(3, appliedOperationArray.size());
+        assertEquals("l", appliedOperationArray.get(0).asString().getValue());
+        assertEquals("m", appliedOperationArray.get(1).asString().getValue());
+        assertEquals("n", appliedOperationArray.get(2).asString().getValue());
+        assertEquals("Field", navigate(osduIntegration, "Field"));
+        assertEquals("Brazil", navigate(osduIntegration, "Country"));
+        assertEquals("Rio de Janeiro", navigate(osduIntegration, "State"));
+        assertEquals("County field", navigate(osduIntegration, "County"));
+        assertEquals("Duque de Caxias", navigate(osduIntegration, "City"));
+        assertEquals("ABC", navigate(osduIntegration, "Region"));
+        assertEquals("Nova Campinas", navigate(osduIntegration, "District"));
+        assertEquals("Block field", navigate(osduIntegration, "Block"));
+        assertEquals("Prospect field", navigate(osduIntegration, "Prospect"));
+        assertEquals("basin field", navigate(osduIntegration, "Basin"));
     }
 }

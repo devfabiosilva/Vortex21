@@ -30,18 +30,21 @@
     <rdw212:EditorHistory xsi:type="rdw212:String64">Short 64 char editor history in Log Citation 10</rdw212:EditorHistory>
     <rdw212:DescriptiveKeywords xsi:type="rdw212:String2000">Key DescriptiveKeywords in @1234</rdw212:DescriptiveKeywords>
    </rdw212:Citation>
-   <rdw212:Existence xsi:type="rdw212:ExistenceKindExt"></rdw212:Existence>
-   <rdw212:ObjectVersionReason xsi:type="rdw212:String2000"></rdw212:ObjectVersionReason>
-   <rdw212:BusinessActivityHistory xsi:type="rdw212:String64"></rdw212:BusinessActivityHistory>
+   <rdw212:Existence xsi:type="rdw212:ExistenceKindExt">log existence</rdw212:Existence>
+   <rdw212:ObjectVersionReason xsi:type="rdw212:String2000">string 2000 char object version reason</rdw212:ObjectVersionReason>
+   <rdw212:BusinessActivityHistory xsi:type="rdw212:String64">Business activity history</rdw212:BusinessActivityHistory>
    <rdw212:OSDUIntegration xsi:type="rdw212:OSDUIntegration">
     <rdw212:LineageAssertions xsi:type="rdw212:OSDULineageAssertion">
-     <rdw212:ID xsi:type="rdw212:String256"></rdw212:ID>
-     <rdw212:LineageRelationshipKind xsi:type="rdw212:OSDULineageRelationshipKind">direct</rdw212:LineageRelationshipKind>
+     <rdw212:ID xsi:type="rdw212:String256">602 ID STRING</rdw212:ID>
+     <rdw212:LineageRelationshipKind xsi:type="rdw212:OSDULineageRelationshipKind">reference</rdw212:LineageRelationshipKind>
     </rdw212:LineageAssertions>
-    <rdw212:OwnerGroup xsi:type="rdw212:String256"></rdw212:OwnerGroup>
-    <rdw212:ViewerGroup xsi:type="rdw212:String256"></rdw212:ViewerGroup>
-    <rdw212:LegalTags xsi:type="rdw212:String256"></rdw212:LegalTags>
-    <rdw212:OSDUGeoJSON xsi:type="xsd:string"></rdw212:OSDUGeoJSON>
+    <rdw212:OwnerGroup xsi:type="rdw212:String256">ownerGroup1</rdw212:OwnerGroup>
+    <rdw212:ViewerGroup xsi:type="rdw212:String256">ViewerGroup1</rdw212:ViewerGroup>
+    <rdw212:ViewerGroup xsi:type="rdw212:String256">ViewerGroup2</rdw212:ViewerGroup>
+    <rdw212:LegalTags xsi:type="rdw212:String256">LegalTag1</rdw212:LegalTags>
+    <rdw212:LegalTags xsi:type="rdw212:String256">LegalTag2</rdw212:LegalTags>
+    <rdw212:LegalTags xsi:type="rdw212:String256">LegalTag3</rdw212:LegalTags>
+    <rdw212:OSDUGeoJSON xsi:type="xsd:string">{"test":123456}</rdw212:OSDUGeoJSON>
     <rdw212:WGS84Latitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw212:WGS84Latitude>
     <rdw212:WGS84Longitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw212:WGS84Longitude>
     <rdw212:WGS84LocationMetadata xsi:type="rdw212:OSDUSpatialLocationIntegration">
