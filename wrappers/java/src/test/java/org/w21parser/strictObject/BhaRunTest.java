@@ -2,6 +2,7 @@ package org.w21parser.strictObject;
 
 import org.bson.*;
 
+import org.jetbrains.annotations.Nullable;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,6 +15,8 @@ import org.w21parser.W21ParserLoader;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.w21parser.Vortex21StrictValidationTest.printW21Exception;
 import static org.w21parser.VortexNativeBindingTest.fromPath;
 
 public class BhaRunTest {
@@ -22,7 +25,7 @@ public class BhaRunTest {
     private W21ParserLoader parser1;
     private BsonDocument bhaRunDocument = null;
 
-    public Object navigate(Object obj, Object... args) throws Exception {
+    public static Object navigate(Object obj, Object... args) throws Exception {
         Object tmp = obj;
         for (Object arg : args) {
             if (tmp == null) return null;
@@ -49,9 +52,7 @@ public class BhaRunTest {
         try {
             this.parser1.readFromFile(fromPath("BhaRun"), W21ParserLoader.W21Object.BhaRun);
         } catch (W21Exception e) {
-            logger.error("Main message: {}", e.getMessage());
-            logger.error("Fault detail: {}", e.getFaultstring());
-            logger.error("XML Fault detail: {}", e.getXMLfaultdetail());
+            printW21Exception(logger, e);
             throw e;
         }
         bhaRunDocument = (BsonDocument)this.parser1.parse(W21ParserLoader.W21OutputType.BSON);
@@ -62,21 +63,32 @@ public class BhaRunTest {
         assertEquals("Parser 1 close method must return 0", 0, this.parser1.close());
     }
 
+    public static void testDefaultRootAttributes(@Nullable BsonDocument bsonRootAttributes, String uuid, String schemaVersion, String objectVersion) {
+        assertEquals(uuid, bsonRootAttributes.get("uuid").asString().getValue());
+        assertEquals(schemaVersion, bsonRootAttributes.get("schemaVersion").asString().getValue());
+        assertEquals(objectVersion, bsonRootAttributes.get("objectVersion").asString().getValue());
+    }
+
     @Test
     public void rootAttributeTest() throws Exception {
-        BsonDocument attributes = (BsonDocument)navigate(bhaRunDocument, "BhaRun", "#attributes");
-        assertEquals("123e4567-e89b-12d3-a456-426614174000", attributes.get("uuid").asString().getValue());
-        assertEquals("2.1", attributes.get("schemaVersion").asString().getValue());
-        assertEquals("2.11", attributes.get("objectVersion").asString().getValue());
+        testDefaultRootAttributes(
+            (BsonDocument)navigate(bhaRunDocument, "BhaRun", "#attributes"),
+                "123e4567-e89b-12d3-a456-426614174000",
+                "2.1",
+                "2.11"
+        );
+
     }
 
     @Test
     public void aliasesArrayTest() throws Exception {
         BsonArray aliases = (BsonArray)navigate(bhaRunDocument, "BhaRun", "Aliases");
+        assertNotNull(aliases);
         assertEquals(2, aliases.size());
 
         BsonValue alias1 = aliases.get(0);
         BsonDocument attributes = (BsonDocument)navigate(alias1, "#attributes");
+        assertNotNull(attributes);
 
         assertEquals("abc test", attributes.get("authority").asString().getValue());
         assertEquals("identifier", alias1.asDocument().get("Identifier").asString().getValue());
@@ -102,6 +114,7 @@ public class BhaRunTest {
     public void citationTest() throws Exception {
         BsonValue citation = (BsonValue) navigate(bhaRunDocument, "BhaRun", "Citation");
 
+        assertNotNull(citation);
         assertEquals("Citation Title", citation.asDocument().get("Title").asString().getValue());
         assertEquals("a", citation.asDocument().get("Originator").asString().getValue());
         assertEquals(DateUtils.toTimestamp("2025-12-30T14:19:54Z"), citation.asDocument().get("Creation").asDateTime().getValue());

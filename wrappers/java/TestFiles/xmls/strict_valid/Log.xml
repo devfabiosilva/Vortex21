@@ -1,21 +1,34 @@
-  <rdw211:Log uuid="523e4568-e89b-12d3-a456-426614174000" schemaVersion="" objectVersion="">
-   <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
-    <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
-    <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>
-    <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
-    <rdw212:EffectiveDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:EffectiveDateTime>
-    <rdw212:TerminationDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:TerminationDateTime>
+  <rdw211:Log uuid="523e4568-e89b-12d3-a456-426614174000" schemaVersion="any version" objectVersion="any object version">
+   <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="log authority">
+    <rdw212:Identifier xsi:type="rdw212:String64">Log identifier</rdw212:Identifier>
+    <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt">Log indentifier kind</rdw212:IdentifierKind>
+    <rdw212:Description xsi:type="rdw212:String2000">
+     Log description (max 2000 char allowed)
+    </rdw212:Description>
+    <rdw212:EffectiveDateTime xsi:type="rdw212:TimeStamp">2026-01-05T18:39:47Z</rdw212:EffectiveDateTime>
+    <rdw212:TerminationDateTime xsi:type="rdw212:TimeStamp">2026-02-05T19:39:48Z</rdw212:TerminationDateTime>
    </rdw212:Aliases>
    <rdw212:Citation xsi:type="rdw212:Citation">
-    <rdw212:Title xsi:type="rdw212:String256"></rdw212:Title>
-    <rdw212:Originator xsi:type="rdw212:String64"></rdw212:Originator>
-    <rdw212:Creation xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:Creation>
-    <rdw212:Format xsi:type="rdw212:String2000"></rdw212:Format>
-    <rdw212:Editor xsi:type="rdw212:String64"></rdw212:Editor>
-    <rdw212:LastUpdate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:LastUpdate>
-    <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
-    <rdw212:EditorHistory xsi:type="rdw212:String64"></rdw212:EditorHistory>
-    <rdw212:DescriptiveKeywords xsi:type="rdw212:String2000"></rdw212:DescriptiveKeywords>
+    <rdw212:Title xsi:type="rdw212:String256">
+     Citation title string (max 256 chars)
+    </rdw212:Title>
+    <rdw212:Originator xsi:type="rdw212:String64">b</rdw212:Originator>
+    <rdw212:Creation xsi:type="rdw212:TimeStamp">2026-02-05T19:39:47Z</rdw212:Creation>
+    <rdw212:Format xsi:type="rdw212:String2000">c</rdw212:Format>
+    <rdw212:Editor xsi:type="rdw212:String64">d</rdw212:Editor>
+    <rdw212:LastUpdate xsi:type="rdw212:TimeStamp">2026-01-15T18:49:44Z</rdw212:LastUpdate>
+    <rdw212:Description xsi:type="rdw212:String2000">Description in Log Citation</rdw212:Description>
+    <rdw212:EditorHistory xsi:type="rdw212:String64">Short 64 char editor history in Log Citation 1</rdw212:EditorHistory>
+    <rdw212:EditorHistory xsi:type="rdw212:String64">Short 64 char editor history in Log Citation 2</rdw212:EditorHistory>
+    <rdw212:EditorHistory xsi:type="rdw212:String64">Short 64 char editor history in Log Citation 3</rdw212:EditorHistory>
+    <rdw212:EditorHistory xsi:type="rdw212:String64">Short 64 char editor history in Log Citation 4</rdw212:EditorHistory>
+    <rdw212:EditorHistory xsi:type="rdw212:String64">Short 64 char editor history in Log Citation 5</rdw212:EditorHistory>
+    <rdw212:EditorHistory xsi:type="rdw212:String64">Short 64 char editor history in Log Citation 6</rdw212:EditorHistory>
+    <rdw212:EditorHistory xsi:type="rdw212:String64">Short 64 char editor history in Log Citation 7</rdw212:EditorHistory>
+    <rdw212:EditorHistory xsi:type="rdw212:String64">Short 64 char editor history in Log Citation 8</rdw212:EditorHistory>
+    <rdw212:EditorHistory xsi:type="rdw212:String64">Short 64 char editor history in Log Citation 9</rdw212:EditorHistory>
+    <rdw212:EditorHistory xsi:type="rdw212:String64">Short 64 char editor history in Log Citation 10</rdw212:EditorHistory>
+    <rdw212:DescriptiveKeywords xsi:type="rdw212:String2000">Key DescriptiveKeywords in @1234</rdw212:DescriptiveKeywords>
    </rdw212:Citation>
    <rdw212:Existence xsi:type="rdw212:ExistenceKindExt"></rdw212:Existence>
    <rdw212:ObjectVersionReason xsi:type="rdw212:String2000"></rdw212:ObjectVersionReason>

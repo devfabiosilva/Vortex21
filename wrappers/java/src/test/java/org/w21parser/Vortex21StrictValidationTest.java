@@ -7,6 +7,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -73,7 +77,6 @@ public class Vortex21StrictValidationTest {
     );
 
     private W21ParserLoader parser1;
-    private int expectedCloseStatusParser1 = 0;
 
     @Before
     public void setUp() throws Exception {
@@ -82,7 +85,19 @@ public class Vortex21StrictValidationTest {
 
     @After
     public void tearDown() {
-        assertEquals("Parser 1 close method must return " + this.expectedCloseStatusParser1, this.expectedCloseStatusParser1, this.parser1.close());
+        assertEquals("Parser 1 close method must return 0", 0, this.parser1.close());
+    }
+
+    public static String loadXmlToString(String fullPathFileName) throws Exception {
+        Path path = Paths.get(fullPathFileName);
+        return Files.readString(path, StandardCharsets.UTF_8);
+    }
+
+    public static void printW21Exception(Logger logger, W21Exception e) {
+        logger.error("Witsml 2.1 error code: {}\n", e.error);
+        logger.error("Main message: \n{}\n", e.getMessage());
+        logger.error("Fault String: \n{}\n", e.getFaultstring());
+        logger.error("Fault String XML: \n{}\n", e.getXMLfaultdetail());
     }
 
     @Test
@@ -90,15 +105,12 @@ public class Vortex21StrictValidationTest {
         for (W21ParserLoader.W21Object object : witsml21List) {
             String objectName = object.toString();
             String fullObjectNamePath = fromPath(objectName);
-            logger.info("Load and validate from file \"{}\" in normal mode", fullObjectNamePath);
+            //logger.info("Load and validate from file \"{}\" in normal mode", fullObjectNamePath);
             try {
                 parser1.readFromFile(fullObjectNamePath, object);
                 assertEquals(objectName, parser1.getInputObjectName());
             } catch (W21Exception e) {
-                logger.error("Witsml 2.1 error code: {}\n", e.error);
-                logger.error("Main message: \n{}\n", e.getMessage());
-                logger.error("Fault String: \n{}\n", e.getFaultstring());
-                logger.error("Fault String XML: \n{}\n", e.getXMLfaultdetail());
+                printW21Exception(logger, e);
                 throw e;
             }
         }
@@ -115,10 +127,41 @@ public class Vortex21StrictValidationTest {
                 parser1.readFromFile(fullObjectNamePath);
                 assertEquals(objectName, parser1.getInputObjectName());
             } catch (W21Exception e) {
-                logger.error("Witsml 2.1 error code: {}\n", e.error);
-                logger.error("Main message: \n{}\n", e.getMessage());
-                logger.error("Fault String: \n{}\n", e.getFaultstring());
-                logger.error("Fault String XML: \n{}\n", e.getXMLfaultdetail());
+                printW21Exception(logger, e);
+                throw e;
+            }
+        }
+    }
+
+    @Test
+    public void validateStrictFieldsFromStringInAutoDetectMode() throws Exception {
+        for (W21ParserLoader.W21Object object : witsml21List) {
+            String objectName = object.toString();
+            String fullObjectNamePath = fromPath(objectName);
+            logger.info("Load from stream (Autodetect): Load and validate from file \"{}\" in normal mode", fullObjectNamePath);
+            try {
+                String stream = loadXmlToString(fullObjectNamePath);
+                parser1.readFromStream(stream);
+                assertEquals(objectName, parser1.getInputObjectName());
+            } catch (W21Exception e) {
+                printW21Exception(logger, e);
+                throw e;
+            }
+        }
+    }
+
+    @Test
+    public void validateStrictFieldsFromString() throws Exception {
+        for (W21ParserLoader.W21Object object : witsml21List) {
+            String objectName = object.toString();
+            String fullObjectNamePath = fromPath(objectName);
+            logger.info("Load from stream: Load and validate from file \"{}\" in normal mode", fullObjectNamePath);
+            try {
+                String stream = loadXmlToString(fullObjectNamePath);
+                parser1.readFromStream(stream, object);
+                assertEquals(objectName, parser1.getInputObjectName());
+            } catch (W21Exception e) {
+                printW21Exception(logger, e);
                 throw e;
             }
         }
