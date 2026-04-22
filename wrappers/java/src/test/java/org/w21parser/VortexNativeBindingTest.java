@@ -447,7 +447,7 @@ public class VortexNativeBindingTest {
         assertEquals("Expected C secure pointer in bbBson after close", textInCSecurePointer, getStringFromByteBuffer(bbBson));
 
         bbJson = getPrivateField(this.parser2, "bbJson");
-        assertNotNull("bbBson must finalize with non null value", bbJson);
+        assertNotNull("bbJson must finalize with non null value", bbJson);
         assertEquals("Expected C secure pointer in bbJson after close", textInCSecurePointer, getStringFromByteBuffer(bbJson));
     }
 }

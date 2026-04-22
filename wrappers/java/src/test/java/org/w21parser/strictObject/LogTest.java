@@ -120,6 +120,25 @@ public class LogTest {
         assertEquals(DateUtils.toTimestamp("2026-02-05T19:39:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
         assertEquals(10, ((BsonValue)navigate(extensionNameValue, "Index")).asInt64().getValue());
         assertEquals("Desc", navigate(extensionNameValue, "Description"));
+
+        assertEquals("inactive", navigate(log, "ActiveStatus"));
+        assertEquals("processed", navigate(log, "ChannelState"));
+        assertEquals("Run Number In String 64", navigate(log, "RunNumber"));
+        assertEquals("Pass number in String 64", navigate(log, "PassNumber"));
+        assertEquals("Pass description in String 64", navigate(log, "PassDescription"));
+
+        BsonArray passDetails = (BsonArray) navigate(log, "PassDetail");
+        assertNotNull(passDetails);
+        assertEquals(2, passDetails.size());
+
+        assertEquals(-50, ((BsonInt64)navigate(passDetails, 0, "Pass")).getValue());
+        assertEquals("Pass description 1", navigate(passDetails, 0, "Description"));
+
+        assertEquals(100, ((BsonInt64)navigate(passDetails, 1, "Pass")).getValue());
+        assertEquals("Pass description 2", navigate(passDetails, 1, "Description"));
+
+        // See Abstract interval test case @ org.w21parser.abstractIntervalType
+        assertEquals("Base Comment", navigate(log, "PrimaryIndexInterval", "Comment"));
     }
 
     @Test
