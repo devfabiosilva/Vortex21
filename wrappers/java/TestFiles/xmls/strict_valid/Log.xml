@@ -45,39 +45,42 @@
     <rdw212:LegalTags xsi:type="rdw212:String256">LegalTag2</rdw212:LegalTags>
     <rdw212:LegalTags xsi:type="rdw212:String256">LegalTag3</rdw212:LegalTags>
     <rdw212:OSDUGeoJSON xsi:type="xsd:string">{"test":123456}</rdw212:OSDUGeoJSON>
-    <rdw212:WGS84Latitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw212:WGS84Latitude>
-    <rdw212:WGS84Longitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw212:WGS84Longitude>
+    <rdw212:WGS84Latitude xsi:type="rdw212:PlaneAngleMeasure" uom="Mrad">12345</rdw212:WGS84Latitude>
+    <rdw212:WGS84Longitude xsi:type="rdw212:PlaneAngleMeasure" uom="seca">-10.0102</rdw212:WGS84Longitude>
     <rdw212:WGS84LocationMetadata xsi:type="rdw212:OSDUSpatialLocationIntegration">
-     <rdw212:SpatialLocationCoordinatesDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:SpatialLocationCoordinatesDate>
-     <rdw212:QuantitativeAccuracyBand xsi:type="rdw212:String64"></rdw212:QuantitativeAccuracyBand>
-     <rdw212:QualitativeSpatialAccuracyType xsi:type="rdw212:String64"></rdw212:QualitativeSpatialAccuracyType>
-     <rdw212:CoordinateQualityCheckPerformedBy xsi:type="rdw212:String64"></rdw212:CoordinateQualityCheckPerformedBy>
-     <rdw212:CoordinateQualityCheckDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:CoordinateQualityCheckDateTime>
-     <rdw212:CoordinateQualityCheckRemark xsi:type="rdw212:String256"></rdw212:CoordinateQualityCheckRemark>
-     <rdw212:AppliedOperation xsi:type="rdw212:String256"></rdw212:AppliedOperation>
+     <rdw212:SpatialLocationCoordinatesDate xsi:type="rdw212:TimeStamp">2026-03-18T17:59:47Z</rdw212:SpatialLocationCoordinatesDate>
+     <rdw212:QuantitativeAccuracyBand xsi:type="rdw212:String64">L</rdw212:QuantitativeAccuracyBand>
+     <rdw212:QualitativeSpatialAccuracyType xsi:type="rdw212:String64">M</rdw212:QualitativeSpatialAccuracyType>
+     <rdw212:CoordinateQualityCheckPerformedBy xsi:type="rdw212:String64">N</rdw212:CoordinateQualityCheckPerformedBy>
+     <rdw212:CoordinateQualityCheckDateTime xsi:type="rdw212:TimeStamp">2025-10-05T19:39:47Z</rdw212:CoordinateQualityCheckDateTime>
+     <rdw212:CoordinateQualityCheckRemark xsi:type="rdw212:String256">S</rdw212:CoordinateQualityCheckRemark>
+     <rdw212:CoordinateQualityCheckRemark xsi:type="rdw212:String256">R</rdw212:CoordinateQualityCheckRemark>
+     <rdw212:AppliedOperation xsi:type="rdw212:String256">T</rdw212:AppliedOperation>
+     <rdw212:AppliedOperation xsi:type="rdw212:String256">U</rdw212:AppliedOperation>
+     <rdw212:AppliedOperation xsi:type="rdw212:String256">V</rdw212:AppliedOperation>
     </rdw212:WGS84LocationMetadata>
-    <rdw212:Field xsi:type="rdw212:String64"></rdw212:Field>
-    <rdw212:Country xsi:type="rdw212:String64"></rdw212:Country>
-    <rdw212:State xsi:type="rdw212:String64"></rdw212:State>
-    <rdw212:County xsi:type="rdw212:String64"></rdw212:County>
-    <rdw212:City xsi:type="rdw212:String64"></rdw212:City>
-    <rdw212:Region xsi:type="rdw212:String64"></rdw212:Region>
-    <rdw212:District xsi:type="rdw212:String64"></rdw212:District>
-    <rdw212:Block xsi:type="rdw212:String64"></rdw212:Block>
-    <rdw212:Prospect xsi:type="rdw212:String64"></rdw212:Prospect>
-    <rdw212:Play xsi:type="rdw212:String64"></rdw212:Play>
-    <rdw212:Basin xsi:type="rdw212:String64"></rdw212:Basin>
+    <rdw212:Field xsi:type="rdw212:String64">Field</rdw212:Field>
+    <rdw212:Country xsi:type="rdw212:String64">Brazil</rdw212:Country>
+    <rdw212:State xsi:type="rdw212:String64">Rio de Janeiro</rdw212:State>
+    <rdw212:County xsi:type="rdw212:String64">County field</rdw212:County>
+    <rdw212:City xsi:type="rdw212:String64">Duque de Caxias</rdw212:City>
+    <rdw212:Region xsi:type="rdw212:String64">ABCD</rdw212:Region>
+    <rdw212:District xsi:type="rdw212:String64">Nova Campinas</rdw212:District>
+    <rdw212:Block xsi:type="rdw212:String64">Block field</rdw212:Block>
+    <rdw212:Prospect xsi:type="rdw212:String64">Prospect field</rdw212:Prospect>
+    <rdw212:Play xsi:type="rdw212:String64">Play field</rdw212:Play>
+    <rdw212:Basin xsi:type="rdw212:String64">basin field</rdw212:Basin>
    </rdw212:OSDUIntegration>
    <rdw212:CustomData xsi:type="rdw212:CustomData">
     <!-- extensibility element(s) -->
    </rdw212:CustomData>
    <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-    <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-    <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-    <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-    <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-    <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-    <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+    <rdw212:Name xsi:type="rdw212:String64">name</rdw212:Name>
+    <rdw212:Value xsi:type="rdw212:StringMeasure" uom="legacy uom">r</rdw212:Value>
+    <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">api gamma ray</rdw212:MeasureClass>
+    <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-02-05T19:39:47Z</rdw212:DTim>
+    <rdw212:Index xsi:type="xsd:long">10</rdw212:Index>
+    <rdw212:Description xsi:type="rdw212:String2000">Desc</rdw212:Description>
    </rdw212:ExtensionNameValue>
    <rdw212:ActiveStatus xsi:type="rdw212:ActiveStatusKind">active</rdw212:ActiveStatus>
    <rdw211:ChannelState xsi:type="rdw211:ChannelState">calculated</rdw211:ChannelState>

@@ -300,18 +300,20 @@ public class BhaRunTest {
         assertEquals("Nova Campinas", navigate(osduIntegration, "District"));
         assertEquals("Block field", navigate(osduIntegration, "Block"));
         assertEquals("Prospect field", navigate(osduIntegration, "Prospect"));
+        assertEquals("Play field", navigate(osduIntegration, "Play"));
         assertEquals("basin field", navigate(osduIntegration, "Basin"));
     }
 
     @Test
     public void customDataInBhaRun() throws Exception {
         BsonArray customData = (BsonArray) navigate(bhaRunDocument, "BhaRun", "CustomData");
+
         assertEquals(2, customData.size());
 
         assertEquals("<b>Custom data Test 1 as string</b>", customData.get(0).asString().getValue().trim());
         assertEquals("<c atr=\"mycustomattr\">\n" +
-                "         <d>Complex Custom Data</d>\n" +
-                "        </c>", customData.get(1).asString().getValue().trim());
+                " <d>Complex Custom Data</d>\n" +
+                "</c>", customData.get(1).asString().getValue().trim());
     }
 
     @Test
