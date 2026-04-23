@@ -252,9 +252,9 @@
       <rdw211:Pass xsi:type="xsd:long">0</rdw211:Pass>
       <rdw211:Description xsi:type="rdw212:String64"></rdw211:Description>
     </rdw211:PassDetail>
-    <rdw211:PrimaryIndexInterval xsi:type="rdw212:AbstractInterval">
-      <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
-    </rdw211:PrimaryIndexInterval>
+<!--    <rdw211:PrimaryIndexInterval xsi:type="rdw212:AbstractInterval">-->
+<!--      <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>-->
+<!--    </rdw211:PrimaryIndexInterval>-->
     <rdw211:LoggingCompany xsi:type="rdw212:DataObjectReference">
       <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174004</rdw212:Uuid>
       <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
@@ -356,9 +356,9 @@
           <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
         </rdw212:ExtensionNameValue>
       </rdw211:Datum>
-      <rdw211:IndexInterval xsi:type="rdw212:AbstractInterval">
-        <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
-      </rdw211:IndexInterval>
+<!--      <rdw211:IndexInterval xsi:type="rdw212:AbstractInterval">-->
+<!--        <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>-->
+<!--      </rdw211:IndexInterval>-->
     </rdw211:Index>
     <rdw211:Channel xsi:type="rdw211:Channel" uuid="523e4568-e89b-12d3-b456-426614174000" schemaVersion="" objectVersion="">
       <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
@@ -455,9 +455,9 @@
         <rdw211:Pass xsi:type="xsd:long">0</rdw211:Pass>
         <rdw211:Description xsi:type="rdw212:String64"></rdw211:Description>
       </rdw211:PassDetail>
-      <rdw211:PrimaryIndexInterval xsi:type="rdw212:AbstractInterval">
-        <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
-      </rdw211:PrimaryIndexInterval>
+<!--      <rdw211:PrimaryIndexInterval xsi:type="rdw212:AbstractInterval">-->
+<!--        <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>-->
+<!--      </rdw211:PrimaryIndexInterval>-->
       <rdw211:LoggingCompany xsi:type="rdw212:DataObjectReference">
         <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-42661417400a</rdw212:Uuid>
         <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
@@ -630,9 +630,9 @@
             <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
           </rdw212:ExtensionNameValue>
         </rdw211:Datum>
-        <rdw211:IndexInterval xsi:type="rdw212:AbstractInterval">
-          <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
-        </rdw211:IndexInterval>
+<!--        <rdw211:IndexInterval xsi:type="rdw212:AbstractInterval">-->
+<!--          <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>-->
+<!--        </rdw211:IndexInterval>-->
       </rdw211:Index>
       <rdw211:DerivedFrom xsi:type="rdw212:DataObjectReference">
         <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174013</rdw212:Uuid>

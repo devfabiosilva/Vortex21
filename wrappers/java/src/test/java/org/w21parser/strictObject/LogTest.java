@@ -30,7 +30,12 @@ public class LogTest {
             printW21Exception(logger, e);
             throw e;
         }
-        this.logDocument = (BsonDocument) this.parser1.parse(W21ParserLoader.W21OutputType.BSON);
+        try {
+            this.logDocument = (BsonDocument) this.parser1.parse(W21ParserLoader.W21OutputType.BSON);
+        } catch (W21Exception e) {
+            printW21Exception(logger, e);
+            throw e;
+        }
     }
 
     @After

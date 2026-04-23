@@ -960,6 +960,40 @@ bson_read_##type##_21_resume: \
   W21_RETURN \
 }
 
+#define BSON_READ_ABSTRACT_OBJECT_ROOT_BUILDER_21_BEGIN(ns, type) \
+static \
+int bson_read_abstract_root_##type##_21( \
+  struct soap *soap, \
+  bson_t *bson, \
+  const char *key, int key_length, \
+  struct ns##__##type *type \
+) \
+{ \
+\
+  if (!type) \
+    W21_RETURN \
+\
+  bson_t \
+    child; \
+\
+  if (!bson_append_document_begin(bson, key, key_length, &child)) { \
+    set_w21_error_message(soap, E_W21_ERROR_ABSTRACT_ROOT_COMPLEX_OBJECT_BEGIN, "Could not begin BSON in abstract root complex object " #type " %s", key); \
+    W21_RETURN \
+  }
+
+#define BSON_READ_ABSTRACT_OBJECT_ROOT_BUILDER_21_END(type) \
+  if (!bson_append_document_end(bson, &child)) \
+    set_w21_error_message(soap, E_W21_ERROR_COMPLEX_OBJECT_END, "Could not end BSON in abstract root complex object " #type " %s", key); \
+\
+  W21_RETURN \
+\
+bson_read_abstract_root_##type##_21_resume: \
+\
+  bson_append_document_end(bson, &child); \
+\
+  W21_RETURN \
+}
+
 /////////////////////////////// END COMPLEX OBJECT BUILDER ////////////////////////////
 
 /////////////////////////////// BEGIN READ COMPLEX OBJECT //////////////////////////////
@@ -988,6 +1022,16 @@ bson_read_##type##_21_resume: \
     CAPTURE_STAT(string) \
   }
 
+//Used for abstract root object function
+#define READ_O_UTF8_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName) \
+  if (objectParent->objectName) { \
+    if (!bson_append_utf8(&child, CWS_CONST_BSON_KEY(#objectName), (const char *)objectParent->objectName, -1)) { \
+      set_w21_error_message(soap, E_W21_ERROR_END_BSON_ABSTRACT_ROOT_OBJECT, "Could add utf-8 in abstract root object " #objectName " in " #objectParent); \
+      goto bson_read_abstract_root_##objectParent##_21_resume; \
+    } \
+    CAPTURE_STAT(string) \
+  }
+
 //used for ROOT Witsml object
 #define READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME_B(ns, objectParent, objectName, typeName) \
   READ_OBJECT_21_OR_ELSE_GOTO_RESUME_B(ns, &root_document, objectParent, objectName, typeName, bson_read_##objectParent##21)
@@ -999,9 +1043,18 @@ bson_read_##type##_21_resume: \
   if (bson_read_##typeName##_21(soap, bsonType, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) \
     goto onErrorGoto##_resume;
 
+#define READ_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(bsonType, objectParent, objectName, typeName, onErrorGoto) \
+  if (bson_read_abstract_root_##typeName##_21(soap, bsonType, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) \
+    goto onErrorGoto##_resume;
+
+
 //used for ROOT Witsml object
 #define READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
   READ_OBJECT_21_OR_ELSE_GOTO_RESUME(&root_document, objectParent, objectName, typeName, bson_read_##objectParent##21)
+
+//used for ROOT Witsml object
+#define READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
+  READ_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(&root_document, objectParent, objectName, typeName, bson_read_##objectParent##21)
 /////////////////////////////// END READ COMPLEX OBJECT //////////////////////////////
 
 #define WITSML21_OBJECT_BEGIN_BASE(ns, object) \

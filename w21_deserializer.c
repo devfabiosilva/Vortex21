@@ -956,10 +956,17 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, PassDetail)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(PassDetail, Description)
 BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_END(PassDetail)
 
+
+// TODO remove
 //struct rdw212__AbstractInterval
 BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractInterval)
   READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractInterval, Comment)
 BSON_READ_OBJECT_BUILDER_21_END(AbstractInterval)
+
+//struct rdw212__AbstractInterval
+BSON_READ_ABSTRACT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbstractInterval)
+  READ_O_UTF8_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(AbstractInterval, Comment)
+BSON_READ_ABSTRACT_OBJECT_ROOT_BUILDER_21_END(AbstractInterval)
 
 //struct rdw211__ChannelOSDUIntegration
 BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw211, ChannelOSDUIntegration)
@@ -5466,7 +5473,10 @@ WITSML21_OBJECT_BEGIN(rdw211, Log)
   READ_W_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(Log, PassNumber)
   READ_W_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(Log, PassDescription)
   READ_W_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(Log, PassDetail, PassDetail)
-  READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Log, PrimaryIndexInterval, AbstractInterval)
+  // BEGIN ABSTRACT
+  //READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Log, PrimaryIndexInterval, AbstractInterval) // TODO REMOVE
+  READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(Log, PrimaryIndexInterval, AbstractInterval)
+  // END ABSTRACT
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Log, LoggingCompany, DataObjectReference)
   READ_W_LONG64_NULLABLE_21_OR_ELSE_GOTO_RESUME(Log, LoggingCompanyCode)
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Log, LoggingToolKind, DataObjectReference)

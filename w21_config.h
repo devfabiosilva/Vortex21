@@ -248,6 +248,14 @@ const char *w21_get_input_object_name(struct soap *);
 DECLARE_W21_CONFIG \
 if ((config->finrootelement != NULL) && (config->finrootelement(soap, SOAP_TYPE_rdw211__##typ) != 0)) return NULL;
 
+#define W21_ABSTRACT_OBJECT_CHECK(type, tag) \
+DECLARE_W21_CONFIG \
+if ((config->in_config & SOAP_XML_STRICT) == 0) { \
+    set_w21_error_message(soap, E_W21_ERROR_POLYMORPHISM_STRICT_MODE_REQUIRED, "%s", w21_message_sanitize_fmt(soap, "WITSML 2.1 polymorphism requires STRICT mode enabled in Vortex 21 at " #type " %s", tag)); \
+    soap->error = SOAP_TAG_MISMATCH; \
+    return NULL; \
+}
+
 #define W21_RETURN return ((W21_CONFIG *)soap->user)->error;
 #define W21_NO_PREVIOUS_ERROR ((((W21_CONFIG *)soap->user)->error) == 0)
 #define W21_HAS_PREVIOUS_ERROR ((((W21_CONFIG *)soap->user)->error) != 0)
