@@ -1047,7 +1047,6 @@ bson_read_abstract_root_##type##_21_resume: \
   if (bson_read_abstract_root_##typeName##_21(soap, bsonType, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) \
     goto onErrorGoto##_resume;
 
-//aqui
 #define BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(ns, type) \
 static \
 int bson_read_transient_##type##_21( \
@@ -1063,7 +1062,6 @@ int bson_read_transient_##type##_21( \
 #define BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(type) \
   W21_RETURN \
 }
-//aqui
 
 #define READ_T_TIME_21_OR_ELSE_GOTO_RESUME(objectParent, objectName) \
   if (!bson_append_time_t(bsonObject, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) { \
@@ -1132,6 +1130,13 @@ int bson_read_transient_##type##_21( \
 //used for ROOT Witsml object
 #define READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
   READ_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(&root_document, objectParent, objectName, typeName, bson_read_##objectParent##21)
+
+//aqui
+#define READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
+  READ_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(&document_in_array, objectParent, objectName, typeName, bson_read_array_of_##objectParent##_21)
+
+#define READ_O_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
+  READ_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(&child, objectParent, objectName, typeName, bson_read_##objectParent##_21)
 /////////////////////////////// END READ COMPLEX OBJECT //////////////////////////////
 
 #define WITSML21_OBJECT_BEGIN_BASE(ns, object) \

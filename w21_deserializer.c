@@ -960,13 +960,12 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_END(PassDetail)
 
 // TODO remove
 //struct rdw212__AbstractInterval
-BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractInterval)
-  READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractInterval, Comment)
-BSON_READ_OBJECT_BUILDER_21_END(AbstractInterval)
+//BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractInterval)
+//  READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractInterval, Comment)
+//BSON_READ_OBJECT_BUILDER_21_END(AbstractInterval)
 
 //struct rdw212__DateTimeInterval
 BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, DateTimeInterval)
-//aqui
 // TRANSIENT SPECIAL CASE
   READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DateTimeInterval, Comment)
   READ_T_TIME_21_OR_ELSE_GOTO_RESUME(DateTimeInterval, StartTime)
@@ -1152,7 +1151,11 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, ChannelIndex)
   READ_A_OBJECT_ENUM_21_OR_ELSE_GOTO_RESUME(rdw212, ChannelIndex, Direction, IndexDirection)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelIndex, Mnemonic)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelIndex, Datum, DataObjectReference)
-  READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelIndex, IndexInterval, AbstractInterval)
+//aqui
+  // BEGIN ABSTRACT
+  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelIndex, IndexInterval, AbstractInterval) // TODO REMOVE
+  READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(ChannelIndex, IndexInterval, AbstractInterval)
+  //END ABSTRACT
 BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_END(ChannelIndex)
 
 //struct rdw211__LogChannelAxis
@@ -1210,7 +1213,10 @@ BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw211, PPFGChannel)
   READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannel, PassNumber)
   READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannel, PassDescription)
   READ_O_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannel, PassDetail, PassDetail)
-  READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannel, PrimaryIndexInterval, AbstractInterval)
+  // BEGIN ABSTRACT
+  //READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannel, PrimaryIndexInterval, AbstractInterval) // TODO REMOVE
+  READ_O_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(PPFGChannel, PrimaryIndexInterval, AbstractInterval)
+  // END ABSTRACT
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannel, LoggingCompany, DataObjectReference)
   READ_O_LONG64_NULLABLE_21_OR_ELSE_GOTO_RESUME(PPFGChannel, LoggingCompanyCode)
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannel, ChannelKind, DataObjectReference)
@@ -1267,7 +1273,10 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, Channel)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PassNumber)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PassDescription)
   READ_A_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PassDetail, PassDetail)
-  READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PrimaryIndexInterval, AbstractInterval)
+  // BEGIN ABSTRACT
+  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PrimaryIndexInterval, AbstractInterval) //TODO REMOVE
+  READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(Channel, PrimaryIndexInterval, AbstractInterval)
+  // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, LoggingCompany, DataObjectReference)
   READ_A_LONG64_NULLABLE_21_OR_ELSE_GOTO_RESUME(Channel, LoggingCompanyCode)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, ChannelKind, DataObjectReference)
@@ -1340,7 +1349,10 @@ BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw211, PPFGChannelSet)
   READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, PassNumber)
   READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, PassDescription)
   READ_O_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, PassDetail, PassDetail)
-  READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, PrimaryIndexInterval, AbstractInterval)
+  // BEGIN ABSTRACT
+  //READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, PrimaryIndexInterval, AbstractInterval) // TODO REMOVE
+  READ_O_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, PrimaryIndexInterval, AbstractInterval)
+  // END ABSTRACT
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, LoggingCompany, DataObjectReference)
   READ_O_LONG64_NULLABLE_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, LoggingCompanyCode)
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, LoggingToolKind, DataObjectReference)
@@ -1384,7 +1396,10 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, ChannelSet)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PassNumber)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PassDescription)
   READ_A_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PassDetail, PassDetail)
-  READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PrimaryIndexInterval, AbstractInterval)
+  // BEGIN ABSTRACT
+  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PrimaryIndexInterval, AbstractInterval) // TODO REMOVE
+  READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PrimaryIndexInterval, AbstractInterval)
+  // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, LoggingCompany, DataObjectReference)
   READ_A_LONG64_NULLABLE_21_OR_ELSE_GOTO_RESUME(ChannelSet, LoggingCompanyCode)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, LoggingToolKind, DataObjectReference)
@@ -1444,7 +1459,10 @@ BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw211, PPFGLog)
   READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGLog, PassNumber)
   READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGLog, PassDescription)
   READ_O_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGLog, PassDetail, PassDetail)
-  READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGLog, PrimaryIndexInterval, AbstractInterval)
+  // BEGIN ABSTRACT
+  //READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGLog, PrimaryIndexInterval, AbstractInterval) //TODO REMOVE
+  READ_O_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(PPFGLog, PrimaryIndexInterval, AbstractInterval)
+  // END ABSTRACT
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGLog, LoggingCompany, DataObjectReference)
   READ_O_LONG64_NULLABLE_21_OR_ELSE_GOTO_RESUME(PPFGLog, LoggingCompanyCode)
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGLog, LoggingToolKind, DataObjectReference)
@@ -1649,7 +1667,10 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, DepthRegParameter)
   READ_A_PUT_SINGLE_ATTR_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, uid)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, Mnemonic)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, Dictionary)
-  READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, IndexInterval, AbstractInterval)
+  // BEGIN ABSTRACT
+  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, IndexInterval, AbstractInterval) // TODO REMOVE
+  READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, IndexInterval, AbstractInterval)
+  // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, Value, GenericMeasure)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, Description)
   READ_A_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, ExtensionNameValue, ExtensionNameValue)
@@ -1709,7 +1730,10 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, DepthRegLogSection)
   READ_A_OBJECT_ENUM_21_OR_ELSE_GOTO_RESUME(rdw212, DepthRegLogSection, IndexKind, DataIndexKind)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegLogSection, IndexUom)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegLogSection, IndexDatum, DataObjectReference)
-  READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegLogSection, IndexInterval, AbstractInterval)
+  // BEGIN ABSTRACT
+  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegLogSection, IndexInterval, AbstractInterval) //TODO REMOVE
+  READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(DepthRegLogSection, IndexInterval, AbstractInterval)
+  // END ABSTRACT
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegLogSection, VerticalLabel)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegLogSection, VerticalRatio)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegLogSection, Comment)
@@ -5213,7 +5237,10 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_END(AbstractEventExtension)
 BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, MemberObject)
   READ_A_PUT_SINGLE_ATTR_21_OR_ELSE_GOTO_RESUME(MemberObject, uid)
   READ_A_OBJECT_ENUM_NULLABLE_21_OR_ELSE_GOTO_RESUME(rdw212, MemberObject, IndexKind, DataIndexKind)
-  READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(MemberObject, IndexInterval, AbstractInterval)
+  // BEGIN ABSTRACT
+  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(MemberObject, IndexInterval, AbstractInterval) TODO REMOVE
+  READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(MemberObject, IndexInterval, AbstractInterval)
+  // END ABSTRACT
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(MemberObject, MnemonicList)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(MemberObject, ReferenceDepth, MeasuredDepth)
   READ_A_TIME_NULLABLE_21_OR_ELSE_GOTO_RESUME(MemberObject, ReferenceDateTime)
@@ -5229,8 +5256,6 @@ BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw211, Participant)
   READ_O_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(Participant, ExtensionNameValue, ExtensionNameValue)
   READ_O_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(Participant, Participant, MemberObject)
 BSON_READ_OBJECT_BUILDER_21_END(Participant)
-
-//IMPLEMENT
 
 //struct rdw211__BhaRun
 WITSML21_OBJECT_BEGIN(rdw211, BhaRun)
@@ -5362,7 +5387,10 @@ WITSML21_OBJECT_BEGIN(rdw211, Channel)
   READ_W_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PassNumber)
   READ_W_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PassDescription)
   READ_W_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PassDetail, PassDetail)
-  READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PrimaryIndexInterval, AbstractInterval)
+  // BEGIN ABSTRACT
+  //READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PrimaryIndexInterval, AbstractInterval) //TODO REMOVE
+  READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(Channel, PrimaryIndexInterval, AbstractInterval)
+  // END ABSTRACT
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, LoggingCompany, DataObjectReference)
   READ_W_LONG64_NULLABLE_21_OR_ELSE_GOTO_RESUME(Channel, LoggingCompanyCode)
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, ChannelKind, DataObjectReference)
@@ -5440,7 +5468,10 @@ WITSML21_OBJECT_BEGIN(rdw211, ChannelSet)
   READ_W_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PassNumber)
   READ_W_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PassDescription)
   READ_W_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PassDetail, PassDetail)
-  READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PrimaryIndexInterval, AbstractInterval)
+  // BEGIN ABSTRACT
+  //READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PrimaryIndexInterval, AbstractInterval) //TODO REMOVE
+  READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PrimaryIndexInterval, AbstractInterval)
+  // END ABSTRACT
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, LoggingCompany, DataObjectReference)
   READ_W_LONG64_NULLABLE_21_OR_ELSE_GOTO_RESUME(ChannelSet, LoggingCompanyCode)
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, LoggingToolKind, DataObjectReference)
