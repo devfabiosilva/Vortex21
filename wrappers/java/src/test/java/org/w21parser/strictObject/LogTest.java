@@ -144,6 +144,34 @@ public class LogTest {
 
         // See Abstract interval test case @ org.w21parser.abstractIntervalType
         assertEquals("Base Comment", navigate(log, "PrimaryIndexInterval", "Comment"));
+
+        BsonDocument loggingCompany = (BsonDocument)navigate(log, "LoggingCompany");
+
+        assertNotNull(loggingCompany);
+        assertEquals("523e4568-e89b-12d3-a456-426614174091", navigate(loggingCompany, "Uuid"));
+        assertEquals("Object version 64 char max", navigate(loggingCompany, "ObjectVersion"));
+        assertEquals("prodml59.Log", navigate(loggingCompany, "QualifiedType"));
+        assertEquals("Title @ LoggingCompany", navigate(loggingCompany, "Title"));
+        assertEquals("http://www.example.com/schema/anyURILoggingCompany", navigate(loggingCompany, "EnergisticsUri"));
+        BsonArray locatorUrl = (BsonArray) navigate(loggingCompany, "LocatorUrl");
+
+        assertNotNull(locatorUrl);
+        assertEquals(1, locatorUrl.size());
+        assertEquals("http://www.example.com/schema/anyURILoggingCompanyA", locatorUrl.get(0).asString().getValue());
+
+        extensionNameValues = (BsonArray) navigate(loggingCompany, "ExtensionNameValue");
+
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+        extensionNameValue = extensionNameValues.get(0);
+
+        assertEquals("Name A", navigate(extensionNameValue, "Name"));
+        assertEquals("uom test", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("Value String Measure", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("area per amount of substance", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2026-05-07T22:39:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(7810, ((BsonInt64) navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("Description A", navigate(extensionNameValue, "Description"));
     }
 
     @Test
