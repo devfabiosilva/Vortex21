@@ -1214,7 +1214,7 @@ W21_RETURN \
     if (bson_put_two_attributes_if_exist( \
       bson, \
       CWS_CONST_BSON_KEY(#objectName1), \
-      (char *)soap_##ns##__##enumTypeSuffixFunction2##2s(soap, objectParent->objectName1), -1, \
+      (char *)soap_##ns##__##enumTypeSuffixFunction1##2s(soap, objectParent->objectName1), -1, \
       CWS_CONST_BSON_KEY(#objectName2), \
       (char *)soap_##ns##__##enumTypeSuffixFunction2##2s(soap, *(objectParent->objectName2)), -1)) { \
       set_w21_error_message(soap, E_W21_ERROR_TWO_ATTRIBUTES_ENUM_REQUIRED1_OPTIONAL2, "Could not set BSON two enum attribute 1 required and 1 optional " #objectName1 " | " #objectName2 " attributes in " #objectParent); \
