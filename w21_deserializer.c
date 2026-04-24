@@ -956,16 +956,81 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, PassDetail)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(PassDetail, Description)
 BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_END(PassDetail)
 
-
 // TODO remove
 //struct rdw212__AbstractInterval
 BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractInterval)
   READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractInterval, Comment)
 BSON_READ_OBJECT_BUILDER_21_END(AbstractInterval)
 
+//struct rdw212__DateTimeInterval
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, DateTimeInterval)
+//aqui
+// TRANSIENT SPECIAL CASE
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DateTimeInterval, Comment)
+  READ_T_TIME_21_OR_ELSE_GOTO_RESUME(DateTimeInterval, StartTime)
+  READ_T_TIME_21_OR_ELSE_GOTO_RESUME(DateTimeInterval, EndTime)
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(DateTimeInterval)
+
+//struct rdw212__ElapsedTimeInterval
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, ElapsedTimeInterval)
+// TRANSIENT SPECIAL CASE
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(ElapsedTimeInterval, Comment)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(ElapsedTimeInterval, StartElapsedTime, TimeMeasure)
+  READ_T_OBJECT_21_VOID(ElapsedTimeInterval, EndElapsedTime, TimeMeasure) // Special case 'VOID' for transient. Used at the end of the function
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(ElapsedTimeInterval)
+
+//struct rdw212__MdInterval
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, MdInterval)
+// TRANSIENT SPECIAL CASE
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(MdInterval, Comment)
+  READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(MdInterval, MdMin)
+  READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(MdInterval, MdMax)
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(MdInterval, Uom)
+  READ_T_OBJECT_21_VOID(MdInterval, Datum, DataObjectReference) // Special case 'VOID' for transient. Used at the end of the function
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(MdInterval)
+
+//struct rdw212__ScalarInterval
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, ScalarInterval)
+// TRANSIENT SPECIAL CASE
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(ScalarInterval, Comment)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(ScalarInterval, MinValue, GenericMeasure)
+  READ_T_OBJECT_21_VOID(ScalarInterval, MaxValue, GenericMeasure) // Special case 'VOID' for transient. Used at the end of the function
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(ScalarInterval)
+
+//struct rdw212__TemperatureInterval
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, TemperatureInterval)
+// TRANSIENT SPECIAL CASE
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(TemperatureInterval, Comment)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(TemperatureInterval, MinTemperature, ThermodynamicTemperatureMeasureExt)
+  READ_T_OBJECT_21_VOID(TemperatureInterval, MaxTemperature, ThermodynamicTemperatureMeasureExt) // Special case 'VOID' for transient. Used at the end of the function
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(TemperatureInterval)
+
+//struct rdw211__PassIndexedDepth
+BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw211, PassIndexedDepth)
+  READ_O_LONG64_21_OR_ELSE_GOTO_RESUME(PassIndexedDepth, Pass)
+  READ_O_OBJECT_ENUM_21_OR_ELSE_GOTO_RESUME(rdw211, PassIndexedDepth, Direction, PassDirection)
+  READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PassIndexedDepth, MeasuredDepth, LengthMeasureExt)
+BSON_READ_OBJECT_BUILDER_21_END(PassIndexedDepth)
+
+//struct rdw211__PassIndexedDepthInterval
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw211, PassIndexedDepthInterval)
+// TRANSIENT SPECIAL CASE
+  READ_T_UTF8_OBJECT_ALIAS_21_OR_ELSE_GOTO_RESUME(PassIndexedDepthInterval, rdw212__Comment, Comment)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(PassIndexedDepthInterval, Datum, DataObjectReference)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(PassIndexedDepthInterval, Start, PassIndexedDepth)
+  READ_T_OBJECT_21_VOID(PassIndexedDepthInterval, End, PassIndexedDepth) // Special case 'VOID' for transient. Used at the end of the function
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(PassIndexedDepthInterval)
+
 //struct rdw212__AbstractInterval
 BSON_READ_ABSTRACT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbstractInterval)
+// ABSTRACT SPECIAL CASE
   READ_O_UTF8_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(AbstractInterval, Comment)
+  READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractInterval, DateTimeInterval)
+  READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractInterval, ElapsedTimeInterval)
+  READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractInterval, MdInterval)
+  READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractInterval, ScalarInterval)
+  READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractInterval, TemperatureInterval)
+  READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw211, AbstractInterval, PassIndexedDepthInterval)
 BSON_READ_ABSTRACT_OBJECT_ROOT_BUILDER_21_END(AbstractInterval)
 
 //struct rdw211__ChannelOSDUIntegration

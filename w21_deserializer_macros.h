@@ -1047,6 +1047,69 @@ bson_read_abstract_root_##type##_21_resume: \
   if (bson_read_abstract_root_##typeName##_21(soap, bsonType, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) \
     goto onErrorGoto##_resume;
 
+//aqui
+#define BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(ns, type) \
+static \
+int bson_read_transient_##type##_21( \
+  struct soap *soap, \
+  bson_t *bsonObject, \
+  struct ns##__##type *type \
+) \
+{ \
+\
+  if (!type) \
+    W21_RETURN
+
+#define BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(type) \
+  W21_RETURN \
+}
+//aqui
+
+#define READ_T_TIME_21_OR_ELSE_GOTO_RESUME(objectParent, objectName) \
+  if (!bson_append_time_t(bsonObject, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) { \
+      set_w21_error_message(soap, E_W21_ERROR_ADD_TIME_REQUIRED_TRANSIENT_OBJECT, "Could not set date-time required value in transient " #objectName " in " #objectParent); \
+    W21_RETURN \
+  } \
+  CAPTURE_STAT(date_time)
+
+#define READ_T_OBJECT_21_VOID(objectParent, objectName, typeName) \
+  bson_read_##typeName##_21(soap, bsonObject, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName);
+
+#define READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
+  if (bson_read_##typeName##_21(soap, bsonObject, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) \
+    W21_RETURN
+
+#define READ_T_UTF8_OBJECT_ALIAS_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, objectAlias) \
+  if (objectParent->objectName) { \
+    if (!bson_append_utf8(bsonObject, CWS_CONST_BSON_KEY(#objectAlias), (const char *)objectParent->objectName, -1)) { \
+      set_w21_error_message(soap, E_W21_ERROR_SET_UTF8_STRING_TRANSIENT_IN_BSON_ALIAS, "Could not add BSON utf-8 transient alias string at " #objectParent " in " #objectAlias); \
+      W21_RETURN \
+    } \
+    CAPTURE_STAT(string) \
+  }
+
+#define READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName) \
+  if (objectParent->objectName) { \
+    if (!bson_append_utf8(bsonObject, CWS_CONST_BSON_KEY(#objectName), (const char *)objectParent->objectName, -1)) { \
+      set_w21_error_message(soap, E_W21_ERROR_SET_UTF8_STRING_IN_TRANSIENT_BSON, #objectParent "Could not read " #objectName " of transient " #objectParent " object"); \
+      W21_RETURN \
+    } \
+    CAPTURE_STAT(string) \
+  }
+
+#define READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(objectParent, objectName) \
+  if (!bson_append_double(bsonObject, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) { \
+    set_w21_error_message(soap, E_W21_ERROR_DOUBLE_TRANSIENT_REQUIRED, "Could not add required double in " #objectName " object at transient " #objectParent); \
+    W21_RETURN \
+  } \
+  CAPTURE_STAT(double)
+
+#define READ_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(ns, bsonObj, objectParent, typeName, onErrorGoto) \
+  if (bson_read_transient_##typeName##_21(soap, bsonObj, objectParent->ns##__##typeName)) \
+    goto onErrorGoto##_resume;
+
+#define READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(ns, objectParent, typeName) \
+  READ_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(ns, &child, objectParent, typeName, bson_read_abstract_root_##objectParent##_21)
 
 //used for ROOT Witsml object
 #define READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \

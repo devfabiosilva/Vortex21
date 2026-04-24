@@ -109,6 +109,93 @@
 <!--      <rdw212:AbsolutePressure uom="pa">5000</rdw212:AbsolutePressure>-->
 <!--    </rdw212:MaxPressure>-->
 <!--  </rdw211:PrimaryIndexInterval>-->
+<!--  <rdw211:PrimaryIndexInterval xsi:type="rdw212:MdInterval">-->
+<!--    <rdw212:Comment>Base Comment test MdInterval</rdw212:Comment>-->
+<!--    <rdw212:MdMin>51.27</rdw212:MdMin>-->
+<!--    <rdw212:MdMax>1000.27</rdw212:MdMax>-->
+<!--    <rdw212:Uom>Test Uom @ MdInterval</rdw212:Uom>-->
+<!--    <rdw211:Datum xsi:type="rdw212:DataObjectReference">-->
+<!--      <rdw212:Uuid xsi:type="rdw212:UuidString">5f3ea568-e89b-12d3-a456-426614174001</rdw212:Uuid>-->
+<!--      <rdw212:ObjectVersion xsi:type="rdw212:String64">Datum object reference 1</rdw212:ObjectVersion>-->
+<!--      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml49.BhaRunTes</rdw212:QualifiedType>-->
+<!--      <rdw212:Title xsi:type="rdw212:String2000">Title @ PrimaryIndexInterval @ rdw212:MdInterval</rdw212:Title>-->
+<!--      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIrdw212_MdInterval</rdw212:EnergisticsUri>-->
+<!--      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIrdw212_MdIntervalB</rdw212:LocatorUrl>-->
+<!--      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">-->
+<!--        <rdw212:Name xsi:type="rdw212:String64">Name ABC</rdw212:Name>-->
+<!--        <rdw212:Value xsi:type="rdw212:StringMeasure" uom="uom a">val</rdw212:Value>-->
+<!--        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>-->
+<!--        <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-02-04T19:29:47Z</rdw212:DTim>-->
+<!--        <rdw212:Index xsi:type="xsd:long">1780</rdw212:Index>-->
+<!--        <rdw212:Description xsi:type="rdw212:String2000">Short description rdw212_MdInterval</rdw212:Description>-->
+<!--      </rdw212:ExtensionNameValue>-->
+<!--    </rdw211:Datum>-->
+<!--  </rdw211:PrimaryIndexInterval>-->
+<!--  <rdw211:PrimaryIndexInterval xsi:type="rdw212:ScalarInterval">-->
+<!--    <rdw212:Comment>Base Comment @ scalar interval type ScalarInterval</rdw212:Comment>-->
+
+<!--    <rdw212:MinValue uom="abc">16.27</rdw212:MinValue>-->
+
+<!--    <rdw212:MaxValue uom="abcde">-->
+<!--      671.37-->
+<!--    </rdw212:MaxValue>-->
+<!--  </rdw211:PrimaryIndexInterval>-->
+<!--  <rdw211:PrimaryIndexInterval xsi:type="rdw212:TemperatureInterval">-->
+<!--    <rdw212:Comment>Base Comment @ scalar interval type TemperatureInterval</rdw212:Comment>-->
+
+<!--    <rdw212:MinTemperature uom="abc">168.27</rdw212:MinTemperature>-->
+
+<!--    <rdw212:MaxTemperature uom="abcde">-->
+<!--      6718.37-->
+<!--    </rdw212:MaxTemperature>-->
+<!--  </rdw211:PrimaryIndexInterval>-->
+<!--  <rdw211:PrimaryIndexInterval xsi:type="rdw212:PassIndexedDepthInterval">-->
+<!--    <rdw212:Comment>Base Comment @ scalar interval type PassIndexedDepthInterval</rdw212:Comment>-->
+<!--    <rdw211:Datum xsi:type="rdw212:DataObjectReference">-->
+<!--      <rdw212:Uuid xsi:type="rdw212:UuidString">5f3ea568-e89b-12d3-a456-426614174001</rdw212:Uuid>-->
+<!--      <rdw212:ObjectVersion xsi:type="rdw212:String64">Datum object reference 1</rdw212:ObjectVersion>-->
+<!--      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml49.BhaRunTes</rdw212:QualifiedType>-->
+<!--      <rdw212:Title xsi:type="rdw212:String2000">Title @ PrimaryIndexInterval @ rdw212:MdInterval</rdw212:Title>-->
+<!--      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIrdw212_MdInterval</rdw212:EnergisticsUri>-->
+<!--      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIrdw212_MdIntervalB</rdw212:LocatorUrl>-->
+<!--      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">-->
+<!--        <rdw212:Name xsi:type="rdw212:String64">Name ABC</rdw212:Name>-->
+<!--        <rdw212:Value xsi:type="rdw212:StringMeasure" uom="uom a">val</rdw212:Value>-->
+<!--        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>-->
+<!--        <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-02-04T19:29:47Z</rdw212:DTim>-->
+<!--        <rdw212:Index xsi:type="xsd:long">1780</rdw212:Index>-->
+<!--        <rdw212:Description xsi:type="rdw212:String2000">Short description rdw212_MdInterval</rdw212:Description>-->
+<!--      </rdw212:ExtensionNameValue>-->
+<!--    </rdw211:Datum>-->
+<!--    <rdw211:Start>-->
+<!--      <Pass>1234</Pass>-->
+<!--      <Direction>holding steady</Direction>-->
+<!--      <MeasuredDepth uom="abbcd">500.128</MeasuredDepth>-->
+<!--    </rdw211:Start>-->
+<!--    <rdw211:End>-->
+<!--      <Pass>7890</Pass>-->
+<!--      <Direction>down</Direction>-->
+<!--      <MeasuredDepth uom="ghi">520.128</MeasuredDepth>-->
+<!--    </rdw211:End>-->
+<!--  </rdw211:PrimaryIndexInterval>-->
+<!--  <rdw211:PrimaryIndexInterval xsi:type="rdw212:ElapsedTimeInterval">-->
+<!--    <rdw212:Comment>Base Comment @ scalar interval type ElapsedTimeInterval</rdw212:Comment>-->
+
+<!--    <rdw212:StartElapsedTime uom="a[t]">2671.72E2</rdw212:StartElapsedTime>-->
+
+<!--    <rdw212:EndElapsedTime uom="ds">-->
+<!--      5E-3-->
+<!--    </rdw212:EndElapsedTime>-->
+<!--  </rdw211:PrimaryIndexInterval>-->
+<!--  <rdw211:PrimaryIndexInterval xsi:type="rdw212:DateTimeInterval">-->
+<!--    <rdw212:Comment>Base Comment @ scalar interval type DateTimeInterval</rdw212:Comment>-->
+
+<!--    <rdw212:StartTime>2025-01-05T19:39:47Z</rdw212:StartTime>-->
+
+<!--    <rdw212:EndTime>-->
+<!--      2026-02-05T19:39:47Z-->
+<!--    </rdw212:EndTime>-->
+<!--  </rdw211:PrimaryIndexInterval>-->
   <rdw211:LoggingCompany xsi:type="rdw212:DataObjectReference">
     <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174001</rdw212:Uuid>
     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
