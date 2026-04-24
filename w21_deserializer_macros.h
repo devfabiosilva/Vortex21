@@ -1075,6 +1075,20 @@ int bson_read_transient_##type##_21( \
 #define READ_T_OBJECT_21_VOID(objectParent, objectName, typeName) \
   bson_read_##typeName##_21(soap, bsonObject, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName);
 
+#define READ_T_TRANSIENT_OBJECT_21_OR_ELSE_GOTO_RESUME(ns, objectParent, objectName, typeName) \
+  if (objectParent->ns##__##objectName) \
+    if (bson_read_transient_##typeName##_21(soap, bsonObject, objectParent->ns##__##objectName)) { \
+      W21_RETURN \
+    }
+
+#define READ_T_TRANSIENT_OBJECT_21_VOID(ns, objectParent, objectName, typeName) \
+  if (objectParent->ns##__##objectName) \
+    bson_read_transient_##typeName##_21(soap, bsonObject, objectParent->ns##__##objectName);
+
+#define READ_T_TRANSIENT_OBJECT_21_VOID_B(objectParent, objectName, typeName) \
+  if (objectParent->objectName) \
+    bson_read_transient_##typeName##_21(soap, bsonObject, objectParent->objectName);
+
 #define READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
   if (bson_read_##typeName##_21(soap, bsonObject, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) \
     W21_RETURN
@@ -1195,6 +1209,28 @@ W21_RETURN \
 #define READ_O_PUT_SINGLE_ATTR_ENUM_REQUIRED_21_OR_ELSE_GOTO_RESUME(ns, objectParent, objectName, enumTypeSuffixFunction) \
   READ_PUT_SINGLE_ATTR_ENUM_REQUIRED_21_OR_ELSE_GOTO_RESUME(&child, ns, objectParent, objectName, enumTypeSuffixFunction, bson_read_##objectParent##_21)
 
+#define READ_PUT_TWO_ATTR_ENUM_REQUIRED1_OPTIONAL2_21_OR_ELSE_GOTO_RESUME(bson, ns, objectParent, objectName1, enumTypeSuffixFunction1, objectName2, enumTypeSuffixFunction2, onErrorGoto) \
+  if (objectParent->objectName2) { \
+    if (bson_put_two_attributes_if_exist( \
+      bson, \
+      CWS_CONST_BSON_KEY(#objectName1), \
+      (char *)soap_##ns##__##enumTypeSuffixFunction2##2s(soap, objectParent->objectName1), -1, \
+      CWS_CONST_BSON_KEY(#objectName2), \
+      (char *)soap_##ns##__##enumTypeSuffixFunction2##2s(soap, *(objectParent->objectName2)), -1)) { \
+      set_w21_error_message(soap, E_W21_ERROR_TWO_ATTRIBUTES_ENUM_REQUIRED1_OPTIONAL2, "Could not set BSON two enum attribute 1 required and 1 optional " #objectName1 " | " #objectName2 " attributes in " #objectParent); \
+      goto onErrorGoto##_resume; \
+    } \
+  } else if (bson_put_single_attribute_if_exists( \
+    bson, \
+    CWS_CONST_BSON_KEY(#objectName1), \
+    (char *)soap_##ns##__##enumTypeSuffixFunction1##2s(soap, objectParent->objectName1), -1)) { \
+    set_w21_error_message(soap, E_W21_ERROR_TWO_ATTRIBUTES_ENUM_REQUIRED1_OPTIONAL2, "Could not set BSON single enum attribute required " #objectName1 " attribute in " #objectParent); \
+    goto onErrorGoto##_resume; \
+  }
+
+#define READ_O_PUT_TWO_ATTR_ENUM_REQUIRED1_OPTIONAL2_21_OR_ELSE_GOTO_RESUME(ns, objectParent, objectName1, enumTypeSuffixFunction1, objectName2, enumTypeSuffixFunction2) \
+  READ_PUT_TWO_ATTR_ENUM_REQUIRED1_OPTIONAL2_21_OR_ELSE_GOTO_RESUME(&child, ns, objectParent, objectName1, enumTypeSuffixFunction1, objectName2, enumTypeSuffixFunction2, bson_read_##objectParent##_21)
+
 //////////////////////////////// COST BUILDER ////////////////////////////////////
 //COST builder. Currency required
 #define BSON_READ_COST_BUILDER_21(ns, type) \
@@ -1296,6 +1332,17 @@ bson_read_##type##_21_resume: \
     } \
     CAPTURE_STAT(string) \
   }
+
+//aqui
+#define READ_DOUBLE_OBJECT_ITEM_21_OR_ELSE_GOTO_RESUME(bson, objectParent, onErrorGoto) \
+  if (!bson_append_double(bson, KEY_USCORE_VALUE, objectParent->__item)) { \
+    set_w21_error_message(soap, E_W21_ERROR_SET_DOUBLE_ITEM, "Could not set double __item value " #objectParent); \
+    goto onErrorGoto##_resume; \
+  } \
+  CAPTURE_STAT(double)
+
+#define READ_O_DOUBLE_OBJECT_ITEM_21_OR_ELSE_GOTO_RESUME(objectParent) \
+  READ_DOUBLE_OBJECT_ITEM_21_OR_ELSE_GOTO_RESUME(&child, objectParent, bson_read_##objectParent##_21)
 
 #define READ_A_UTF8_OBJECT_ITEM_21_OR_ELSE_GOTO_RESUME(objectParent) \
   READ_UTF8_OBJECT_ITEM_21_OR_ELSE_GOTO_RESUME(&document_in_array, objectParent, bson_read_array_of_##objectParent##_21)

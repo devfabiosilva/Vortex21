@@ -728,6 +728,7 @@ BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, ReferencePointTvdInterval)
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(ReferencePointTvdInterval, ReferencePoint, DataObjectReference)
 BSON_READ_OBJECT_BUILDER_21_END(ReferencePointTvdInterval)
 
+//TODO REMOVE IT
 //struct rdw212__AbstractTvdInterval
 BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractTvdInterval)
   READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Comment)
@@ -739,6 +740,7 @@ BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractTvdInterval)
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME_B(rdw212, AbstractTvdInterval, ReferencePointTvdInterval, ReferencePointTvdInterval)
 BSON_READ_OBJECT_BUILDER_21_END(AbstractTvdInterval)
 
+//TODO REMOVE IT
 //struct rdw212__AbstractTvdInterval
 BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractTvdInterval)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Comment)
@@ -971,6 +973,96 @@ BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, DateTimeInterval)
   READ_T_TIME_21_OR_ELSE_GOTO_RESUME(DateTimeInterval, EndTime)
 BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(DateTimeInterval)
 
+//struct rdw212__DatumTvdInterval
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, DatumTvdInterval)
+// TRANSIENT SPECIAL CASE
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DatumTvdInterval, Comment)
+  READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(DatumTvdInterval, TvdMin)
+  READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(DatumTvdInterval, TvdMax)
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DatumTvdInterval, Uom)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(DatumTvdInterval, Trajectory, DataObjectReference)
+  READ_T_OBJECT_21_VOID(DatumTvdInterval, Datum, DataObjectReference) // Special case 'VOID' for transient. Used at the end of the function
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(DatumTvdInterval)
+
+//struct rdw212__ReferencePointTvdInterval
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, ReferencePointTvdInterval)
+// TRANSIENT SPECIAL CASE
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(ReferencePointTvdInterval, Comment)
+  READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(ReferencePointTvdInterval, TvdMin)
+  READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(ReferencePointTvdInterval, TvdMax)
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(ReferencePointTvdInterval, Uom)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(ReferencePointTvdInterval, Trajectory, DataObjectReference)
+  READ_T_OBJECT_21_VOID(ReferencePointTvdInterval, ReferencePoint, DataObjectReference) // Special case 'VOID' for transient. Used at the end of the function
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(ReferencePointTvdInterval)
+
+//struct rdw212__AbstractTvdInterval
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbstractTvdInterval)
+// TRANSIENT SPECIAL CASE
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Comment)
+  READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, TvdMin)
+  READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, TvdMax)
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Uom)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Trajectory, DataObjectReference)
+  READ_T_TRANSIENT_OBJECT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractTvdInterval, DatumTvdInterval, DatumTvdInterval)
+  READ_T_TRANSIENT_OBJECT_21_VOID(rdw212, AbstractTvdInterval, ReferencePointTvdInterval, ReferencePointTvdInterval)
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(AbstractTvdInterval)
+
+//struct rdw212__AbsolutePressure
+BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, AbsolutePressure)
+  READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(AbsolutePressure, AbsolutePressure, PressureMeasureExt)
+BSON_READ_OBJECT_BUILDER_21_END(AbsolutePressure)
+
+//struct rdw212__AbsolutePressureInterval
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbsolutePressureInterval)
+// TRANSIENT SPECIAL CASE
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbsolutePressureInterval, Comment)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(AbsolutePressureInterval, MinPressure, AbsolutePressure)
+  READ_T_OBJECT_21_VOID(AbsolutePressureInterval, MaxPressure, AbsolutePressure) // Special case 'VOID' for transient. Used at the end of the function
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(AbstractPressureInterval)
+
+//struct rdw212__ReferencePressure
+BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, ReferencePressure)
+  READ_O_PUT_TWO_ATTR_ENUM_REQUIRED1_OPTIONAL2_21_OR_ELSE_GOTO_RESUME(rdw212, ReferencePressure, uom, PressureUom, referencePressureKind, ReferencePressureKind)
+  READ_O_DOUBLE_OBJECT_ITEM_21_OR_ELSE_GOTO_RESUME(ReferencePressure)
+BSON_READ_OBJECT_BUILDER_21_END(ReferencePressure)
+
+//struct rdw212__GaugePressure
+BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, GaugePressure)
+  READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(GaugePressure, GaugePressure, PressureMeasureExt)
+  READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(GaugePressure, ReferencePressure, ReferencePressure)
+BSON_READ_OBJECT_BUILDER_21_END(GaugePressure)
+
+//struct rdw212__GaugePressureInterval
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, GaugePressureInterval)
+// TRANSIENT SPECIAL CASE
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(GaugePressureInterval, Comment)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(GaugePressureInterval, MinPressure, GaugePressure)
+  READ_T_OBJECT_21_VOID(GaugePressureInterval, MaxPressure, GaugePressure) // Special case 'VOID' for transient. Used at the end of the function
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(GaugePressureInterval)
+
+//struct rdw212__RelativePressure
+BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, RelativePressure)
+  READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(RelativePressure, RelativePressure, PressureMeasure)
+  READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(RelativePressure, ReferencePressure, ReferencePressure)
+BSON_READ_OBJECT_BUILDER_21_END(RelativePressure)
+
+//struct rdw212__RelativePressureInterval
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, RelativePressureInterval)
+// TRANSIENT SPECIAL CASE
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(RelativePressureInterval, Comment)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(RelativePressureInterval, MinPressure, RelativePressure)
+  READ_T_OBJECT_21_VOID(RelativePressureInterval, MaxPressure, RelativePressure) // Special case 'VOID' for transient. Used at the end of the function
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(GaugePressureInterval)
+
+//struct rdw212__AbstractPressureInterval
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbstractPressureInterval)
+// TRANSIENT SPECIAL CASE
+  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractPressureInterval, Comment)
+  READ_T_TRANSIENT_OBJECT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractPressureInterval, AbsolutePressureInterval, AbsolutePressureInterval)
+  READ_T_TRANSIENT_OBJECT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractPressureInterval, GaugePressureInterval, GaugePressureInterval)
+  READ_T_TRANSIENT_OBJECT_21_VOID(rdw212, AbstractPressureInterval, RelativePressureInterval, RelativePressureInterval)
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(AbstractPressureInterval)
+
 //struct rdw212__ElapsedTimeInterval
 BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, ElapsedTimeInterval)
 // TRANSIENT SPECIAL CASE
@@ -1025,6 +1117,8 @@ BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(PassIndexedDepthInterval)
 BSON_READ_ABSTRACT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbstractInterval)
 // ABSTRACT SPECIAL CASE
   READ_O_UTF8_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(AbstractInterval, Comment)
+  READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractInterval, AbstractPressureInterval)
+  READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractInterval, AbstractTvdInterval)
   READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractInterval, DateTimeInterval)
   READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractInterval, ElapsedTimeInterval)
   READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractInterval, MdInterval)
