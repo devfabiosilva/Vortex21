@@ -204,6 +204,29 @@ public class LogTest {
         assertEquals(DateUtils.toTimestamp("2026-06-08T19:59:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
         assertEquals(18929019, ((BsonValue)navigate(extensionNameValue, "Index")).asInt64().getValue());
         assertEquals("LoggingToolKind description (max 2000 chars)", navigate(extensionNameValue, "Description"));
+
+        assertEquals("LoggingToolClass char extension", navigate(log, "LoggingToolClass"));
+        assertEquals("String 256 max char", navigate(log,"LoggingToolClassLongName"));
+
+        BsonDocument loggingServicePeriod = (BsonDocument) navigate(log, "LoggingServicePeriod");
+        assertNotNull(loggingServicePeriod);
+        assertEquals("Comment @ LoggingServicePeriod", navigate(loggingServicePeriod, "Comment"));
+        assertEquals(DateUtils.toTimestamp("2026-02-15T19:39:47Z"), ((BsonValue)navigate(loggingServicePeriod, "StartTime")).asDateTime().getValue());
+        assertEquals(DateUtils.toTimestamp("2026-03-07T19:39:47Z"), ((BsonValue)navigate(loggingServicePeriod, "EndTime")).asDateTime().getValue());
+
+        assertEquals("interpreted", navigate(log,"Derivation"));
+        assertEquals("coiled tubing", navigate(log,"LoggingMethod"));
+
+        assertEquals("uomA", navigate(log,"NominalHoleSize", "#attributes", "uom"));
+        assertEquals(1.0, ((BsonDouble)navigate(log,"NominalHoleSize", "#value")).getValue(), 1E6);
+
+        assertEquals("mudClass extension", navigate(log,"MudClass"));
+        assertEquals("MudSubClass extension", navigate(log,"MudSubClass"));
+        assertEquals("open hole", navigate(log,"HoleLoggingStatus"));
+
+        assertEquals("", navigate(log,"NominalSamplingInterval", "#attributes", "uom"));
+        assertEquals(2.01, ((BsonDouble)navigate(log,"NominalSamplingInterval", "#value")).getValue(), 1E6);
+
     }
 
     @Test
@@ -293,5 +316,43 @@ public class LogTest {
     public void customDataInBhaRun() throws Exception {
         BsonArray customData = (BsonArray) navigate(this.logDocument, "Log", "CustomData");
         assertNull(customData);
+    }
+
+    @Test
+    public void logOSDUIntegration() throws Exception {
+        BsonDocument logOSDUIntegration = (BsonDocument) navigate(this.logDocument, "Log", "LogOSDUIntegration");
+
+        assertEquals("Log version (max 64 chars)", navigate(logOSDUIntegration, "LogVersion"));
+        assertEquals(DateUtils.toTimestamp("2026-08-05T20:21:10Z"), ((BsonDateTime)navigate(logOSDUIntegration, "ZeroTime")).asDateTime().getValue());
+        assertEquals("FrameIdentifier (max char 64)", navigate(logOSDUIntegration, "FrameIdentifier"));
+        assertTrue(((BsonBoolean)navigate(logOSDUIntegration, "IsRegular")).getValue());
+
+        BsonDocument intermediaryServiceCompany = (BsonDocument) navigate(logOSDUIntegration, "IntermediaryServiceCompany");
+
+        assertNotNull(intermediaryServiceCompany);
+        assertEquals("523e4568-e89b-12d3-a456-426614174003", navigate(intermediaryServiceCompany, "Uuid"));
+        assertEquals("Empty Object Version", navigate(intermediaryServiceCompany, "ObjectVersion"));
+        assertEquals("prodml56.Log", navigate(intermediaryServiceCompany, "QualifiedType"));
+        assertEquals("No title", navigate(intermediaryServiceCompany, "Title"));
+        assertEquals("http://www.example.com/schema/anyURIIntermediaryServiceCompany", navigate(intermediaryServiceCompany, "EnergisticsUri"));
+        BsonArray locatorUrl = (BsonArray) navigate(intermediaryServiceCompany, "LocatorUrl");
+
+        assertNotNull(locatorUrl);
+        assertEquals(1, locatorUrl.size());
+        assertEquals("http://www.example.com/schema/anyURIIntermediaryServiceCompanyA", locatorUrl.get(0).asString().getValue());
+
+        BsonArray extensionNameValues = (BsonArray) navigate(intermediaryServiceCompany, "ExtensionNameValue");
+
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+        BsonValue extensionNameValue = extensionNameValues.get(0);
+
+        assertEquals("NameB", navigate(extensionNameValue, "Name"));
+        assertEquals("uom testA", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("Empty Value N", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("data transfer speed", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2024-11-05T20:31:27Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(-1927, ((BsonInt64) navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("Description XYZ", navigate(extensionNameValue, "Description"));
     }
 }

@@ -363,39 +363,39 @@
       <rdw212:Description xsi:type="rdw212:String2000">LoggingToolKind description (max 2000 chars)</rdw212:Description>
     </rdw212:ExtensionNameValue>
   </rdw211:LoggingToolKind>
-  <rdw211:LoggingToolClass xsi:type="rdw211:LoggingToolClassExt"></rdw211:LoggingToolClass>
-  <rdw211:LoggingToolClassLongName xsi:type="rdw212:String256"></rdw211:LoggingToolClassLongName>
+  <rdw211:LoggingToolClass xsi:type="rdw211:LoggingToolClassExt">LoggingToolClass char extension</rdw211:LoggingToolClass>
+  <rdw211:LoggingToolClassLongName xsi:type="rdw212:String256">String 256 max char</rdw211:LoggingToolClassLongName>
   <rdw211:LoggingServicePeriod xsi:type="rdw212:DateTimeInterval">
-    <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>
-    <rdw212:StartTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:StartTime>
-    <rdw212:EndTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:EndTime>
+    <rdw212:Comment xsi:type="rdw212:String2000">Comment @ LoggingServicePeriod</rdw212:Comment>
+    <rdw212:StartTime xsi:type="rdw212:TimeStamp">2026-02-15T19:39:47Z</rdw212:StartTime>
+    <rdw212:EndTime xsi:type="rdw212:TimeStamp">2026-03-07T19:39:47Z</rdw212:EndTime>
   </rdw211:LoggingServicePeriod>
-  <rdw211:Derivation xsi:type="rdw211:ChannelDerivation">raw</rdw211:Derivation>
+  <rdw211:Derivation xsi:type="rdw211:ChannelDerivation">interpreted</rdw211:Derivation>
   <rdw211:LoggingMethod xsi:type="rdw211:LoggingMethod">coiled tubing</rdw211:LoggingMethod>
-  <rdw211:NominalHoleSize xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw211:NominalHoleSize>
-  <rdw211:MudClass xsi:type="rdw211:MudClassExt"></rdw211:MudClass>
-  <rdw211:MudSubClass xsi:type="rdw211:MudSubClassExt"></rdw211:MudSubClass>
+  <rdw211:NominalHoleSize xsi:type="rdw212:LengthMeasureExt" uom="uomA">1.0</rdw211:NominalHoleSize>
+  <rdw211:MudClass xsi:type="rdw211:MudClassExt">mudClass extension</rdw211:MudClass>
+  <rdw211:MudSubClass xsi:type="rdw211:MudSubClassExt">MudSubClass extension</rdw211:MudSubClass>
   <rdw211:HoleLoggingStatus xsi:type="rdw211:HoleLoggingStatus">open hole</rdw211:HoleLoggingStatus>
-  <rdw211:NominalSamplingInterval xsi:type="rdw212:GenericMeasure" uom="">0.0</rdw211:NominalSamplingInterval>
+  <rdw211:NominalSamplingInterval xsi:type="rdw212:GenericMeasure" uom="">2.010</rdw211:NominalSamplingInterval>
   <rdw211:LogOSDUIntegration xsi:type="rdw211:LogOSDUIntegration">
-    <rdw211:LogVersion xsi:type="rdw212:String64"></rdw211:LogVersion>
-    <rdw211:ZeroTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:ZeroTime>
-    <rdw211:FrameIdentifier xsi:type="rdw212:String64"></rdw211:FrameIdentifier>
-    <rdw211:IsRegular xsi:type="xsd:boolean">false</rdw211:IsRegular>
+    <rdw211:LogVersion xsi:type="rdw212:String64">Log version (max 64 chars)</rdw211:LogVersion>
+    <rdw211:ZeroTime xsi:type="rdw212:TimeStamp">2026-08-05T20:21:10Z</rdw211:ZeroTime>
+    <rdw211:FrameIdentifier xsi:type="rdw212:String64">FrameIdentifier (max char 64)</rdw211:FrameIdentifier>
+    <rdw211:IsRegular xsi:type="xsd:boolean">true</rdw211:IsRegular>
     <rdw211:IntermediaryServiceCompany xsi:type="rdw212:DataObjectReference">
       <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174003</rdw212:Uuid>
-      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml56.Log</rdw212:QualifiedType>
-      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64">Empty Object Version</rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml56.Log</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000">No title</rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIIntermediaryServiceCompany</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIIntermediaryServiceCompanyA</rdw212:LocatorUrl>
       <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-        <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-        <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-        <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-        <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-        <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+        <rdw212:Name xsi:type="rdw212:String64">NameB</rdw212:Name>
+        <rdw212:Value xsi:type="rdw212:StringMeasure" uom="uom testA">Empty Value N</rdw212:Value>
+        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">data transfer speed</rdw212:MeasureClass>
+        <rdw212:DTim xsi:type="rdw212:TimeStamp">2024-11-05T20:31:27Z</rdw212:DTim>
+        <rdw212:Index xsi:type="xsd:long">-1927</rdw212:Index>
+        <rdw212:Description xsi:type="rdw212:String2000">Description XYZ</rdw212:Description>
       </rdw212:ExtensionNameValue>
     </rdw211:IntermediaryServiceCompany>
   </rdw211:LogOSDUIntegration>
