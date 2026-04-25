@@ -172,6 +172,38 @@ public class LogTest {
         assertEquals(DateUtils.toTimestamp("2026-05-07T22:39:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
         assertEquals(7810, ((BsonInt64) navigate(extensionNameValue, "Index")).getValue());
         assertEquals("Description A", navigate(extensionNameValue, "Description"));
+
+        assertEquals(1762, ((BsonInt64)navigate(log, "LoggingCompanyCode")).getValue());
+
+        BsonDocument loggingToolKind = (BsonDocument) navigate(log, "LoggingToolKind");
+
+        assertEquals("873e4568-e89b-12d3-a456-426614174002", navigate(loggingToolKind, "Uuid"));
+        assertEquals("Object version @ LoggingToolKind", navigate(loggingToolKind, "ObjectVersion"));
+        assertEquals("witsml31.test", navigate(loggingToolKind, "QualifiedType"));
+        assertEquals("LoggingToolKind title", navigate(loggingToolKind, "Title"));
+        assertEquals("http://www.example.com/schema/anyURILoggingToolKind", navigate(loggingToolKind, "EnergisticsUri"));
+
+        locatorUrl = (BsonArray) navigate(loggingToolKind, "LocatorUrl");
+        assertNotNull(locatorUrl);
+        assertEquals(2, locatorUrl.size());
+
+        assertEquals("http://www.example.com/schema/anyURILoggingToolKindA", locatorUrl.get(0).asString().getValue());
+        assertEquals("http://www.example.com/schema/anyURILoggingToolKindB", locatorUrl.get(1).asString().getValue());
+
+        extensionNameValues = (BsonArray) navigate(loggingToolKind, "ExtensionNameValue");
+
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = extensionNameValues.get(0);
+
+        assertEquals("LoggingToolKind Extension Name Value (Name)", navigate(extensionNameValue, "Name"));
+        assertEquals("LoggingToolKind uom", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("Value with uom", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("area per count", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2026-06-08T19:59:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(18929019, ((BsonValue)navigate(extensionNameValue, "Index")).asInt64().getValue());
+        assertEquals("LoggingToolKind description (max 2000 chars)", navigate(extensionNameValue, "Description"));
     }
 
     @Test

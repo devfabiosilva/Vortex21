@@ -345,21 +345,22 @@
       <rdw212:Description xsi:type="rdw212:String2000">Description A</rdw212:Description>
     </rdw212:ExtensionNameValue>
   </rdw211:LoggingCompany>
-  <rdw211:LoggingCompanyCode xsi:type="xsd:long">0</rdw211:LoggingCompanyCode>
+  <rdw211:LoggingCompanyCode xsi:type="xsd:long">1762</rdw211:LoggingCompanyCode>
   <rdw211:LoggingToolKind xsi:type="rdw212:DataObjectReference">
-    <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174002</rdw212:Uuid>
-    <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+    <rdw212:Uuid xsi:type="rdw212:UuidString">873e4568-e89b-12d3-a456-426614174002</rdw212:Uuid>
+    <rdw212:ObjectVersion xsi:type="rdw212:String64">Object version @ LoggingToolKind</rdw212:ObjectVersion>
     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml31.test</rdw212:QualifiedType>
-    <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-    <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+    <rdw212:Title xsi:type="rdw212:String2000">LoggingToolKind title</rdw212:Title>
+    <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURILoggingToolKind</rdw212:EnergisticsUri>
+    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURILoggingToolKindA</rdw212:LocatorUrl>
+    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURILoggingToolKindB</rdw212:LocatorUrl>
     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      <rdw212:Name xsi:type="rdw212:String64">LoggingToolKind Extension Name Value (Name)</rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom="LoggingToolKind uom">Value with uom</rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">area per count</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-06-08T19:59:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">18929019</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000">LoggingToolKind description (max 2000 chars)</rdw212:Description>
     </rdw212:ExtensionNameValue>
   </rdw211:LoggingToolKind>
   <rdw211:LoggingToolClass xsi:type="rdw211:LoggingToolClassExt"></rdw211:LoggingToolClass>
