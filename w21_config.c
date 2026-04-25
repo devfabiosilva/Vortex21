@@ -4,6 +4,67 @@
 #include <time.h>
 #include <malloc.h>
 
+_Static_assert(W21_OBJECT_NONE == 0, "W21_OBJECT_NONE must be zero");
+_Static_assert(W21_OBJECT_AutoDetect == 1, "W21_OBJECT_AutoDetect must be 1");
+#define W21_OBJ_ASSERT(obj) \
+  _Static_assert(W21_OBJECT_##obj > W21_OBJECT_AutoDetect, "W21_OBJECT_" #obj " must be greater than W21_OBJECT_AutoDetect");
+
+W21_OBJ_ASSERT(BhaRun)
+W21_OBJ_ASSERT(CementJob)
+W21_OBJ_ASSERT(CementJobEvaluation)
+W21_OBJ_ASSERT(Channel)
+W21_OBJ_ASSERT(ChannelKind)
+W21_OBJ_ASSERT(ChannelKindDictionary)
+W21_OBJ_ASSERT(ChannelSet)
+W21_OBJ_ASSERT(CuttingsGeology)
+W21_OBJ_ASSERT(CuttingsGeologyInterval)
+W21_OBJ_ASSERT(DepthRegImage)
+W21_OBJ_ASSERT(DownholeComponent)
+W21_OBJ_ASSERT(DrillReport)
+W21_OBJ_ASSERT(ErrorTerm)
+W21_OBJ_ASSERT(ErrorTermDictionary)
+W21_OBJ_ASSERT(FluidsReport)
+W21_OBJ_ASSERT(InterpretedGeology)
+W21_OBJ_ASSERT(InterpretedGeologyInterval)
+W21_OBJ_ASSERT(Log)
+W21_OBJ_ASSERT(LoggingToolKind)
+W21_OBJ_ASSERT(LoggingToolKindDictionary)
+W21_OBJ_ASSERT(MudLogReport)
+W21_OBJ_ASSERT(MudlogReportInterval)
+W21_OBJ_ASSERT(OpsReport)
+W21_OBJ_ASSERT(PPFGChannel)
+W21_OBJ_ASSERT(PPFGChannelSet)
+W21_OBJ_ASSERT(PPFGLog)
+W21_OBJ_ASSERT(Rig)
+W21_OBJ_ASSERT(RigUtilization)
+W21_OBJ_ASSERT(Risk)
+W21_OBJ_ASSERT(ShowEvaluation)
+W21_OBJ_ASSERT(ShowEvaluationInterval)
+W21_OBJ_ASSERT(StimJob)
+W21_OBJ_ASSERT(StimJobStage)
+W21_OBJ_ASSERT(StimPerforationCluster)
+W21_OBJ_ASSERT(SurveyProgram)
+W21_OBJ_ASSERT(Target)
+W21_OBJ_ASSERT(ToolErrorModel)
+W21_OBJ_ASSERT(ToolErrorModelDictionary)
+W21_OBJ_ASSERT(Trajectory)
+W21_OBJ_ASSERT(TrajectoryStation)
+W21_OBJ_ASSERT(Tubular)
+W21_OBJ_ASSERT(WeightingFunction)
+W21_OBJ_ASSERT(WeightingFunctionDictionary)
+W21_OBJ_ASSERT(Well)
+W21_OBJ_ASSERT(Wellbore)
+W21_OBJ_ASSERT(WellboreCompletion)
+W21_OBJ_ASSERT(WellboreGeology)
+W21_OBJ_ASSERT(WellboreGeometry)
+W21_OBJ_ASSERT(WellboreGeometrySection)
+W21_OBJ_ASSERT(WellboreMarker)
+W21_OBJ_ASSERT(WellboreMarkerSet)
+W21_OBJ_ASSERT(WellCMLedger)
+W21_OBJ_ASSERT(WellCompletion)
+
+#undef W21_OBJ_ASSERT
+
 #define CONTRACT_BEGIN_EVAL(x) "<?xml version=\"1.0\" encoding=\"UTF-8\"?><"#x"Contract xmlns:cw21rd=\"http://tempuri.org/cw21rd.xsd\">"
 #define CONTRACT_END_EVAL(x) "</"#x"Contract>"
 

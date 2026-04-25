@@ -14,7 +14,7 @@
 
 enum w21_object_e {
   W21_OBJECT_NONE = 0,
-  W21_OBJECT_AutoDetect,
+  W21_OBJECT_AutoDetect = 1,
   SET_W21_ENUM_OBJ(BhaRun),
   SET_W21_ENUM_OBJ(CementJob),
   SET_W21_ENUM_OBJ(CementJobEvaluation),
@@ -70,7 +70,6 @@ enum w21_object_e {
   SET_W21_ENUM_OBJ(WellCompletion)
 };
 
-_Static_assert(W21_OBJECT_NONE == 0, "W21_OBJECT_NONE must be zero");
 #undef SET_W21_ENUM_OBJ
 
 enum w21_contract_e {
