@@ -1026,11 +1026,23 @@ bson_read_abstract_root_##type##_21_resume: \
 #define READ_O_UTF8_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName) \
   if (objectParent->objectName) { \
     if (!bson_append_utf8(&child, CWS_CONST_BSON_KEY(#objectName), (const char *)objectParent->objectName, -1)) { \
-      set_w21_error_message(soap, E_W21_ERROR_END_BSON_ABSTRACT_ROOT_OBJECT, "Could add utf-8 in abstract root object " #objectName " in " #objectParent); \
+      set_w21_error_message(soap, E_W21_ERROR_ADD_UTF8_IN_ABSTRACT_ROOT_OBJECT, "Could add utf-8 in abstract root object " #objectName " in " #objectParent); \
       goto bson_read_abstract_root_##objectParent##_21_resume; \
     } \
     CAPTURE_STAT(string) \
   }
+
+//aqui
+#define READ_O_DOUBLE_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName) \
+  if (!bson_append_double(&child, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) { \
+    set_w21_error_message(soap, E_W21_ERROR_ADD_REQUIRED_DOUBLE_IN_ABSTRACT_ROOT_OBJECT, "Could not add required double in " #objectName " object at root abstract " #objectParent); \
+    goto bson_read_abstract_root_##objectParent##_21_resume; \
+  } \
+  CAPTURE_STAT(double)
+
+#define READ_O_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
+  if (bson_read_##typeName##_21(soap, &child, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) \
+    goto bson_read_abstract_root_##objectParent##_21_resume;
 
 //used for ROOT Witsml object
 #define READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME_B(ns, objectParent, objectName, typeName) \
@@ -1131,7 +1143,6 @@ int bson_read_transient_##type##_21( \
 #define READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
   READ_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(&root_document, objectParent, objectName, typeName, bson_read_##objectParent##21)
 
-//aqui
 #define READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
   READ_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(&document_in_array, objectParent, objectName, typeName, bson_read_array_of_##objectParent##_21)
 
@@ -1338,7 +1349,6 @@ bson_read_##type##_21_resume: \
     CAPTURE_STAT(string) \
   }
 
-//aqui
 #define READ_DOUBLE_OBJECT_ITEM_21_OR_ELSE_GOTO_RESUME(bson, objectParent, onErrorGoto) \
   if (!bson_append_double(bson, KEY_USCORE_VALUE, objectParent->__item)) { \
     set_w21_error_message(soap, E_W21_ERROR_SET_DOUBLE_ITEM, "Could not set double __item value " #objectParent); \
