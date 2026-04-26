@@ -784,20 +784,6 @@ BSON_READ_ABSTRACT_OBJECT_ROOT_BUILDER_21_END(AbstractTvdInterval)
 
 //TODO REMOVE IT
 //struct rdw212__AbstractTvdInterval
-/*
-BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractTvdInterval)
-  READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Comment)
-  READ_O_DOUBLE_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, TvdMin)
-  READ_O_DOUBLE_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, TvdMax)
-  READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Uom)
-  READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Trajectory, DataObjectReference)
-  READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME_B(rdw212, AbstractTvdInterval, DatumTvdInterval, DatumTvdInterval)
-  READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME_B(rdw212, AbstractTvdInterval, ReferencePointTvdInterval, ReferencePointTvdInterval)
-BSON_READ_OBJECT_BUILDER_21_END(AbstractTvdInterval)
-*/
-
-//TODO REMOVE IT
-//struct rdw212__AbstractTvdInterval
 BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractTvdInterval)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Comment)
   READ_A_DOUBLE_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, TvdMin)
@@ -818,7 +804,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, WellboreGeometrySection)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME_B(rdw212, WellboreGeometrySection, MdInterval, MdInterval)
   READ_A_OBJECT_ENUM_NULLABLE_21_OR_ELSE_GOTO_RESUME(rdw211, WellboreGeometrySection, TypeHoleCasing, HoleCasingType)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(WellboreGeometrySection, SectionTvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(WellboreGeometrySection, SectionTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(WellboreGeometrySection, IdSection, LengthMeasure)
@@ -1168,9 +1153,7 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, ChannelIndex)
   READ_A_OBJECT_ENUM_21_OR_ELSE_GOTO_RESUME(rdw212, ChannelIndex, Direction, IndexDirection)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelIndex, Mnemonic)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelIndex, Datum, DataObjectReference)
-//aqui
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelIndex, IndexInterval, AbstractInterval) // TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(ChannelIndex, IndexInterval, AbstractInterval)
   //END ABSTRACT
 BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_END(ChannelIndex)
@@ -1231,7 +1214,6 @@ BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw211, PPFGChannel)
   READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannel, PassDescription)
   READ_O_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannel, PassDetail, PassDetail)
   // BEGIN ABSTRACT
-  //READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannel, PrimaryIndexInterval, AbstractInterval) // TODO REMOVE
   READ_O_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(PPFGChannel, PrimaryIndexInterval, AbstractInterval)
   // END ABSTRACT
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannel, LoggingCompany, DataObjectReference)
@@ -1291,7 +1273,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, Channel)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PassDescription)
   READ_A_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PassDetail, PassDetail)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PrimaryIndexInterval, AbstractInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(Channel, PrimaryIndexInterval, AbstractInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, LoggingCompany, DataObjectReference)
@@ -1367,7 +1348,6 @@ BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw211, PPFGChannelSet)
   READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, PassDescription)
   READ_O_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, PassDetail, PassDetail)
   // BEGIN ABSTRACT
-  //READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, PrimaryIndexInterval, AbstractInterval) // TODO REMOVE
   READ_O_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, PrimaryIndexInterval, AbstractInterval)
   // END ABSTRACT
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGChannelSet, LoggingCompany, DataObjectReference)
@@ -1414,7 +1394,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, ChannelSet)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PassDescription)
   READ_A_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PassDetail, PassDetail)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PrimaryIndexInterval, AbstractInterval) // TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PrimaryIndexInterval, AbstractInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, LoggingCompany, DataObjectReference)
@@ -1477,7 +1456,6 @@ BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw211, PPFGLog)
   READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGLog, PassDescription)
   READ_O_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGLog, PassDetail, PassDetail)
   // BEGIN ABSTRACT
-  //READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGLog, PrimaryIndexInterval, AbstractInterval) //TODO REMOVE
   READ_O_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(PPFGLog, PrimaryIndexInterval, AbstractInterval)
   // END ABSTRACT
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(PPFGLog, LoggingCompany, DataObjectReference)
@@ -1685,7 +1663,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, DepthRegParameter)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, Mnemonic)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, Dictionary)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, IndexInterval, AbstractInterval) // TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, IndexInterval, AbstractInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegParameter, Value, GenericMeasure)
@@ -1748,7 +1725,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, DepthRegLogSection)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegLogSection, IndexUom)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegLogSection, IndexDatum, DataObjectReference)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegLogSection, IndexInterval, AbstractInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(DepthRegLogSection, IndexInterval, AbstractInterval)
   // END ABSTRACT
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DepthRegLogSection, VerticalLabel)
@@ -1901,7 +1877,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, StringEquipment)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(StringEquipment, Length, LengthMeasure)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(StringEquipment, MdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(StringEquipment, TvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(StringEquipment, TvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_BOOLEAN_NULLABLE_21_OR_ELSE_GOTO_RESUME(StringEquipment, OutsideString)
@@ -1973,7 +1948,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, Borehole)
   READ_A_OBJECT_ENUM_NULLABLE_21_OR_ELSE_GOTO_RESUME(rdw211, Borehole, TypeBorehole, BoreholeType)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(Borehole, MdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(Borehole, TvdInterval, AbstractTvdInterval) // TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(Borehole, TvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(Borehole, BoreholeDiameter, LengthMeasure)
@@ -1989,7 +1963,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, GeologyFeature)
   READ_A_OBJECT_ENUM_NULLABLE_21_OR_ELSE_GOTO_RESUME(rdw211, GeologyFeature, GeologyType, GeologyType)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(GeologyFeature, FeatureMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(GeologyFeature, FeatureTvdInterval, AbstractTvdInterval) //TODO
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(GeologyFeature, FeatureTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(GeologyFeature, GeologicUnitInterpretation, DataObjectReference)
@@ -2039,7 +2012,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, PerfHole)
   READ_A_PUT_SINGLE_ATTR_21_OR_ELSE_GOTO_RESUME(PerfHole, uid)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(PerfHole, MdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(PerfHole, TvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(PerfHole, TvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(PerfHole, HoleDiameter, LengthMeasure)
@@ -2108,7 +2080,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, PerforationSet)
   READ_A_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(PerforationSet, DownholeString, ComponentReference)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(PerforationSet, MdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(PerforationSet, TvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(PerforationSet, TvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(PerforationSet, HoleDiameter, LengthMeasure)
@@ -2446,7 +2417,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, DrillActivity)
   READ_A_OBJECT_ENUM_NULLABLE_21_OR_ELSE_GOTO_RESUME(rdw211, DrillActivity, TypeActivityClass, DrillActivityClassType)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillActivity, ActivityMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillActivity, ActivityTvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(DrillActivity, ActivityTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillActivity, BitMdInterval, MdInterval)
@@ -2488,7 +2458,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, DrillReportLogInfo)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportLogInfo, ServiceCompany, DataObjectReference)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportLogInfo, LoggedMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportLogInfo, LoggedTvdInterval, AbstractTvdInterval) // TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(DrillReportLogInfo, LoggedTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportLogInfo, Tool, DataObjectReference)
@@ -2505,9 +2474,8 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, DrillReportCoreInfo)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportCoreInfo, CoreNumber)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportCoreInfo, CoredMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportCoreInfo, CoredTvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(DrillReportCoreInfo, CoredTvdInterval, AbstractTvdInterval)
-  // BEGIN ABSTRACT
+  // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportCoreInfo, LenRecovered, LengthMeasure)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportCoreInfo, RecoverPc, VolumePerVolumeMeasure)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportCoreInfo, LenBarrel, LengthMeasure)
@@ -2566,7 +2534,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, DrillReportLithShowInfo)
   READ_A_TIME_NULLABLE_21_OR_ELSE_GOTO_RESUME(DrillReportLithShowInfo, DTim)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportLithShowInfo, ShowMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportLithShowInfo, ShowTvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(DrillReportLithShowInfo, ShowTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportLithShowInfo, Show)
@@ -2634,7 +2601,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, DrillReportPerfInfo)
   READ_A_TIME_NULLABLE_21_OR_ELSE_GOTO_RESUME(DrillReportPerfInfo, DTimClose)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportPerfInfo, PerforationMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportPerfInfo, PerforationTvdInterval, AbstractTvdInterval) // TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(DrillReportPerfInfo, PerforationTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportPerfInfo, ExtensionNameValue, ExtensionNameValue)
@@ -2647,7 +2613,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, DrillReportGasReadingInfo)
   READ_A_OBJECT_ENUM_NULLABLE_21_OR_ELSE_GOTO_RESUME(rdw211, DrillReportGasReadingInfo, ReadingType, GasPeakType)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportGasReadingInfo, GasReadingMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportGasReadingInfo, GasReadingTvdInterval, AbstractTvdInterval) // TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(DrillReportGasReadingInfo, GasReadingTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(DrillReportGasReadingInfo, GasHigh, VolumePerVolumeMeasure)
@@ -3925,7 +3890,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, StimPerforationCluster)
   READ_A_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME_B(rdw212, StimPerforationCluster, ExtensionNameValue, ExtensionNameValue)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(StimPerforationCluster, MdPerforatedInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(StimPerforationCluster, TvdPerforatedInterval, AbstractTvdInterval) // TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(StimPerforationCluster, TvdPerforatedInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(StimPerforationCluster, Type)
@@ -4205,7 +4169,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, StimTubular)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(StimTubular, Weight, MassPerLengthMeasure)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(StimTubular, TubularMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(StimTubular, TubularTvdInterval, AbstractTvdInterval) // TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(StimTubular, TubularTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(StimTubular, VolumeFactor, VolumePerLengthMeasure)
@@ -5028,7 +4991,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, GravelPackInterval)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(GravelPackInterval, DownholeString, DataObjectComponentReference)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(GravelPackInterval, GravelPackMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(GravelPackInterval, GravelPackTvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(GravelPackInterval, GravelPackTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(GravelPackInterval, EventHistory, EventInfo)
@@ -5044,7 +5006,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, OpenHoleInterval)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(OpenHoleInterval, BoreholeString, DataObjectComponentReference)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(OpenHoleInterval, OpenHoleMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(OpenHoleInterval, OpenHoleTvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(OpenHoleInterval, OpenHoleTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(OpenHoleInterval, EventHistory, EventInfo)
@@ -5062,7 +5023,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, PerforationStatusHistory)
   READ_A_TIME_NULLABLE_21_OR_ELSE_GOTO_RESUME(PerforationStatusHistory, EndDate)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(PerforationStatusHistory, PerforationMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(PerforationStatusHistory, PerforationTvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(PerforationStatusHistory, PerforationTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_DOUBLE_NULLABLE_21_OR_ELSE_GOTO_RESUME(PerforationStatusHistory, AllocationFactor)
@@ -5075,7 +5035,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, PerforationSetInterval)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(PerforationSetInterval, PerforationSet, DataObjectComponentReference)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(PerforationSetInterval, PerforationSetMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(PerforationSetInterval, PerforationSetTvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(PerforationSetInterval, PerforationSetTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(PerforationSetInterval, EventHistory, EventInfo)
@@ -5092,7 +5051,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, SlotsInterval)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(SlotsInterval, StringEquipment, DataObjectComponentReference)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(SlotsInterval, SlottedMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(SlotsInterval, SlottedTvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(SlotsInterval, SlottedTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(SlotsInterval, EventHistory, EventInfo)
@@ -5309,7 +5267,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, MemberObject)
   READ_A_PUT_SINGLE_ATTR_21_OR_ELSE_GOTO_RESUME(MemberObject, uid)
   READ_A_OBJECT_ENUM_NULLABLE_21_OR_ELSE_GOTO_RESUME(rdw212, MemberObject, IndexKind, DataIndexKind)
   // BEGIN ABSTRACT
-  //READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME(MemberObject, IndexInterval, AbstractInterval) TODO REMOVE
   READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(MemberObject, IndexInterval, AbstractInterval)
   // END ABSTRACT
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(MemberObject, MnemonicList)
@@ -5459,7 +5416,6 @@ WITSML21_OBJECT_BEGIN(rdw211, Channel)
   READ_W_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PassDescription)
   READ_W_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PassDetail, PassDetail)
   // BEGIN ABSTRACT
-  //READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, PrimaryIndexInterval, AbstractInterval) //TODO REMOVE
   READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(Channel, PrimaryIndexInterval, AbstractInterval)
   // END ABSTRACT
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Channel, LoggingCompany, DataObjectReference)
@@ -5540,7 +5496,6 @@ WITSML21_OBJECT_BEGIN(rdw211, ChannelSet)
   READ_W_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PassDescription)
   READ_W_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PassDetail, PassDetail)
   // BEGIN ABSTRACT
-  //READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PrimaryIndexInterval, AbstractInterval) //TODO REMOVE
   READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(ChannelSet, PrimaryIndexInterval, AbstractInterval)
   // END ABSTRACT
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(ChannelSet, LoggingCompany, DataObjectReference)
@@ -5735,7 +5690,6 @@ WITSML21_OBJECT_BEGIN(rdw211, Log)
   READ_W_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(Log, PassDescription)
   READ_W_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(Log, PassDetail, PassDetail)
   // BEGIN ABSTRACT
-  //READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Log, PrimaryIndexInterval, AbstractInterval) // TODO REMOVE
   READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(Log, PrimaryIndexInterval, AbstractInterval)
   // END ABSTRACT
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Log, LoggingCompany, DataObjectReference)
@@ -6230,7 +6184,6 @@ WITSML21_OBJECT_BEGIN(rdw211, StimPerforationCluster)
   READ_W_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME_B(rdw212, StimPerforationCluster, ExtensionNameValue, ExtensionNameValue)
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(StimPerforationCluster, MdPerforatedInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(StimPerforationCluster, TvdPerforatedInterval, AbstractTvdInterval) //TODO REMOVE
   READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(StimPerforationCluster, TvdPerforatedInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_W_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(StimPerforationCluster, Type)
@@ -6580,7 +6533,6 @@ WITSML21_OBJECT_BEGIN(rdw211, WellboreCompletion)
   READ_W_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(WellboreCompletion, SuffixAPI)
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(WellboreCompletion, CompletionMdInterval, MdInterval)
   // BEGIN ABSTRACT
-  //READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(WellboreCompletion, CompletionTvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(WellboreCompletion, CompletionTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_W_OBJECT_ENUM_NULLABLE_21_OR_ELSE_GOTO_RESUME(rdw211, WellboreCompletion, CurrentStatus, CompletionStatus)
@@ -6641,7 +6593,6 @@ WITSML21_OBJECT_BEGIN(rdw211, WellboreGeometrySection)
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME_B(rdw212, WellboreGeometrySection, MdInterval, MdInterval)
   READ_W_OBJECT_ENUM_NULLABLE_21_OR_ELSE_GOTO_RESUME(rdw211, WellboreGeometrySection, TypeHoleCasing, HoleCasingType)
   // BEGIN ABSTRACT
-  //READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(WellboreGeometrySection, SectionTvdInterval, AbstractTvdInterval) //TODO REMOVE
   READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(WellboreGeometrySection, SectionTvdInterval, AbstractTvdInterval)
   // END ABSTRACT
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(WellboreGeometrySection, IdSection, LengthMeasure)

@@ -313,7 +313,7 @@ public class LogTest {
     }
 
     @Test
-    public void customDataInBhaRun() throws Exception {
+    public void customLog() throws Exception {
         BsonArray customData = (BsonArray) navigate(this.logDocument, "Log", "CustomData");
         assertNull(customData);
     }
