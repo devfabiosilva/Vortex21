@@ -408,7 +408,7 @@ public class LogTest {
 
         assertEquals("EDITOR HISTORY A1", editorHistory.get(0).asString().getValue());
         assertEquals("EDITOR HISTORY B1", editorHistory.get(1).asString().getValue());
-        assertEquals("EDITOR HISTORY B1", editorHistory.get(2).asString().getValue());
+        assertEquals("EDITOR HISTORY C1", editorHistory.get(2).asString().getValue());
 
         assertEquals("DescriptiveKeywords A1", citation.asDocument().get("DescriptiveKeywords").asString().getValue());
 
@@ -517,5 +517,160 @@ public class LogTest {
         assertEquals("Prospect field", navigate(osduIntegration, "Prospect"));
         assertEquals("Play field", navigate(osduIntegration, "Play"));
         assertEquals("basin field", navigate(osduIntegration, "Basin"));
+
+        // Test second element in array
+
+        channelSet = channelSetArray.get(1).asDocument();
+        testDefaultRootAttributes(
+                channelSet.get("#attributes").asDocument(),
+                "523e4568-e89c-12d3-a456-426614174000",
+                "3",
+                "4"
+        );
+
+        aliases = (BsonArray)navigate(channelSet, "Aliases");
+
+        alias = aliases.get(0);
+        assertEquals("AT", navigate(alias, "#attributes", "authority"));
+        assertEquals("Identifier C", navigate(alias, "Identifier"));
+        assertEquals("IdentifierKind C", navigate(alias, "IdentifierKind"));
+        assertEquals("Description C", navigate(alias, "Description"));
+        assertEquals(DateUtils.toTimestamp("2021-01-05T19:39:47Z"), ((BsonValue)navigate(alias, "EffectiveDateTime")).asDateTime().getValue());
+        assertEquals(DateUtils.toTimestamp("2022-01-05T19:39:47Z"), ((BsonValue)navigate(alias, "TerminationDateTime")).asDateTime().getValue());
+
+        alias = aliases.get(1);
+        assertEquals("authority d", navigate(alias, "#attributes", "authority"));
+        assertEquals("Identifier D", navigate(alias, "Identifier"));
+        assertEquals("IdentifierKind D", navigate(alias, "IdentifierKind"));
+        assertEquals("Description D", navigate(alias, "Description"));
+        assertEquals(DateUtils.toTimestamp("2021-02-05T19:39:47Z"), ((BsonValue)navigate(alias, "EffectiveDateTime")).asDateTime().getValue());
+        assertEquals(DateUtils.toTimestamp("2022-02-05T19:39:47Z"), ((BsonValue)navigate(alias, "TerminationDateTime")).asDateTime().getValue());
+
+        citation = (BsonValue) navigate(channelSet, "Citation");
+
+        assertNotNull(citation);
+        assertEquals(" ", citation.asDocument().get("Title").asString().getValue());
+        assertEquals("Ima", citation.asDocument().get("Originator").asString().getValue());
+        assertEquals(DateUtils.toTimestamp("2026-05-05T19:38:47Z"), citation.asDocument().get("Creation").asDateTime().getValue());
+        assertEquals("nop", citation.asDocument().get("Format").asString().getValue());
+        assertEquals("Editor B", citation.asDocument().get("Editor").asString().getValue());
+        assertEquals(DateUtils.toTimestamp("2025-01-05T19:39:27Z"), citation.asDocument().get("LastUpdate").asDateTime().getValue());
+        assertEquals("Description in Citation B", citation.asDocument().get("Description").asString().getValue());
+
+        editorHistory = citation.asDocument().get("EditorHistory").asArray();
+
+        assertEquals(3, editorHistory.size());
+
+        assertEquals("EDITOR HISTORY A2", editorHistory.get(0).asString().getValue());
+        assertEquals("EDITOR HISTORY B2", editorHistory.get(1).asString().getValue());
+        assertEquals("EDITOR HISTORY C2", editorHistory.get(2).asString().getValue());
+
+        assertEquals("DescriptiveKeywords B1", citation.asDocument().get("DescriptiveKeywords").asString().getValue());
+
+        assertEquals("Existence B", navigate(channelSet, "Existence"));
+        assertEquals("ObjectVersionReason B", navigate(channelSet, "ObjectVersionReason"));
+
+        businessActivityHistoryArray = (BsonArray) navigate(channelSet, "BusinessActivityHistory");
+        assertNotNull(businessActivityHistoryArray);
+        assertEquals(4, businessActivityHistoryArray.size());
+
+        assertEquals("BusinessActivityHistory A2", ((BsonString)navigate(businessActivityHistoryArray, 0)).asString().getValue());
+        assertEquals("BusinessActivityHistory B2", ((BsonString)navigate(businessActivityHistoryArray, 1)).asString().getValue());
+        assertEquals("BusinessActivityHistory C2", ((BsonString)navigate(businessActivityHistoryArray, 2)).asString().getValue());
+        assertEquals("BusinessActivityHistory D2", ((BsonString)navigate(businessActivityHistoryArray, 3)).asString().getValue());
+
+        osduIntegration = (BsonDocument) navigate(channelSet, "OSDUIntegration");
+
+        lineageAssertions = (BsonArray) navigate(osduIntegration, "LineageAssertions");
+
+        assertNotNull(lineageAssertions);
+        assertEquals(3, lineageAssertions.size());
+
+        lineageAssertion = (BsonDocument)lineageAssertions.get(0);
+
+        assertEquals("701-D", navigate(lineageAssertion,  "ID"));
+        assertEquals("indirect", navigate(lineageAssertion,  "LineageRelationshipKind"));
+
+        lineageAssertion = (BsonDocument)lineageAssertions.get(1);
+
+        assertEquals("701-E", navigate(lineageAssertion,  "ID"));
+        assertEquals("reference", navigate(lineageAssertion,  "LineageRelationshipKind"));
+
+        lineageAssertion = (BsonDocument)lineageAssertions.get(2);
+
+        assertEquals("701-F", navigate(lineageAssertion,  "ID"));
+        assertEquals("direct", navigate(lineageAssertion,  "LineageRelationshipKind"));
+
+        ownerGroupArray = (BsonArray) navigate(osduIntegration, "OwnerGroup");
+
+        assertNotNull(ownerGroupArray);
+        assertNotNull(ownerGroupArray);
+        assertEquals(2, ownerGroupArray.size());
+
+        assertEquals("ownerGroupB1", ((BsonString)navigate(ownerGroupArray, 0)).getValue());
+        assertEquals("ownerGroupB2", ((BsonString)navigate(ownerGroupArray, 1)).getValue());
+
+        viewerGroupArray = (BsonArray) navigate(osduIntegration, "ViewerGroup");
+
+        assertNotNull(viewerGroupArray);
+        assertEquals(3, viewerGroupArray.size());
+
+        assertEquals("ViewerGroupB1", ((BsonString)navigate(viewerGroupArray, 0)).getValue());
+        assertEquals("ViewerGroupB2", ((BsonString)navigate(viewerGroupArray, 1)).getValue());
+        assertEquals("ViewerGroupB3", ((BsonString)navigate(viewerGroupArray, 2)).getValue());
+
+        legalTags = (BsonArray)navigate(osduIntegration, "LegalTags");
+
+        assertNotNull(legalTags);
+        assertEquals(4, legalTags.size());
+
+        assertEquals("LegalTagB1", ((BsonString)legalTags.get(0)).getValue());
+        assertEquals("LegalTagB2", ((BsonString)legalTags.get(1)).getValue());
+        assertEquals("LegalTagB3", ((BsonString)legalTags.get(2)).getValue());
+        assertEquals("LegalTagB4", ((BsonString)legalTags.get(3)).getValue());
+
+        assertEquals("{\"text\":\"Any JSON\", \"value\": 4.67}", navigate(osduIntegration, "OSDUGeoJSON"));
+
+        wGS84Latitude = (BsonDocument) navigate(osduIntegration, "WGS84Latitude");
+
+        assertEquals("0.001 seca", navigate(wGS84Latitude, "#attributes", "uom"));
+        assertEquals(0.1, ((BsonDouble)navigate(wGS84Latitude, "#value")).getValue(), 1E-6);
+
+        wGS84Longitude = (BsonDocument) navigate(osduIntegration, "WGS84Longitude");
+        assertEquals("urad", navigate(wGS84Longitude, "#attributes", "uom"));
+        assertEquals(7.01, ((BsonDouble)navigate(wGS84Longitude, "#value")).getValue(), 1E-6);
+
+        wGS84LocationMetadata = (BsonDocument) navigate(osduIntegration, "WGS84LocationMetadata");
+        assertEquals(DateUtils.toTimestamp("2023-03-15T19:39:47Z"), ((BsonDateTime)navigate(wGS84LocationMetadata, "SpatialLocationCoordinatesDate")).asDateTime().getValue());
+        assertEquals("gB1", navigate(wGS84LocationMetadata,"QuantitativeAccuracyBand"));
+        assertEquals("hB2", navigate(wGS84LocationMetadata,"QualitativeSpatialAccuracyType"));
+        assertEquals("iB3", navigate(wGS84LocationMetadata,"CoordinateQualityCheckPerformedBy"));
+        assertEquals(DateUtils.toTimestamp("2021-02-08T19:39:47Z"), ((BsonDateTime)navigate(wGS84LocationMetadata, "CoordinateQualityCheckDateTime")).asDateTime().getValue());
+
+        coordinateQualityCheckRemarkArray = (BsonArray) navigate(wGS84LocationMetadata,"CoordinateQualityCheckRemark");
+
+        assertNotNull(coordinateQualityCheckRemarkArray);
+        assertEquals(2, coordinateQualityCheckRemarkArray.size());
+        assertEquals("CoordinateQualityCheckRemark B1", coordinateQualityCheckRemarkArray.get(0).asString().getValue());
+        assertEquals("CoordinateQualityCheckRemark B2", coordinateQualityCheckRemarkArray.get(1).asString().getValue());
+
+        appliedOperationArray = (BsonArray) navigate(wGS84LocationMetadata,"AppliedOperation");
+
+        assertNotNull(appliedOperationArray);
+        assertEquals(3, appliedOperationArray.size());
+        assertEquals("lB1", appliedOperationArray.get(0).asString().getValue());
+        assertEquals("mB2", appliedOperationArray.get(1).asString().getValue());
+        assertEquals("nB3", appliedOperationArray.get(2).asString().getValue());
+        assertEquals("Field 2", navigate(osduIntegration, "Field"));
+        assertEquals("Brazil 2", navigate(osduIntegration, "Country"));
+        assertEquals("Rio de Janeiro 2", navigate(osduIntegration, "State"));
+        assertEquals("County field 2", navigate(osduIntegration, "County"));
+        assertEquals("Duque de Caxias 2", navigate(osduIntegration, "City"));
+        assertEquals("ABC 2", navigate(osduIntegration, "Region"));
+        assertEquals("Nova Campinas 2", navigate(osduIntegration, "District"));
+        assertEquals("Block field 2", navigate(osduIntegration, "Block"));
+        assertEquals("Prospect field 2", navigate(osduIntegration, "Prospect"));
+        assertEquals("Play field 2", navigate(osduIntegration, "Play"));
+        assertEquals("basin field 2", navigate(osduIntegration, "Basin"));
     }
 }
