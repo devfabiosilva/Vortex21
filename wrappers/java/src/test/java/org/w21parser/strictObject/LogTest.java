@@ -518,6 +518,24 @@ public class LogTest {
         assertEquals("Play field", navigate(osduIntegration, "Play"));
         assertEquals("basin field", navigate(osduIntegration, "Basin"));
 
+        customDataValidate(channelSet, "<a>TestA1</a>", "<b>TestA2</b>");
+
+        BsonArray extensionNameValues = (BsonArray) navigate(channelSet, "ExtensionNameValue");
+
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        BsonDocument extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertNotNull(extensionNameValue);
+
+        assertEquals("Name A1", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("uom test A", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("AA", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("mass", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2026-04-27T10:30:00Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(198, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("Desc A", navigate(extensionNameValue, "Description"));
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -672,5 +690,34 @@ public class LogTest {
         assertEquals("Prospect field 2", navigate(osduIntegration, "Prospect"));
         assertEquals("Play field 2", navigate(osduIntegration, "Play"));
         assertEquals("basin field 2", navigate(osduIntegration, "Basin"));
+
+        customDataValidate(channelSet, "<array>TestB1</array>", "<array>TestB2</array>");
+
+        extensionNameValues = (BsonArray) navigate(channelSet, "ExtensionNameValue");
+
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertNotNull(extensionNameValue);
+
+        assertEquals("Name A2", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("uom test B", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("BB", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("angle per volume", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2026-03-27T10:30:00Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(300, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("Desc B", navigate(extensionNameValue, "Description"));
+    }
+
+    private void customDataValidate(BsonDocument document, String ...args) throws Exception {
+        assertNotNull(document);
+        BsonArray customData = (BsonArray) navigate(document, "CustomData");
+        assertNotNull(customData);
+        assertEquals(args.length, customData.size());
+        int i = 0;
+        for (String arg: args) {
+            assertEquals(arg, (customData.get(i++)).asString().getValue().trim());
+        }
     }
 }

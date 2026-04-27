@@ -483,15 +483,16 @@
       <Basin>basin field</Basin>
     </rdw212:OSDUIntegration>
     <rdw212:CustomData xsi:type="rdw212:CustomData">
-      <!-- extensibility element(s) -->
+      <a>TestA1</a>
+      <b>TestA2</b>
     </rdw212:CustomData>
     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      <rdw212:Name xsi:type="rdw212:String64">Name A1</rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom="uom test A">AA</rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">mass</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-04-27T10:30:00Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">198</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000">Desc A</rdw212:Description>
     </rdw212:ExtensionNameValue>
     <rdw212:ActiveStatus xsi:type="rdw212:ActiveStatusKind">inactive</rdw212:ActiveStatus>
     <rdw211:ChannelState xsi:type="rdw211:ChannelState">memory</rdw211:ChannelState>
@@ -1127,15 +1128,16 @@
       <Basin>basin field 2</Basin>
     </rdw212:OSDUIntegration>
     <rdw212:CustomData xsi:type="rdw212:CustomData">
-      <!-- extensibility element(s) -->
+      <array>TestB1</array>
+      <array>TestB2</array>
     </rdw212:CustomData>
     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      <rdw212:Name xsi:type="rdw212:String64">Name A2</rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom="uom test B">BB</rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">angle per volume</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-03-27T10:30:00Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">300</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000">Desc B</rdw212:Description>
     </rdw212:ExtensionNameValue>
     <rdw212:ActiveStatus xsi:type="rdw212:ActiveStatusKind">inactive</rdw212:ActiveStatus>
     <rdw211:ChannelState xsi:type="rdw211:ChannelState">memory</rdw211:ChannelState>
