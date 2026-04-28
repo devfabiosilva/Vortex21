@@ -496,12 +496,16 @@
     </rdw212:ExtensionNameValue>
     <rdw212:ActiveStatus xsi:type="rdw212:ActiveStatusKind">inactive</rdw212:ActiveStatus>
     <rdw211:ChannelState xsi:type="rdw211:ChannelState">memory</rdw211:ChannelState>
-    <rdw211:RunNumber xsi:type="rdw212:String64"></rdw211:RunNumber>
-    <rdw211:PassNumber xsi:type="rdw212:String64"></rdw211:PassNumber>
-    <rdw211:PassDescription xsi:type="rdw212:String64"></rdw211:PassDescription>
+    <rdw211:RunNumber xsi:type="rdw212:String64">Raw Number in String64 A</rdw211:RunNumber>
+    <rdw211:PassNumber xsi:type="rdw212:String64">Pass Number in String64 A</rdw211:PassNumber>
+    <rdw211:PassDescription xsi:type="rdw212:String64">Pass Description in String 64 A</rdw211:PassDescription>
     <rdw211:PassDetail xsi:type="rdw211:PassDetail">
-      <rdw211:Pass xsi:type="xsd:long">0</rdw211:Pass>
-      <rdw211:Description xsi:type="rdw212:String64"></rdw211:Description>
+      <rdw211:Pass xsi:type="xsd:long">102</rdw211:Pass>
+      <rdw211:Description xsi:type="rdw212:String64">Description in PassDetail A1</rdw211:Description>
+    </rdw211:PassDetail>
+    <rdw211:PassDetail xsi:type="rdw211:PassDetail">
+      <rdw211:Pass xsi:type="xsd:long">103</rdw211:Pass>
+      <rdw211:Description xsi:type="rdw212:String64">Description in PassDetail A2</rdw211:Description>
     </rdw211:PassDetail>
     <rdw211:PrimaryIndexInterval xsi:type="rdw212:DatumTvdInterval">
       <rdw212:Comment xsi:type="rdw212:String2000">Base Comment at DatumTvdInterval</rdw212:Comment>
@@ -1141,12 +1145,12 @@
     </rdw212:ExtensionNameValue>
     <rdw212:ActiveStatus xsi:type="rdw212:ActiveStatusKind">inactive</rdw212:ActiveStatus>
     <rdw211:ChannelState xsi:type="rdw211:ChannelState">memory</rdw211:ChannelState>
-    <rdw211:RunNumber xsi:type="rdw212:String64"></rdw211:RunNumber>
-    <rdw211:PassNumber xsi:type="rdw212:String64"></rdw211:PassNumber>
-    <rdw211:PassDescription xsi:type="rdw212:String64"></rdw211:PassDescription>
+    <rdw211:RunNumber xsi:type="rdw212:String64">Raw Number in String64 B</rdw211:RunNumber>
+    <rdw211:PassNumber xsi:type="rdw212:String64">Pass Number in String64 B</rdw211:PassNumber>
+    <rdw211:PassDescription xsi:type="rdw212:String64">Pass Description in String 64 B</rdw211:PassDescription>
     <rdw211:PassDetail xsi:type="rdw211:PassDetail">
-      <rdw211:Pass xsi:type="xsd:long">0</rdw211:Pass>
-      <rdw211:Description xsi:type="rdw212:String64"></rdw211:Description>
+      <rdw211:Pass xsi:type="xsd:long">129</rdw211:Pass>
+      <rdw211:Description xsi:type="rdw212:String64">Description in PassDetail B1</rdw211:Description>
     </rdw211:PassDetail>
     <!--    <rdw211:PrimaryIndexInterval xsi:type="rdw212:AbstractInterval">-->
     <!--      <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>-->

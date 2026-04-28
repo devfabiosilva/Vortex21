@@ -536,6 +536,21 @@ public class LogTest {
         assertEquals(198, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
         assertEquals("Desc A", navigate(extensionNameValue, "Description"));
 
+        assertEquals("Raw Number in String64 A", navigate(channelSet, "RunNumber"));
+        assertEquals("Pass Number in String64 A", navigate(channelSet, "PassNumber"));
+        assertEquals("Pass Description in String 64 A", navigate(channelSet, "PassDescription"));
+
+        BsonArray passDetail = (BsonArray)navigate(channelSet, "PassDetail");
+
+        assertNotNull(passDetail);
+        assertEquals(2, passDetail.size());
+
+        assertEquals(102, ((BsonInt64)navigate(passDetail, 0, "Pass")).getValue());
+        assertEquals("Description in PassDetail A1", navigate(passDetail, 0, "Description"));
+
+        assertEquals(103, ((BsonInt64)navigate(passDetail, 1, "Pass")).getValue());
+        assertEquals("Description in PassDetail A2", navigate(passDetail, 1, "Description"));
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -708,6 +723,19 @@ public class LogTest {
         assertEquals(DateUtils.toTimestamp("2026-03-27T10:30:00Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
         assertEquals(300, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
         assertEquals("Desc B", navigate(extensionNameValue, "Description"));
+
+        assertEquals("Raw Number in String64 B", navigate(channelSet, "RunNumber"));
+        assertEquals("Pass Number in String64 B", navigate(channelSet, "PassNumber"));
+        assertEquals("Pass Description in String 64 B", navigate(channelSet, "PassDescription"));
+
+        passDetail = (BsonArray)navigate(channelSet, "PassDetail");
+
+        assertNotNull(passDetail);
+        assertEquals(1, passDetail.size());
+
+        assertEquals(129, ((BsonInt64)navigate(passDetail, 0, "Pass")).getValue());
+        assertEquals("Description in PassDetail B1", navigate(passDetail, 0, "Description"));
+
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
