@@ -15,6 +15,7 @@ struct c_bson_serialized_t {
 #define CWS_CONST_BSON_KEY(str) (const char *)str, (int)(sizeof(str)-1)
 #define KEY_USCORE_VALUE CWS_CONST_BSON_KEY("#value")
 #define KEY_USCORE_ATTRIBUTES CWS_CONST_BSON_KEY("#attributes")
+#define KEY_USCORE_ABSTRACT_TYPE CWS_CONST_BSON_KEY("#abstype")
 #define SET_MULTIPLE_ATTRIBUTES(...) __VA_ARGS__, NULL, 0, NULL
 
 #define CWS_BSON_NEW bson_new()

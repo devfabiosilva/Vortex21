@@ -144,6 +144,7 @@ public class LogTest {
 
         // See Abstract interval test case @ org.w21parser.abstractIntervalType
         assertEquals("Base Comment", navigate(log, "PrimaryIndexInterval", "Comment"));
+        assertEquals("rdw212:AbstractInterval", navigate(log, "PrimaryIndexInterval", "#abstype"));
 
         BsonDocument loggingCompany = (BsonDocument)navigate(log, "LoggingCompany");
 

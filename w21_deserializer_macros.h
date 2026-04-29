@@ -64,6 +64,12 @@
     goto onErrorGoto##_resume; \
   }
 
+#define DETECT_ABSTRACT_TYPE_IN_ROOT_ELEMENT(objectParent, type, ...) \
+  if (w21_detect_abstract(soap, &child, CWS_CONST_BSON_KEY(#type), __VA_ARGS__, NULL)) { \
+    set_w21_error_message(soap, E_W21_ERROR_DETECT_ROOT_ABSTRACT_TYPE, "Could detect root type abstract attribute in " #objectParent); \
+    goto bson_read_abstract_root_##objectParent##_21_resume; \
+  }
+
 #define READ_W_PUT_MULTIPLE_ATTRIBUTES_21_OR_ELSE_GOTO_RESUME(objectParent, ...) \
   READ_PUT_MULTIPLE_ATTRIBUTES_21_OR_ELSE_GOTO_RESUME(&root_document, objectParent, bson_read_##objectParent##21, __VA_ARGS__)
 
@@ -1032,7 +1038,6 @@ bson_read_abstract_root_##type##_21_resume: \
     CAPTURE_STAT(string) \
   }
 
-//aqui
 #define READ_O_DOUBLE_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName) \
   if (!bson_append_double(&child, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) { \
     set_w21_error_message(soap, E_W21_ERROR_ADD_REQUIRED_DOUBLE_IN_ABSTRACT_ROOT_OBJECT, "Could not add required double in " #objectName " object at root abstract " #objectParent); \

@@ -269,6 +269,30 @@ bson_read_arrayOfEnum21_util_resume:
   W21_RETURN
 }
 
+static int w21_detect_abstract(struct soap *soap, bson_t *parent, const char *absKeyType, size_t absKeyTypeSize, ...)
+{
+//aqui
+  void **argument;
+  bool setType = true;
+
+  va_list args;
+  va_start(args, absKeyTypeSize);
+  while ((argument = (void **)va_arg(args, void **)) != NULL) {
+
+    if (*argument) {
+      setType = false;
+      break;
+    }
+  }
+  va_end(args);
+
+
+  if ((setType) && (!bson_append_utf8(parent, KEY_USCORE_ABSTRACT_TYPE, (const char *)absKeyType, absKeyTypeSize)))
+    return -7;
+
+  return 0;
+}
+
 ////////////////////////////// BEGIN MEASURE FUNCTIONS BUILDER ////////////////////////////////////
 BSON_READ_MEASURE_BUILDER_21_D(rdw212, AnglePerLengthMeasure, AnglePerLengthUom)
 BSON_READ_MEASURE_BUILDER_21_D(rdw212, PlaneAngleMeasure, PlaneAngleUom)
@@ -1002,12 +1026,6 @@ BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, PassDetail)
   READ_A_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(PassDetail, Description)
 BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_END(PassDetail)
 
-// TODO remove
-//struct rdw212__AbstractInterval
-//BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractInterval)
-//  READ_O_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractInterval, Comment)
-//BSON_READ_OBJECT_BUILDER_21_END(AbstractInterval)
-
 //struct rdw212__AbsolutePressure
 BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, AbsolutePressure)
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(AbsolutePressure, AbsolutePressure, PressureMeasureExt)
@@ -1117,6 +1135,18 @@ BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(PassIndexedDepthInterval)
 //struct rdw212__AbstractInterval
 BSON_READ_ABSTRACT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbstractInterval)
 // ABSTRACT SPECIAL CASE
+//aqui
+  DETECT_ABSTRACT_TYPE_IN_ROOT_ELEMENT(
+    AbstractInterval, rdw212:AbstractInterval,
+    &AbstractInterval->rdw212__AbstractPressureInterval,
+    &AbstractInterval->rdw212__AbstractTvdInterval,
+    &AbstractInterval->rdw212__DateTimeInterval,
+    &AbstractInterval->rdw212__ElapsedTimeInterval,
+    &AbstractInterval->rdw212__MdInterval,
+    &AbstractInterval->rdw212__ScalarInterval,
+    &AbstractInterval->rdw212__TemperatureInterval,
+    &AbstractInterval->rdw211__PassIndexedDepthInterval
+  )
   READ_O_UTF8_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(AbstractInterval, Comment)
   READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractInterval, AbstractPressureInterval)
   READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractInterval, AbstractTvdInterval)
