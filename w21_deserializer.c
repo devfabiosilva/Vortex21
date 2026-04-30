@@ -271,7 +271,6 @@ bson_read_arrayOfEnum21_util_resume:
 
 static int w21_detect_abstract(struct soap *soap, bson_t *parent, const char *absKeyType, size_t absKeyTypeSize, ...)
 {
-//aqui
   void **argument;
   bool setType = true;
 
@@ -763,6 +762,7 @@ BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(DateTimeInterval)
 //struct rdw212__DatumTvdInterval
 BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, DatumTvdInterval)
 // TRANSIENT SPECIAL CASE
+  SET_ABSTRACT_TYPE_IN_TRANSIENT_OBJECT(rdw212:DatumTvdInterval)
   READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(DatumTvdInterval, Comment)
   READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(DatumTvdInterval, TvdMin)
   READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(DatumTvdInterval, TvdMax)

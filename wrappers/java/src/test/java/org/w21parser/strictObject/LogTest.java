@@ -552,6 +552,19 @@ public class LogTest {
         assertEquals(103, ((BsonInt64)navigate(passDetail, 1, "Pass")).getValue());
         assertEquals("Description in PassDetail A2", navigate(passDetail, 1, "Description"));
 
+        BsonDocument primaryIndexInterval = (BsonDocument)navigate(channelSet, "PrimaryIndexInterval");
+
+        assertNotNull(primaryIndexInterval);
+
+        assertEquals("rdw212:DatumTvdInterval", navigate(primaryIndexInterval, "#abstype"));
+
+        assertEquals("Base Comment at DatumTvdInterval", navigate(primaryIndexInterval, "Comment"));
+        assertEquals(127.1718, ((BsonDouble)navigate(primaryIndexInterval, "TvdMin")).getValue(), 1E-6);
+        assertEquals(18279.88, ((BsonDouble)navigate(primaryIndexInterval, "TvdMax")).getValue(), 1E-6);
+        assertEquals("t", navigate(primaryIndexInterval, "Uom"));
+
+        //TODO implement test for Trajectory and Datum
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();

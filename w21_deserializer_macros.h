@@ -1064,6 +1064,12 @@ bson_read_abstract_root_##type##_21_resume: \
   if (bson_read_abstract_root_##typeName##_21(soap, bsonType, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) \
     goto onErrorGoto##_resume;
 
+#define SET_ABSTRACT_TYPE_IN_TRANSIENT_OBJECT(type) \
+  if (!bson_append_utf8(bsonObject, KEY_USCORE_ABSTRACT_TYPE, CWS_CONST_BSON_KEY(#type))) { \
+    set_w21_error_message(soap, E_W21_ERROR_SET_TYPE_IN_TRANSIENT_OBJECT, "Could not set type in transient object " #type); \
+    W21_RETURN \
+  }
+
 #define BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(ns, type) \
 static \
 int bson_read_transient_##type##_21( \
