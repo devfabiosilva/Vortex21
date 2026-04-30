@@ -1110,6 +1110,7 @@ BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(ScalarInterval)
 
 //struct rdw212__TemperatureInterval
 BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, TemperatureInterval)
+  SET_ABSTRACT_TYPE_IN_TRANSIENT_OBJECT(rdw212:TemperatureInterval)
 // TRANSIENT SPECIAL CASE
   READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(TemperatureInterval, Comment)
   READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(TemperatureInterval, MinTemperature, ThermodynamicTemperatureMeasureExt)

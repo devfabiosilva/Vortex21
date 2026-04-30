@@ -563,7 +563,65 @@ public class LogTest {
         assertEquals(18279.88, ((BsonDouble)navigate(primaryIndexInterval, "TvdMax")).getValue(), 1E-6);
         assertEquals("t", navigate(primaryIndexInterval, "Uom"));
 
-        //TODO implement test for Trajectory and Datum
+        BsonDocument trajectory = (BsonDocument)navigate(primaryIndexInterval, "Trajectory");
+
+        assertNotNull(trajectory);
+        assertEquals("5f3ea568-e89b-12d3-a456-426614174001", navigate(trajectory, "Uuid"));
+        assertEquals("Datum object reference 1", navigate(trajectory, "ObjectVersion"));
+        assertEquals("prodml49.BhaRunTes", navigate(trajectory, "QualifiedType"));
+        assertEquals("Title @ PrimaryIndexInterval @ rdw212:DatumTvdInterval", navigate(trajectory, "Title"));
+        assertEquals("http://www.example.com/schema/anyURIrdw212_DatumTvdInterval", navigate(trajectory, "EnergisticsUri"));
+
+        BsonArray locatorUrlArray = (BsonArray)navigate(trajectory, "LocatorUrl");
+        assertNotNull(locatorUrlArray);
+        assertEquals(1, locatorUrlArray.size());
+
+        assertEquals("http://www.example.com/schema/anyURIrdw212_DatumTvdIntervalB", ((BsonString)navigate(locatorUrlArray, 0)).asString().getValue());
+
+        extensionNameValues = (BsonArray)navigate(trajectory, "ExtensionNameValue");
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertNotNull(extensionNameValue);
+
+        assertEquals("Name ABC", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("uom a", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("val", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("absorbed dose", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2018-02-04T19:29:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(1780, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("Short description rdw212_DatumTvdInterval", navigate(extensionNameValue, "Description"));
+
+        BsonDocument datum = (BsonDocument)navigate(primaryIndexInterval, "Datum");
+
+        assertNotNull(datum);
+        assertEquals("5f3ea568-e89b-12d3-a456-426614177001", navigate(datum, "Uuid"));
+        assertEquals("Datum object reference 2", navigate(datum, "ObjectVersion"));
+        assertEquals("prodml45.BhaRun", navigate(datum, "QualifiedType"));
+        assertEquals("Title @ PrimaryIndexInterval @ rdw212:DatumTvdInterval 2", navigate(datum, "Title"));
+        assertEquals("http://www.example.com/schema/anyURIrdw212_DatumTvdInterval2", navigate(datum, "EnergisticsUri"));
+
+        locatorUrlArray = (BsonArray)navigate(datum, "LocatorUrl");
+        assertNotNull(locatorUrlArray);
+        assertEquals(1, locatorUrlArray.size());
+
+        assertEquals("http://www.example.com/schema/anyURIrdw212_DatumTvdIntervalB2", ((BsonString)navigate(locatorUrlArray, 0)).asString().getValue());
+
+        extensionNameValues = (BsonArray)navigate(datum, "ExtensionNameValue");
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertNotNull(extensionNameValue);
+
+        assertEquals("Name ABC2", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("uom b", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("val2", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("area per time", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2017-02-04T19:29:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(3770, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("Short description rdw212_DatumTvdInterval2", navigate(extensionNameValue, "Description"));
 
         // Test second element in array
 
@@ -750,6 +808,16 @@ public class LogTest {
         assertEquals(129, ((BsonInt64)navigate(passDetail, 0, "Pass")).getValue());
         assertEquals("Description in PassDetail B1", navigate(passDetail, 0, "Description"));
 
+        primaryIndexInterval = (BsonDocument)navigate(channelSet, "PrimaryIndexInterval");
+
+        assertNotNull(primaryIndexInterval);
+
+        assertEquals("rdw212:TemperatureInterval", navigate(primaryIndexInterval, "#abstype"));
+        assertEquals("Base Comment @ scalar interval type TemperatureInterval", navigate(primaryIndexInterval, "Comment"));
+        assertEquals(168.27, ((BsonDouble)navigate(primaryIndexInterval, "MinTemperature", "#value")).getValue(), 1E-6);
+        assertEquals("degrees Celsius", navigate(primaryIndexInterval, "MinTemperature", "#attributes", "uom"));
+        assertEquals(678.37, ((BsonDouble)navigate(primaryIndexInterval, "MaxTemperature", "#value")).getValue(), 1E-6);
+        assertEquals("Fahrenheit", navigate(primaryIndexInterval, "MaxTemperature", "#attributes", "uom"));
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
