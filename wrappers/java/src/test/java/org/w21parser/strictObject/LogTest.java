@@ -623,6 +623,71 @@ public class LogTest {
         assertEquals(3770, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
         assertEquals("Short description rdw212_DatumTvdInterval2", navigate(extensionNameValue, "Description"));
 
+        BsonDocument loggingCompany = (BsonDocument)navigate(channelSet, "LoggingCompany");
+
+        assertNotNull(loggingCompany);
+        assertEquals("523e4568-e89b-12d3-a456-426614174004", navigate(loggingCompany, "Uuid"));
+        assertEquals("Object version in LoggingCompany A", navigate(loggingCompany, "ObjectVersion"));
+        assertEquals("eml71.Log", navigate(loggingCompany, "QualifiedType"));
+        assertEquals("Untitled", navigate(loggingCompany, "Title"));
+        assertEquals("http://www.example.com/schema/anyURILoggingCompany", navigate(loggingCompany, "EnergisticsUri"));
+
+        locatorUrlArray = (BsonArray)navigate(loggingCompany, "LocatorUrl");
+        assertNotNull(locatorUrlArray);
+        assertEquals(2, locatorUrlArray.size());
+
+        assertEquals("http://www.example.com/schema/anyURILoggingCompanyA1", ((BsonString)navigate(locatorUrlArray, 0)).asString().getValue());
+        assertEquals("http://www.example.com/schema/anyURILoggingCompanyA2", ((BsonString)navigate(locatorUrlArray, 1)).asString().getValue());
+
+        extensionNameValues = (BsonArray)navigate(loggingCompany, "ExtensionNameValue");
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertNotNull(extensionNameValue);
+
+        assertEquals("Name ABC A", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("uom a a", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("any value string here", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("digital storage", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2026-05-05T22:39:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(-2, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("Any desc", navigate(extensionNameValue, "Description"));
+
+        assertEquals(691, ((BsonInt64)navigate(channelSet, "LoggingCompanyCode")).getValue());
+
+
+        BsonDocument loggingToolKind = (BsonDocument)navigate(channelSet, "LoggingToolKind");
+
+        assertNotNull(loggingToolKind);
+        assertEquals("523e4568-e89b-12d3-a456-426614174105", navigate(loggingToolKind, "Uuid"));
+        assertEquals("Object version in LoggingToolKind A", navigate(loggingToolKind, "ObjectVersion"));
+        assertEquals("eml20.n", navigate(loggingToolKind, "QualifiedType"));
+        assertEquals("eml title", navigate(loggingToolKind, "Title"));
+        assertEquals("http://www.example.com/schema/anyURILoggingToolKindA", navigate(loggingToolKind, "EnergisticsUri"));
+
+        locatorUrlArray = (BsonArray)navigate(loggingToolKind, "LocatorUrl");
+        assertNotNull(locatorUrlArray);
+        assertEquals(2, locatorUrlArray.size());
+
+        assertEquals("http://www.example.com/schema/anyURILoggingToolKindA1", ((BsonString)navigate(locatorUrlArray, 0)).asString().getValue());
+        assertEquals("http://www.example.com/schema/anyURILoggingToolKindA2", ((BsonString)navigate(locatorUrlArray, 1)).asString().getValue());
+
+        extensionNameValues = (BsonArray)navigate(loggingToolKind, "ExtensionNameValue");
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertNotNull(extensionNameValue);
+
+        assertEquals("Name XYZ A", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("uom a b", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("any value string here a", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("energy length per time area temperature", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2016-01-05T19:39:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(-100, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("AXYZ", navigate(extensionNameValue, "Description"));
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -818,6 +883,70 @@ public class LogTest {
         assertEquals("degrees Celsius", navigate(primaryIndexInterval, "MinTemperature", "#attributes", "uom"));
         assertEquals(678.37, ((BsonDouble)navigate(primaryIndexInterval, "MaxTemperature", "#value")).getValue(), 1E-6);
         assertEquals("Fahrenheit", navigate(primaryIndexInterval, "MaxTemperature", "#attributes", "uom"));
+
+        loggingCompany = (BsonDocument)navigate(channelSet, "LoggingCompany");
+
+        assertNotNull(loggingCompany);
+        assertEquals("523e4568-e89b-12d3-a456-426614174084", navigate(loggingCompany, "Uuid"));
+        assertEquals("Object version in LoggingCompany B", navigate(loggingCompany, "ObjectVersion"));
+        assertEquals("witsml20.Rig", navigate(loggingCompany, "QualifiedType"));
+        assertEquals("Untitled B", navigate(loggingCompany, "Title"));
+        assertEquals("http://www.example.com/schema/anyURILoggingCompanyAX", navigate(loggingCompany, "EnergisticsUri"));
+
+        locatorUrlArray = (BsonArray)navigate(loggingCompany, "LocatorUrl");
+        assertNotNull(locatorUrlArray);
+        assertEquals(2, locatorUrlArray.size());
+
+        assertEquals("http://www.example.com/schema/anyURILoggingCompanyB1", ((BsonString)navigate(locatorUrlArray, 0)).asString().getValue());
+        assertEquals("http://www.example.com/schema/anyURILoggingCompanyB2", ((BsonString)navigate(locatorUrlArray, 1)).asString().getValue());
+
+        extensionNameValues = (BsonArray)navigate(loggingCompany, "ExtensionNameValue");
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertNotNull(extensionNameValue);
+
+        assertEquals("NAME A", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("uom A A", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("any value string here B", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("dipole moment", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2021-03-08T09:39:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(0, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("Any desc A", navigate(extensionNameValue, "Description"));
+
+        assertEquals(1000, ((BsonInt64)navigate(channelSet, "LoggingCompanyCode")).getValue());
+
+        loggingToolKind = (BsonDocument)navigate(channelSet, "LoggingToolKind");
+
+        assertNotNull(loggingToolKind);
+        assertEquals("573e4568-e89b-12d3-a456-426614174005", navigate(loggingToolKind, "Uuid"));
+        assertEquals("Object version in LoggingToolKind B", navigate(loggingToolKind, "ObjectVersion"));
+        assertEquals("eml21.n", navigate(loggingToolKind, "QualifiedType"));
+        assertEquals("eml1 title", navigate(loggingToolKind, "Title"));
+        assertEquals("http://www.example.com/schema/anyURILoggingToolKindA", navigate(loggingToolKind, "EnergisticsUri"));
+
+        locatorUrlArray = (BsonArray)navigate(loggingToolKind, "LocatorUrl");
+        assertNotNull(locatorUrlArray);
+        assertEquals(2, locatorUrlArray.size());
+
+        assertEquals("http://www.example.com/schema/anyURILoggingToolKindA1", ((BsonString)navigate(locatorUrlArray, 0)).asString().getValue());
+        assertEquals("http://www.example.com/schema/anyURILoggingToolKindA2", ((BsonString)navigate(locatorUrlArray, 1)).asString().getValue());
+
+        extensionNameValues = (BsonArray)navigate(loggingToolKind, "ExtensionNameValue");
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertNotNull(extensionNameValue);
+
+        assertEquals("Name XYZ B", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("uom b b", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("any value string here c", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("electric current density", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2021-03-05T12:39:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(1090, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("CDEF", navigate(extensionNameValue, "Description"));
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
