@@ -688,6 +688,62 @@ public class LogTest {
         assertEquals(-100, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
         assertEquals("AXYZ", navigate(extensionNameValue, "Description"));
 
+        assertEquals("", navigate(channelSet, "LoggingToolClass"));
+
+        assertEquals("LoggingToolClassLongNameA", navigate(channelSet, "LoggingToolClassLongName"));
+        assertEquals("edited", navigate(channelSet, "Derivation"));
+        assertEquals("wireline", navigate(channelSet, "LoggingMethod"));
+
+        assertEquals(1.6, ((BsonDouble)navigate(channelSet, "NominalHoleSize", "#value")).getValue(), 1E-6);
+        assertEquals("X", navigate(channelSet, "NominalHoleSize", "#attributes", "uom"));
+        assertEquals("MudClassExtTest1", navigate(channelSet, "MudClass"));
+        assertEquals("MudSubClassExtTest1", navigate(channelSet, "MudSubClass"));
+        assertEquals("cemented hole", navigate(channelSet, "HoleLoggingStatus"));
+
+        assertEquals(0.1, ((BsonDouble)navigate(channelSet, "NominalSamplingInterval", "#value")).getValue(), 1E-6);
+        assertEquals("Y", navigate(channelSet, "NominalSamplingInterval", "#attributes", "uom"));
+
+        BsonDocument channelSetOSDUIntegration = (BsonDocument)navigate(channelSet, "ChannelSetOSDUIntegration");
+
+        assertNotNull(channelSetOSDUIntegration);
+
+        assertEquals("ChannelSetVersionTest", navigate(channelSetOSDUIntegration, "ChannelSetVersion"));
+        assertEquals("FrameIdentifierTest", navigate(channelSetOSDUIntegration, "FrameIdentifier"));
+
+        BsonDocument intermediaryServiceCompany = (BsonDocument)navigate(channelSetOSDUIntegration, "IntermediaryServiceCompany");
+
+        assertNotNull(intermediaryServiceCompany);
+        assertEquals("523e4568-e89b-12d3-a456-426614174006", navigate(intermediaryServiceCompany, "Uuid"));
+        assertEquals("Object version in intermediaryServiceCompany A", navigate(intermediaryServiceCompany, "ObjectVersion"));
+        assertEquals("resqml78.CementJob", navigate(intermediaryServiceCompany, "QualifiedType"));
+        assertEquals("UntitledKXZ", navigate(intermediaryServiceCompany, "Title"));
+        assertEquals("http://www.example.com/schema/anyURIIntermediaryServiceCompanyA", navigate(intermediaryServiceCompany, "EnergisticsUri"));
+
+        locatorUrlArray = (BsonArray)navigate(intermediaryServiceCompany, "LocatorUrl");
+        assertNotNull(locatorUrlArray);
+        assertEquals(2, locatorUrlArray.size());
+
+        assertEquals("http://www.example.com/schema/anyURIIntermediaryServiceCompanyA1", ((BsonString)navigate(locatorUrlArray, 0)).asString().getValue());
+        assertEquals("http://www.example.com/schema/anyURIIntermediaryServiceCompanyA2", ((BsonString)navigate(locatorUrlArray, 1)).asString().getValue());
+
+        extensionNameValues = (BsonArray)navigate(intermediaryServiceCompany, "ExtensionNameValue");
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertNotNull(extensionNameValue);
+
+        assertEquals("WXYZ", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("UOMA", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("ValA", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("absorbed dose", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2022-05-05T22:39:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(1289, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("Any desc X", navigate(extensionNameValue, "Description"));
+
+        assertFalse(((BsonBoolean)navigate(channelSetOSDUIntegration, "IsRegular")).getValue());
+        assertEquals(DateUtils.toTimestamp("2017-01-05T19:39:47Z"), ((BsonValue)navigate(channelSetOSDUIntegration, "ZeroTime")).asDateTime().getValue());
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -947,6 +1003,63 @@ public class LogTest {
         assertEquals(DateUtils.toTimestamp("2021-03-05T12:39:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
         assertEquals(1090, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
         assertEquals("CDEF", navigate(extensionNameValue, "Description"));
+
+        assertEquals("LoggingToolClassTEST", navigate(channelSet, "LoggingToolClass"));
+
+        assertEquals("LoggingToolClassLongNameB", navigate(channelSet, "LoggingToolClassLongName"));
+        assertEquals("interpreted", navigate(channelSet, "Derivation"));
+        assertEquals("subsea", navigate(channelSet, "LoggingMethod"));
+
+        assertEquals(189.17, ((BsonDouble)navigate(channelSet, "NominalHoleSize", "#value")).getValue(), 1E-6);
+        assertEquals("km", navigate(channelSet, "NominalHoleSize", "#attributes", "uom"));
+        assertEquals("MudClassExtTest2", navigate(channelSet, "MudClass"));
+        assertEquals("MudSubClassExtTest2", navigate(channelSet, "MudSubClass"));
+        assertEquals("cased hole", navigate(channelSet, "HoleLoggingStatus"));
+
+        assertEquals(0.2, ((BsonDouble)navigate(channelSet, "NominalSamplingInterval", "#value")).getValue(), 1E-6);
+        assertEquals("M", navigate(channelSet, "NominalSamplingInterval", "#attributes", "uom"));
+
+        channelSetOSDUIntegration = (BsonDocument)navigate(channelSet, "ChannelSetOSDUIntegration");
+
+        assertNotNull(channelSetOSDUIntegration);
+
+        assertEquals("ChannelSetVersionTestA", navigate(channelSetOSDUIntegration, "ChannelSetVersion"));
+        assertEquals("FrameIdentifierTestA", navigate(channelSetOSDUIntegration, "FrameIdentifier"));
+
+        intermediaryServiceCompany = (BsonDocument)navigate(channelSetOSDUIntegration, "IntermediaryServiceCompany");
+
+        assertNotNull(intermediaryServiceCompany);
+        assertEquals("523e4568-e89b-12d3-a456-426819174006", navigate(intermediaryServiceCompany, "Uuid"));
+        assertEquals("Object version in intermediaryServiceCompany B", navigate(intermediaryServiceCompany, "ObjectVersion"));
+        assertEquals("resqml88.Cement", navigate(intermediaryServiceCompany, "QualifiedType"));
+        assertEquals("Untitled *KXH", navigate(intermediaryServiceCompany, "Title"));
+        assertEquals("http://www.example.com/schema/anyURIIntermediaryServiceCompanyB", navigate(intermediaryServiceCompany, "EnergisticsUri"));
+
+        locatorUrlArray = (BsonArray)navigate(intermediaryServiceCompany, "LocatorUrl");
+        assertNotNull(locatorUrlArray);
+        assertEquals(2, locatorUrlArray.size());
+
+        assertEquals("http://www.example.com/schema/anyURIIntermediaryServiceCompanyB1", ((BsonString)navigate(locatorUrlArray, 0)).asString().getValue());
+        assertEquals("http://www.example.com/schema/anyURIIntermediaryServiceCompanyB2", ((BsonString)navigate(locatorUrlArray, 1)).asString().getValue());
+
+        extensionNameValues = (BsonArray)navigate(intermediaryServiceCompany, "ExtensionNameValue");
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertNotNull(extensionNameValue);
+
+        assertEquals("WXYZ test", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("ValB", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("capacitance", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2021-08-05T22:39:47Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(10981, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("Any desc ABCV", navigate(extensionNameValue, "Description"));
+
+        assertTrue(((BsonBoolean)navigate(channelSetOSDUIntegration, "IsRegular")).getValue());
+        assertEquals(DateUtils.toTimestamp("2015-01-05T19:39:47Z"), ((BsonValue)navigate(channelSetOSDUIntegration, "ZeroTime")).asDateTime().getValue());
+
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
