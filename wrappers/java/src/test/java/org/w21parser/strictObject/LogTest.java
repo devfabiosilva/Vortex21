@@ -9,6 +9,13 @@ import org.slf4j.LoggerFactory;
 import org.w21parser.DateUtils;
 import org.w21parser.W21Exception;
 import org.w21parser.W21ParserLoader;
+import org.w21parser.common.DataObjectReference;
+import org.w21parser.common.ExtensionNameValue;
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 import static org.junit.Assert.*;
 import static org.w21parser.Vortex21StrictValidationTest.printW21Exception;
@@ -744,6 +751,78 @@ public class LogTest {
         assertFalse(((BsonBoolean)navigate(channelSetOSDUIntegration, "IsRegular")).getValue());
         assertEquals(DateUtils.toTimestamp("2017-01-05T19:39:47Z"), ((BsonValue)navigate(channelSetOSDUIntegration, "ZeroTime")).asDateTime().getValue());
 
+        BsonArray indexArray = (BsonArray) navigate(channelSet, "Index");
+        assertNotNull(indexArray);
+        assertEquals(1, indexArray.size());
+
+        BsonValue index = indexArray.get(0);
+
+        assertEquals("scalar", navigate(index, "IndexKind"));
+
+        BsonDocument indexPropertyKind = (BsonDocument)navigate(index, "IndexPropertyKind");
+
+        assertNotNull(indexPropertyKind);
+        assertEquals("523e4568-e87e-f2db-a456-426614174007", navigate(indexPropertyKind, "Uuid"));
+        assertEquals("Object version in IndexPropertyKind A", navigate(indexPropertyKind, "ObjectVersion"));
+        assertEquals("resqml81.a", navigate(indexPropertyKind, "QualifiedType"));
+        assertEquals("Test ABC TITLE", navigate(indexPropertyKind, "Title"));
+        assertEquals("http://www.example.com/schema/anyURIIndexPropertyKindA", navigate(indexPropertyKind, "EnergisticsUri"));
+
+        locatorUrlArray = (BsonArray)navigate(indexPropertyKind, "LocatorUrl");
+        assertNotNull(locatorUrlArray);
+        assertEquals(2, locatorUrlArray.size());
+
+        assertEquals("http://www.example.com/schema/anyURIIndexPropertyKindA1", ((BsonString)navigate(locatorUrlArray, 0)).asString().getValue());
+        assertEquals("http://www.example.com/schema/anyURIIndexPropertyKindA2", ((BsonString)navigate(locatorUrlArray, 1)).asString().getValue());
+
+        extensionNameValues = (BsonArray)navigate(indexPropertyKind, "ExtensionNameValue");
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertNotNull(extensionNameValue);
+
+        assertEquals("ENVA", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("KM", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("area per amount of substance", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2016-07-03T18:27:29Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(198001, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("Mkap", navigate(extensionNameValue, "Description"));
+
+        assertEquals("yk", navigate(index, "Uom"));
+        assertEquals("decreasing", navigate(index, "Direction"));
+        assertEquals("my mnemonic", navigate(index, "Mnemonic"));
+
+        List<ExtensionNameValue> extensionNameValueArrayInDatum = List.of(
+          new ExtensionNameValue(
+                  "AXYZABC",
+                  "valueuom", "Test VALUE",
+                  "diffusive time of flight",
+                  "2022-11-15T19:39:47Z",
+                  1526L, "Short string 2000 description", null)
+        );
+
+        List<String> locatorUrlArrayInDatum = List.of(
+                "http://www.example.com/schema/anyURIDatumA1",
+                "http://www.example.com/schema/anyURIDatumA2"
+        );
+
+        datum = (BsonDocument) navigate(index, "Datum");
+
+        DataObjectReference datumObject = new DataObjectReference(
+                "523e4568-e89b-12d3-a456-426614174008",
+                "Datum Object Version",
+                "eml78.mf",
+                "Datum Title",
+                "http://www.example.com/schema/anyURIDatumA",
+                locatorUrlArrayInDatum,
+                extensionNameValueArrayInDatum,
+                datum
+        );
+
+        datumObject.test();
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1059,6 +1138,78 @@ public class LogTest {
 
         assertTrue(((BsonBoolean)navigate(channelSetOSDUIntegration, "IsRegular")).getValue());
         assertEquals(DateUtils.toTimestamp("2015-01-05T19:39:47Z"), ((BsonValue)navigate(channelSetOSDUIntegration, "ZeroTime")).asDateTime().getValue());
+
+        indexArray = (BsonArray) navigate(channelSet, "Index");
+        assertNotNull(indexArray);
+        assertEquals(1, indexArray.size());
+
+        index = indexArray.get(0);
+
+        assertEquals("measured depth", navigate(index, "IndexKind"));
+
+        indexPropertyKind = (BsonDocument)navigate(index, "IndexPropertyKind");
+
+        assertNotNull(indexPropertyKind);
+        assertEquals("523e4568-e89b-12d3-a456-426614174007", navigate(indexPropertyKind, "Uuid"));
+        assertEquals("Object version in IndexPropertyKind B", navigate(indexPropertyKind, "ObjectVersion"));
+        assertEquals("witsml21.this", navigate(indexPropertyKind, "QualifiedType"));
+        assertEquals("Test DEF TITLE", navigate(indexPropertyKind, "Title"));
+        assertEquals("http://www.example.com/schema/anyURIIndexPropertyKindB", navigate(indexPropertyKind, "EnergisticsUri"));
+
+        locatorUrlArray = (BsonArray)navigate(indexPropertyKind, "LocatorUrl");
+        assertNotNull(locatorUrlArray);
+        assertEquals(2, locatorUrlArray.size());
+
+        assertEquals("http://www.example.com/schema/anyURIIndexPropertyKindB1", ((BsonString)navigate(locatorUrlArray, 0)).asString().getValue());
+        assertEquals("http://www.example.com/schema/anyURIIndexPropertyKindB2", ((BsonString)navigate(locatorUrlArray, 1)).asString().getValue());
+
+        extensionNameValues = (BsonArray)navigate(indexPropertyKind, "ExtensionNameValue");
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        extensionNameValue = (BsonDocument)extensionNameValues.get(0);
+        assertNotNull(extensionNameValue);
+
+        assertEquals("ENVABC", extensionNameValue.get("Name").asString().getValue());
+        assertEquals("x", navigate(extensionNameValue, "Value", "#attributes", "uom"));
+        assertEquals("yxz", navigate(extensionNameValue, "Value", "#value"));
+        assertEquals("absorbed dose", navigate(extensionNameValue, "MeasureClass"));
+        assertEquals(DateUtils.toTimestamp("2017-08-03T18:27:29Z"), ((BsonValue)navigate(extensionNameValue, "DTim")).asDateTime().getValue());
+        assertEquals(10, ((BsonInt64)navigate(extensionNameValue, "Index")).getValue());
+        assertEquals("gg", navigate(extensionNameValue, "Description"));
+
+        assertEquals("yk", navigate(index, "Uom"));
+        assertEquals("increasing", navigate(index, "Direction"));
+        assertEquals("this mnemonic", navigate(index, "Mnemonic"));
+
+        extensionNameValueArrayInDatum = List.of(
+                new ExtensionNameValue(
+                        "KLM",
+                        "valueuomB", "Test VALUE B",
+                        "dose equivalent",
+                        "2020-11-15T19:39:47Z",
+                        15L, "Short string 2000 description B", null)
+        );
+
+        locatorUrlArrayInDatum = List.of(
+                "http://www.example.com/schema/anyURIDatumB1",
+                "http://www.example.com/schema/anyURIDatumB2"
+        );
+
+        datum = (BsonDocument) navigate(index, "Datum");
+
+        datumObject = new DataObjectReference(
+                "f13e4568-e89b-12d3-a456-426614174009",
+                "Datum Object Version B",
+                "eml81.mf",
+                "Datum Title B",
+                "http://www.example.com/schema/anyURIDatumB",
+                locatorUrlArrayInDatum,
+                extensionNameValueArrayInDatum,
+                datum
+        );
+
+        datumObject.test();
 
     }
 
