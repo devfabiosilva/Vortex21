@@ -9,13 +9,11 @@ import org.slf4j.LoggerFactory;
 import org.w21parser.DateUtils;
 import org.w21parser.W21Exception;
 import org.w21parser.W21ParserLoader;
+import org.w21parser.common.Aliases;
 import org.w21parser.common.DataObjectReference;
 import org.w21parser.common.ExtensionNameValue;
 
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 import static org.junit.Assert.*;
 import static org.w21parser.Vortex21StrictValidationTest.printW21Exception;
@@ -834,6 +832,26 @@ public class LogTest {
         assertEquals(500.0003, ((BsonDouble)navigate(indexInterval, "MaxPressure", "AbsolutePressure", "#value")).getValue(), 1E-6);
         assertEquals("mpa", navigate(indexInterval, "MaxPressure", "AbsolutePressure", "#attributes", "uom"));
 
+        BsonArray channelArray = (BsonArray)navigate(channelSet, "Channel");
+
+        assertNotNull(channelArray);
+        assertEquals(1, channelArray.size());
+
+        BsonDocument channel = (BsonDocument)navigate(channelArray, 0);
+
+        assertEquals("52374568-e89b-12d3-b456-426614174000", navigate(channel, "#attributes", "uuid"));
+        assertEquals("7", navigate(channel, "#attributes", "schemaVersion"));
+        assertEquals("8", navigate(channel, "#attributes", "objectVersion"));
+
+        Aliases.build((BsonArray)navigate(channel, "Aliases")).add(
+                "aut",
+                "Channel Alias Identifier",
+                "Chanel Alias IdentifierKind",
+                "Alias Desc A",
+                "2021-01-05T19:38:47Z",
+                "2022-01-05T19:49:47Z"
+        ).test();
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1239,6 +1257,26 @@ public class LogTest {
         assertEquals(1.1767, ((BsonDouble)navigate(indexInterval, "MaxPressure", "ReferencePressure", "#value")).getValue(), 1E-6);
         assertEquals("torr", navigate(indexInterval, "MaxPressure", "ReferencePressure", "#attributes", "uom"));
         assertEquals("ambient", navigate(indexInterval, "MaxPressure", "ReferencePressure", "#attributes", "referencePressureKind"));
+
+        channelArray = (BsonArray)navigate(channelSet, "Channel");
+
+        assertNotNull(channelArray);
+        assertEquals(1, channelArray.size());
+
+        channel = (BsonDocument)navigate(channelArray, 0);
+
+        assertEquals("523e4868-e89b-12d3-b456-42661417400a", navigate(channel, "#attributes", "uuid"));
+        assertEquals("11", navigate(channel, "#attributes", "schemaVersion"));
+        assertEquals("22", navigate(channel, "#attributes", "objectVersion"));
+
+        Aliases.build((BsonArray)navigate(channel, "Aliases")).add(
+                "aut B",
+                "Channel Alias Identifier B",
+                "Chanel Alias IdentifierKind B",
+                "Alias Desc B",
+                "2026-01-05T19:38:47Z",
+                "2026-02-05T19:49:47Z"
+        ).test();
 
     }
 

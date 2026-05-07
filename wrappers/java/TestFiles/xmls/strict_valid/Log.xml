@@ -663,13 +663,13 @@
         </rdw212:MaxPressure>
       </rdw211:IndexInterval>
     </rdw211:Index>
-    <rdw211:Channel xsi:type="rdw211:Channel" uuid="523e4568-e89b-12d3-b456-426614174000" schemaVersion="" objectVersion="">
-      <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
-        <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
-        <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>
-        <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
-        <rdw212:EffectiveDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:EffectiveDateTime>
-        <rdw212:TerminationDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:TerminationDateTime>
+    <rdw211:Channel xsi:type="rdw211:Channel" uuid="52374568-e89b-12d3-b456-426614174000" schemaVersion="7" objectVersion="8">
+      <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="aut">
+        <rdw212:Identifier xsi:type="rdw212:String64">Channel Alias Identifier</rdw212:Identifier>
+        <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt">Chanel Alias IdentifierKind</rdw212:IdentifierKind>
+        <rdw212:Description xsi:type="rdw212:String2000">Alias Desc A</rdw212:Description>
+        <rdw212:EffectiveDateTime xsi:type="rdw212:TimeStamp">2021-01-05T19:38:47Z</rdw212:EffectiveDateTime>
+        <rdw212:TerminationDateTime xsi:type="rdw212:TimeStamp">2022-01-05T19:49:47Z</rdw212:TerminationDateTime>
       </rdw212:Aliases>
       <rdw212:Citation xsi:type="rdw212:Citation">
         <rdw212:Title xsi:type="rdw212:String256"></rdw212:Title>
@@ -1294,13 +1294,13 @@
         </MaxPressure>
       </rdw211:IndexInterval>
     </rdw211:Index>
-    <rdw211:Channel xsi:type="rdw211:Channel" uuid="523e4568-e89b-12d3-b456-426614174000" schemaVersion="" objectVersion="">
-      <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
-        <rdw212:Identifier xsi:type="rdw212:String64"></rdw212:Identifier>
-        <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt"></rdw212:IdentifierKind>
-        <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
-        <rdw212:EffectiveDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:EffectiveDateTime>
-        <rdw212:TerminationDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:TerminationDateTime>
+    <rdw211:Channel xsi:type="rdw211:Channel" uuid="523e4868-e89b-12d3-b456-42661417400a" schemaVersion="11" objectVersion="22">
+      <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="aut B">
+        <rdw212:Identifier xsi:type="rdw212:String64">Channel Alias Identifier B</rdw212:Identifier>
+        <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt">Chanel Alias IdentifierKind B</rdw212:IdentifierKind>
+        <rdw212:Description xsi:type="rdw212:String2000">Alias Desc B</rdw212:Description>
+        <rdw212:EffectiveDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:38:47Z</rdw212:EffectiveDateTime>
+        <rdw212:TerminationDateTime xsi:type="rdw212:TimeStamp">2026-02-05T19:49:47Z</rdw212:TerminationDateTime>
       </rdw212:Aliases>
       <rdw212:Citation xsi:type="rdw212:Citation">
         <rdw212:Title xsi:type="rdw212:String256"></rdw212:Title>
