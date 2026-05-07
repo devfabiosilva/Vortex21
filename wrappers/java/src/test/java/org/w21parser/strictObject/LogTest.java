@@ -823,6 +823,17 @@ public class LogTest {
 
         datumObject.test();
 
+        BsonDocument indexInterval = (BsonDocument)navigate(index, "IndexInterval");
+
+        assertNotNull(indexInterval);
+        assertEquals("rdw212:AbsolutePressureInterval", navigate(indexInterval, "#abstype"));
+        assertEquals("AbsolutePressureInterval: Base Comment in IndexInterval", navigate(indexInterval, "Comment"));
+        assertEquals(4000.001, ((BsonDouble)navigate(indexInterval, "MinPressure", "AbsolutePressure", "#value")).getValue(), 1E-6);
+        assertEquals("kpa", navigate(indexInterval, "MinPressure", "AbsolutePressure", "#attributes", "uom"));
+
+        assertEquals(500.0003, ((BsonDouble)navigate(indexInterval, "MaxPressure", "AbsolutePressure", "#value")).getValue(), 1E-6);
+        assertEquals("mpa", navigate(indexInterval, "MaxPressure", "AbsolutePressure", "#attributes", "uom"));
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1210,6 +1221,24 @@ public class LogTest {
         );
 
         datumObject.test();
+
+        indexInterval = (BsonDocument)navigate(index, "IndexInterval");
+
+        assertNotNull(indexInterval);
+        assertEquals("rdw212:GaugePressureInterval", navigate(indexInterval, "#abstype"));
+        assertEquals("Comment in IndexInterval at GaugePressureInterval abstract type", navigate(indexInterval, "Comment"));
+        assertEquals(16.18, ((BsonDouble)navigate(indexInterval, "MinPressure", "GaugePressure", "#value")).getValue(), 1E-6);
+        assertEquals("MPa", navigate(indexInterval, "MinPressure", "GaugePressure", "#attributes", "uom"));
+        assertEquals(18.173, ((BsonDouble)navigate(indexInterval, "MinPressure", "ReferencePressure", "#value")).getValue(), 1E-6);
+        assertEquals("lbf/ft2", navigate(indexInterval, "MinPressure", "ReferencePressure", "#attributes", "uom"));
+        assertEquals("legal", navigate(indexInterval, "MinPressure", "ReferencePressure", "#attributes", "referencePressureKind"));
+
+        assertEquals(1271.171, ((BsonDouble)navigate(indexInterval, "MaxPressure", "GaugePressure", "#value")).getValue(), 1E-6);
+        assertEquals("inHg[60degF]", navigate(indexInterval, "MaxPressure", "GaugePressure", "#attributes", "uom"));
+
+        assertEquals(1.1767, ((BsonDouble)navigate(indexInterval, "MaxPressure", "ReferencePressure", "#value")).getValue(), 1E-6);
+        assertEquals("torr", navigate(indexInterval, "MaxPressure", "ReferencePressure", "#attributes", "uom"));
+        assertEquals("ambient", navigate(indexInterval, "MaxPressure", "ReferencePressure", "#attributes", "referencePressureKind"));
 
     }
 

@@ -250,7 +250,7 @@ if ((config->finrootelement != NULL) && (config->finrootelement(soap, SOAP_TYPE_
 #define W21_ABSTRACT_OBJECT_CHECK(type, tag) \
 DECLARE_W21_CONFIG \
 if ((config->in_config & SOAP_XML_STRICT) == 0) { \
-    set_w21_error_message(soap, E_W21_ERROR_POLYMORPHISM_STRICT_MODE_REQUIRED, "%s", w21_message_sanitize_fmt(soap, "WITSML 2.1 polymorphism requires STRICT mode enabled in Vortex 21 at " #type " %s", tag)); \
+    set_w21_error_message(soap, E_W21_ERROR_POLYMORPHISM_STRICT_MODE_REQUIRED, "%s", w21_message_sanitize_fmt(soap, "WITSML 2.1 polymorphism requires STRICT mode enabled in Vortex 21 at type: " #type " in tag name %s", tag)); \
     soap->error = SOAP_TAG_MISMATCH; \
     return NULL; \
 }

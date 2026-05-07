@@ -651,9 +651,17 @@
           <rdw212:Description xsi:type="rdw212:String2000">Short string 2000 description</rdw212:Description>
         </rdw212:ExtensionNameValue>
       </rdw211:Datum>
-<!--      <rdw211:IndexInterval xsi:type="rdw212:AbstractInterval">-->
-<!--        <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>-->
-<!--      </rdw211:IndexInterval>-->
+      <rdw211:IndexInterval xsi:type="rdw212:AbsolutePressureInterval">
+        <rdw212:Comment>AbsolutePressureInterval: Base Comment in IndexInterval</rdw212:Comment>
+
+        <rdw212:MinPressure>
+          <rdw212:AbsolutePressure uom="kpa">4000.001</rdw212:AbsolutePressure>
+        </rdw212:MinPressure>
+
+        <rdw212:MaxPressure>
+          <rdw212:AbsolutePressure uom="mpa">500.0003</rdw212:AbsolutePressure>
+        </rdw212:MaxPressure>
+      </rdw211:IndexInterval>
     </rdw211:Index>
     <rdw211:Channel xsi:type="rdw211:Channel" uuid="523e4568-e89b-12d3-b456-426614174000" schemaVersion="" objectVersion="">
       <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">
@@ -1274,9 +1282,17 @@
           <rdw212:Description xsi:type="rdw212:String2000">Short string 2000 description B</rdw212:Description>
         </rdw212:ExtensionNameValue>
       </rdw211:Datum>
-      <!--      <rdw211:IndexInterval xsi:type="rdw212:AbstractInterval">-->
-      <!--        <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>-->
-      <!--      </rdw211:IndexInterval>-->
+      <rdw211:IndexInterval xsi:type="GaugePressureInterval">
+        <Comment>Comment in IndexInterval at GaugePressureInterval abstract type</Comment>
+        <MinPressure>
+          <GaugePressure uom="MPa">16.18</GaugePressure>
+          <ReferencePressure uom="lbf/ft2" referencePressureKind="legal">18.173</ReferencePressure>
+        </MinPressure>
+        <MaxPressure>
+          <GaugePressure uom="inHg[60degF]">1271.171</GaugePressure>
+          <ReferencePressure uom="torr" referencePressureKind="ambient">1.1767</ReferencePressure>
+        </MaxPressure>
+      </rdw211:IndexInterval>
     </rdw211:Index>
     <rdw211:Channel xsi:type="rdw211:Channel" uuid="523e4568-e89b-12d3-b456-426614174000" schemaVersion="" objectVersion="">
       <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="">

@@ -1034,6 +1034,7 @@ BSON_READ_OBJECT_BUILDER_21_END(AbsolutePressure)
 //struct rdw212__AbsolutePressureInterval
 BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbsolutePressureInterval)
 // TRANSIENT SPECIAL CASE
+  SET_ABSTRACT_TYPE_IN_TRANSIENT_OBJECT(rdw212:AbsolutePressureInterval)
   READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbsolutePressureInterval, Comment)
   READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(AbsolutePressureInterval, MinPressure, AbsolutePressure)
   READ_T_OBJECT_21_VOID(AbsolutePressureInterval, MaxPressure, AbsolutePressure) // Special case 'VOID' for transient. Used at the end of the function
@@ -1054,6 +1055,7 @@ BSON_READ_OBJECT_BUILDER_21_END(GaugePressure)
 //struct rdw212__GaugePressureInterval
 BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, GaugePressureInterval)
 // TRANSIENT SPECIAL CASE
+  SET_ABSTRACT_TYPE_IN_TRANSIENT_OBJECT(rdw212:GaugePressureInterval)
   READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(GaugePressureInterval, Comment)
   READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(GaugePressureInterval, MinPressure, GaugePressure)
   READ_T_OBJECT_21_VOID(GaugePressureInterval, MaxPressure, GaugePressure) // Special case 'VOID' for transient. Used at the end of the function
