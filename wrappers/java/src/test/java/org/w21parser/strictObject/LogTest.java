@@ -10,6 +10,7 @@ import org.w21parser.DateUtils;
 import org.w21parser.W21Exception;
 import org.w21parser.W21ParserLoader;
 import org.w21parser.common.Aliases;
+import org.w21parser.common.Citation;
 import org.w21parser.common.DataObjectReference;
 import org.w21parser.common.ExtensionNameValue;
 
@@ -852,6 +853,21 @@ public class LogTest {
                 "2022-01-05T19:49:47Z"
         ).test();
 
+        Citation.build(
+                "Citation in Channel A",
+                "Originator in Channel A",
+                "2014-01-05T20:39:47Z",
+                "Format in Channel A",
+                "Editor in Channel A",
+                "2015-01-05T19:39:47Z",
+                "Description in Channel A",
+                List.of(
+                        "Editor History in Channel A1",
+                        "Editor History in Channel A2"
+                ),
+                "Description Keywords in Channel A",
+                (BsonDocument)navigate(channel, "Citation")
+        ).test();
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1278,6 +1294,22 @@ public class LogTest {
                 "2026-02-05T19:49:47Z"
         ).test();
 
+        Citation.build(
+                "Citation in Channel B",
+                "Originator in Channel B",
+                "2012-01-05T20:39:47Z",
+                "Format in Channel B",
+                "Editor in Channel B",
+                "2013-01-05T19:39:47Z",
+                "Description in Channel B",
+                List.of(
+                        "Editor History in Channel B1",
+                        "Editor History in Channel B2",
+                        "Editor History in Channel B3"
+                ),
+                "Description Keywords in Channel B",
+                (BsonDocument)navigate(channel, "Citation")
+        ).test();
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
