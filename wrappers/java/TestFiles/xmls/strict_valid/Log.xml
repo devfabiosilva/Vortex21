@@ -683,9 +683,10 @@
         <rdw212:EditorHistory xsi:type="rdw212:String64">Editor History in Channel A2</rdw212:EditorHistory>
         <rdw212:DescriptiveKeywords xsi:type="rdw212:String2000">Description Keywords in Channel A</rdw212:DescriptiveKeywords>
       </rdw212:Citation>
-      <rdw212:Existence xsi:type="rdw212:ExistenceKindExt"></rdw212:Existence>
-      <rdw212:ObjectVersionReason xsi:type="rdw212:String2000"></rdw212:ObjectVersionReason>
-      <rdw212:BusinessActivityHistory xsi:type="rdw212:String64"></rdw212:BusinessActivityHistory>
+      <rdw212:Existence xsi:type="rdw212:ExistenceKindExt">Existence @ Channel A</rdw212:Existence>
+      <rdw212:ObjectVersionReason xsi:type="rdw212:String2000">ObjectVersionReason @ Channel A</rdw212:ObjectVersionReason>
+      <rdw212:BusinessActivityHistory xsi:type="rdw212:String64">BusinessActivityHistory @ Channel A1</rdw212:BusinessActivityHistory>
+      <rdw212:BusinessActivityHistory xsi:type="rdw212:String64">BusinessActivityHistory @ Channel A2</rdw212:BusinessActivityHistory>
       <rdw212:OSDUIntegration xsi:type="rdw212:OSDUIntegration">
         <rdw212:LineageAssertions xsi:type="rdw212:OSDULineageAssertion">
           <rdw212:ID xsi:type="rdw212:String256"></rdw212:ID>
@@ -1317,9 +1318,11 @@
         <rdw212:EditorHistory xsi:type="rdw212:String64">Editor History in Channel B2</rdw212:EditorHistory>
         <rdw212:EditorHistory xsi:type="rdw212:String64">Editor History in Channel B3</rdw212:EditorHistory>
       </rdw212:Citation>
-      <rdw212:Existence xsi:type="rdw212:ExistenceKindExt"></rdw212:Existence>
-      <rdw212:ObjectVersionReason xsi:type="rdw212:String2000"></rdw212:ObjectVersionReason>
-      <rdw212:BusinessActivityHistory xsi:type="rdw212:String64"></rdw212:BusinessActivityHistory>
+      <rdw212:Existence xsi:type="rdw212:ExistenceKindExt">Existence @ Channel B</rdw212:Existence>
+      <rdw212:ObjectVersionReason xsi:type="rdw212:String2000">ObjectVersionReason @ Channel B</rdw212:ObjectVersionReason>
+      <rdw212:BusinessActivityHistory xsi:type="rdw212:String64">BusinessActivityHistory @ Channel B1</rdw212:BusinessActivityHistory>
+      <rdw212:BusinessActivityHistory xsi:type="rdw212:String64">BusinessActivityHistory @ Channel B2</rdw212:BusinessActivityHistory>
+      <rdw212:BusinessActivityHistory xsi:type="rdw212:String64">BusinessActivityHistory @ Channel B3</rdw212:BusinessActivityHistory>
       <rdw212:OSDUIntegration xsi:type="rdw212:OSDUIntegration">
         <rdw212:LineageAssertions xsi:type="rdw212:OSDULineageAssertion">
           <rdw212:ID xsi:type="rdw212:String256"></rdw212:ID>

@@ -1,6 +1,7 @@
 package org.w21parser.strictObject;
 
 import org.bson.*;
+import org.bson.conversions.Bson;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -868,6 +869,17 @@ public class LogTest {
                 "Description Keywords in Channel A",
                 (BsonDocument)navigate(channel, "Citation")
         ).test();
+
+        assertEquals("Existence @ Channel A", navigate(channel, "Existence"));
+        assertEquals("ObjectVersionReason @ Channel A", navigate(channel, "ObjectVersionReason"));
+
+        businessActivityHistoryArray = (BsonArray) navigate(channel, "BusinessActivityHistory");
+        assertNotNull(businessActivityHistoryArray);
+        assertEquals(2, businessActivityHistoryArray.size());
+
+        assertEquals("BusinessActivityHistory @ Channel A1", businessActivityHistoryArray.get(0).asString().getValue());
+        assertEquals("BusinessActivityHistory @ Channel A2", businessActivityHistoryArray.get(1).asString().getValue());
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1310,6 +1322,18 @@ public class LogTest {
                 "Description Keywords in Channel B",
                 (BsonDocument)navigate(channel, "Citation")
         ).test();
+
+        assertEquals("Existence @ Channel B", navigate(channel, "Existence"));
+        assertEquals("ObjectVersionReason @ Channel B", navigate(channel, "ObjectVersionReason"));
+
+        businessActivityHistoryArray = (BsonArray) navigate(channel, "BusinessActivityHistory");
+        assertNotNull(businessActivityHistoryArray);
+        assertEquals(3, businessActivityHistoryArray.size());
+
+        assertEquals("BusinessActivityHistory @ Channel B1", businessActivityHistoryArray.get(0).asString().getValue());
+        assertEquals("BusinessActivityHistory @ Channel B2", businessActivityHistoryArray.get(1).asString().getValue());
+        assertEquals("BusinessActivityHistory @ Channel B3", businessActivityHistoryArray.get(2).asString().getValue());
+
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
