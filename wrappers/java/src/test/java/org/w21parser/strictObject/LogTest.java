@@ -1,7 +1,6 @@
 package org.w21parser.strictObject;
 
 import org.bson.*;
-import org.bson.conversions.Bson;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,10 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.w21parser.DateUtils;
 import org.w21parser.W21Exception;
 import org.w21parser.W21ParserLoader;
-import org.w21parser.common.Aliases;
-import org.w21parser.common.Citation;
-import org.w21parser.common.DataObjectReference;
-import org.w21parser.common.ExtensionNameValue;
+import org.w21parser.common.*;
 
 import java.util.List;
 
@@ -880,6 +876,52 @@ public class LogTest {
         assertEquals("BusinessActivityHistory @ Channel A1", businessActivityHistoryArray.get(0).asString().getValue());
         assertEquals("BusinessActivityHistory @ Channel A2", businessActivityHistoryArray.get(1).asString().getValue());
 
+        OSDUIntegration.build(
+                List.of(
+                        OSDULineageAssertion.build(
+                        "OSDUID A",
+                        "direct",
+                        null
+                        )
+                ),
+                List.of("OwnerGroup A"),
+                List.of("ViewerGroup A"),
+                List.of("LegalTags A"),
+                "{\"test\": 123}",
+                PlaneAngleMeasure.build(
+                        "gon",
+                        12.101,
+                        null
+                ),
+                PlaneAngleMeasure.build(
+                        "mina",
+                        10.01,
+                        null
+                ),
+                OSDUSpatialLocationIntegration.build(
+                        "2023-06-05T19:39:47Z",
+                        "QuantitativeAccuracyBand A",
+                        "QualitativeSpatialAccuracyType A",
+                        "CoordinateQualityCheckPerformedBy A",
+                        "2022-08-11T19:39:47Z",
+                        List.of("CoordinateQualityCheckRemark A"),
+                        List.of("AppliedOperation A"),
+                        null
+                ),
+                "Field A",
+                "Country A",
+                "State A",
+                "County A",
+                "City A",
+                "Region A",
+                "District A",
+                "Block A",
+                "Prospect A",
+                "Play A",
+                "Basin A",
+                (BsonDocument) navigate(channel, "OSDUIntegration")
+        ).test();
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1333,6 +1375,76 @@ public class LogTest {
         assertEquals("BusinessActivityHistory @ Channel B1", businessActivityHistoryArray.get(0).asString().getValue());
         assertEquals("BusinessActivityHistory @ Channel B2", businessActivityHistoryArray.get(1).asString().getValue());
         assertEquals("BusinessActivityHistory @ Channel B3", businessActivityHistoryArray.get(2).asString().getValue());
+
+        OSDUIntegration.build(
+                List.of(
+                        OSDULineageAssertion.build(
+                                "ID AB",
+                                "indirect",
+                                null
+                        ),
+                        OSDULineageAssertion.build(
+                                "ID CD",
+                                "direct",
+                                null
+                        )
+                ),
+                List.of(
+                        "OwnerGroup 1",
+                        "OwnerGroup 2",
+                        "OwnerGroup 3"
+                ),
+                List.of(
+                        "ViewerGroup 1",
+                        "ViewerGroup 2",
+                        "ViewerGroup 3"
+                ),
+                List.of(
+                        "LegalTags 1",
+                        "LegalTags 2",
+                        "LegalTags 3",
+                        "LegalTags 4"
+                ),
+                "{\"test\":987}",
+                PlaneAngleMeasure.build(
+                        "rev",
+                        16.11,
+                        null
+                ),
+                PlaneAngleMeasure.build(
+                        "Mrad",
+                        70.001,
+                        null
+                ),
+                OSDUSpatialLocationIntegration.build(
+                        "2021-10-05T19:39:47Z",
+                        "QuantitativeAccuracyBand B",
+                        "QualitativeSpatialAccuracyType B",
+                        "CoordinateQualityCheckPerformedBy B",
+                        "2021-01-05T19:39:47Z",
+                        List.of(
+                                "CoordinateQualityCheckRemark B1",
+                                "CoordinateQualityCheckRemark B2"
+                        ),
+                        List.of(
+                                "AppliedOperation B1",
+                                "AppliedOperation B2"
+                        ),
+                        null
+                ),
+                "Field B",
+                "Country B",
+                "State B",
+                "County B",
+                "City B",
+                "Region B",
+                "District B",
+                "Block B",
+                "Prospect B",
+                "Play B",
+                "Basin B",
+                (BsonDocument) navigate(channel, "OSDUIntegration")
+        ).test();
 
     }
 

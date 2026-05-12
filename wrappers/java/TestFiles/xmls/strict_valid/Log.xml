@@ -689,35 +689,35 @@
       <rdw212:BusinessActivityHistory xsi:type="rdw212:String64">BusinessActivityHistory @ Channel A2</rdw212:BusinessActivityHistory>
       <rdw212:OSDUIntegration xsi:type="rdw212:OSDUIntegration">
         <rdw212:LineageAssertions xsi:type="rdw212:OSDULineageAssertion">
-          <rdw212:ID xsi:type="rdw212:String256"></rdw212:ID>
+          <rdw212:ID xsi:type="rdw212:String256">OSDUID A</rdw212:ID>
           <rdw212:LineageRelationshipKind xsi:type="rdw212:OSDULineageRelationshipKind">direct</rdw212:LineageRelationshipKind>
         </rdw212:LineageAssertions>
-        <rdw212:OwnerGroup xsi:type="rdw212:String256"></rdw212:OwnerGroup>
-        <rdw212:ViewerGroup xsi:type="rdw212:String256"></rdw212:ViewerGroup>
-        <rdw212:LegalTags xsi:type="rdw212:String256"></rdw212:LegalTags>
-        <rdw212:OSDUGeoJSON xsi:type="xsd:string"></rdw212:OSDUGeoJSON>
-        <rdw212:WGS84Latitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw212:WGS84Latitude>
-        <rdw212:WGS84Longitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw212:WGS84Longitude>
+        <rdw212:OwnerGroup xsi:type="rdw212:String256">OwnerGroup A</rdw212:OwnerGroup>
+        <rdw212:ViewerGroup xsi:type="rdw212:String256">ViewerGroup A</rdw212:ViewerGroup>
+        <rdw212:LegalTags xsi:type="rdw212:String256">LegalTags A</rdw212:LegalTags>
+        <rdw212:OSDUGeoJSON xsi:type="xsd:string">{"test": 123}</rdw212:OSDUGeoJSON>
+        <rdw212:WGS84Latitude xsi:type="rdw212:PlaneAngleMeasure" uom="gon">12.101</rdw212:WGS84Latitude>
+        <rdw212:WGS84Longitude xsi:type="rdw212:PlaneAngleMeasure" uom="mina">10.01</rdw212:WGS84Longitude>
         <rdw212:WGS84LocationMetadata xsi:type="rdw212:OSDUSpatialLocationIntegration">
-          <rdw212:SpatialLocationCoordinatesDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:SpatialLocationCoordinatesDate>
-          <rdw212:QuantitativeAccuracyBand xsi:type="rdw212:String64"></rdw212:QuantitativeAccuracyBand>
-          <rdw212:QualitativeSpatialAccuracyType xsi:type="rdw212:String64"></rdw212:QualitativeSpatialAccuracyType>
-          <rdw212:CoordinateQualityCheckPerformedBy xsi:type="rdw212:String64"></rdw212:CoordinateQualityCheckPerformedBy>
-          <rdw212:CoordinateQualityCheckDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:CoordinateQualityCheckDateTime>
-          <rdw212:CoordinateQualityCheckRemark xsi:type="rdw212:String256"></rdw212:CoordinateQualityCheckRemark>
-          <rdw212:AppliedOperation xsi:type="rdw212:String256"></rdw212:AppliedOperation>
+          <rdw212:SpatialLocationCoordinatesDate xsi:type="rdw212:TimeStamp">2023-06-05T19:39:47Z</rdw212:SpatialLocationCoordinatesDate>
+          <rdw212:QuantitativeAccuracyBand xsi:type="rdw212:String64">QuantitativeAccuracyBand A</rdw212:QuantitativeAccuracyBand>
+          <rdw212:QualitativeSpatialAccuracyType xsi:type="rdw212:String64">QualitativeSpatialAccuracyType A</rdw212:QualitativeSpatialAccuracyType>
+          <rdw212:CoordinateQualityCheckPerformedBy xsi:type="rdw212:String64">CoordinateQualityCheckPerformedBy A</rdw212:CoordinateQualityCheckPerformedBy>
+          <rdw212:CoordinateQualityCheckDateTime xsi:type="rdw212:TimeStamp">2022-08-11T19:39:47Z</rdw212:CoordinateQualityCheckDateTime>
+          <rdw212:CoordinateQualityCheckRemark xsi:type="rdw212:String256">CoordinateQualityCheckRemark A</rdw212:CoordinateQualityCheckRemark>
+          <rdw212:AppliedOperation xsi:type="rdw212:String256">AppliedOperation A</rdw212:AppliedOperation>
         </rdw212:WGS84LocationMetadata>
-        <rdw212:Field xsi:type="rdw212:String64"></rdw212:Field>
-        <rdw212:Country xsi:type="rdw212:String64"></rdw212:Country>
-        <rdw212:State xsi:type="rdw212:String64"></rdw212:State>
-        <rdw212:County xsi:type="rdw212:String64"></rdw212:County>
-        <rdw212:City xsi:type="rdw212:String64"></rdw212:City>
-        <rdw212:Region xsi:type="rdw212:String64"></rdw212:Region>
-        <rdw212:District xsi:type="rdw212:String64"></rdw212:District>
-        <rdw212:Block xsi:type="rdw212:String64"></rdw212:Block>
-        <rdw212:Prospect xsi:type="rdw212:String64"></rdw212:Prospect>
-        <rdw212:Play xsi:type="rdw212:String64"></rdw212:Play>
-        <rdw212:Basin xsi:type="rdw212:String64"></rdw212:Basin>
+        <rdw212:Field xsi:type="rdw212:String64">Field A</rdw212:Field>
+        <rdw212:Country xsi:type="rdw212:String64">Country A</rdw212:Country>
+        <rdw212:State xsi:type="rdw212:String64">State A</rdw212:State>
+        <rdw212:County xsi:type="rdw212:String64">County A</rdw212:County>
+        <rdw212:City xsi:type="rdw212:String64">City A</rdw212:City>
+        <rdw212:Region xsi:type="rdw212:String64">Region A</rdw212:Region>
+        <rdw212:District xsi:type="rdw212:String64">District A</rdw212:District>
+        <rdw212:Block xsi:type="rdw212:String64">Block A</rdw212:Block>
+        <rdw212:Prospect xsi:type="rdw212:String64">Prospect A</rdw212:Prospect>
+        <rdw212:Play xsi:type="rdw212:String64">Play A</rdw212:Play>
+        <rdw212:Basin xsi:type="rdw212:String64">Basin A</rdw212:Basin>
       </rdw212:OSDUIntegration>
       <rdw212:CustomData xsi:type="rdw212:CustomData">
         <!-- extensibility element(s) -->
@@ -1325,35 +1325,49 @@
       <rdw212:BusinessActivityHistory xsi:type="rdw212:String64">BusinessActivityHistory @ Channel B3</rdw212:BusinessActivityHistory>
       <rdw212:OSDUIntegration xsi:type="rdw212:OSDUIntegration">
         <rdw212:LineageAssertions xsi:type="rdw212:OSDULineageAssertion">
-          <rdw212:ID xsi:type="rdw212:String256"></rdw212:ID>
+          <rdw212:ID xsi:type="rdw212:String256">ID AB</rdw212:ID>
+          <rdw212:LineageRelationshipKind xsi:type="rdw212:OSDULineageRelationshipKind">indirect</rdw212:LineageRelationshipKind>
+        </rdw212:LineageAssertions>
+        <rdw212:LineageAssertions xsi:type="rdw212:OSDULineageAssertion">
+          <rdw212:ID xsi:type="rdw212:String256">ID CD</rdw212:ID>
           <rdw212:LineageRelationshipKind xsi:type="rdw212:OSDULineageRelationshipKind">direct</rdw212:LineageRelationshipKind>
         </rdw212:LineageAssertions>
-        <rdw212:OwnerGroup xsi:type="rdw212:String256"></rdw212:OwnerGroup>
-        <rdw212:ViewerGroup xsi:type="rdw212:String256"></rdw212:ViewerGroup>
-        <rdw212:LegalTags xsi:type="rdw212:String256"></rdw212:LegalTags>
-        <rdw212:OSDUGeoJSON xsi:type="xsd:string"></rdw212:OSDUGeoJSON>
-        <rdw212:WGS84Latitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw212:WGS84Latitude>
-        <rdw212:WGS84Longitude xsi:type="rdw212:PlaneAngleMeasure" uom="0.001 seca">0.0</rdw212:WGS84Longitude>
+        <rdw212:LegalTags xsi:type="rdw212:String256">LegalTags 1</rdw212:LegalTags>
+        <!-- LegalTags: Left out of order for test -->
+        <rdw212:OwnerGroup xsi:type="rdw212:String256">OwnerGroup 1</rdw212:OwnerGroup>
+        <rdw212:OwnerGroup xsi:type="rdw212:String256">OwnerGroup 2</rdw212:OwnerGroup>
+        <rdw212:OwnerGroup xsi:type="rdw212:String256">OwnerGroup 3</rdw212:OwnerGroup>
+        <rdw212:ViewerGroup xsi:type="rdw212:String256">ViewerGroup 1</rdw212:ViewerGroup>
+        <rdw212:ViewerGroup xsi:type="rdw212:String256">ViewerGroup 2</rdw212:ViewerGroup>
+        <rdw212:ViewerGroup xsi:type="rdw212:String256">ViewerGroup 3</rdw212:ViewerGroup>
+        <rdw212:LegalTags xsi:type="rdw212:String256">LegalTags 2</rdw212:LegalTags>
+        <rdw212:LegalTags xsi:type="rdw212:String256">LegalTags 3</rdw212:LegalTags>
+        <rdw212:LegalTags xsi:type="rdw212:String256">LegalTags 4</rdw212:LegalTags>
+        <rdw212:OSDUGeoJSON xsi:type="xsd:string">{"test":987}</rdw212:OSDUGeoJSON>
+        <rdw212:WGS84Latitude xsi:type="rdw212:PlaneAngleMeasure" uom="rev">16.11</rdw212:WGS84Latitude>
+        <rdw212:WGS84Longitude xsi:type="rdw212:PlaneAngleMeasure" uom="Mrad">70.001</rdw212:WGS84Longitude>
         <rdw212:WGS84LocationMetadata xsi:type="rdw212:OSDUSpatialLocationIntegration">
-          <rdw212:SpatialLocationCoordinatesDate xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:SpatialLocationCoordinatesDate>
-          <rdw212:QuantitativeAccuracyBand xsi:type="rdw212:String64"></rdw212:QuantitativeAccuracyBand>
-          <rdw212:QualitativeSpatialAccuracyType xsi:type="rdw212:String64"></rdw212:QualitativeSpatialAccuracyType>
-          <rdw212:CoordinateQualityCheckPerformedBy xsi:type="rdw212:String64"></rdw212:CoordinateQualityCheckPerformedBy>
-          <rdw212:CoordinateQualityCheckDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:CoordinateQualityCheckDateTime>
-          <rdw212:CoordinateQualityCheckRemark xsi:type="rdw212:String256"></rdw212:CoordinateQualityCheckRemark>
-          <rdw212:AppliedOperation xsi:type="rdw212:String256"></rdw212:AppliedOperation>
+          <rdw212:SpatialLocationCoordinatesDate xsi:type="rdw212:TimeStamp">2021-10-05T19:39:47Z</rdw212:SpatialLocationCoordinatesDate>
+          <rdw212:QuantitativeAccuracyBand xsi:type="rdw212:String64">QuantitativeAccuracyBand B</rdw212:QuantitativeAccuracyBand>
+          <rdw212:QualitativeSpatialAccuracyType xsi:type="rdw212:String64">QualitativeSpatialAccuracyType B</rdw212:QualitativeSpatialAccuracyType>
+          <rdw212:CoordinateQualityCheckPerformedBy xsi:type="rdw212:String64">CoordinateQualityCheckPerformedBy B</rdw212:CoordinateQualityCheckPerformedBy>
+          <rdw212:CoordinateQualityCheckDateTime xsi:type="rdw212:TimeStamp">2021-01-05T19:39:47Z</rdw212:CoordinateQualityCheckDateTime>
+          <rdw212:CoordinateQualityCheckRemark xsi:type="rdw212:String256">CoordinateQualityCheckRemark B1</rdw212:CoordinateQualityCheckRemark>
+          <rdw212:CoordinateQualityCheckRemark xsi:type="rdw212:String256">CoordinateQualityCheckRemark B2</rdw212:CoordinateQualityCheckRemark>
+          <rdw212:AppliedOperation xsi:type="rdw212:String256">AppliedOperation B1</rdw212:AppliedOperation>
+          <rdw212:AppliedOperation xsi:type="rdw212:String256">AppliedOperation B2</rdw212:AppliedOperation>
         </rdw212:WGS84LocationMetadata>
-        <rdw212:Field xsi:type="rdw212:String64"></rdw212:Field>
-        <rdw212:Country xsi:type="rdw212:String64"></rdw212:Country>
-        <rdw212:State xsi:type="rdw212:String64"></rdw212:State>
-        <rdw212:County xsi:type="rdw212:String64"></rdw212:County>
-        <rdw212:City xsi:type="rdw212:String64"></rdw212:City>
-        <rdw212:Region xsi:type="rdw212:String64"></rdw212:Region>
-        <rdw212:District xsi:type="rdw212:String64"></rdw212:District>
-        <rdw212:Block xsi:type="rdw212:String64"></rdw212:Block>
-        <rdw212:Prospect xsi:type="rdw212:String64"></rdw212:Prospect>
-        <rdw212:Play xsi:type="rdw212:String64"></rdw212:Play>
-        <rdw212:Basin xsi:type="rdw212:String64"></rdw212:Basin>
+        <rdw212:Field xsi:type="rdw212:String64">Field B</rdw212:Field>
+        <rdw212:Country xsi:type="rdw212:String64">Country B</rdw212:Country>
+        <rdw212:State xsi:type="rdw212:String64">State B</rdw212:State>
+        <rdw212:County xsi:type="rdw212:String64">County B</rdw212:County>
+        <rdw212:City xsi:type="rdw212:String64">City B</rdw212:City>
+        <rdw212:Region xsi:type="rdw212:String64">Region B</rdw212:Region>
+        <rdw212:District xsi:type="rdw212:String64">District B</rdw212:District>
+        <rdw212:Block xsi:type="rdw212:String64">Block B</rdw212:Block>
+        <rdw212:Prospect xsi:type="rdw212:String64">Prospect B</rdw212:Prospect>
+        <rdw212:Play xsi:type="rdw212:String64">Play B</rdw212:Play>
+        <rdw212:Basin xsi:type="rdw212:String64">Basin B</rdw212:Basin>
       </rdw212:OSDUIntegration>
       <rdw212:CustomData xsi:type="rdw212:CustomData">
         <!-- extensibility element(s) -->

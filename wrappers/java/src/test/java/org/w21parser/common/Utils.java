@@ -3,6 +3,7 @@ package org.w21parser.common;
 import org.bson.BsonArray;
 import org.bson.BsonDateTime;
 import org.bson.BsonDocument;
+import org.bson.BsonDouble;
 import org.w21parser.DateUtils;
 
 import java.util.List;
@@ -11,6 +12,19 @@ import static org.junit.Assert.*;
 import static org.w21parser.strictObject.BhaRunTest.navigate;
 
 public class Utils {
+
+    static void testDouble(Double expected, BsonDouble actual) {
+        if (expected != null) {
+            assertNotNull(actual);
+            assertEquals(expected, actual.getValue(), 1E-6);
+        } else
+            assertNull(actual);
+    }
+
+    static void testDouble(Double expected, String key, BsonDocument doc) throws Exception {
+        testDouble(expected, (BsonDouble) navigate(doc, key));
+    }
+
     static void testString(String expected, String actual) {
         if (expected != null) {
             assertNotNull(actual);
@@ -21,6 +35,10 @@ public class Utils {
 
     static void testString(String expected, String key, BsonDocument doc) throws Exception {
         testString(expected, (String)navigate(doc, key));
+    }
+
+    static void testStringAttribute(String expected, String key, BsonDocument doc) throws Exception {
+        testString(expected, (String)navigate(doc, "#attributes", key));
     }
 
     static void testDateTime(String expected, BsonDateTime bdt) {
