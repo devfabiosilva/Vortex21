@@ -720,23 +720,24 @@
         <rdw212:Basin xsi:type="rdw212:String64">Basin A</rdw212:Basin>
       </rdw212:OSDUIntegration>
       <rdw212:CustomData xsi:type="rdw212:CustomData">
-        <!-- extensibility element(s) -->
+        <a><b>Test1</b><c>Test2</c></a>
+        <k>Test3</k>
       </rdw212:CustomData>
       <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-        <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-        <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-        <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-        <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-        <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+        <rdw212:Name xsi:type="rdw212:String64">Channel ENV A</rdw212:Name>
+        <rdw212:Value xsi:type="rdw212:StringMeasure" uom="mno">Value ENV A</rdw212:Value>
+        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">area</rdw212:MeasureClass>
+        <rdw212:DTim xsi:type="rdw212:TimeStamp">2012-02-15T20:39:47Z</rdw212:DTim>
+        <rdw212:Index xsi:type="xsd:long">1010</rdw212:Index>
+        <rdw212:Description xsi:type="rdw212:String2000">Desc AXM</rdw212:Description>
       </rdw212:ExtensionNameValue>
-      <rdw212:ActiveStatus xsi:type="rdw212:ActiveStatusKind">active</rdw212:ActiveStatus>
-      <rdw211:Mnemonic xsi:type="rdw212:String64"></rdw211:Mnemonic>
-      <rdw211:GlobalMnemonic xsi:type="rdw212:String64"></rdw211:GlobalMnemonic>
-      <rdw211:DataKind xsi:type="rdw211:ChannelDataKind">boolean</rdw211:DataKind>
-      <rdw211:Uom xsi:type="rdw212:UnitOfMeasureExt"></rdw211:Uom>
-      <rdw211:Source xsi:type="rdw212:String64"></rdw211:Source>
-      <rdw211:ChannelState xsi:type="rdw211:ChannelState">calculated</rdw211:ChannelState>
+      <rdw212:ActiveStatus xsi:type="rdw212:ActiveStatusKind">inactive</rdw212:ActiveStatus>
+      <rdw211:Mnemonic xsi:type="rdw212:String64">mnemonic a</rdw211:Mnemonic>
+      <rdw211:GlobalMnemonic xsi:type="rdw212:String64">GlobalMnemonic A</rdw211:GlobalMnemonic>
+      <rdw211:DataKind xsi:type="rdw211:ChannelDataKind">true vertical depth</rdw211:DataKind>
+      <rdw211:Uom xsi:type="rdw212:UnitOfMeasureExt">UomExtA</rdw211:Uom>
+      <rdw211:Source xsi:type="rdw212:String64">Source 64 A</rdw211:Source>
+      <rdw211:ChannelState xsi:type="rdw211:ChannelState">real time</rdw211:ChannelState>
       <rdw211:ChannelPropertyKind xsi:type="rdw212:DataObjectReference">
         <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174009</rdw212:Uuid>
         <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
@@ -1373,20 +1374,20 @@
         <!-- extensibility element(s) -->
       </rdw212:CustomData>
       <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-        <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-        <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-        <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-        <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-        <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+        <rdw212:Name xsi:type="rdw212:String64">Channel ENV B</rdw212:Name>
+        <rdw212:Value xsi:type="rdw212:StringMeasure" uom="pqr">Value ENV B</rdw212:Value>
+        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">area per amount of substance</rdw212:MeasureClass>
+        <rdw212:DTim xsi:type="rdw212:TimeStamp">2011-03-15T21:39:47Z</rdw212:DTim>
+        <rdw212:Index xsi:type="xsd:long">1212</rdw212:Index>
+        <rdw212:Description xsi:type="rdw212:String2000">Desc AXM</rdw212:Description>
       </rdw212:ExtensionNameValue>
       <rdw212:ActiveStatus xsi:type="rdw212:ActiveStatusKind">active</rdw212:ActiveStatus>
-      <rdw211:Mnemonic xsi:type="rdw212:String64"></rdw211:Mnemonic>
-      <rdw211:GlobalMnemonic xsi:type="rdw212:String64"></rdw211:GlobalMnemonic>
-      <rdw211:DataKind xsi:type="rdw211:ChannelDataKind">boolean</rdw211:DataKind>
-      <rdw211:Uom xsi:type="rdw212:UnitOfMeasureExt"></rdw211:Uom>
-      <rdw211:Source xsi:type="rdw212:String64"></rdw211:Source>
-      <rdw211:ChannelState xsi:type="rdw211:ChannelState">calculated</rdw211:ChannelState>
+      <rdw211:Mnemonic xsi:type="rdw212:String64">mnemonic b</rdw211:Mnemonic>
+      <rdw211:GlobalMnemonic xsi:type="rdw212:String64">GlobalMnemonic B</rdw211:GlobalMnemonic>
+      <rdw211:DataKind xsi:type="rdw211:ChannelDataKind">string</rdw211:DataKind>
+      <rdw211:Uom xsi:type="rdw212:UnitOfMeasureExt">UomExtB</rdw211:Uom>
+      <rdw211:Source xsi:type="rdw212:String64">Source 64 B</rdw211:Source>
+      <rdw211:ChannelState xsi:type="rdw211:ChannelState">processed</rdw211:ChannelState>
       <rdw211:ChannelPropertyKind xsi:type="rdw212:DataObjectReference">
         <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174009</rdw212:Uuid>
         <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>

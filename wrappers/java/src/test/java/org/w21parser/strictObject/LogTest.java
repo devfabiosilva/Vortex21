@@ -922,6 +922,37 @@ public class LogTest {
                 (BsonDocument) navigate(channel, "OSDUIntegration")
         ).test();
 
+        CustomData.build(
+                List.of(
+                        "<a><b>Test1</b><c>Test2</c></a>",
+                        "<k>Test3</k>"
+                ),
+                channel
+        ).test();
+
+        extensionNameValues = (BsonArray)navigate(channel, "ExtensionNameValue");
+        assertNotNull(extensionNameValues);
+        assertEquals(1, extensionNameValues.size());
+
+        ExtensionNameValue.build(
+                "Channel ENV A",
+                "mno",
+                "Value ENV A",
+                "area",
+                "2012-02-15T20:39:47Z",
+                1010L,
+                "Desc AXM",
+                (BsonDocument) extensionNameValues.get(0)
+        ).test();
+
+        assertEquals("inactive", navigate(channel, "ActiveStatus"));
+        assertEquals("mnemonic a", navigate(channel, "Mnemonic"));
+        assertEquals("GlobalMnemonic A", navigate(channel, "GlobalMnemonic"));
+        assertEquals("true vertical depth", navigate(channel, "DataKind"));
+        assertEquals("UomExtA", navigate(channel, "Uom"));
+        assertEquals("Source 64 A", navigate(channel, "Source"));
+        assertEquals("real time", navigate(channel, "ChannelState"));
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1446,6 +1477,32 @@ public class LogTest {
                 (BsonDocument) navigate(channel, "OSDUIntegration")
         ).test();
 
+        CustomData.build(
+                null,
+                channel
+        ).test();
+
+        extensionNameValues = (BsonArray)navigate(channel, "ExtensionNameValue");
+        assertEquals(1, extensionNameValues.size());
+
+        ExtensionNameValue.build(
+                "Channel ENV B",
+                "pqr",
+                "Value ENV B",
+                "area per amount of substance",
+                "2011-03-15T21:39:47Z",
+                1212L,
+                "Desc AXM",
+                (BsonDocument) extensionNameValues.get(0)
+        ).test();
+
+        assertEquals("active", navigate(channel, "ActiveStatus"));
+        assertEquals("mnemonic b", navigate(channel, "Mnemonic"));
+        assertEquals("GlobalMnemonic B", navigate(channel, "GlobalMnemonic"));
+        assertEquals("string", navigate(channel, "DataKind"));
+        assertEquals("UomExtB", navigate(channel, "Uom"));
+        assertEquals("Source 64 B", navigate(channel, "Source"));
+        assertEquals("processed", navigate(channel, "ChannelState"));
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
