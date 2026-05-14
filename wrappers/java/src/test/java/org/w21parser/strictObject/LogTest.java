@@ -953,6 +953,31 @@ public class LogTest {
         assertEquals("Source 64 A", navigate(channel, "Source"));
         assertEquals("real time", navigate(channel, "ChannelState"));
 
+        new DataObjectReference(
+                "523e4568-e89b-12d3-a456-426614174009",
+                "ObjectVersion in ChannelPropertyKind A",
+                "custom56.m",
+                        "ChannelPropertyKind title A",
+                "http://www.example.com/schema/anyURIChannelPropertyKindA",
+                List.of(
+                        "http://www.example.com/schema/anyURIChannelPropertyKindA1",
+                        "http://www.example.com/schema/anyURIChannelPropertyKindA2"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                        "ENV NAME ChannelPropertyKindA",
+                        "z",
+                        "ENV Value ChannelPropertyKindA",
+                        "absorbed dose",
+                        "2010-01-05T19:39:50Z",
+                                2870L,
+                        "DESC ENV ChannelPropertyKindA",
+                        null
+                        )
+                ),
+                (BsonDocument)navigate(channel, "ChannelPropertyKind")
+        ).test();
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1503,6 +1528,41 @@ public class LogTest {
         assertEquals("UomExtB", navigate(channel, "Uom"));
         assertEquals("Source 64 B", navigate(channel, "Source"));
         assertEquals("processed", navigate(channel, "ChannelState"));
+
+        new DataObjectReference(
+                "523e4568-e89b-12d3-a456-426614174fa9",
+                "ObjectVersion in ChannelPropertyKind B",
+                "custom58.k",
+                "ChannelPropertyKind title B",
+                "http://www.example.com/schema/anyURIChannelPropertyKindB",
+                List.of(
+                        "http://www.example.com/schema/anyURIChannelPropertyKindB1",
+                        "http://www.example.com/schema/anyURIChannelPropertyKindB2"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "ENV NAME ChannelPropertyKindB",
+                                "w",
+                                "ENV Value ChannelPropertyKindB",
+                                "electric field strength",
+                                "2009-02-05T19:39:50Z",
+                                18720L,
+                                "DESC ENV ChannelPropertyKindB",
+                                null
+                        ),
+                        ExtensionNameValue.build(
+                                "ENV NAME ChannelPropertyKindC",
+                                "w",
+                                "ENV Value ChannelPropertyKindC",
+                                "electromagnetic moment",
+                                "2019-07-15T19:39:51Z",
+                                28721L,
+                                "DESC ENV ChannelPropertyKindC",
+                                null
+                        )
+                ),
+                (BsonDocument)navigate(channel, "ChannelPropertyKind")
+        ).test();
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
