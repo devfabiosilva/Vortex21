@@ -1,9 +1,6 @@
 package org.w21parser.common;
 
-import org.bson.BsonArray;
-import org.bson.BsonDateTime;
-import org.bson.BsonDocument;
-import org.bson.BsonDouble;
+import org.bson.*;
 import org.w21parser.DateUtils;
 
 import java.util.List;
@@ -23,6 +20,18 @@ public class Utils {
 
     static void testDouble(Double expected, String key, BsonDocument doc) throws Exception {
         testDouble(expected, (BsonDouble) navigate(doc, key));
+    }
+
+    static void testLong(Long expected, BsonInt64 actual) {
+        if (expected != null) {
+            assertNotNull(actual);
+            assertEquals(expected.longValue(), actual.getValue());
+        } else
+            assertNull(actual);
+    }
+
+    static void testLong(Long expected, String key, BsonDocument doc) throws Exception {
+        testLong(expected, (BsonInt64) navigate(doc, key));
     }
 
     static void testString(String expected, String actual) {

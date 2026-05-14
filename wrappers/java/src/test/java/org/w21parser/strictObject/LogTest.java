@@ -978,6 +978,18 @@ public class LogTest {
                 (BsonDocument)navigate(channel, "ChannelPropertyKind")
         ).test();
 
+        assertEquals("RunNumber A", navigate(channel, "RunNumber"));
+        assertEquals("PassNumber A", navigate(channel, "PassNumber"));
+        assertEquals("PassDescription A", navigate(channel, "PassDescription"));
+
+        passDetail = (BsonArray)navigate(channel, "PassDetail");
+
+        assertNotNull(passDetail);
+        assertEquals(2, passDetail.size());
+
+        PassDetail.build(1L, "PassDetail A1", (BsonDocument) passDetail.get(0)).test();
+        PassDetail.build(2L, null, (BsonDocument) passDetail.get(1)).test();
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1563,6 +1575,17 @@ public class LogTest {
                 ),
                 (BsonDocument)navigate(channel, "ChannelPropertyKind")
         ).test();
+
+        assertEquals("RunNumber B", navigate(channel, "RunNumber"));
+        assertEquals("PassNumber B", navigate(channel, "PassNumber"));
+        assertEquals("PassDescription B", navigate(channel, "PassDescription"));
+
+        passDetail = (BsonArray)navigate(channel, "PassDetail");
+
+        assertNotNull(passDetail);
+        assertEquals(1, passDetail.size());
+
+        PassDetail.build(10L, "PassDetail B1", (BsonDocument) passDetail.get(0)).test();
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {

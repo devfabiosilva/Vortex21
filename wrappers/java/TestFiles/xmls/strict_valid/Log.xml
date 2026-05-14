@@ -755,12 +755,15 @@
           <rdw212:Description xsi:type="rdw212:String2000">DESC ENV ChannelPropertyKindA</rdw212:Description>
         </rdw212:ExtensionNameValue>
       </rdw211:ChannelPropertyKind>
-      <rdw211:RunNumber xsi:type="rdw212:String64"></rdw211:RunNumber>
-      <rdw211:PassNumber xsi:type="rdw212:String64"></rdw211:PassNumber>
-      <rdw211:PassDescription xsi:type="rdw212:String64"></rdw211:PassDescription>
+      <rdw211:RunNumber xsi:type="rdw212:String64">RunNumber A</rdw211:RunNumber>
+      <rdw211:PassNumber xsi:type="rdw212:String64">PassNumber A</rdw211:PassNumber>
+      <rdw211:PassDescription xsi:type="rdw212:String64">PassDescription A</rdw211:PassDescription>
       <rdw211:PassDetail xsi:type="rdw211:PassDetail">
-        <rdw211:Pass xsi:type="xsd:long">0</rdw211:Pass>
-        <rdw211:Description xsi:type="rdw212:String64"></rdw211:Description>
+        <rdw211:Pass xsi:type="xsd:long">1</rdw211:Pass>
+        <rdw211:Description xsi:type="rdw212:String64">PassDetail A1</rdw211:Description>
+      </rdw211:PassDetail>
+      <rdw211:PassDetail xsi:type="rdw211:PassDetail">
+        <rdw211:Pass xsi:type="xsd:long">2</rdw211:Pass>
       </rdw211:PassDetail>
 <!--      <rdw211:PrimaryIndexInterval xsi:type="rdw212:AbstractInterval">-->
 <!--        <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>-->
@@ -1169,7 +1172,7 @@
       <rdw211:Pass xsi:type="xsd:long">129</rdw211:Pass>
       <rdw211:Description xsi:type="rdw212:String64">Description in PassDetail B1</rdw211:Description>
     </rdw211:PassDetail>
-    <rdw211:PrimaryIndexInterval xsi:type="rdw212:TemperatureInterval">
+    <rdw211:PrimaryIndexInterval xsi:type="TemperatureInterval">
       <rdw212:Comment>Base Comment @ scalar interval type TemperatureInterval</rdw212:Comment>
 
       <rdw212:MinTemperature uom="degrees Celsius">168.27</rdw212:MinTemperature>
@@ -1414,12 +1417,12 @@
           <rdw212:Description xsi:type="rdw212:String2000">DESC ENV ChannelPropertyKindC</rdw212:Description>
         </rdw212:ExtensionNameValue>
       </rdw211:ChannelPropertyKind>
-      <rdw211:RunNumber xsi:type="rdw212:String64"></rdw211:RunNumber>
-      <rdw211:PassNumber xsi:type="rdw212:String64"></rdw211:PassNumber>
-      <rdw211:PassDescription xsi:type="rdw212:String64"></rdw211:PassDescription>
+      <rdw211:RunNumber xsi:type="rdw212:String64">RunNumber B</rdw211:RunNumber>
+      <rdw211:PassNumber xsi:type="rdw212:String64">PassNumber B</rdw211:PassNumber>
+      <rdw211:PassDescription xsi:type="rdw212:String64">PassDescription B</rdw211:PassDescription>
       <rdw211:PassDetail xsi:type="rdw211:PassDetail">
-        <rdw211:Pass xsi:type="xsd:long">0</rdw211:Pass>
-        <rdw211:Description xsi:type="rdw212:String64"></rdw211:Description>
+        <rdw211:Pass xsi:type="xsd:long">10</rdw211:Pass>
+        <rdw211:Description xsi:type="rdw212:String64">PassDetail B1</rdw211:Description>
       </rdw211:PassDetail>
       <!--      <rdw211:PrimaryIndexInterval xsi:type="rdw212:AbstractInterval">-->
       <!--        <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>-->
