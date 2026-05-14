@@ -990,6 +990,15 @@ public class LogTest {
         PassDetail.build(1L, "PassDetail A1", (BsonDocument) passDetail.get(0)).test();
         PassDetail.build(2L, null, (BsonDocument) passDetail.get(1)).test();
 
+        primaryIndexInterval = (BsonDocument)navigate(channel, "PrimaryIndexInterval");
+
+        assertEquals("rdw212:ScalarInterval", navigate(primaryIndexInterval, "#abstype"));
+        assertEquals("Base Comment @ scalar interval type ScalarInterval", navigate(primaryIndexInterval, "Comment"));
+        assertEquals("abcefg", navigate(primaryIndexInterval, "MinValue", "#attributes", "uom"));
+        assertEquals(16.27, ((BsonDouble)navigate(primaryIndexInterval, "MinValue", "#value")).getValue(), 1E-6);
+        assertEquals("abcdehijk", navigate(primaryIndexInterval, "MaxValue", "#attributes", "uom"));
+        assertEquals(671.37, ((BsonDouble)navigate(primaryIndexInterval, "MaxValue", "#value")).getValue(), 1E-6);
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1586,6 +1595,45 @@ public class LogTest {
         assertEquals(1, passDetail.size());
 
         PassDetail.build(10L, "PassDetail B1", (BsonDocument) passDetail.get(0)).test();
+
+        primaryIndexInterval = (BsonDocument)navigate(channel, "PrimaryIndexInterval");
+
+        assertEquals("rdw211:PassIndexedDepthInterval", navigate(primaryIndexInterval, "#abstype"));
+        assertEquals("Base Comment @ scalar interval type PassIndexedDepthInterval", navigate(primaryIndexInterval, "Comment"));
+
+        new DataObjectReference(
+                "5f3ea568-e89b-12d3-a456-426614174901",
+                "Datum object reference 1",
+                "prodml69.BhaRunTest",
+                "Title @ PrimaryIndexInterval @ PassIndexedDepthInterval",
+                "http://www.example.com/schema/anyPassIndexedDepthInterval",
+                List.of("http://www.example.com/schema/anyURIPassIndexedDepthInterval"),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Name ABC IJK",
+                                "uom mnop",
+                                "val",
+                                "absorbed dose",
+                                "2025-08-01T20:19:42Z",
+                                178097L,
+                                "Short description PassIndexedDepthInterval",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(primaryIndexInterval, "Datum")
+        ).test();
+
+        BsonDocument startEnd = (BsonDocument) navigate(primaryIndexInterval, "Start");
+        assertEquals(1234L, ((BsonInt64)navigate(startEnd, "Pass")).getValue());
+        assertEquals("holding steady", navigate(startEnd, "Direction"));
+        assertEquals("abbcd", navigate(startEnd, "MeasuredDepth", "#attributes", "uom"));
+        assertEquals(500.128, ((BsonDouble)navigate(startEnd, "MeasuredDepth", "#value")).getValue(), 1E-6);
+
+        startEnd = (BsonDocument) navigate(primaryIndexInterval, "End");
+        assertEquals(7890L, ((BsonInt64)navigate(startEnd, "Pass")).getValue());
+        assertEquals("down", navigate(startEnd, "Direction"));
+        assertEquals("ghi", navigate(startEnd, "MeasuredDepth", "#attributes", "uom"));
+        assertEquals(520.1328, ((BsonDouble)navigate(startEnd, "MeasuredDepth", "#value")).getValue(), 1E-6);
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
