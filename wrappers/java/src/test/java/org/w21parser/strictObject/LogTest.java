@@ -999,6 +999,67 @@ public class LogTest {
         assertEquals("abcdehijk", navigate(primaryIndexInterval, "MaxValue", "#attributes", "uom"));
         assertEquals(671.37, ((BsonDouble)navigate(primaryIndexInterval, "MaxValue", "#value")).getValue(), 1E-6);
 
+        new DataObjectReference(
+                "523e4568-e89b-12d3-a456-42661417470a",
+                "LoggingCompany object version",
+                "custom51.ya",
+                "LoggingCompany title A",
+                "http://www.example.com/schema/anyURILoggingCompany",
+                List.of(
+                        "http://www.example.com/schema/anyURILoggingCompanyA1",
+                        "http://www.example.com/schema/anyURILoggingCompanyA2"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "LoggingCompany ENV A1",
+                                "ENV uom",
+                                "ENV A1",
+                                "amount of substance per amount of substance",
+                                "2023-11-17T22:49:47Z",
+                                13098L,
+                                "Desc A1",
+                                null
+                        ),
+                        ExtensionNameValue.build(
+                                "LoggingCompany ENV A2",
+                                "ENV uom 2",
+                                "ENV A2",
+                                "amount of substance per amount of substance",
+                                "2022-10-18T23:55:47Z",
+                                13012L,
+                                "Desc A2",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "LoggingCompany")
+        ).test();
+
+        assertEquals(1892L, ((BsonInt64)navigate(channel, "LoggingCompanyCode")).getValue());
+
+        new DataObjectReference(
+                "527e458f-e89b-1ad3-a456-42661417400b",
+                "ChannelKind Object version A",
+                "custom77.za",
+                "ChannelKind title a",
+                "http://www.example.com/schema/anyURIChannelKindA",
+                List.of(
+                        "http://www.example.com/schema/anyURIChannelKindA1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "ChannelKind ENV A",
+                                "ChannelKind ENV UOM A",
+                                "ChannelKind Value A",
+                                "absorbed dose",
+                                "2025-01-05T19:39:47Z",
+                                1901L,
+                                "ChannelKind Desc A",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "ChannelKind")
+        ).test();
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1634,6 +1695,58 @@ public class LogTest {
         assertEquals("down", navigate(startEnd, "Direction"));
         assertEquals("ghi", navigate(startEnd, "MeasuredDepth", "#attributes", "uom"));
         assertEquals(520.1328, ((BsonDouble)navigate(startEnd, "MeasuredDepth", "#value")).getValue(), 1E-6);
+
+        new DataObjectReference(
+                "523e4568-e89b-12d3-a456-42661417490a",
+                "LoggingCompany object version B",
+                "custom51.ya",
+                "LoggingCompany title B",
+                "http://www.example.com/schema/anyURILoggingCompanyB",
+                List.of(
+                        "http://www.example.com/schema/anyURILoggingCompanyB1",
+                        "http://www.example.com/schema/anyURILoggingCompanyB2",
+                        "http://www.example.com/schema/anyURILoggingCompanyB3"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "LoggingCompany ENV B1",
+                                "ENV uom B",
+                                "ENV B1",
+                                "area per time",
+                                "2023-12-17T23:49:47Z",
+                                5000L,
+                                "Desc B1",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "LoggingCompany")
+        ).test();
+
+        assertEquals(300L, ((BsonInt64)navigate(channel, "LoggingCompanyCode")).getValue());
+
+        new DataObjectReference(
+                "523f6568-e89b-12d3-a456-42661417400b",
+                "ChannelKind Object version B",
+                "custom77.zb",
+                "ChannelKind title b",
+                "http://www.example.com/schema/anyURIChannelKindB",
+                List.of(
+                        "http://www.example.com/schema/anyURIChannelKindB1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "ChannelKind ENV B",
+                                "ChannelKind ENV UOM B",
+                                "ChannelKind Value B",
+                                "attenuation per frequency interval",
+                                "2021-06-08T19:39:57Z",
+                                820L,
+                                "Any desc ABC in ChannelKind",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "ChannelKind")
+        ).test();
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
