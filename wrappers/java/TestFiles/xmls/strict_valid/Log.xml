@@ -869,35 +869,45 @@
         <rdw211:ChannelFamily xsi:type="rdw212:String64">ChannelFamily in IntermediaryServiceCompany A</rdw211:ChannelFamily>
       </rdw211:ChannelOSDUIntegration>
       <rdw211:Datum xsi:type="rdw212:DataObjectReference">
-        <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-42661417400e</rdw212:Uuid>
-        <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-        <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml76.h</rdw212:QualifiedType>
-        <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+        <rdw212:Uuid xsi:type="rdw212:UuidString">523e8568-28fb-d2d3-a4a6-42661417490e</rdw212:Uuid>
+        <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in Datum A</rdw212:ObjectVersion>
+        <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml76.ha</rdw212:QualifiedType>
+        <rdw212:Title xsi:type="rdw212:String2000">Title in Datum A</rdw212:Title>
+        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDatumA</rdw212:EnergisticsUri>
+        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDatumA1</rdw212:LocatorUrl>
+        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDatumA2</rdw212:LocatorUrl>
+        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDatumA3</rdw212:LocatorUrl>
         <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-          <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-          <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-          <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-          <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-          <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-          <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+          <rdw212:Name xsi:type="rdw212:String64">Datum in A1</rdw212:Name>
+          <rdw212:Value xsi:type="rdw212:StringMeasure" uom="DatumUomA1">DatumValueA1</rdw212:Value>
+          <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">force per volume</rdw212:MeasureClass>
+          <rdw212:DTim xsi:type="rdw212:TimeStamp">2022-11-15T19:39:47Z</rdw212:DTim>
+          <rdw212:Index xsi:type="xsd:long">819</rdw212:Index>
+          <rdw212:Description xsi:type="rdw212:String2000">Descr in DATUM A1</rdw212:Description>
+        </rdw212:ExtensionNameValue>
+        <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+          <rdw212:Name xsi:type="rdw212:String64">Datum in A2</rdw212:Name>
+          <rdw212:Value xsi:type="rdw212:StringMeasure" uom="DatumUomA2">DatumValueA2</rdw212:Value>
+          <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">frequency interval</rdw212:MeasureClass>
+          <rdw212:DTim xsi:type="rdw212:TimeStamp">2022-11-16T20:39:47Z</rdw212:DTim>
+          <rdw212:Index xsi:type="xsd:long">859</rdw212:Index>
+          <rdw212:Description xsi:type="rdw212:String2000">Descr in DATUM A2</rdw212:Description>
         </rdw212:ExtensionNameValue>
       </rdw211:Datum>
       <rdw211:SeismicReferenceElevation xsi:type="rdw212:DataObjectReference">
         <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-42661417400f</rdw212:Uuid>
-        <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-        <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml34.n</rdw212:QualifiedType>
-        <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+        <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in SeismicReferenceElevation A</rdw212:ObjectVersion>
+        <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml34.na</rdw212:QualifiedType>
+        <rdw212:Title xsi:type="rdw212:String2000">Title in SeismicReferenceElevation A</rdw212:Title>
+        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURISeismicReferenceElevationA</rdw212:EnergisticsUri>
+        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURISeismicReferenceElevationA1</rdw212:LocatorUrl>
         <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-          <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-          <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-          <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-          <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-          <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-          <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+          <rdw212:Name xsi:type="rdw212:String64">SeismicReferenceElevation NAME A</rdw212:Name>
+          <rdw212:Value xsi:type="rdw212:StringMeasure" uom="SeismicReferenceElevationUomA">SeismicReferenceElevationValueA</rdw212:Value>
+          <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">luminous efficacy</rdw212:MeasureClass>
+          <rdw212:DTim xsi:type="rdw212:TimeStamp">2016-11-15T20:29:42Z</rdw212:DTim>
+          <rdw212:Index xsi:type="xsd:long">17277</rdw212:Index>
+          <rdw212:Description xsi:type="rdw212:String2000">Description in SeismicReferenceElevationValue A</rdw212:Description>
         </rdw212:ExtensionNameValue>
       </rdw211:SeismicReferenceElevation>
       <rdw211:Data xsi:type="rdw211:ChannelData">
@@ -1562,34 +1572,36 @@
       </rdw211:ChannelOSDUIntegration>
       <rdw211:Datum xsi:type="rdw212:DataObjectReference">
         <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-42661417400e</rdw212:Uuid>
-        <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-        <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml76.h</rdw212:QualifiedType>
-        <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+        <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in Datum B</rdw212:ObjectVersion>
+        <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml61.hb</rdw212:QualifiedType>
+        <rdw212:Title xsi:type="rdw212:String2000">Title in Datum B</rdw212:Title>
+        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDatumB</rdw212:EnergisticsUri>
+        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDatumB1</rdw212:LocatorUrl>
+        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDatumB2</rdw212:LocatorUrl>
+        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDatumB3</rdw212:LocatorUrl>
         <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-          <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-          <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-          <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-          <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-          <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-          <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+          <rdw212:Name xsi:type="rdw212:String64">Datum in B1</rdw212:Name>
+          <rdw212:Value xsi:type="rdw212:StringMeasure" uom="DatumUomB1">DatumValueB1</rdw212:Value>
+          <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">isothermal compressibility</rdw212:MeasureClass>
+          <rdw212:DTim xsi:type="rdw212:TimeStamp">2021-12-15T19:39:47Z</rdw212:DTim>
+          <rdw212:Index xsi:type="xsd:long">88191</rdw212:Index>
+          <rdw212:Description xsi:type="rdw212:String2000">Descr in DATUM B1</rdw212:Description>
         </rdw212:ExtensionNameValue>
       </rdw211:Datum>
       <rdw211:SeismicReferenceElevation xsi:type="rdw212:DataObjectReference">
-        <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-42661417400f</rdw212:Uuid>
-        <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-        <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml34.n</rdw212:QualifiedType>
-        <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+        <rdw212:Uuid xsi:type="rdw212:UuidString">f73ec568-e89b-92d3-a456-42661417400f</rdw212:Uuid>
+        <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in SeismicReferenceElevation B</rdw212:ObjectVersion>
+        <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">prodml34.nb</rdw212:QualifiedType>
+        <rdw212:Title xsi:type="rdw212:String2000">Title in SeismicReferenceElevation B</rdw212:Title>
+        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURISeismicReferenceElevationB</rdw212:EnergisticsUri>
+        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURISeismicReferenceElevationB1</rdw212:LocatorUrl>
         <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-          <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-          <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-          <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-          <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-          <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-          <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+          <rdw212:Name xsi:type="rdw212:String64">SeismicReferenceElevation NAME B</rdw212:Name>
+          <rdw212:Value xsi:type="rdw212:StringMeasure" uom="SeismicReferenceElevationUomB">SeismicReferenceElevationValueB</rdw212:Value>
+          <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">heat flow rate</rdw212:MeasureClass>
+          <rdw212:DTim xsi:type="rdw212:TimeStamp">2020-11-15T20:29:42Z</rdw212:DTim>
+          <rdw212:Index xsi:type="xsd:long">71629</rdw212:Index>
+          <rdw212:Description xsi:type="rdw212:String2000">Description in SeismicReferenceElevationValue B</rdw212:Description>
         </rdw212:ExtensionNameValue>
       </rdw211:SeismicReferenceElevation>
       <rdw211:Data xsi:type="rdw211:ChannelData">

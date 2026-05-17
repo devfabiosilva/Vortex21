@@ -1141,6 +1141,66 @@ public class LogTest {
         assertEquals("ChannelMainFamily in IntermediaryServiceCompany A", navigate(channelOSDUIntegration, "ChannelMainFamily"));
         assertEquals("ChannelFamily in IntermediaryServiceCompany A", navigate(channelOSDUIntegration, "ChannelFamily"));
 
+        new DataObjectReference(
+                "523e8568-28fb-d2d3-a4a6-42661417490e",
+                "ObjectVersion in Datum A",
+                "prodml76.ha",
+                "Title in Datum A",
+                "http://www.example.com/schema/anyURIDatumA",
+                List.of(
+                        "http://www.example.com/schema/anyURIDatumA1",
+                        "http://www.example.com/schema/anyURIDatumA2",
+                        "http://www.example.com/schema/anyURIDatumA3"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Datum in A1",
+                                "DatumUomA1",
+                                "DatumValueA1",
+                                "force per volume",
+                                "2022-11-15T19:39:47Z",
+                                819L,
+                                "Descr in DATUM A1",
+                                null
+                        ),
+                        ExtensionNameValue.build(
+                                "Datum in A2",
+                                "DatumUomA2",
+                                "DatumValueA2",
+                                "frequency interval",
+                                "2022-11-16T20:39:47Z",
+                                859L,
+                                "Descr in DATUM A2",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "Datum")
+        ).test();
+
+        new DataObjectReference(
+                "523e4568-e89b-12d3-a456-42661417400f",
+                "ObjectVersion in SeismicReferenceElevation A",
+                "prodml34.na",
+                "Title in SeismicReferenceElevation A",
+                "http://www.example.com/schema/anyURISeismicReferenceElevationA",
+                List.of(
+                        "http://www.example.com/schema/anyURISeismicReferenceElevationA1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "SeismicReferenceElevation NAME A",
+                                "SeismicReferenceElevationUomA",
+                                "SeismicReferenceElevationValueA",
+                                "luminous efficacy",
+                                "2016-11-15T20:29:42Z",
+                                17277L,
+                                "Description in SeismicReferenceElevationValue A",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "SeismicReferenceElevation")
+        ).test();
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1913,6 +1973,55 @@ public class LogTest {
         assertEquals("ChannelMainFamily in IntermediaryServiceCompany B", navigate(channelOSDUIntegration, "ChannelMainFamily"));
         assertEquals("ChannelFamily in IntermediaryServiceCompany B", navigate(channelOSDUIntegration, "ChannelFamily"));
 
+        new DataObjectReference(
+                "523e4568-e89b-12d3-a456-42661417400e",
+                "ObjectVersion in Datum B",
+                "prodml61.hb",
+                "Title in Datum B",
+                "http://www.example.com/schema/anyURIDatumB",
+                List.of(
+                        "http://www.example.com/schema/anyURIDatumB1",
+                        "http://www.example.com/schema/anyURIDatumB2",
+                        "http://www.example.com/schema/anyURIDatumB3"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Datum in B1",
+                                "DatumUomB1",
+                                "DatumValueB1",
+                                "isothermal compressibility",
+                                "2021-12-15T19:39:47Z",
+                                88191L,
+                                "Descr in DATUM B1",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "Datum")
+        ).test();
+
+        new DataObjectReference(
+                "f73ec568-e89b-92d3-a456-42661417400f",
+                "ObjectVersion in SeismicReferenceElevation B",
+                "prodml34.nb",
+                "Title in SeismicReferenceElevation B",
+                "http://www.example.com/schema/anyURISeismicReferenceElevationB",
+                List.of(
+                        "http://www.example.com/schema/anyURISeismicReferenceElevationB1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "SeismicReferenceElevation NAME B",
+                                "SeismicReferenceElevationUomB",
+                                "SeismicReferenceElevationValueB",
+                                "heat flow rate",
+                                "2020-11-15T20:29:42Z",
+                                71629L,
+                                "Description in SeismicReferenceElevationValue B",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "SeismicReferenceElevation")
+        ).test();
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
