@@ -1105,6 +1105,42 @@ public class LogTest {
         assertEquals("NominalSamplingIntervalUomA", navigate(channel, "NominalSamplingInterval", "#attributes", "uom"));
         assertEquals(1920.188, ((BsonDouble) navigate(channel, "NominalSamplingInterval", "#value")).getValue(), 1E-6);
 
+        BsonDocument channelOSDUIntegration = (BsonDocument)navigate(channel, "ChannelOSDUIntegration");
+        assertNotNull(channelOSDUIntegration);
+
+        assertEquals("ChannelQuality in ChannelOSDUIntegration A", navigate(channelOSDUIntegration, "ChannelQuality"));
+
+        new DataObjectReference(
+                "5fae4568-e89b-12d3-a456-42661417400d",
+                "ObjectVersion in IntermediaryServiceCompany A",
+                "custom15.mm",
+                "Title in IntermediaryServiceCompany A",
+                "http://www.example.com/schema/anyURIIntermediaryServiceCompanyA",
+                List.of(
+                        "http://www.example.com/schema/anyURIIntermediaryServiceCompanyA1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "IntermediaryServiceCompany ENV A",
+                                "IntermediaryServiceCompanyUomA",
+                                "IntermediaryServiceCompanyValueA",
+                                "dimensionless",
+                                "2018-02-05T20:03:04Z",
+                                -19L,
+                                "Description in IntermediaryServiceCompanyA",
+                                null
+                        )
+                ),
+                (BsonDocument)navigate(channelOSDUIntegration, "IntermediaryServiceCompany")
+        ).test();
+
+        assertFalse(((BsonBoolean) navigate(channelOSDUIntegration, "IsRegular")).getValue());
+
+        assertEquals(DateUtils.toTimestamp("2017-01-05T09:29:26Z"), ((BsonValue) navigate(channelOSDUIntegration, "ZeroTime")).asDateTime().getValue());
+        assertEquals("ChannelBusinessValue in IntermediaryServiceCompany A", navigate(channelOSDUIntegration, "ChannelBusinessValue"));
+        assertEquals("ChannelMainFamily in IntermediaryServiceCompany A", navigate(channelOSDUIntegration, "ChannelMainFamily"));
+        assertEquals("ChannelFamily in IntermediaryServiceCompany A", navigate(channelOSDUIntegration, "ChannelFamily"));
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1836,6 +1872,47 @@ public class LogTest {
 
         assertEquals("NominalSamplingIntervalUomB", navigate(channel, "NominalSamplingInterval", "#attributes", "uom"));
         assertEquals(98.19201, ((BsonDouble) navigate(channel, "NominalSamplingInterval", "#value")).getValue(), 1E-6);
+
+        channelOSDUIntegration = (BsonDocument)navigate(channel, "ChannelOSDUIntegration");
+        assertNotNull(channelOSDUIntegration);
+
+        assertEquals("ChannelQuality in ChannelOSDUIntegration B", navigate(channelOSDUIntegration, "ChannelQuality"));
+
+        new DataObjectReference(
+                "523e4568-e89b-12d3-a456-42661417400d",
+                "ObjectVersion in IntermediaryServiceCompany B",
+                "custom75.mkm",
+                "Title in IntermediaryServiceCompany B",
+                "http://www.example.com/schema/anyURIIntermediaryServiceCompanyB",
+                List.of(
+                        "http://www.example.com/schema/anyURIIntermediaryServiceCompanyB1",
+                        "http://www.example.com/schema/anyURIIntermediaryServiceCompanyB2",
+                        "http://www.example.com/schema/anyURIIntermediaryServiceCompanyB3",
+                        "http://www.example.com/schema/anyURIIntermediaryServiceCompanyB4",
+                        "http://www.example.com/schema/anyURIIntermediaryServiceCompanyB5"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "IntermediaryServiceCompany ENV B",
+                                "IntermediaryServiceCompanyUomB",
+                                "IntermediaryServiceCompanyValueB",
+                                "dynamic viscosity",
+                                "2018-03-15T21:08:04Z",
+                                17289L,
+                                "Description in IntermediaryServiceCompanyB",
+                                null
+                        )
+                ),
+                (BsonDocument)navigate(channelOSDUIntegration, "IntermediaryServiceCompany")
+        ).test();
+
+        assertTrue(((BsonBoolean) navigate(channelOSDUIntegration, "IsRegular")).getValue());
+
+        assertEquals(DateUtils.toTimestamp("2015-01-05T19:39:37Z"), ((BsonValue) navigate(channelOSDUIntegration, "ZeroTime")).asDateTime().getValue());
+        assertEquals("ChannelBusinessValue in IntermediaryServiceCompany B", navigate(channelOSDUIntegration, "ChannelBusinessValue"));
+        assertEquals("ChannelMainFamily in IntermediaryServiceCompany B", navigate(channelOSDUIntegration, "ChannelMainFamily"));
+        assertEquals("ChannelFamily in IntermediaryServiceCompany B", navigate(channelOSDUIntegration, "ChannelFamily"));
+
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
