@@ -1060,6 +1060,51 @@ public class LogTest {
                 (BsonDocument) navigate(channel, "ChannelKind")
         ).test();
 
+        new DataObjectReference(
+                "523e4568-e89b-12d3-a456-42661417400c",
+                "ObjectVersion in LoggingToolKind",
+                "custom10.log",
+                "Title in LoggingToolKind",
+                "http://www.example.com/schema/anyURILoggingToolKindA",
+                List.of(
+                        "http://www.example.com/schema/anyURILoggingToolKindA1",
+                        "http://www.example.com/schema/anyURILoggingToolKindA2",
+                        "http://www.example.com/schema/anyURILoggingToolKindA3"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "LoggingToolKind ENV name",
+                                "LoggingToolKind ENV uom A",
+                                "LoggingToolKind ENV value",
+                                "cation exchange capacity",
+                                "2026-02-02T15:41:47Z",
+                                19281L,
+                                "LoggingToolKind in description",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "LoggingToolKind")
+        ).test();
+
+        assertEquals("LoggingToolClass A", navigate(channel, "LoggingToolClass"));
+        assertEquals("edited", navigate(channel, "Derivation"));
+        assertEquals("MWD", navigate(channel, "LoggingMethod"));
+
+        assertEquals("NominalHoleSizeUomA", navigate(channel, "NominalHoleSize", "#attributes", "uom"));
+        assertEquals(12.61, ((BsonDouble) navigate(channel, "NominalHoleSize", "#value")).getValue(), 1E-6);
+
+        assertEquals("SensorOffsetUomA", navigate(channel, "SensorOffset", "#attributes", "uom"));
+        assertEquals(18.0228, ((BsonDouble) navigate(channel, "SensorOffset", "#value")).getValue(), 1E-6);
+
+        assertEquals("MudClassA", navigate(channel, "MudClass"));
+        assertEquals("MudSubClassA", navigate(channel, "MudSubClass"));
+        assertEquals("cemented hole", navigate(channel, "HoleLoggingStatus"));
+
+        assertTrue(((BsonBoolean)navigate(channel, "IsContinuous")).getValue());
+
+        assertEquals("NominalSamplingIntervalUomA", navigate(channel, "NominalSamplingInterval", "#attributes", "uom"));
+        assertEquals(1920.188, ((BsonDouble) navigate(channel, "NominalSamplingInterval", "#value")).getValue(), 1E-6);
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -1747,6 +1792,50 @@ public class LogTest {
                 ),
                 (BsonDocument) navigate(channel, "ChannelKind")
         ).test();
+
+        new DataObjectReference(
+                "523e4568-e89b-12d3-a456-426614174fec",
+                "ObjectVersion in LoggingToolKind B",
+                "custom10.logB",
+                "ObjectVersion title B",
+                "http://www.example.com/schema/anyURILoggingToolKindB",
+                List.of(
+                        "http://www.example.com/schema/anyURILoggingToolKindB1",
+                        "http://www.example.com/schema/anyURILoggingToolKindB2"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Name XYZ BCD",
+                                "axzw",
+                                "LoggingToolKind ENV value B",
+                                "diffusive time of flight",
+                                "2020-02-07T18:21:39Z",
+                                192899714L,
+                                "LoggingToolKind B in description",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "LoggingToolKind")
+        ).test();
+
+        assertEquals("LoggingToolClass B", navigate(channel, "LoggingToolClass"));
+        assertEquals("raw", navigate(channel, "Derivation"));
+        assertEquals("coiled tubing", navigate(channel, "LoggingMethod"));
+
+        assertEquals("cm", navigate(channel, "NominalHoleSize", "#attributes", "uom"));
+        assertEquals(1829.17, ((BsonDouble) navigate(channel, "NominalHoleSize", "#value")).getValue(), 1E-6);
+
+        assertEquals("SensorOffsetUomB", navigate(channel, "SensorOffset", "#attributes", "uom"));
+        assertEquals(18766.01, ((BsonDouble) navigate(channel, "SensorOffset", "#value")).getValue(), 1E-6);
+
+        assertEquals("MudClassB", navigate(channel, "MudClass"));
+        assertEquals("MudSubClassB", navigate(channel, "MudSubClass"));
+        assertEquals("cased hole", navigate(channel, "HoleLoggingStatus"));
+
+        assertFalse(((BsonBoolean)navigate(channel, "IsContinuous")).getValue());
+
+        assertEquals("NominalSamplingIntervalUomB", navigate(channel, "NominalSamplingInterval", "#attributes", "uom"));
+        assertEquals(98.19201, ((BsonDouble) navigate(channel, "NominalSamplingInterval", "#value")).getValue(), 1E-6);
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {

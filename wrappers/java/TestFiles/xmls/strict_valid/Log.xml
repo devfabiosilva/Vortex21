@@ -818,30 +818,32 @@
       </rdw211:ChannelKind>
       <rdw211:LoggingToolKind xsi:type="rdw212:DataObjectReference">
         <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-42661417400c</rdw212:Uuid>
-        <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+        <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in LoggingToolKind</rdw212:ObjectVersion>
         <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom10.log</rdw212:QualifiedType>
-        <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+        <rdw212:Title xsi:type="rdw212:String2000">Title in LoggingToolKind</rdw212:Title>
+        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURILoggingToolKindA</rdw212:EnergisticsUri>
+        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURILoggingToolKindA1</rdw212:LocatorUrl>
+        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURILoggingToolKindA2</rdw212:LocatorUrl>
+        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURILoggingToolKindA3</rdw212:LocatorUrl>
         <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-          <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-          <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-          <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-          <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-          <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-          <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+          <rdw212:Name xsi:type="rdw212:String64">LoggingToolKind ENV name</rdw212:Name>
+          <rdw212:Value xsi:type="rdw212:StringMeasure" uom="LoggingToolKind ENV uom A">LoggingToolKind ENV value</rdw212:Value>
+          <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">cation exchange capacity</rdw212:MeasureClass>
+          <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-02-02T15:41:47Z</rdw212:DTim>
+          <rdw212:Index xsi:type="xsd:long">19281</rdw212:Index>
+          <rdw212:Description xsi:type="rdw212:String2000">LoggingToolKind in description</rdw212:Description>
         </rdw212:ExtensionNameValue>
       </rdw211:LoggingToolKind>
-      <rdw211:LoggingToolClass xsi:type="rdw211:LoggingToolClassExt"></rdw211:LoggingToolClass>
-      <rdw211:Derivation xsi:type="rdw211:ChannelDerivation">raw</rdw211:Derivation>
-      <rdw211:LoggingMethod xsi:type="rdw211:LoggingMethod">coiled tubing</rdw211:LoggingMethod>
-      <rdw211:NominalHoleSize xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw211:NominalHoleSize>
-      <rdw211:SensorOffset xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw211:SensorOffset>
-      <rdw211:MudClass xsi:type="rdw211:MudClassExt"></rdw211:MudClass>
-      <rdw211:MudSubClass xsi:type="rdw211:MudSubClassExt"></rdw211:MudSubClass>
-      <rdw211:HoleLoggingStatus xsi:type="rdw211:HoleLoggingStatus">open hole</rdw211:HoleLoggingStatus>
-      <rdw211:IsContinuous xsi:type="xsd:boolean">false</rdw211:IsContinuous>
-      <rdw211:NominalSamplingInterval xsi:type="rdw212:GenericMeasure" uom="">0.0</rdw211:NominalSamplingInterval>
+      <rdw211:LoggingToolClass xsi:type="rdw211:LoggingToolClassExt">LoggingToolClass A</rdw211:LoggingToolClass>
+      <rdw211:Derivation xsi:type="rdw211:ChannelDerivation">edited</rdw211:Derivation>
+      <rdw211:LoggingMethod xsi:type="rdw211:LoggingMethod">MWD</rdw211:LoggingMethod>
+      <rdw211:NominalHoleSize xsi:type="rdw212:LengthMeasureExt" uom="NominalHoleSizeUomA">12.61</rdw211:NominalHoleSize>
+      <rdw211:SensorOffset xsi:type="rdw212:LengthMeasureExt" uom="SensorOffsetUomA">18.0228</rdw211:SensorOffset>
+      <rdw211:MudClass xsi:type="rdw211:MudClassExt">MudClassA</rdw211:MudClass>
+      <rdw211:MudSubClass xsi:type="rdw211:MudSubClassExt">MudSubClassA</rdw211:MudSubClass>
+      <rdw211:HoleLoggingStatus xsi:type="rdw211:HoleLoggingStatus">cemented hole</rdw211:HoleLoggingStatus>
+      <rdw211:IsContinuous xsi:type="xsd:boolean">true</rdw211:IsContinuous>
+      <rdw211:NominalSamplingInterval xsi:type="rdw212:GenericMeasure" uom="NominalSamplingIntervalUomA">1920.188</rdw211:NominalSamplingInterval>
       <rdw211:ChannelOSDUIntegration xsi:type="rdw211:ChannelOSDUIntegration">
         <rdw211:ChannelQuality xsi:type="rdw212:String64"></rdw211:ChannelQuality>
         <rdw211:IntermediaryServiceCompany xsi:type="rdw212:DataObjectReference">
@@ -1504,31 +1506,32 @@
         </rdw212:ExtensionNameValue>
       </rdw211:ChannelKind>
       <rdw211:LoggingToolKind xsi:type="rdw212:DataObjectReference">
-        <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-42661417400c</rdw212:Uuid>
-        <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-        <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom10.log</rdw212:QualifiedType>
-        <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+        <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174fec</rdw212:Uuid>
+        <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in LoggingToolKind B</rdw212:ObjectVersion>
+        <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom10.logB</rdw212:QualifiedType>
+        <rdw212:Title xsi:type="rdw212:String2000">ObjectVersion title B</rdw212:Title>
+        <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURILoggingToolKindB</rdw212:EnergisticsUri>
+        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURILoggingToolKindB1</rdw212:LocatorUrl>
+        <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURILoggingToolKindB2</rdw212:LocatorUrl>
         <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-          <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-          <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-          <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-          <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-          <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-          <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+          <rdw212:Name xsi:type="rdw212:String64">Name XYZ BCD</rdw212:Name>
+          <rdw212:Value xsi:type="rdw212:StringMeasure" uom="axzw">LoggingToolKind ENV value B</rdw212:Value>
+          <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">diffusive time of flight</rdw212:MeasureClass>
+          <rdw212:DTim xsi:type="rdw212:TimeStamp">2020-02-07T18:21:39Z</rdw212:DTim>
+          <rdw212:Index xsi:type="xsd:long">192899714</rdw212:Index>
+          <rdw212:Description xsi:type="rdw212:String2000">LoggingToolKind B in description</rdw212:Description>
         </rdw212:ExtensionNameValue>
       </rdw211:LoggingToolKind>
-      <rdw211:LoggingToolClass xsi:type="rdw211:LoggingToolClassExt"></rdw211:LoggingToolClass>
+      <rdw211:LoggingToolClass xsi:type="rdw211:LoggingToolClassExt">LoggingToolClass B</rdw211:LoggingToolClass>
       <rdw211:Derivation xsi:type="rdw211:ChannelDerivation">raw</rdw211:Derivation>
       <rdw211:LoggingMethod xsi:type="rdw211:LoggingMethod">coiled tubing</rdw211:LoggingMethod>
-      <rdw211:NominalHoleSize xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw211:NominalHoleSize>
-      <rdw211:SensorOffset xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw211:SensorOffset>
-      <rdw211:MudClass xsi:type="rdw211:MudClassExt"></rdw211:MudClass>
-      <rdw211:MudSubClass xsi:type="rdw211:MudSubClassExt"></rdw211:MudSubClass>
-      <rdw211:HoleLoggingStatus xsi:type="rdw211:HoleLoggingStatus">open hole</rdw211:HoleLoggingStatus>
+      <rdw211:NominalHoleSize xsi:type="rdw212:LengthMeasureExt" uom="cm">1829.17</rdw211:NominalHoleSize>
+      <rdw211:SensorOffset xsi:type="rdw212:LengthMeasureExt" uom="SensorOffsetUomB">18766.01</rdw211:SensorOffset>
+      <rdw211:MudClass xsi:type="rdw211:MudClassExt">MudClassB</rdw211:MudClass>
+      <rdw211:MudSubClass xsi:type="rdw211:MudSubClassExt">MudSubClassB</rdw211:MudSubClass>
+      <rdw211:HoleLoggingStatus xsi:type="rdw211:HoleLoggingStatus">cased hole</rdw211:HoleLoggingStatus>
       <rdw211:IsContinuous xsi:type="xsd:boolean">false</rdw211:IsContinuous>
-      <rdw211:NominalSamplingInterval xsi:type="rdw212:GenericMeasure" uom="">0.0</rdw211:NominalSamplingInterval>
+      <rdw211:NominalSamplingInterval xsi:type="rdw212:GenericMeasure" uom="NominalSamplingIntervalUomB">98.19201</rdw211:NominalSamplingInterval>
       <rdw211:ChannelOSDUIntegration xsi:type="rdw211:ChannelOSDUIntegration">
         <rdw211:ChannelQuality xsi:type="rdw212:String64"></rdw211:ChannelQuality>
         <rdw211:IntermediaryServiceCompany xsi:type="rdw212:DataObjectReference">
