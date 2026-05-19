@@ -1201,6 +1201,34 @@ public class LogTest {
                 (BsonDocument) navigate(channel, "SeismicReferenceElevation")
         ).test();
 
+        BsonDocument dataBlock = (BsonDocument) navigate(channel, "Data");
+        assertEquals("Data string long value", navigate(dataBlock, "Data"));
+        assertEquals("http://www.example.com/schema/anyURIData", navigate(dataBlock, "FileUri"));
+
+        new DataObjectReference(
+                "523e4568-e89b-12d3-a456-42661417401f",
+                "ObjectVersion in DataSource A",
+                "witsml27.TextA",
+                "Title in DataSource A",
+                "http://www.example.com/schema/anyURIDataSourceA",
+                List.of(
+                        "http://www.example.com/schema/anyURIDataSourceA1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "DataSource ENV Name A",
+                                "DataSourceUomA",
+                                "DataSourceValueA",
+                                "molar heat capacity",
+                                "2025-03-08T22:28:12Z",
+                                8728L,
+                                "DataSourceValue in description A",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "DataSource")
+        ).test();
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -2021,6 +2049,34 @@ public class LogTest {
                         )
                 ),
                 (BsonDocument) navigate(channel, "SeismicReferenceElevation")
+        ).test();
+
+        dataBlock = (BsonDocument) navigate(channel, "Data");
+        assertEquals("Data string long value B", navigate(dataBlock, "Data"));
+        assertEquals("http://www.example.com/schema/anyURIDataB", navigate(dataBlock, "FileUri"));
+
+        new DataObjectReference(
+                "913e4568-e89b-12d3-a456-426614174017",
+                "ObjectVersion in DataSource B",
+                "custom16.b",
+                "Title in DataSource B",
+                "http://www.example.com/schema/anyURIDataSourceB",
+                List.of(
+                        "http://www.example.com/schema/anyURIDataSourceB1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "DataSource ENV NameB",
+                                "DataSourceUomB",
+                                "DataSourceValueB",
+                                "potential difference per power drop",
+                                "2012-05-09T18:21:58Z",
+                                4192776L,
+                                "DataSourceValue in description B",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "DataSource")
         ).test();
     }
 
