@@ -1229,6 +1229,65 @@ public class LogTest {
                 (BsonDocument) navigate(channel, "DataSource")
         ).test();
 
+        BsonArray indexBlock = (BsonArray) navigate(channel, "Index");
+        assertNotNull(indexBlock);
+        assertEquals(1, indexBlock.size());
+
+        BsonDocument indexBsonDocument = (BsonDocument)indexBlock.get(0);
+        assertEquals("pass indexed depth", navigate(indexBsonDocument, "IndexKind"));
+        assertEquals("UnitOfMeasureExtA", navigate(indexBsonDocument, "Uom"));
+        assertEquals("unordered", navigate(indexBsonDocument, "Direction"));
+        assertEquals("mnemonicString64A", navigate(indexBsonDocument, "Mnemonic"));
+
+        new DataObjectReference(
+                "023e4568-e89b-72d4-f456-429614174011",
+                "ObjectVersion in IndexPropertyKind",
+                "witsml13.a67",
+                "Title in IndexPropertyKind",
+                "http://www.example.com/schema/anyURIIndexPropertyKindA",
+                List.of(
+                        "http://www.example.com/schema/anyURIIndexPropertyKindA1",
+                        "http://www.example.com/schema/anyURIIndexPropertyKindA2"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "ENV name in IndexPropertyKind",
+                                "IndexPropertyKindUomA",
+                                "IndexPropertyKindA",
+                                "data transfer speed",
+                                "2021-11-15T20:39:47Z",
+                                19917L,
+                                "Description @ IndexPropertyKind",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(indexBsonDocument, "IndexPropertyKind")
+        ).test();
+
+        new DataObjectReference(
+                "523e4568-e89b-12f3-2456-426614174012",
+                "ObjectVersion in Datum C",
+                "witsml14.logC",
+                "Title in Datum C",
+                "http://www.example.com/schema/anyURIDatumC",
+                List.of(
+                        "http://www.example.com/schema/anyURIDatumC1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Datum name in C",
+                                "DatumUomC",
+                                "DatumValueC",
+                                "force area",
+                                "2011-03-12T13:29:47Z",
+                                71787101L,
+                                "Datum in Description",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(indexBsonDocument, "Datum")
+        ).test();
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -2078,6 +2137,65 @@ public class LogTest {
                 ),
                 (BsonDocument) navigate(channel, "DataSource")
         ).test();
+
+        indexBlock = (BsonArray) navigate(channel, "Index");
+        assertNotNull(indexBlock);
+        assertEquals(1, indexBlock.size());
+
+        indexBsonDocument = (BsonDocument)indexBlock.get(0);
+        assertEquals("scalar", navigate(indexBsonDocument, "IndexKind"));
+        assertEquals("UnitOfMeasureExtD", navigate(indexBsonDocument, "Uom"));
+        assertEquals("increasing", navigate(indexBsonDocument, "Direction"));
+        assertEquals("mnemonicString64D", navigate(indexBsonDocument, "Mnemonic"));
+
+        new DataObjectReference(
+                "593e4568-e89b-12d3-a45f-42a6141740b2",
+                "ObjectVersion in IndexPropertyKind D",
+                "witsml18.67a",
+                "Title in IndexPropertyKind D",
+                "http://www.example.com/schema/anyURIIndexPropertyKindD",
+                List.of(
+                        "http://www.example.com/schema/anyURIIndexPropertyKindD1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "ENV D NAME",
+                                "IndexPropertyKindUomD",
+                                "IndexPropertyKindValueD",
+                                "magnetic vector potential",
+                                "2020-10-17T18:29:17Z",
+                                8165551901L,
+                                "Description @ IndexPropertyKind D",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(indexBsonDocument, "IndexPropertyKind")
+        ).test();
+
+        new DataObjectReference(
+                "523e4568-e89b-12d3-a456-426614174d17",
+                "ObjectVersion in Datum D",
+                "witsml24.logD",
+                "Title in Datum D",
+                "http://www.example.com/schema/anyURIDatumD",
+                List.of(
+                        "http://www.example.com/schema/anyURIDatumD1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Datum name in D",
+                                "DatumUomD",
+                                "DatumValueD",
+                                "logarithmic power ratio per length",
+                                "2025-11-20T18:29:47Z",
+                                9186L,
+                                "Datum in Description D",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(indexBsonDocument, "Datum")
+        ).test();
+
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
