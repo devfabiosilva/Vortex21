@@ -1288,6 +1288,19 @@ public class LogTest {
                 (BsonDocument) navigate(indexBsonDocument, "Datum")
         ).test();
 
+        indexInterval = (BsonDocument) navigate(indexBsonDocument, "IndexInterval");
+
+        assertEquals("rdw212:ElapsedTimeInterval", navigate(indexInterval, "#abstype"));
+        assertEquals("Base Comment @ Index interval type ElapsedTimeInterval", navigate(indexInterval, "Comment"));
+
+        BsonDocument startInterval = (BsonDocument) navigate(indexInterval, "StartElapsedTime");
+        assertEquals("a[t]", navigate(startInterval, "#attributes", "uom"));
+        assertEquals(267172.0, ((BsonDouble)navigate(startInterval, "#value")).getValue(), 1E-6);
+
+        BsonDocument endInterval = (BsonDocument) navigate(indexInterval, "EndElapsedTime");
+        assertEquals("ds", navigate(endInterval, "#attributes", "uom"));
+        assertEquals(0.000005, ((BsonDouble)navigate(endInterval, "#value")).getValue(), 1E-6);
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -2196,6 +2209,11 @@ public class LogTest {
                 (BsonDocument) navigate(indexBsonDocument, "Datum")
         ).test();
 
+        indexInterval = (BsonDocument) navigate(indexBsonDocument, "IndexInterval");
+        assertEquals("rdw212:DateTimeInterval", navigate(indexInterval, "#abstype"));
+        assertEquals("Base Comment @ scalar IndexInterval type DateTimeInterval", navigate(indexInterval, "Comment"));
+        assertEquals(DateUtils.toTimestamp("2021-09-16T23:29:22Z"), ((BsonValue) navigate(indexInterval, "StartTime")).asDateTime().getValue());
+        assertEquals(DateUtils.toTimestamp("2021-09-17T23:29:22Z"), ((BsonValue) navigate(indexInterval, "EndTime")).asDateTime().getValue());
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {

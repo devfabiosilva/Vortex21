@@ -968,9 +968,11 @@
             <rdw212:Description xsi:type="rdw212:String2000">Datum in Description</rdw212:Description>
           </rdw212:ExtensionNameValue>
         </rdw211:Datum>
-<!--        <rdw211:IndexInterval xsi:type="rdw212:AbstractInterval">-->
-<!--          <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>-->
-<!--        </rdw211:IndexInterval>-->
+        <rdw211:IndexInterval xsi:type="ElapsedTimeInterval">
+          <rdw212:Comment>Base Comment @ Index interval type ElapsedTimeInterval</rdw212:Comment>
+          <rdw212:StartElapsedTime uom="a[t]">2671.72E2</rdw212:StartElapsedTime>
+          <rdw212:EndElapsedTime uom="ds">5E-6</rdw212:EndElapsedTime>
+        </rdw211:IndexInterval>
       </rdw211:Index>
       <rdw211:DerivedFrom xsi:type="rdw212:DataObjectReference">
         <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174013</rdw212:Uuid>
@@ -1662,9 +1664,15 @@
             <rdw212:Description xsi:type="rdw212:String2000">Datum in Description D</rdw212:Description>
           </rdw212:ExtensionNameValue>
         </rdw211:Datum>
-        <!--        <rdw211:IndexInterval xsi:type="rdw212:AbstractInterval">-->
-        <!--          <rdw212:Comment xsi:type="rdw212:String2000"></rdw212:Comment>-->
-        <!--        </rdw211:IndexInterval>-->
+        <rdw211:IndexInterval xsi:type="rdw212:DateTimeInterval">
+          <rdw212:Comment>Base Comment @ scalar IndexInterval type DateTimeInterval</rdw212:Comment>
+
+          <rdw212:StartTime>2021-09-16T23:29:22Z</rdw212:StartTime>
+
+          <rdw212:EndTime>
+            2021-09-17T23:29:22Z
+          </rdw212:EndTime>
+        </rdw211:IndexInterval>
       </rdw211:Index>
       <rdw211:DerivedFrom xsi:type="rdw212:DataObjectReference">
         <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174013</rdw212:Uuid>
