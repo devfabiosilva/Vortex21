@@ -1301,6 +1301,118 @@ public class LogTest {
         assertEquals("ds", navigate(endInterval, "#attributes", "uom"));
         assertEquals(0.000005, ((BsonDouble)navigate(endInterval, "#value")).getValue(), 1E-6);
 
+        BsonArray derivedFrom = (BsonArray) navigate(channel, "DerivedFrom");
+        assertNotNull(derivedFrom);
+        assertEquals(2, derivedFrom.size());
+
+        new DataObjectReference(
+                "593e4568-e89b-12d3-a456-426614174013",
+                "ObjectVersion in DerivedFrom",
+                "eml54.well",
+                "Title in DerivedFrom",
+                "http://www.example.com/schema/anyURIDerivedFromA",
+                List.of(
+                        "http://www.example.com/schema/anyURIDerivedFromA1",
+                        "http://www.example.com/schema/anyURIDerivedFromA2"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "DerivedFrom ENV A",
+                                "DerivedFromUomA",
+                                "DerivedFromValueA",
+                                "cation exchange capacity",
+                                "2022-02-02T12:19:44Z",
+                                9265L,
+                                "DerivedFrom desc A",
+                                null
+                        )
+                ),
+                derivedFrom.get(0).asDocument()
+        ).test();
+
+        new DataObjectReference(
+                "593e4568-e89b-12d3-a456-426614174077",
+                "ObjectVersion in DerivedFrom B",
+                "eml54.wellB",
+                "Title in DerivedFrom B",
+                "http://www.example.com/schema/anyURIDerivedFromB",
+                List.of(
+                        "http://www.example.com/schema/anyURIDerivedFromB1",
+                        "http://www.example.com/schema/anyURIDerivedFromB2"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "DerivedFrom ENV B",
+                                "DerivedFromUomB",
+                                "DerivedFromValueB",
+                                "electric conductance",
+                                "2009-10-06T12:19:44Z",
+                                9265816L,
+                                "DerivedFrom desc B",
+                                null
+                        )
+                ),
+                derivedFrom.get(1).asDocument()
+        ).test();
+
+        new DataObjectReference(
+                "5238456a-e89b-12d3-a456-426614174014",
+                "ObjectVersion in Wellbore",
+                "custom32.d",
+                "Title in Wellbore",
+                "http://www.example.com/schema/anyURIWellboreA",
+                List.of(
+                        "http://www.example.com/schema/anyURIWellboreA1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Wellbore ENV A1",
+                                "WellboreUomA1",
+                                "WellboreValuaA1",
+                                "dimensionless",
+                                "2012-03-09T19:39:47Z",
+                                11187L,
+                                "Description in Wellbore A1",
+                                null
+                        ),
+                        ExtensionNameValue.build(
+                                "Wellbore ENV A2",
+                                "WellboreUomA2",
+                                "WellboreValuaA2",
+                                "dimensionless",
+                                "2011-04-07T19:39:47Z",
+                                11187918L,
+                                "Description in Wellbore A2",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "Wellbore")
+        ).test();
+
+        ArrayOfLogChannelAxis.build(
+                List.of(
+                        LogChannelAxis.build(
+                                "a123",
+                                12.0,
+                                17.718,
+                                11976355L,
+                                "AxisDefinition A",
+                                "AxisPropertyKind A",
+                                "AxisUom A"
+                        ),
+                        LogChannelAxis.build(
+                                "b456",
+                                0.1761,
+                                891.17662,
+                                1927767L,
+                                "AxisName B",
+                                "AxisPropertyKind B",
+                                "AxisUom B"
+                        )
+                ),
+                (BsonArray) navigate(channel, "AxisDefinition")
+        ).test();
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -2214,6 +2326,82 @@ public class LogTest {
         assertEquals("Base Comment @ scalar IndexInterval type DateTimeInterval", navigate(indexInterval, "Comment"));
         assertEquals(DateUtils.toTimestamp("2021-09-16T23:29:22Z"), ((BsonValue) navigate(indexInterval, "StartTime")).asDateTime().getValue());
         assertEquals(DateUtils.toTimestamp("2021-09-17T23:29:22Z"), ((BsonValue) navigate(indexInterval, "EndTime")).asDateTime().getValue());
+
+        derivedFrom = (BsonArray) navigate(channel, "DerivedFrom");
+        assertNotNull(derivedFrom);
+        assertEquals(1, derivedFrom.size());
+
+        new DataObjectReference(
+                "52384268-e89b-12d3-a456-4266141740af",
+                "ObjectVersion in DerivedFrom F",
+                "prodml96.wellbore",
+                "Title in DerivedFrom F",
+                "http://www.example.com/schema/anyURIDerivedFromF",
+                List.of(
+                        "http://www.example.com/schema/anyURIDerivedFromF1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "DerivedFrom ENV F",
+                                "DerivedFromUomF",
+                                "DerivedFromValueF",
+                                "electric resistance",
+                                "2008-12-02T12:17:10Z",
+                                926518427L,
+                                "DerivedFrom desc F",
+                                null
+                        )
+                ),
+                derivedFrom.get(0).asDocument()
+        ).test();
+
+        new DataObjectReference(
+                "52384569-ff9e-12d3-a456-426614174c2e",
+                "ObjectVersion in Wellbore G",
+                "custom37.data",
+                "Title in Wellbore F",
+                "http://www.example.com/schema/anyURIWellboreG",
+                List.of(
+                        "http://www.example.com/schema/anyURIWellboreG1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Wellbore ENV G1",
+                                "WellboreUomG1",
+                                "WellboreValueG1",
+                                "electric resistance per length",
+                                "2006-11-15T22:29:27Z",
+                                1088017L,
+                                "Description in Wellbore G1",
+                                null
+                        )
+                ),
+                (BsonDocument) navigate(channel, "Wellbore")
+        ).test();
+
+        ArrayOfLogChannelAxis.build(
+                List.of(
+                        LogChannelAxis.build(
+                                "c123",
+                                1178.0,
+                                19.11829,
+                                1197626L,
+                                "AxisDefinition C",
+                                "AxisPropertyKind C",
+                                "AxisUom C"
+                        ),
+                        LogChannelAxis.build(
+                                "d456",
+                                1.2761,
+                                892.17862918,
+                                1692777L,
+                                "AxisName D",
+                                "AxisPropertyKind D",
+                                "AxisUom D"
+                        )
+                ),
+                (BsonArray) navigate(channel, "AxisDefinition")
+        ).test();
     }
 
     private void customDataValidate(BsonDocument document, String ...args) throws Exception {
