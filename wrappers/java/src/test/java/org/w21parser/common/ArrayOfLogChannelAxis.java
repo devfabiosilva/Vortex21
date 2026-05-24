@@ -18,6 +18,10 @@ public class ArrayOfLogChannelAxis {
         return new ArrayOfLogChannelAxis(logChannelAxisList, docArray);
     }
 
+    public static ArrayOfLogChannelAxis build(List<LogChannelAxis> logChannelAxisList) {
+        return new ArrayOfLogChannelAxis(logChannelAxisList, null);
+    }
+
     public void test() throws Exception {
         if (this.logChannelAxisList != null) {
             assertNotNull(this.docArray);
@@ -30,5 +34,9 @@ public class ArrayOfLogChannelAxis {
             }
         } else
             assertNull(this.docArray);
+    }
+
+    public void setLogChannelAxisList(BsonArray docArray) {
+        this.docArray = docArray;
     }
 }

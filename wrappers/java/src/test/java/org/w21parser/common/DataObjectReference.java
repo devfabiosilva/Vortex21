@@ -17,8 +17,9 @@ public class DataObjectReference {
     private final String energisticsUri;
     private final List<String> locatorUrl;
     private final List<ExtensionNameValue> extensionNameValues;
-    private final BsonDocument dataObjectReference;
+    private BsonDocument dataObjectReference;
 
+    // TODO make it private
     public DataObjectReference(
             String uuid,
             String objectVersion,
@@ -38,6 +39,49 @@ public class DataObjectReference {
         this.locatorUrl = locatorUrl;
         this.extensionNameValues = extensionNameValues;
         this.dataObjectReference = dataObjectReference;
+    }
+
+    public static DataObjectReference build(
+            String uuid,
+            String objectVersion,
+            String qualifiedType,
+            String title,
+            String energisticsUri,
+            List<String> locatorUrl,
+            List<ExtensionNameValue> extensionNameValues,
+            BsonDocument dataObjectReference
+    ) {
+        return new DataObjectReference(
+                uuid,
+                objectVersion,
+                qualifiedType,
+                title,
+                energisticsUri,
+                locatorUrl,
+                extensionNameValues,
+                dataObjectReference
+        );
+    }
+
+    public static DataObjectReference build(
+            String uuid,
+            String objectVersion,
+            String qualifiedType,
+            String title,
+            String energisticsUri,
+            List<String> locatorUrl,
+            List<ExtensionNameValue> extensionNameValues
+    ) {
+        return new DataObjectReference(
+                uuid,
+                objectVersion,
+                qualifiedType,
+                title,
+                energisticsUri,
+                locatorUrl,
+                extensionNameValues,
+                null
+        );
     }
 
     public void test() throws Exception {
@@ -100,5 +144,9 @@ public class DataObjectReference {
             }
         } else
             assertNull(actualExtensionNameValues);
+    }
+
+    public void setDataObjectReference(BsonDocument doc) {
+        this.dataObjectReference = doc;
     }
 }

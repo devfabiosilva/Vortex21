@@ -1413,6 +1413,89 @@ public class LogTest {
                 (BsonArray) navigate(channel, "AxisDefinition")
         ).test();
 
+        ArrayOfPointMetadata.build(
+                List.of(
+                        PointMetadata.build(
+                                "PointMetadata A1",
+                                "pass indexed depth",
+                                "PointMetadata A1 description",
+                                "PointMetadata A1 UOM",
+                                DataObjectReference.build(
+                                        "718e45f8-e89b-12d3-a456-426614174015",
+                                        "ObjectVersion in MetadataPropertyKindA1",
+                                        "custom68.tap",
+                                        "Title in MetadataPropertyKind A1",
+                                        "http://www.example.com/schema/anyURIMetadataPropertyKindA1",
+                                        List.of(
+                                                "http://www.example.com/schema/anyURIMetadataPropertyKindA11",
+                                                "http://www.example.com/schema/anyURIMetadataPropertyKindA12"
+                                        ),
+                                        List.of(
+                                                ExtensionNameValue.build("Name ENV A11", "ENVA11Uom", "ENVA11Value", "energy", "2021-10-18T22:19:00Z", 17265318L, "Description in MetadataPropertyKindA11", null),
+                                                ExtensionNameValue.build("Name ENV A12", "ENVA12Uom", "ENVA12Value", "force per force", "2021-11-19T22:56:16Z", 815265218L, "Description in MetadataPropertyKindA12", null)
+                                        )
+                                ),
+                                ArrayOfLogChannelAxis.build(
+                                        List.of(
+                                                LogChannelAxis.build("A1",182.38, 0.09187, 29881L, "AxisName A1", "AxisPropertyKind A1", "AxisUom A1"),
+                                                LogChannelAxis.build("A2",8129.011, 0.18725, 11762L, "AxisName A2", "AxisPropertyKind A2", "AxisUom A2")
+                                        )
+                                ),
+                                DataObjectReference.build(
+                                        "523e4568-a8fb-1cd3-a456-4e6614174016",
+                                        "ObjectVersion in DATUM AA",
+                                        "custom61.wellbore",
+                                        "Title in DATUM AA",
+                                        "http://www.example.com/schema/anyURIDATUMAA",
+                                        List.of("http://www.example.com/schema/anyURIDATUMAA1"),
+                                        List.of(
+                                                ExtensionNameValue.build("Name in ENV AA", "ENVAAUom", "ENVAAValue", "heat capacity", "2016-06-02T21:09:17Z", 888170L, "Description in ENVAA", null)
+                                        )
+                                )
+                        ),
+                        PointMetadata.build(
+                                "PointMetadata B1",
+                                "double",
+                                "PointMetadata B1 description",
+                                "PointMetadata B1 UOM",
+                                DataObjectReference.build(
+                                        "71ae45f8-e89b-12df-a456-426614174b1c",
+                                        "ObjectVersion in MetadataPropertyKindB1",
+                                        "custom89.tapk",
+                                        "Title in MetadataPropertyKind B1",
+                                        "http://www.example.com/schema/anyURIMetadataPropertyKindB1",
+                                        List.of(
+                                                "http://www.example.com/schema/anyURIMetadataPropertyKindB11",
+                                                "http://www.example.com/schema/anyURIMetadataPropertyKindB12"
+                                        ),
+                                        List.of(
+                                                ExtensionNameValue.build("Name ENV B11", "ENVB11Uom", "ENVB11Value", "cation exchange capacity", "2020-11-11T23:19:00Z", 653181809L, "Description in MetadataPropertyKindB11", null),
+                                                ExtensionNameValue.build("Name ENV B12", "ENVB12Uom", "ENVB12Value", "electric charge per mass", "2017-12-19T20:26:12Z", 1181525218L, "Description in MetadataPropertyKindB12", null)
+                                        )
+                                ),
+                                ArrayOfLogChannelAxis.build(
+                                        List.of(
+                                                LogChannelAxis.build("B1", 18.318, 101.19187, 33298811L, "AxisName B1", "AxisPropertyKind B1", "AxisUom B1"),
+                                                LogChannelAxis.build("B2", 1889.011119, 909.18725, 197112622L, "AxisName B2", "AxisPropertyKind B2", "AxisUom B2")
+                                        ),
+                                        null
+                                ),
+                                DataObjectReference.build(
+                                        "523e4d68-a8fb-1cdf-a456-4e661417401d",
+                                        "ObjectVersion in DATUM BA",
+                                        "custom18.wellboreB",
+                                        "Title in DATUM BA",
+                                        "http://www.example.com/schema/anyURIDATUMBA",
+                                        List.of("http://www.example.com/schema/anyURIDATUMBA1"),
+                                        List.of(
+                                                ExtensionNameValue.build("Name in ENV BA", "ENVBAUom", "ENVBAValue", "kinematic viscosity", "2015-01-12T22:19:22Z", 17828170L, "Description in ENVBA", null)
+                                        )
+                                )
+                        )
+                ),
+                (BsonArray) navigate(channel, "PointMetadata")
+        ).test();
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -2401,6 +2484,50 @@ public class LogTest {
                         )
                 ),
                 (BsonArray) navigate(channel, "AxisDefinition")
+        ).test();
+
+        ArrayOfPointMetadata.build(
+                List.of(
+                        PointMetadata.build(
+                                "PointMetadata D1",
+                                "measured depth",
+                                "PointMetadata D1 description",
+                                "PointMetadata D1 UOM",
+                                DataObjectReference.build(
+                                        "41ae45f0-e89b-12df-a4d6-426614174b1c",
+                                        "ObjectVersion in MetadataPropertyKindD1",
+                                        "eml89.tapk",
+                                        "Title in MetadataPropertyKind D1",
+                                        "http://www.example.com/schema/anyURIMetadataPropertyKindD1",
+                                        List.of(
+                                                "http://www.example.com/schema/anyURIMetadataPropertyKindD11",
+                                                "http://www.example.com/schema/anyURIMetadataPropertyKindD12"
+                                        ),
+                                        List.of(
+                                                ExtensionNameValue.build("Name ENV D11", "ENVD11Uom", "ENVD11Value", "logarithmic power ratio", "2014-01-19T21:29:05Z", 996531L, "Description in MetadataPropertyKindD11", null),
+                                                ExtensionNameValue.build("Name ENV D12", "ENVB12Uom", "ENVD12Value", "magnetic flux density per length", "2013-02-19T20:22:10Z", 111552191L, "Description in MetadataPropertyKindD12", null)
+                                        )
+                                ),
+                                ArrayOfLogChannelAxis.build(
+                                        List.of(
+                                                LogChannelAxis.build("D1", 11.3, 10.76, 3298819L, "AxisName D1", "AxisPropertyKind D1", "AxisUom D1"),
+                                                LogChannelAxis.build("D2", 18.119, 9179.25, 11897112L, "AxisName D2", "AxisPropertyKind D2", "AxisUom D2")
+                                        )
+                                ),
+                                DataObjectReference.build(
+                                        "aa3e4df8-a8fb-1cdf-a456-4e6f1417401d",
+                                        "ObjectVersion in DATUM DA",
+                                        "custom11.wellboreD",
+                                        "Title in DATUM DA",
+                                        "http://www.example.com/schema/anyURIDATUMDA",
+                                        List.of("http://www.example.com/schema/anyURIDATUMBD1"),
+                                        List.of(
+                                                ExtensionNameValue.build("Name in ENV DA", "ENVDAUom", "ENVDAValue", "second moment of area", "2004-02-12T21:12:22Z", 771781701L, "Description in ENVDA", null)
+                                        )
+                                )
+                        )
+                ),
+                (BsonArray) navigate(channel, "PointMetadata")
         ).test();
     }
 
