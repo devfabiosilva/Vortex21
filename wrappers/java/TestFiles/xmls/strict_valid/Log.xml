@@ -1176,39 +1176,42 @@
       </rdw211:PointMetadata>
     </rdw211:Channel>
     <rdw211:Data xsi:type="rdw211:ChannelData">
-      <rdw211:Data xsi:type="xsd:string"></rdw211:Data>
-      <rdw211:FileUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw211:FileUri>
+      <rdw211:Data xsi:type="xsd:string">Data in ChannelSet1</rdw211:Data>
+      <rdw211:FileUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIData1</rdw211:FileUri>
     </rdw211:Data>
     <rdw211:Wellbore xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174017</rdw212:Uuid>
-      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom76.b</rdw212:QualifiedType>
-      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">8f3e4568-e89b-12d3-a4a6-b2661417401c</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in Wellbore 1</rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom71.b</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000">Title in Wellbore 1</rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIWellbore1</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIWellbore1</rdw212:LocatorUrl>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIWellbore2</rdw212:LocatorUrl>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIWellbore3</rdw212:LocatorUrl>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIWellbore4</rdw212:LocatorUrl>
       <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-        <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-        <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-        <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-        <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-        <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+        <rdw212:Name xsi:type="rdw212:String64">Name ENV in Wellbore 1</rdw212:Name>
+        <rdw212:Value xsi:type="rdw212:StringMeasure" uom="WellboreEnvUom">WellboreEnvValue</rdw212:Value>
+        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">potential difference per power drop</rdw212:MeasureClass>
+        <rdw212:DTim xsi:type="rdw212:TimeStamp">2020-01-15T10:31:47Z</rdw212:DTim>
+        <rdw212:Index xsi:type="xsd:long">17201198</rdw212:Index>
+        <rdw212:Description xsi:type="rdw212:String2000">desc in Wellbore 1</rdw212:Description>
       </rdw212:ExtensionNameValue>
     </rdw211:Wellbore>
     <rdw211:DataSource xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174018</rdw212:Uuid>
-      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">resqml10.2</rdw212:QualifiedType>
-      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">f2de4568-e89b-12d3-a456-42d614174a18</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in DataSource1</rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml10.2</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000">Title in DataSource 1</rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDataSource1</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDataSource1</rdw212:LocatorUrl>
       <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-        <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-        <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-        <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-        <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-        <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+        <rdw212:Name xsi:type="rdw212:String64">Name ENV DataSource1</rdw212:Name>
+        <rdw212:Value xsi:type="rdw212:StringMeasure" uom="DataSource1Uom">DataSource1Value</rdw212:Value>
+        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">pressure squared per force time per area</rdw212:MeasureClass>
+        <rdw212:DTim xsi:type="rdw212:TimeStamp">2025-01-09T20:19:17Z</rdw212:DTim>
+        <rdw212:Index xsi:type="xsd:long">78729983</rdw212:Index>
+        <rdw212:Description xsi:type="rdw212:String2000">DataSource1 description</rdw212:Description>
       </rdw212:ExtensionNameValue>
     </rdw211:DataSource>
   </rdw211:ChannelSet>
@@ -1901,56 +1904,57 @@
       </rdw211:PointMetadata>
     </rdw211:Channel>
     <rdw211:Data xsi:type="rdw211:ChannelData">
-      <rdw211:Data xsi:type="xsd:string"></rdw211:Data>
-      <rdw211:FileUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw211:FileUri>
+      <rdw211:Data xsi:type="xsd:string">Data in ChannelSet2</rdw211:Data>
+      <rdw211:FileUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIData2</rdw211:FileUri>
     </rdw211:Data>
     <rdw211:Wellbore xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174017</rdw212:Uuid>
-      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom76.b</rdw212:QualifiedType>
-      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">52ee4568-e89b-d2d3-a45a-42661417471a</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in Wellbore 2</rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom99.ba</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000">Title in Wellbore 2</rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIWellbore2</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIWellboreA</rdw212:LocatorUrl>
       <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-        <rdw212:Name xsi:type="rdw212:String64">DataSource ENV NameB</rdw212:Name>
-        <rdw212:Value xsi:type="rdw212:StringMeasure" uom="DataSourceUomB">DataSourceValueB</rdw212:Value>
-        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">potential difference per power drop</rdw212:MeasureClass>
-        <rdw212:DTim xsi:type="rdw212:TimeStamp">2012-05-09T18:21:58Z</rdw212:DTim>
-        <rdw212:Index xsi:type="xsd:long">4192776</rdw212:Index>
-        <rdw212:Description xsi:type="rdw212:String2000">DataSourceValue in description B</rdw212:Description>
+        <rdw212:Name xsi:type="rdw212:String64">Name ENV in Wellbore 2</rdw212:Name>
+        <rdw212:Value xsi:type="rdw212:StringMeasure" uom="WellboreEnvUomA">WellboreEnvValueA</rdw212:Value>
+        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">reciprocal mass time</rdw212:MeasureClass>
+        <rdw212:DTim xsi:type="rdw212:TimeStamp">2012-10-08T17:20:58Z</rdw212:DTim>
+        <rdw212:Index xsi:type="xsd:long">89172011</rdw212:Index>
+        <rdw212:Description xsi:type="rdw212:String2000">desc in Wellbore 2</rdw212:Description>
       </rdw212:ExtensionNameValue>
     </rdw211:Wellbore>
     <rdw211:DataSource xsi:type="rdw212:DataObjectReference">
-      <rdw212:Uuid xsi:type="rdw212:UuidString">523e4568-e89b-12d3-a456-426614174018</rdw212:Uuid>
-      <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
-      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">resqml10.2</rdw212:QualifiedType>
-      <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+      <rdw212:Uuid xsi:type="rdw212:UuidString">522e4a6e-fc9b-12d3-a456-426614174011</rdw212:Uuid>
+      <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in DataSource2</rdw212:ObjectVersion>
+      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">resqml17.2a</rdw212:QualifiedType>
+      <rdw212:Title xsi:type="rdw212:String2000">Title in DataSource 2</rdw212:Title>
+      <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDataSource2</rdw212:EnergisticsUri>
+      <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDataSource2A</rdw212:LocatorUrl>
       <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-        <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-        <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-        <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-        <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-        <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+        <rdw212:Name xsi:type="rdw212:String64">Name ENV DataSource2</rdw212:Name>
+        <rdw212:Value xsi:type="rdw212:StringMeasure" uom="DataSource2Uom">DataSource2Value</rdw212:Value>
+        <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">signaling event per time</rdw212:MeasureClass>
+        <rdw212:DTim xsi:type="rdw212:TimeStamp">2015-07-15T12:29:42Z</rdw212:DTim>
+        <rdw212:Index xsi:type="xsd:long">39855787299</rdw212:Index>
+        <rdw212:Description xsi:type="rdw212:String2000">DataSource2 description</rdw212:Description>
       </rdw212:ExtensionNameValue>
     </rdw211:DataSource>
   </rdw211:ChannelSet>
   <rdw211:Wellbore xsi:type="rdw212:DataObjectReference">
-    <rdw212:Uuid xsi:type="rdw212:UuidString">523e45F8-e89b-12d3-a456-426614174019</rdw212:Uuid>
-    <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+    <rdw212:Uuid xsi:type="rdw212:UuidString">523e45F8-e8aa-12d3-a456-476614174819</rdw212:Uuid>
+    <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in Log Wellbore</rdw212:ObjectVersion>
     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom38.test</rdw212:QualifiedType>
-    <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-    <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+    <rdw212:Title xsi:type="rdw212:String2000">Title in Log Wellbore</rdw212:Title>
+    <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURILogWellbore</rdw212:EnergisticsUri>
+    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURILogWellbore1</rdw212:LocatorUrl>
+    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURILogWellbore2</rdw212:LocatorUrl>
     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      <rdw212:Name xsi:type="rdw212:String64">Name in LogWellbore</rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom="LogWellboreUom">LogWellboreValue</rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">thermodynamic temperature per thermodynamic temperature</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2010-01-05T08:09:07Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">7718776</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000">Desc in LogWellboreValue</rdw212:Description>
     </rdw212:ExtensionNameValue>
   </rdw211:Wellbore>
 </rdw211:Log>

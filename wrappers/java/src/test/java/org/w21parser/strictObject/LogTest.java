@@ -1496,6 +1496,61 @@ public class LogTest {
                 (BsonArray) navigate(channel, "PointMetadata")
         ).test();
 
+        Data.build(
+                "Data in ChannelSet1",
+                "http://www.example.com/schema/anyURIData1",
+                (BsonDocument) navigate(channelSet, "Data")
+        ).test();
+
+        new DataObjectReference(
+                "8f3e4568-e89b-12d3-a4a6-b2661417401c",
+                "ObjectVersion in Wellbore 1",
+                "custom71.b",
+                "Title in Wellbore 1",
+                "http://www.example.com/schema/anyURIWellbore1",
+                List.of(
+                        "http://www.example.com/schema/anyURIWellbore1",
+                        "http://www.example.com/schema/anyURIWellbore2",
+                        "http://www.example.com/schema/anyURIWellbore3",
+                        "http://www.example.com/schema/anyURIWellbore4"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Name ENV in Wellbore 1",
+                                "WellboreEnvUom",
+                                "WellboreEnvValue",
+                                "potential difference per power drop",
+                                "2020-01-15T10:31:47Z",
+                                17201198L,
+                                "desc in Wellbore 1"
+                        )
+                ),
+                (BsonDocument) navigate(channelSet, "Wellbore")
+        ).test();
+
+        new DataObjectReference(
+                "f2de4568-e89b-12d3-a456-42d614174a18",
+                "ObjectVersion in DataSource1",
+                "eml10.2",
+                "Title in DataSource 1",
+                "http://www.example.com/schema/anyURIDataSource1",
+                List.of(
+                        "http://www.example.com/schema/anyURIDataSource1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Name ENV DataSource1",
+                                "DataSource1Uom",
+                                "DataSource1Value",
+                                "pressure squared per force time per area",
+                                "2025-01-09T20:19:17Z",
+                                78729983L,
+                                "DataSource1 description"
+                        )
+                ),
+                (BsonDocument) navigate(channelSet, "DataSource")
+        ).test();
+
         // Test second element in array
 
         channelSet = channelSetArray.get(1).asDocument();
@@ -2528,6 +2583,85 @@ public class LogTest {
                         )
                 ),
                 (BsonArray) navigate(channel, "PointMetadata")
+        ).test();
+
+        Data.build(
+                "Data in ChannelSet2",
+                "http://www.example.com/schema/anyURIData2",
+                (BsonDocument) navigate(channelSet, "Data")
+        ).test();
+
+        DataObjectReference.build(
+                "52ee4568-e89b-d2d3-a45a-42661417471a",
+                "ObjectVersion in Wellbore 2",
+                "custom99.ba",
+                "Title in Wellbore 2",
+                "http://www.example.com/schema/anyURIWellbore2",
+                List.of(
+                        "http://www.example.com/schema/anyURIWellboreA"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Name ENV in Wellbore 2",
+                                "WellboreEnvUomA",
+                                "WellboreEnvValueA",
+                                "reciprocal mass time",
+                                "2012-10-08T17:20:58Z",
+                                89172011L,
+                                "desc in Wellbore 2"
+                        )
+                ),
+                (BsonDocument) navigate(channelSet, "Wellbore")
+        ).test();
+
+        DataObjectReference.build(
+                "522e4a6e-fc9b-12d3-a456-426614174011",
+                "ObjectVersion in DataSource2",
+                "resqml17.2a",
+                "Title in DataSource 2",
+                "http://www.example.com/schema/anyURIDataSource2",
+                List.of(
+                        "http://www.example.com/schema/anyURIDataSource2A"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Name ENV DataSource2",
+                                "DataSource2Uom",
+                                "DataSource2Value",
+                                "signaling event per time",
+                                "2015-07-15T12:29:42Z",
+                                39855787299L,
+                                "DataSource2 description"
+                        )
+                ),
+                (BsonDocument) navigate(channelSet, "DataSource")
+        ).test();
+    }
+
+    @Test
+    public void wellboreInLogTest() throws Exception {
+        DataObjectReference.build(
+                "523e45F8-e8aa-12d3-a456-476614174819",
+                "ObjectVersion in Log Wellbore",
+                "custom38.test",
+                "Title in Log Wellbore",
+                "http://www.example.com/schema/anyURILogWellbore",
+                List.of(
+                        "http://www.example.com/schema/anyURILogWellbore1",
+                        "http://www.example.com/schema/anyURILogWellbore2"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Name in LogWellbore",
+                                "LogWellboreUom",
+                                "LogWellboreValue",
+                                "thermodynamic temperature per thermodynamic temperature",
+                                "2010-01-05T08:09:07Z",
+                                7718776L,
+                                "Desc in LogWellboreValue"
+                        )
+                ),
+                (BsonDocument) navigate(this.logDocument, "Log", "Wellbore")
         ).test();
     }
 

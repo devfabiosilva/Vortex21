@@ -36,6 +36,10 @@ public class ExtensionNameValue {
         return new ExtensionNameValue(name, valueUom, value, measureClass, dtim, index, description, extensionNameValue);
     }
 
+    public static ExtensionNameValue build(String name, String valueUom, String value, String measureClass, String dtim, Long index, String description) throws Exception {
+        return new ExtensionNameValue(name, valueUom, value, measureClass, dtim, index, description, null);
+    }
+
     public void test() throws Exception {
         String actualName = (String)navigate(extensionNameValue, "Name");
         if (name != null) {
