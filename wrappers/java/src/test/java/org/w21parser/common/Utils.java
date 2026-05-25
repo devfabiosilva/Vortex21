@@ -42,8 +42,20 @@ public class Utils {
             assertNull(actual);
     }
 
-    static void testString(String expected, String key, BsonDocument doc) throws Exception {
+    public static void testString(String expected, String key, BsonDocument doc) throws Exception {
         testString(expected, (String)navigate(doc, key));
+    }
+
+    public static void testStringTrim(String expected, String actual) {
+        if (expected != null) {
+            assertNotNull(actual);
+            assertEquals(expected, actual.trim());
+        } else
+            assertNull(actual);
+    }
+
+    static void testStringTrim(String expected, String key, BsonDocument doc) throws Exception {
+        testStringTrim(expected, (String)navigate(doc, "#attributes", key));
     }
 
     static void testStringAttribute(String expected, String key, BsonDocument doc) throws Exception {
@@ -72,7 +84,7 @@ public class Utils {
             assertNull(actual);
     }
 
-    static void testStringList(List<String> expected, String key, BsonDocument doc) throws Exception {
+    public static void testStringList(List<String> expected, String key, BsonDocument doc) throws Exception {
         testStringList(expected, (BsonArray) navigate(doc, key));
     }
 }

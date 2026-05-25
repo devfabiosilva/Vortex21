@@ -59,6 +59,10 @@ public class OSDUIntegration {
         return new OSDUIntegration(lineageAssertions, ownerGroup, viewerGroup, legalTags, oSDUGeoJSON, wGS84Latitude, wGS84Longitude, wGS84LocationMetadata, field, country, state, county, city, region, district, block, prospect, play, basin, doc);
     }
 
+    public static OSDUIntegration build(List<OSDULineageAssertion> lineageAssertions, List<String> ownerGroup, List<String> viewerGroup, List<String> legalTags, String oSDUGeoJSON, PlaneAngleMeasure wGS84Latitude, PlaneAngleMeasure wGS84Longitude, OSDUSpatialLocationIntegration wGS84LocationMetadata, String field, String country, String state, String county, String city, String region, String district, String block, String prospect, String play, String basin) {
+        return new OSDUIntegration(lineageAssertions, ownerGroup, viewerGroup, legalTags, oSDUGeoJSON, wGS84Latitude, wGS84Longitude, wGS84LocationMetadata, field, country, state, county, city, region, district, block, prospect, play, basin, null);
+    }
+
     public void test() throws Exception {
         BsonArray documentArr = (BsonArray) navigate(this.doc, "LineageAssertions");
         BsonDocument document;

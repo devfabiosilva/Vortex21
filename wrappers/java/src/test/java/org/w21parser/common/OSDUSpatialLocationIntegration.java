@@ -31,6 +31,10 @@ public class OSDUSpatialLocationIntegration {
         return new OSDUSpatialLocationIntegration(spatialLocationCoordinatesDate, quantitativeAccuracyBand, qualitativeSpatialAccuracyType, coordinateQualityCheckPerformedBy, coordinateQualityCheckDateTime, coordinateQualityCheckRemark, appliedOperation, doc);
     }
 
+    public static OSDUSpatialLocationIntegration build(String spatialLocationCoordinatesDate, String quantitativeAccuracyBand, String qualitativeSpatialAccuracyType, String coordinateQualityCheckPerformedBy, String coordinateQualityCheckDateTime, List<String> coordinateQualityCheckRemark, List<String> appliedOperation) {
+        return new OSDUSpatialLocationIntegration(spatialLocationCoordinatesDate, quantitativeAccuracyBand, qualitativeSpatialAccuracyType, coordinateQualityCheckPerformedBy, coordinateQualityCheckDateTime, coordinateQualityCheckRemark, appliedOperation, null);
+    }
+
     public void test() throws Exception {
         testDateTime(this.spatialLocationCoordinatesDate, "SpatialLocationCoordinatesDate", this.doc);
         testString(this.quantitativeAccuracyBand, "QuantitativeAccuracyBand", this.doc);

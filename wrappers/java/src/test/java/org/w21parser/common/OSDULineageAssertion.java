@@ -19,6 +19,10 @@ public class OSDULineageAssertion {
         return new OSDULineageAssertion(iD, lineageRelationshipKind, doc);
     }
 
+    public static OSDULineageAssertion build(String iD, String lineageRelationshipKind) {
+        return new OSDULineageAssertion(iD, lineageRelationshipKind, null);
+    }
+
     public void setOSDULineageAssertion(BsonDocument doc) {
         this.doc = doc;
     }

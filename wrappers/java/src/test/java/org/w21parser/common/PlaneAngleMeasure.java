@@ -19,6 +19,10 @@ public class PlaneAngleMeasure {
         return new PlaneAngleMeasure(uom, value, doc);
     }
 
+    public static PlaneAngleMeasure build(String uom, Double value) {
+        return new PlaneAngleMeasure(uom, value, null);
+    }
+
     public void test() throws Exception {
         testStringAttribute(this.uom, "uom", doc);
         testDouble(this.value, "#value", doc);
