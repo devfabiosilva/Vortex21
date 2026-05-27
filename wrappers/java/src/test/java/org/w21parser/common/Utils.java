@@ -18,7 +18,7 @@ public class Utils {
             assertNull(actual);
     }
 
-    static void testDouble(Double expected, String key, BsonDocument doc) throws Exception {
+    public static void testDouble(Double expected, String key, BsonDocument doc) throws Exception {
         testDouble(expected, (BsonDouble) navigate(doc, key));
     }
 
@@ -58,7 +58,7 @@ public class Utils {
         testStringTrim(expected, (String)navigate(doc, "#attributes", key));
     }
 
-    static void testStringAttribute(String expected, String key, BsonDocument doc) throws Exception {
+    public static void testStringAttribute(String expected, String key, BsonDocument doc) throws Exception {
         testString(expected, (String)navigate(doc, "#attributes", key));
     }
 
@@ -70,7 +70,7 @@ public class Utils {
             assertNull(bdt);
     }
 
-    static void testDateTime(String expected, String key, BsonDocument doc) throws Exception {
+    public static void testDateTime(String expected, String key, BsonDocument doc) throws Exception {
         testDateTime(expected, (BsonDateTime)navigate(doc, key));
     }
 

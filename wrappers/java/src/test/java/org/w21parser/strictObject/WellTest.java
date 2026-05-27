@@ -209,6 +209,60 @@ public class WellTest {
     }
 
     @Test
+    public void wellFacilityLifecyclePeriodTest() throws Exception {
+        ArrayOfFacilityLifecyclePeriod.build(
+                List.of(
+                        FacilityLifecyclePeriod.build(
+                                "State in LifeCycleHistory 1",
+                                "2016-04-03T19:26:47Z",
+                                "2016-05-02T19:29:47Z"
+                        ),
+                        FacilityLifecyclePeriod.build(
+                                "State in LifeCycleHistory 2",
+                              "2015-04-03T19:26:47Z",
+                                "2015-05-02T19:29:47Z"
+                        )
+                ),
+                (BsonArray) navigate(this.wellDocument, "Well", "LifeCycleHistory")
+        ).test();
+    }
+
+    @Test
+    public void wellOperatorTest() throws Exception {
+        DataObjectReference.build(
+                "173e4567-e89b-12d3-a456-4266141740f2",
+                "ObjectVersion in Operator",
+                "witsml21.Well",
+                "Title in Operator",
+                "http://www.example.com/schema/anyURIOperatorA",
+                List.of(
+                        "http://www.example.com/schema/anyURIOperatorA1",
+                        "http://www.example.com/schema/anyURIOperatorA2"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "Name A",
+                                "UomA",
+                                "ValueA",
+                                "electric field strength",
+                                "2021-08-05T19:39:47Z",
+                                881777L,
+                                "Operator Desc A"
+                        ),
+                        ExtensionNameValue.build(
+                                "Name B",
+                                "UomB",
+                                "ValueB",
+                                "force per volume",
+                                "2021-07-02T19:39:27Z",
+                                8777L,
+                                "Operator Desc A"
+                        )
+                ),
+                (BsonDocument) navigate(this.wellDocument, "Well", "Operator")
+        ).test();
+    }
+    @Test
     public void wellMiscTest() throws Exception {
         BsonDocument well = (BsonDocument)navigate(this.wellDocument, "Well");
         testString("Exst", "Existence", well);
@@ -225,5 +279,45 @@ public class WellTest {
                 ),
                 "BusinessActivityHistory", well
         );
+        testString("inactive", "ActiveStatus", well);
+        testString("UniqueIdentifier test", "UniqueIdentifier", well);
+        testString("NameLegal test", "NameLegal", well);
+        testString("NumGovt test", "NumGovt", well);
+        testString("NumAPI test", "NumAPI", well);
+        testString("OperatingEnvironment test", "OperatingEnvironment", well);
+        testString("+23:01","TimeZone", well);
+        testString("Basin test", "Basin", well);
+        testString("Play test", "Play", well);
+        testString("Prospect test", "Prospect", well);
+        testString("Field test", "Field", well);
+        testString("Country test", "Country", well);
+        testString("State test", "State", well);
+        testString("County test", "County", well);
+        testString("Region test", "Region", well);
+        testString("District test", "District", well);
+        testString("NumLicense test", "NumLicense", well);
+        testDateTime("2021-05-05T19:19:38Z", "DTimLicense", well);
+        ArrayOfLicensePeriod.build(
+                List.of(
+                        LicensePeriod.build(
+                            "NumLicense test 1",
+                            "2021-07-19T22:39:47Z",
+                            "2022-04-01T11:19:17Z"
+                        ),
+                        LicensePeriod.build(
+                                "NumLicense test 2",
+                                "2023-07-19T22:39:47Z",
+                                "2024-04-01T11:19:17Z"
+                        )
+                ),
+                (BsonArray) navigate(well, "LicenseHistory")
+        ).test();
+
+        testString("Block test", "Block", well);
+        testString("InterestType test", "InterestType", well);
+        testStringAttribute("ppk", "uom", (BsonDocument) navigate(well, "PcInterest"));
+        testDouble(17.0211, "#value", (BsonDocument) navigate(well, "PcInterest"));
+        testString("SlotName test", "SlotName", well);
+        testString("LifeCycleState test", "LifeCycleState", well);
     }
 }

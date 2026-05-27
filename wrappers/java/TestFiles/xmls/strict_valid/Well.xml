@@ -113,53 +113,72 @@
     <rdw212:Index xsi:type="xsd:long">187651</rdw212:Index>
     <rdw212:Description xsi:type="rdw212:String2000">Desc B</rdw212:Description>
    </rdw212:ExtensionNameValue>
-   <rdw212:ActiveStatus xsi:type="rdw212:ActiveStatusKind">active</rdw212:ActiveStatus>
-   <rdw211:UniqueIdentifier xsi:type="rdw212:String64"></rdw211:UniqueIdentifier>
-   <rdw211:NameLegal xsi:type="rdw212:String64"></rdw211:NameLegal>
-   <rdw211:NumGovt xsi:type="rdw212:String64"></rdw211:NumGovt>
-   <rdw211:NumAPI xsi:type="rdw212:String64"></rdw211:NumAPI>
-   <rdw211:OperatingEnvironment xsi:type="rdw211:OperatingEnvironmentExt"></rdw211:OperatingEnvironment>
+   <rdw212:ActiveStatus xsi:type="rdw212:ActiveStatusKind">inactive</rdw212:ActiveStatus>
+   <rdw211:UniqueIdentifier xsi:type="rdw212:String64">UniqueIdentifier test</rdw211:UniqueIdentifier>
+   <rdw211:NameLegal xsi:type="rdw212:String64">NameLegal test</rdw211:NameLegal>
+   <rdw211:NumGovt xsi:type="rdw212:String64">NumGovt test</rdw211:NumGovt>
+   <rdw211:NumAPI xsi:type="rdw212:String64">NumAPI test</rdw211:NumAPI>
+   <rdw211:OperatingEnvironment xsi:type="rdw211:OperatingEnvironmentExt">OperatingEnvironment test</rdw211:OperatingEnvironment>
    <rdw211:TimeZone xsi:type="rdw212:TimeZone">+23:01</rdw211:TimeZone>
-   <rdw211:Basin xsi:type="rdw212:String64"></rdw211:Basin>
-   <rdw211:Play xsi:type="rdw212:String64"></rdw211:Play>
-   <rdw211:Prospect xsi:type="rdw212:String64"></rdw211:Prospect>
-   <rdw211:Field xsi:type="rdw212:String64"></rdw211:Field>
-   <rdw211:Country xsi:type="rdw212:String64"></rdw211:Country>
-   <rdw211:State xsi:type="rdw212:String64"></rdw211:State>
-   <rdw211:County xsi:type="rdw212:String64"></rdw211:County>
-   <rdw211:Region xsi:type="rdw212:String64"></rdw211:Region>
-   <rdw211:District xsi:type="rdw212:String64"></rdw211:District>
-   <rdw211:NumLicense xsi:type="rdw212:String64"></rdw211:NumLicense>
-   <rdw211:DTimLicense xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:DTimLicense>
+   <rdw211:Basin xsi:type="rdw212:String64">Basin test</rdw211:Basin>
+   <rdw211:Play xsi:type="rdw212:String64">Play test</rdw211:Play>
+   <rdw211:Prospect xsi:type="rdw212:String64">Prospect test</rdw211:Prospect>
+   <rdw211:Field xsi:type="rdw212:String64">Field test</rdw211:Field>
+   <rdw211:Country xsi:type="rdw212:String64">Country test</rdw211:Country>
+   <rdw211:State xsi:type="rdw212:String64">State test</rdw211:State>
+   <rdw211:County xsi:type="rdw212:String64">County test</rdw211:County>
+   <rdw211:Region xsi:type="rdw212:String64">Region test</rdw211:Region>
+   <rdw211:District xsi:type="rdw212:String64">District test</rdw211:District>
+   <rdw211:NumLicense xsi:type="rdw212:String64">NumLicense test</rdw211:NumLicense>
+   <rdw211:DTimLicense xsi:type="rdw212:TimeStamp">2021-05-05T19:19:38Z</rdw211:DTimLicense>
    <rdw211:LicenseHistory xsi:type="rdw211:LicensePeriod">
-    <rdw211:NumLicense xsi:type="rdw212:String64"></rdw211:NumLicense>
-    <rdw211:TerminationDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:TerminationDateTime>
-    <rdw211:EffectiveDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw211:EffectiveDateTime>
+    <rdw211:NumLicense xsi:type="rdw212:String64">NumLicense test 1</rdw211:NumLicense>
+    <rdw211:TerminationDateTime xsi:type="rdw212:TimeStamp">2021-07-19T22:39:47Z</rdw211:TerminationDateTime>
+    <rdw211:EffectiveDateTime xsi:type="rdw212:TimeStamp">2022-04-01T11:19:17Z</rdw211:EffectiveDateTime>
    </rdw211:LicenseHistory>
-   <rdw211:Block xsi:type="rdw212:String64"></rdw211:Block>
-   <rdw211:InterestType xsi:type="rdw211:WellInterestExt"></rdw211:InterestType>
-   <rdw211:PcInterest xsi:type="rdw212:DimensionlessMeasure" uom="%">0.0</rdw211:PcInterest>
-   <rdw211:SlotName xsi:type="rdw212:String64"></rdw211:SlotName>
-   <rdw211:LifeCycleState xsi:type="rdw212:FacilityLifecycleStateExt"></rdw211:LifeCycleState>
+   <rdw211:LicenseHistory xsi:type="rdw211:LicensePeriod">
+    <rdw211:NumLicense xsi:type="rdw212:String64">NumLicense test 2</rdw211:NumLicense>
+    <rdw211:TerminationDateTime xsi:type="rdw212:TimeStamp">2023-07-19T22:39:47Z</rdw211:TerminationDateTime>
+    <rdw211:EffectiveDateTime xsi:type="rdw212:TimeStamp">2024-04-01T11:19:17Z</rdw211:EffectiveDateTime>
+   </rdw211:LicenseHistory>
+   <rdw211:Block xsi:type="rdw212:String64">Block test</rdw211:Block>
+   <rdw211:InterestType xsi:type="rdw211:WellInterestExt">InterestType test</rdw211:InterestType>
+   <rdw211:PcInterest xsi:type="rdw212:DimensionlessMeasure" uom="ppk">17.0211</rdw211:PcInterest>
+   <rdw211:SlotName xsi:type="rdw212:String64">SlotName test</rdw211:SlotName>
+   <rdw211:LifeCycleState xsi:type="rdw212:FacilityLifecycleStateExt">LifeCycleState test</rdw211:LifeCycleState>
    <rdw211:LifeCycleHistory xsi:type="rdw212:FacilityLifecyclePeriod">
-    <rdw212:State xsi:type="rdw212:FacilityLifecycleStateExt"></rdw212:State>
-    <rdw212:StartDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:StartDateTime>
-    <rdw212:EndDateTime xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:EndDateTime>
+    <rdw212:State xsi:type="rdw212:FacilityLifecycleStateExt">State in LifeCycleHistory 1</rdw212:State>
+    <rdw212:StartDateTime xsi:type="rdw212:TimeStamp">2016-04-03T19:26:47Z</rdw212:StartDateTime>
+    <rdw212:EndDateTime xsi:type="rdw212:TimeStamp">2016-05-02T19:29:47Z</rdw212:EndDateTime>
+   </rdw211:LifeCycleHistory>
+   <rdw211:LifeCycleHistory xsi:type="rdw212:FacilityLifecyclePeriod">
+    <rdw212:State xsi:type="rdw212:FacilityLifecycleStateExt">State in LifeCycleHistory 2</rdw212:State>
+    <rdw212:StartDateTime xsi:type="rdw212:TimeStamp">2015-04-03T19:26:47Z</rdw212:StartDateTime>
+    <rdw212:EndDateTime xsi:type="rdw212:TimeStamp">2015-05-02T19:29:47Z</rdw212:EndDateTime>
    </rdw211:LifeCycleHistory>
    <rdw211:Operator xsi:type="rdw212:DataObjectReference">
-    <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174002</rdw212:Uuid>
-    <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+    <rdw212:Uuid xsi:type="rdw212:UuidString">173e4567-e89b-12d3-a456-4266141740f2</rdw212:Uuid>
+    <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in Operator</rdw212:ObjectVersion>
     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml21.Well</rdw212:QualifiedType>
-    <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-    <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+    <rdw212:Title xsi:type="rdw212:String2000">Title in Operator</rdw212:Title>
+    <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIOperatorA</rdw212:EnergisticsUri>
+    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIOperatorA1</rdw212:LocatorUrl>
+    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIOperatorA2</rdw212:LocatorUrl>
     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     <rdw212:Name xsi:type="rdw212:String64">Name A</rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom="UomA">ValueA</rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">electric field strength</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2021-08-05T19:39:47Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">881777</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000">Operator Desc A</rdw212:Description>
+    </rdw212:ExtensionNameValue>
+    <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64">Name B</rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom="UomB">ValueB</rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">force per volume</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2021-07-02T19:39:27Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">8777</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000">Operator Desc A</rdw212:Description>
     </rdw212:ExtensionNameValue>
    </rdw211:Operator>
    <rdw211:OperatorDiv xsi:type="rdw212:String64"></rdw211:OperatorDiv>
