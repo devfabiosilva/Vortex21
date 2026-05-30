@@ -262,6 +262,113 @@ public class WellTest {
                 (BsonDocument) navigate(this.wellDocument, "Well", "Operator")
         ).test();
     }
+
+    @Test
+    public void wellOriginalOperatorTest() throws Exception {
+        DataObjectReference.build(
+                "12ce4567-ed9b-12d3-a456-476614174e03",
+                "ObjectVersion in OriginalOperator",
+                "prodml10.BhaRun",
+                "Title in OriginalOperator",
+                "http://www.example.com/schema/anyURIOriginalOperatorA",
+                List.of(
+                        "http://www.example.com/schema/anyURIOriginalOperatorA1"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "ENV NAME A",
+                                "ENVUomA",
+                                "ENVVALUEA",
+                                "absorbed dose",
+                                "2023-11-07T18:27:36Z",
+                                7189198L,
+                                "Oper Desc"
+                        )
+                ),
+                (BsonDocument) navigate(this.wellDocument, "Well", "OriginalOperator")
+        ).test();
+    }
+
+    @Test
+    public void wellOperatorHistoryTest() throws Exception {
+        ArrayOfFacilityOperator.build(
+            List.of(
+                FacilityOperator.build(
+                    DataObjectReference.build(
+                            "723e4567-e89b-13d3-a456-426614174d0f",
+                            "ObjectVersion in BusinessAssociate",
+                            "eml11.xyz",
+                            "Title in BusinessAssociate",
+                            "http://www.example.com/schema/anyURIBusinessAssociateA",
+                            List.of(
+                                    "http://www.example.com/schema/anyURIBusinessAssociateA1",
+                                    "http://www.example.com/schema/anyURIBusinessAssociateA2"
+                            ),
+                            List.of(
+                                    ExtensionNameValue.build(
+                                            "ENV1Name",
+                                            "UomA1",
+                                            "ValuaA1",
+                                            "luminous flux",
+                                            "2016-02-05T19:39:47Z",
+                                            81762L,
+                                            "Desc AB"
+                                    )
+                            )
+                    ),
+                    "2016-01-05T19:39:47Z",
+                    "2016-02-07T11:29:48Z"
+                ),
+                FacilityOperator.build(
+                        DataObjectReference.build(
+                                "853e4568-e89b-13d3-a456-426614174d0f",
+                                "ObjectVersion in BusinessAssociate2",
+                                "eml12.xyza",
+                                "Title in BusinessAssociate2",
+                                "http://www.example.com/schema/anyURIBusinessAssociateB",
+                                List.of(
+                                        "http://www.example.com/schema/anyURIBusinessAssociateB1",
+                                        "http://www.example.com/schema/anyURIBusinessAssociateB2"
+                                ),
+                                List.of(
+                                        ExtensionNameValue.build(
+                                                "ENV2Name",
+                                                "UomB1",
+                                                "ValuaB1",
+                                                "magnetic vector potential",
+                                                "2016-12-15T19:39:47Z",
+                                                9176176L,
+                                                "Desc ABABCD"
+                                        )
+                                )
+                        ),
+                        "2016-01-05T19:39:47Z",
+                        "2016-02-07T11:29:48Z"
+                )
+            ),
+                (BsonArray) navigate(this.wellDocument, "Well", "OperatorHistory")
+        ).test();
+    }
+
+    @Test
+    public void wellStatusHistoryTest() throws Exception {
+        ArrayOfStatusHistory.build(
+                List.of(
+                        StatusHistory.build(
+                                "abandoned",
+                                "2025-01-05T19:39:47Z",
+                                "2025-05-15T09:29:27Z"
+                        ),
+                        StatusHistory.build(
+                                "working over",
+                                "2026-01-15T19:39:47Z",
+                                "2026-04-07T19:39:47Z"
+                        )
+                ),
+                (BsonArray) navigate(this.wellDocument, "Well", "StatusHistory")
+        ).test();
+    }
+
     @Test
     public void wellMiscTest() throws Exception {
         BsonDocument well = (BsonDocument)navigate(this.wellDocument, "Well");
@@ -319,5 +426,7 @@ public class WellTest {
         testDouble(17.0211, "#value", (BsonDocument) navigate(well, "PcInterest"));
         testString("SlotName test", "SlotName", well);
         testString("LifeCycleState test", "LifeCycleState", well);
+        testString("OperatorDiv Test", "OperatorDiv", well);
+        testString("temporarily abandoned", "StatusWell", well);
     }
 }
