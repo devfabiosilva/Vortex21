@@ -5,25 +5,25 @@ import org.bson.BsonDocument;
 import static org.w21parser.common.Utils.testDateTime;
 import static org.w21parser.common.Utils.testString;
 
-public class StatusHistory {
+public class WellStatusPeriod {
     public String status = null;
     public String startDateTime = null;
     public String endDateTime = null;
     private BsonDocument doc = null;
 
-    private StatusHistory(String status, String startDateTime, String endDateTime, BsonDocument doc) {
+    private WellStatusPeriod(String status, String startDateTime, String endDateTime, BsonDocument doc) {
         this.status = status;
         this.startDateTime = startDateTime;
         this.endDateTime = endDateTime;
         this.doc = doc;
     }
 
-    public static StatusHistory build(String status, String startDateTime, String endDateTime, BsonDocument doc) {
-        return new StatusHistory(status, startDateTime, endDateTime, doc);
+    public static WellStatusPeriod build(String status, String startDateTime, String endDateTime, BsonDocument doc) {
+        return new WellStatusPeriod(status, startDateTime, endDateTime, doc);
     }
 
-    public static StatusHistory build(String status, String startDateTime, String endDateTime) {
-        return new StatusHistory(status, startDateTime, endDateTime, null);
+    public static WellStatusPeriod build(String status, String startDateTime, String endDateTime) {
+        return new WellStatusPeriod(status, startDateTime, endDateTime, null);
     }
 
     public void test() throws Exception {

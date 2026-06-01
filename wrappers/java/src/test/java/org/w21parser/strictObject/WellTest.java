@@ -352,20 +352,39 @@ public class WellTest {
 
     @Test
     public void wellStatusHistoryTest() throws Exception {
-        ArrayOfStatusHistory.build(
+        ArrayOfWellStatusPeriod.build(
                 List.of(
-                        StatusHistory.build(
+                        WellStatusPeriod.build(
                                 "abandoned",
                                 "2025-01-05T19:39:47Z",
                                 "2025-05-15T09:29:27Z"
                         ),
-                        StatusHistory.build(
+                        WellStatusPeriod.build(
                                 "working over",
                                 "2026-01-15T19:39:47Z",
                                 "2026-04-07T19:39:47Z"
                         )
                 ),
                 (BsonArray) navigate(this.wellDocument, "Well", "StatusHistory")
+        ).test();
+    }
+
+    @Test
+    public void wellPurposeHistoryTest() throws Exception {
+        ArrayOfWellPurposePeriod.build(
+                List.of(
+                        WellPurposePeriod.build(
+                                "general srvc -- borehole re-acquisition",
+                                "2023-07-01T20:21:12Z",
+                                "2024-01-06T22:43:42Z"
+                        ),
+                        WellPurposePeriod.build(
+                                "development -- infill development",
+                                "2025-07-01T20:21:12Z",
+                                "2026-01-06T22:43:42Z"
+                        )
+                ),
+                (BsonArray) navigate(this.wellDocument, "Well", "PurposeHistory")
         ).test();
     }
 
@@ -428,5 +447,10 @@ public class WellTest {
         testString("LifeCycleState test", "LifeCycleState", well);
         testString("OperatorDiv Test", "OperatorDiv", well);
         testString("temporarily abandoned", "StatusWell", well);
+        testString("general srvc -- research -- strat test", "PurposeWell", well);
+        testString("non HC gas -- CO2", "FluidWell", well);
+        testString("huff-n-puff", "DirectionWell", well);
+        testDateTime("2021-01-15T19:39:47Z", "DTimSpud", well);
+        testDateTime("2022-03-05T23:29:57Z", "DTimPa", well);
     }
 }
