@@ -266,62 +266,72 @@
    <rdw211:DirectionWell xsi:type="rdw211:WellDirection">huff-n-puff</rdw211:DirectionWell>
    <rdw211:DTimSpud xsi:type="rdw212:TimeStamp">2021-01-15T19:39:47Z</rdw211:DTimSpud>
    <rdw211:DTimPa xsi:type="rdw212:TimeStamp">2022-03-05T23:29:57Z</rdw211:DTimPa>
-   <rdw211:WaterDepth xsi:type="rdw212:LengthMeasure" uom="m">0.0</rdw211:WaterDepth>
+   <rdw211:WaterDepth xsi:type="rdw212:LengthMeasure" uom="link[US]">1827.119801</rdw211:WaterDepth>
    <rdw211:InformationalGeographicLocationWGS84 xsi:type="rdw212:Geographic2dPosition">
-    <rdw212:Latitude xsi:type="rdw212:PlaneAngleMeasureExt" uom="">0.0</rdw212:Latitude>
-    <rdw212:Longitude xsi:type="rdw212:PlaneAngleMeasureExt" uom="">0.0</rdw212:Longitude>
-    <rdw212:Epoch xsi:type="xsd:double">0.0</rdw212:Epoch>
+    <rdw212:Latitude xsi:type="rdw212:PlaneAngleMeasureExt" uom="LatitudeUom">0.187</rdw212:Latitude>
+    <rdw212:Longitude xsi:type="rdw212:PlaneAngleMeasureExt" uom="LongitudeUom">172.01</rdw212:Longitude>
+    <rdw212:Epoch xsi:type="xsd:double">0.9917</rdw212:Epoch>
     <rdw212:GeographicCrs xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174005</rdw212:Uuid>
-     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">123e4f67-e8db-12d3-a456-426614174015</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64">GeographicCrs ObjectVersion</rdw212:ObjectVersion>
      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom21.abc</rdw212:QualifiedType>
-     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:Title xsi:type="rdw212:String2000">GeographicCrs title</rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIGeographicCrsA</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIGeographicCrsA1</rdw212:LocatorUrl>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIGeographicCrsA2</rdw212:LocatorUrl>
      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
+      <rdw212:Name xsi:type="rdw212:String64">GeographicCrs Name A</rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom="GeographicCrsUomA">GeographicCrsValueA</rdw212:Value>
       <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2022-10-25T20:39:47Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">777888</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000">GeographicCrs Desc</rdw212:Description>
      </rdw212:ExtensionNameValue>
     </rdw212:GeographicCrs>
    </rdw211:InformationalGeographicLocationWGS84>
    <rdw211:InformationalProjectedLocation xsi:type="rdw212:Projected2dPosition">
-    <rdw212:Coordinate1 xsi:type="xsd:double">0.0</rdw212:Coordinate1>
-    <rdw212:Coordinate2 xsi:type="xsd:double">0.0</rdw212:Coordinate2>
+    <rdw212:Coordinate1 xsi:type="xsd:double">18.01</rdw212:Coordinate1>
+    <rdw212:Coordinate2 xsi:type="xsd:double">20</rdw212:Coordinate2>
     <rdw212:ProjectedCrs xsi:type="rdw212:DataObjectReference">
-     <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174006</rdw212:Uuid>
-     <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+     <rdw212:Uuid xsi:type="rdw212:UuidString">c2fe4567-e89b-12d3-a456-426614174006</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64">ProjectedCrs ObjectVersion</rdw212:ObjectVersion>
      <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">resqml32.xy</rdw212:QualifiedType>
-     <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+     <rdw212:Title xsi:type="rdw212:String2000">ProjectedCrs title</rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIProjectedCrsA</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIProjectedCrsA1</rdw212:LocatorUrl>
      <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-      <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-      <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-      <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-      <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-      <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+      <rdw212:Name xsi:type="rdw212:String64">ProjectedCrs ENV NAME</rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom="ProjectedCrsUomA">ProjectedCrsValueA</rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">electric conductivity</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2023-11-15T11:29:27Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">18701988</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000">DescABV</rdw212:Description>
      </rdw212:ExtensionNameValue>
     </rdw212:ProjectedCrs>
    </rdw211:InformationalProjectedLocation>
    <rdw211:DataSourceOrganization xsi:type="rdw212:DataObjectReference">
-    <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174007</rdw212:Uuid>
-    <rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>
+    <rdw212:Uuid xsi:type="rdw212:UuidString">123e4567-e89b-12d3-a456-426614174fc2</rdw212:Uuid>
+    <rdw212:ObjectVersion xsi:type="rdw212:String64">DataSourceOrganization ObjectVersion</rdw212:ObjectVersion>
     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom81.test</rdw212:QualifiedType>
-    <rdw212:Title xsi:type="rdw212:String2000"></rdw212:Title>
-    <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:EnergisticsUri>
-    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURI</rdw212:LocatorUrl>
+    <rdw212:Title xsi:type="rdw212:String2000">DataSourceOrganization title</rdw212:Title>
+    <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDataSourceOrganizationA</rdw212:EnergisticsUri>
+    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDataSourceOrganizationA1</rdw212:LocatorUrl>
+    <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDataSourceOrganizationA2</rdw212:LocatorUrl>
     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
-     <rdw212:Name xsi:type="rdw212:String64"></rdw212:Name>
-     <rdw212:Value xsi:type="rdw212:StringMeasure" uom=""></rdw212:Value>
-     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">absorbed dose</rdw212:MeasureClass>
-     <rdw212:DTim xsi:type="rdw212:TimeStamp">2026-01-05T19:39:47Z</rdw212:DTim>
-     <rdw212:Index xsi:type="xsd:long">0</rdw212:Index>
-     <rdw212:Description xsi:type="rdw212:String2000"></rdw212:Description>
+     <rdw212:Name xsi:type="rdw212:String64">ENV A 1 NAME</rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom="UomA1">ValueA1</rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">attenuation per frequency interval</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2022-03-02T18:28:17Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">99999</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000">DESC ABCD</rdw212:Description>
+    </rdw212:ExtensionNameValue>
+    <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+     <rdw212:Name xsi:type="rdw212:String64">ENV B 2 NAME</rdw212:Name>
+     <rdw212:Value xsi:type="rdw212:StringMeasure" uom="UomB2">ValueB2</rdw212:Value>
+     <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">cation exchange capacity</rdw212:MeasureClass>
+     <rdw212:DTim xsi:type="rdw212:TimeStamp">2021-01-15T19:30:27Z</rdw212:DTim>
+     <rdw212:Index xsi:type="xsd:long">19287674318</rdw212:Index>
+     <rdw212:Description xsi:type="rdw212:String2000">DESC XYZABC</rdw212:Description>
     </rdw212:ExtensionNameValue>
    </rdw211:DataSourceOrganization>
    <rdw211:WellheadElevation xsi:type="rdw212:AbstractElevation">

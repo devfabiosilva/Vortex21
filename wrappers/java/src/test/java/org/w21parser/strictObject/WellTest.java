@@ -389,6 +389,104 @@ public class WellTest {
     }
 
     @Test
+    public void wellInformationalGeographicLocationWGS84Test() throws Exception {
+        Geographic2dPosition.build(
+                PlaneAngleMeasureExt.build("LatitudeUom", 0.187),
+                PlaneAngleMeasureExt.build("LongitudeUom", 172.01),
+                0.9917,
+                DataObjectReference.build(
+                        "123e4f67-e8db-12d3-a456-426614174015",
+                        "GeographicCrs ObjectVersion",
+                        "custom21.abc",
+                        "GeographicCrs title",
+                        "http://www.example.com/schema/anyURIGeographicCrsA",
+                        List.of(
+                                "http://www.example.com/schema/anyURIGeographicCrsA1",
+                                "http://www.example.com/schema/anyURIGeographicCrsA2"
+                        ),
+                        List.of(
+                                ExtensionNameValue.build(
+                                        "GeographicCrs Name A",
+                                        "GeographicCrsUomA",
+                                        "GeographicCrsValueA",
+                                        "absorbed dose",
+                                        "2022-10-25T20:39:47Z",
+                                        777888L,
+                                        "GeographicCrs Desc"
+                                )
+                        )
+                ),
+                (BsonDocument) navigate(this.wellDocument, "Well", "InformationalGeographicLocationWGS84")
+        ).test();
+    }
+
+    @Test
+    public void wellInformationalProjectedLocationTest() throws Exception {
+        Projected2dPosition.build(
+                18.01,
+                20.0,
+                DataObjectReference.build(
+                        "c2fe4567-e89b-12d3-a456-426614174006",
+                        "ProjectedCrs ObjectVersion",
+                        "resqml32.xy",
+                        "ProjectedCrs title",
+                        "http://www.example.com/schema/anyURIProjectedCrsA",
+                        List.of(
+                                "http://www.example.com/schema/anyURIProjectedCrsA1"
+                        ),
+                        List.of(
+                                ExtensionNameValue.build(
+                                        "ProjectedCrs ENV NAME",
+                                        "ProjectedCrsUomA",
+                                        "ProjectedCrsValueA",
+                                        "electric conductivity",
+                                        "2023-11-15T11:29:27Z",
+                                        18701988L,
+                                        "DescABV"
+                                )
+                        )
+                ),
+                (BsonDocument) navigate(this.wellDocument, "Well", "InformationalProjectedLocation")
+        ).test();
+    }
+
+    @Test
+    public void wellDataSourceOrganizationTest() throws Exception {
+        DataObjectReference.build(
+                "123e4567-e89b-12d3-a456-426614174fc2",
+                "DataSourceOrganization ObjectVersion",
+                "custom81.test",
+                "DataSourceOrganization title",
+                "http://www.example.com/schema/anyURIDataSourceOrganizationA",
+                List.of(
+                        "http://www.example.com/schema/anyURIDataSourceOrganizationA1",
+                        "http://www.example.com/schema/anyURIDataSourceOrganizationA2"
+                ),
+                List.of(
+                        ExtensionNameValue.build(
+                                "ENV A 1 NAME",
+                                "UomA1",
+                                "ValueA1",
+                                "attenuation per frequency interval",
+                                "2022-03-02T18:28:17Z",
+                                99999L,
+                                "DESC ABCD"
+                        ),
+                        ExtensionNameValue.build(
+                                "ENV B 2 NAME",
+                                "UomB2",
+                                "ValueB2",
+                                "cation exchange capacity",
+                                "2021-01-15T19:30:27Z",
+                                19287674318L,
+                                "DESC XYZABC"
+                        )
+                ),
+                (BsonDocument) navigate(this.wellDocument, "Well", "DataSourceOrganization")
+        ).test();
+    }
+
+    @Test
     public void wellMiscTest() throws Exception {
         BsonDocument well = (BsonDocument)navigate(this.wellDocument, "Well");
         testString("Exst", "Existence", well);
@@ -452,5 +550,7 @@ public class WellTest {
         testString("huff-n-puff", "DirectionWell", well);
         testDateTime("2021-01-15T19:39:47Z", "DTimSpud", well);
         testDateTime("2022-03-05T23:29:57Z", "DTimPa", well);
+        testStringAttribute("link[US]", "uom", (BsonDocument) navigate(well, "WaterDepth"));
+        testDouble(1827.119801, "#value", (BsonDocument) navigate(well, "WaterDepth"));
     }
 }

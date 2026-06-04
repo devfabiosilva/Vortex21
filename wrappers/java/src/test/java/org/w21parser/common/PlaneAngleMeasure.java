@@ -9,7 +9,7 @@ public class PlaneAngleMeasure {
     public final Double value;
     private BsonDocument doc;
 
-    private PlaneAngleMeasure(String uom, Double value, BsonDocument doc) {
+    public PlaneAngleMeasure(String uom, Double value, BsonDocument doc) {
         this.uom = uom;
         this.value = value;
         this.doc = doc;
