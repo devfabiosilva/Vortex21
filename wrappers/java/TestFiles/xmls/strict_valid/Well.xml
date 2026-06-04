@@ -334,11 +334,67 @@
      <rdw212:Description xsi:type="rdw212:String2000">DESC XYZABC</rdw212:Description>
     </rdw212:ExtensionNameValue>
    </rdw211:DataSourceOrganization>
-   <rdw211:WellheadElevation xsi:type="rdw212:AbstractElevation">
-    <rdw212:Elevation xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:Elevation>
+<!--   <rdw211:WellheadElevation xsi:type="rdw212:AbstractElevation">-->
+<!--    <rdw212:Elevation xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:Elevation>-->
+<!--   </rdw211:WellheadElevation>-->
+   <rdw211:WellheadElevation xsi:type="rdw212:DatumElevation">
+    <rdw212:Elevation xsi:type="rdw212:LengthMeasureExt" uom="WellheadElevationUom">0.199826</rdw212:Elevation>
+    <rdw211:Datum xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">b23e4537-e89b-a2d3-a456-426614174ff2</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64">WellheadElevation ObjectVersion</rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">custom99.testA</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000">WellheadElevation title</rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIWellheadElevationA</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIDataWellheadElevationA1</rdw212:LocatorUrl>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIWellheadElevationA2</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64">ENV WellheadElevation NAME</rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom="WellheadElevationUomA1">WellheadElevationValueA1</rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">api gamma ray</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2020-02-01T10:28:17Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">1880999</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000">DESC ABCD WellheadElevation</rdw212:Description>
+     </rdw212:ExtensionNameValue>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64">ENV WellheadElevation B 2 NAME</rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom="WellheadElevationUomB2">WellheadElevationValueB2</rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">diffusion coefficient</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2023-05-15T13:28:21Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">189127674312</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000">DESC XYZABC DEFG</rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:Datum>
    </rdw211:WellheadElevation>
-   <rdw211:GroundElevation xsi:type="rdw212:AbstractElevation">
-    <rdw212:Elevation xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:Elevation>
+<!--   <rdw211:GroundElevation xsi:type="rdw212:AbstractElevation">-->
+<!--    <rdw212:Elevation xsi:type="rdw212:LengthMeasureExt" uom="">0.0</rdw212:Elevation>-->
+<!--   </rdw211:GroundElevation>-->
+   <rdw211:GroundElevation xsi:type="rdw212:ReferencePointElevation">
+    <rdw212:Elevation xsi:type="rdw212:LengthMeasureExt" uom="GroundElevationUom">127.11</rdw212:Elevation>
+    <rdw211:ReferencePoint xsi:type="rdw212:DataObjectReference">
+     <rdw212:Uuid xsi:type="rdw212:UuidString">cf3e4591-e89b-a2d3-a456-416614874ff2</rdw212:Uuid>
+     <rdw212:ObjectVersion xsi:type="rdw212:String64">GroundElevation ObjectVersion</rdw212:ObjectVersion>
+     <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml99.testB</rdw212:QualifiedType>
+     <rdw212:Title xsi:type="rdw212:String2000">GroundElevation title</rdw212:Title>
+     <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyGroundElevationA</rdw212:EnergisticsUri>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIGroundElevationA1</rdw212:LocatorUrl>
+     <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIGroundElevationA2</rdw212:LocatorUrl>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64">ENV GroundElevation NAME</rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom="GroundElevationA1">GroundElevationValueA1</rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">volume</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2016-02-01T10:28:17Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">2870998</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000">DESC ABCD GroundElevation A</rdw212:Description>
+     </rdw212:ExtensionNameValue>
+     <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+      <rdw212:Name xsi:type="rdw212:String64">ENV GroundElevation B 2 NAME</rdw212:Name>
+      <rdw212:Value xsi:type="rdw212:StringMeasure" uom="GroundElevationUomB2">GroundElevationValueB2</rdw212:Value>
+      <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">unitless</rdw212:MeasureClass>
+      <rdw212:DTim xsi:type="rdw212:TimeStamp">2012-02-15T13:28:21Z</rdw212:DTim>
+      <rdw212:Index xsi:type="xsd:long">98912711674</rdw212:Index>
+      <rdw212:Description xsi:type="rdw212:String2000">DESC XYZABC DEFG unitless B</rdw212:Description>
+     </rdw212:ExtensionNameValue>
+    </rdw211:ReferencePoint>
    </rdw211:GroundElevation>
    <rdw211:WellSurfaceLocation xsi:type="rdw212:AbstractPosition">
    </rdw211:WellSurfaceLocation>

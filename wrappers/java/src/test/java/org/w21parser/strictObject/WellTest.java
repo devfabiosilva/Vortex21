@@ -487,6 +487,94 @@ public class WellTest {
     }
 
     @Test
+    public void wellAbstractWellheadElevationTest() throws Exception {
+        BsonDocument wellheadElevation = (BsonDocument) navigate(this.wellDocument, "Well", "WellheadElevation");
+        testString("rdw212:DatumElevation", "#abstype", wellheadElevation);
+        DatumElevation.build(
+                PlaneAngleMeasureExt.build(
+                        "WellheadElevationUom",
+                        0.199826
+                ),
+                DataObjectReference.build(
+                        "b23e4537-e89b-a2d3-a456-426614174ff2",
+                        "WellheadElevation ObjectVersion",
+                        "custom99.testA",
+                        "WellheadElevation title",
+                        "http://www.example.com/schema/anyURIWellheadElevationA",
+                        List.of(
+                                "http://www.example.com/schema/anyURIDataWellheadElevationA1",
+                                "http://www.example.com/schema/anyURIWellheadElevationA2"
+                        ),
+                        List.of(
+                                ExtensionNameValue.build(
+                                        "ENV WellheadElevation NAME",
+                                        "WellheadElevationUomA1",
+                                        "WellheadElevationValueA1",
+                                        "api gamma ray",
+                                        "2020-02-01T10:28:17Z",
+                                        1880999L,
+                                        "DESC ABCD WellheadElevation"
+                                ),
+                                ExtensionNameValue.build(
+                                        "ENV WellheadElevation B 2 NAME",
+                                        "WellheadElevationUomB2",
+                                        "WellheadElevationValueB2",
+                                        "diffusion coefficient",
+                                        "2023-05-15T13:28:21Z",
+                                        189127674312L,
+                                        "DESC XYZABC DEFG"
+                                )
+                        )
+                ),
+                wellheadElevation
+        ).test();
+    }
+
+    @Test
+    public void wellAbstractGroundElevationTest() throws Exception {
+        BsonDocument groundElevation = (BsonDocument)navigate(this.wellDocument, "Well", "GroundElevation");
+        testString("rdw212:ReferencePointElevation", "#abstype", groundElevation);
+        ReferencePointElevation.build(
+                PlaneAngleMeasureExt.build(
+                        "GroundElevationUom",
+                        127.11
+                ),
+                DataObjectReference.build(
+                        "cf3e4591-e89b-a2d3-a456-416614874ff2",
+                        "GroundElevation ObjectVersion",
+                        "eml99.testB",
+                        "GroundElevation title",
+                        "http://www.example.com/schema/anyGroundElevationA",
+                        List.of(
+                                "http://www.example.com/schema/anyURIGroundElevationA1",
+                                "http://www.example.com/schema/anyURIGroundElevationA2"
+                        ),
+                        List.of(
+                                ExtensionNameValue.build(
+                                        "ENV GroundElevation NAME",
+                                        "GroundElevationA1",
+                                        "GroundElevationValueA1",
+                                        "volume",
+                                        "2016-02-01T10:28:17Z",
+                                        2870998L,
+                                        "DESC ABCD GroundElevation A"
+                                ),
+                                ExtensionNameValue.build(
+                                        "ENV GroundElevation B 2 NAME",
+                                        "GroundElevationUomB2",
+                                        "GroundElevationValueB2",
+                                        "unitless",
+                                        "2012-02-15T13:28:21Z",
+                                        98912711674L,
+                                        "DESC XYZABC DEFG unitless B"
+                                )
+                        )
+                ),
+                groundElevation
+        ).test();
+    }
+
+    @Test
     public void wellMiscTest() throws Exception {
         BsonDocument well = (BsonDocument)navigate(this.wellDocument, "Well");
         testString("Exst", "Existence", well);

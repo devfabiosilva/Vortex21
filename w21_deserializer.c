@@ -2230,12 +2230,41 @@ BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, ReferencePointElevation)
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(ReferencePointElevation, ReferencePoint, DataObjectReference)
 BSON_READ_OBJECT_BUILDER_21_END(ReferencePointElevation)
 
+//TODO REMOVE
 //struct rdw212__AbstractElevation
 BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractElevation)
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractElevation, Elevation, LengthMeasureExt)
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME_B(rdw212, AbstractElevation, DatumElevation, DatumElevation)
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME_B(rdw212, AbstractElevation, ReferencePointElevation, ReferencePointElevation)
 BSON_READ_OBJECT_BUILDER_21_END(AbstractElevation)
+
+//struct rdw212__DatumElevation
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, DatumElevation)
+// TRANSIENT SPECIAL CASE
+  SET_ABSTRACT_TYPE_IN_TRANSIENT_OBJECT(rdw212:DatumElevation)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(DatumElevation, Elevation, LengthMeasureExt)
+  READ_T_OBJECT_21_VOID(DatumElevation, Datum, DataObjectReference) // Special case 'VOID' for transient. Used at the end of the function
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(DatumElevation)
+
+//struct rdw212__ReferencePointElevation
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, ReferencePointElevation)
+// TRANSIENT SPECIAL CASE
+  SET_ABSTRACT_TYPE_IN_TRANSIENT_OBJECT(rdw212:ReferencePointElevation)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(ReferencePointElevation, Elevation, LengthMeasureExt)
+  READ_T_OBJECT_21_VOID(ReferencePointElevation, ReferencePoint, DataObjectReference) // Special case 'VOID' for transient. Used at the end of the function
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(ReferencePointElevation)
+
+//struct rdw212__AbstractElevation
+BSON_READ_ABSTRACT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbstractElevation)
+  DETECT_ABSTRACT_TYPE_IN_ROOT_ELEMENT(
+    AbstractElevation, rdw212:AbstractElevation,
+    &AbstractElevation->rdw212__DatumElevation,
+    &AbstractElevation->rdw212__ReferencePointElevation
+  )
+  READ_O_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(AbstractElevation, Elevation, LengthMeasureExt)
+  READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractElevation, DatumElevation)
+  READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractElevation, ReferencePointElevation)
+BSON_READ_ABSTRACT_OBJECT_ROOT_BUILDER_21_END(AbstractElevation)
 
 //struct rdw211__DrillReportStatusInfo
 BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw211, DrillReportStatusInfo)
@@ -6743,8 +6772,14 @@ WITSML21_OBJECT_BEGIN(rdw211, Well)
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Well, InformationalGeographicLocationWGS84, Geographic2dPosition)
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Well, InformationalProjectedLocation, Projected2dPosition)
   READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Well, DataSourceOrganization, DataObjectReference)
-  READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Well, WellheadElevation, AbstractElevation)
-  READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Well, GroundElevation, AbstractElevation)
+  //READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Well, WellheadElevation, AbstractElevation) // TODO REMOVE
+  // BEGIN ABSTRACT
+  READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(Well, WellheadElevation, AbstractElevation)
+  // END ABSTRACT
+  //READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(Well, GroundElevation, AbstractElevation) // TODO REMOVE
+  // BEGIN ABSTRACT
+  READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(Well, GroundElevation, AbstractElevation)
+  // END ABSTRACT
   READ_W_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(Well, WellSurfaceLocation, AbstractPosition)
 WITSML21_OBJECT_END(Well)
 

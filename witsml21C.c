@@ -188000,6 +188000,9 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_out_rdw212__AbstractElevation(struct soap *soap, 
 
 SOAP_FMAC3 struct rdw212__AbstractElevation * SOAP_FMAC4 soap_in_rdw212__AbstractElevation(struct soap *soap, const char *tag, struct rdw212__AbstractElevation *a, const char *type)
 {
+	//W21 ABSTRACT BEGIN
+	W21_ABSTRACT_OBJECT_CHECK(rdw212__AbstractElevation, tag)
+	//W21 ABSTRACT END
 	size_t soap_flag_Elevation = 1;
 	int err = soap_element_begin_in(soap, tag, 0, type);
 	if (err && err != SOAP_TYPE)
@@ -204881,6 +204884,9 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_out_rdw212__AbstractPosition(struct soap *soap, c
 
 SOAP_FMAC3 struct rdw212__AbstractPosition * SOAP_FMAC4 soap_in_rdw212__AbstractPosition(struct soap *soap, const char *tag, struct rdw212__AbstractPosition *a, const char *type)
 {
+	//W21 ABSTRACT BEGIN
+	W21_ABSTRACT_OBJECT_CHECK(rdw212__AbstractPosition, tag)
+	//W21 ABSTRACT END
 	int err = soap_element_begin_in(soap, tag, 0, type);
 	if (err && err != SOAP_TYPE)
 		return NULL;
