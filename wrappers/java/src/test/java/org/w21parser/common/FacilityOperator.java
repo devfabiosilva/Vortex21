@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import static org.w21parser.common.Utils.testDateTime;
 import static org.w21parser.strictObject.BhaRunTest.navigate;
 
-public class FacilityOperator {
+public class FacilityOperator implements BsonDeserializable {
     public DataObjectReference businessAssociate = null;
     public String effectiveDateTime = null;
     public String terminationDateTime = null;
@@ -26,6 +26,7 @@ public class FacilityOperator {
         return new FacilityOperator(businessAssociate, effectiveDateTime, terminationDateTime, null);
     }
 
+    @Override
     public void test() throws Exception {
         if (this.businessAssociate != null) {
             assertNotNull(this.doc);
@@ -38,7 +39,8 @@ public class FacilityOperator {
         testDateTime(this.terminationDateTime, "TerminationDateTime", this.doc);
     }
 
-    public void setFacilityOperator(BsonDocument doc) {
+    @Override
+    public void setBsonDocument(BsonDocument doc) {
         this.doc = doc;
     }
 }

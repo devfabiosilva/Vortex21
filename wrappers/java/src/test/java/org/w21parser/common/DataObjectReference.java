@@ -3,7 +3,6 @@ package org.w21parser.common;
 import org.bson.BsonArray;
 import org.bson.BsonDocument;
 import org.bson.BsonString;
-import org.bson.BsonValue;
 
 import java.util.List;
 import static org.junit.Assert.*;
@@ -137,9 +136,9 @@ public class DataObjectReference {
             assertNotNull(actualExtensionNameValues);
             assertEquals(extensionNameValues.size(), actualExtensionNameValues.size());
             for (int i = 0; i < extensionNameValues.size(); i++) {
-                BsonValue extensionNameValue = actualExtensionNameValues.get(i);
+                BsonDocument extensionNameValue = actualExtensionNameValues.get(i).asDocument();
                 ExtensionNameValue extensionNameValueTmp = extensionNameValues.get(i);
-                extensionNameValueTmp.setExtensionNameValue(extensionNameValue);
+                extensionNameValueTmp.setBsonDocument(extensionNameValue);
                 extensionNameValueTmp.test();
             }
         } else

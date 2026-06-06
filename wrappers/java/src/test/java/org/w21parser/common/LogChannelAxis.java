@@ -4,7 +4,7 @@ import org.bson.BsonDocument;
 
 import static org.w21parser.common.Utils.*;
 
-public class LogChannelAxis {
+public class LogChannelAxis implements BsonDeserializable {
     public final String uid;
     public final Double axisStart;
     public final Double axisSpacing;
@@ -37,6 +37,7 @@ public class LogChannelAxis {
         this.doc = doc;
     }
 
+    @Override
     public void test() throws Exception {
         testStringAttribute(this.uid, "uid", this.doc);
         testDouble(this.axisStart, "AxisStart", this.doc);
@@ -45,5 +46,10 @@ public class LogChannelAxis {
         testString(this.axisName, "AxisName", this.doc);
         testString(this.axisPropertyKind, "AxisPropertyKind", this.doc);
         testString(this.axisUom, "AxisUom", this.doc);
+    }
+
+    @Override
+    public void setBsonDocument(BsonDocument doc) {
+        this.doc = doc;
     }
 }

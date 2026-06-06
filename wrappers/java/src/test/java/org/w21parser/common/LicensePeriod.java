@@ -5,7 +5,7 @@ import org.bson.BsonDocument;
 import static org.w21parser.common.Utils.testDateTime;
 import static org.w21parser.common.Utils.testString;
 
-public class LicensePeriod {
+public class LicensePeriod implements BsonDeserializable {
     public String numLicense = null;
     public String terminationDateTime = null;
     public String effectiveDateTime = null;
@@ -26,13 +26,15 @@ public class LicensePeriod {
         return new LicensePeriod(numLicense, terminationDateTime, effectiveDateTime, null);
     }
 
+    @Override
     public void test() throws Exception {
         testString(this.numLicense, "NumLicense", this.doc);
         testDateTime(this.terminationDateTime, "TerminationDateTime", this.doc);
         testDateTime(this.effectiveDateTime, "EffectiveDateTime", this.doc);
     }
 
-    public void setLicensePeriod(BsonDocument doc) {
+    @Override
+    public void setBsonDocument(BsonDocument doc) {
         this.doc = doc;
     }
 }

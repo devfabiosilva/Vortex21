@@ -5,7 +5,7 @@ import org.bson.BsonDocument;
 import static org.w21parser.common.Utils.testDateTime;
 import static org.w21parser.common.Utils.testString;
 
-public class WellStatusPeriod {
+public class WellStatusPeriod implements BsonDeserializable {
     public String status = null;
     public String startDateTime = null;
     public String endDateTime = null;
@@ -26,13 +26,15 @@ public class WellStatusPeriod {
         return new WellStatusPeriod(status, startDateTime, endDateTime, null);
     }
 
+    @Override
     public void test() throws Exception {
         testString(this.status, "Status", this.doc);
         testDateTime(this.startDateTime, "StartDateTime", this.doc);
         testDateTime(this.endDateTime, "EndDateTime", this.doc);
     }
 
-    public void setStatusHistory(BsonDocument doc) {
+    @Override
+    public void setBsonDocument(BsonDocument doc) {
         this.doc = doc;
     }
 }

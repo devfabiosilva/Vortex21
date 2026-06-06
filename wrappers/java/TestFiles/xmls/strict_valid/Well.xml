@@ -398,5 +398,13 @@
    </rdw211:GroundElevation>
    <rdw211:WellSurfaceLocation xsi:type="rdw212:AbstractPosition">
    </rdw211:WellSurfaceLocation>
+<!--   <rdw211:WellSurfaceLocation xsi:type="rdw212:ProjectedCompoundPosition">-->
+<!--       <Coordinate1>182.188</Coordinate1>-->
+<!--       <Coordinate2>1726.199</Coordinate2>-->
+<!--       <VerticalCoordinate>300.101</VerticalCoordinate>-->
+<!--       <ProjectedCompoundCrs>-->
+
+<!--       </ProjectedCompoundCrs>-->
+<!--   </rdw211:WellSurfaceLocation>-->
   </rdw211:Well>
 

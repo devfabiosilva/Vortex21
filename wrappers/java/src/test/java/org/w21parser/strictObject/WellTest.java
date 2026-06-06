@@ -183,7 +183,7 @@ public class WellTest {
 
     @Test
     public void wellExtensionNameValueTest() throws Exception {
-        ArrayOfExtensionNameValue.build(
+        ArrayOf.build(
                 List.of(
                         ExtensionNameValue.build(
                                 "Name A",
@@ -210,7 +210,7 @@ public class WellTest {
 
     @Test
     public void wellFacilityLifecyclePeriodTest() throws Exception {
-        ArrayOfFacilityLifecyclePeriod.build(
+        ArrayOf.build(
                 List.of(
                         FacilityLifecyclePeriod.build(
                                 "State in LifeCycleHistory 1",
@@ -291,7 +291,7 @@ public class WellTest {
 
     @Test
     public void wellOperatorHistoryTest() throws Exception {
-        ArrayOfFacilityOperator.build(
+        ArrayOf.build(
             List.of(
                 FacilityOperator.build(
                     DataObjectReference.build(
@@ -352,7 +352,7 @@ public class WellTest {
 
     @Test
     public void wellStatusHistoryTest() throws Exception {
-        ArrayOfWellStatusPeriod.build(
+        ArrayOf.build(
                 List.of(
                         WellStatusPeriod.build(
                                 "abandoned",
@@ -371,7 +371,7 @@ public class WellTest {
 
     @Test
     public void wellPurposeHistoryTest() throws Exception {
-        ArrayOfWellPurposePeriod.build(
+        ArrayOf.build(
                 List.of(
                         WellPurposePeriod.build(
                                 "general srvc -- borehole re-acquisition",
@@ -609,7 +609,7 @@ public class WellTest {
         testString("District test", "District", well);
         testString("NumLicense test", "NumLicense", well);
         testDateTime("2021-05-05T19:19:38Z", "DTimLicense", well);
-        ArrayOfLicensePeriod.build(
+        ArrayOf.build(
                 List.of(
                         LicensePeriod.build(
                             "NumLicense test 1",

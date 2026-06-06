@@ -1389,7 +1389,7 @@ public class LogTest {
                 (BsonDocument) navigate(channel, "Wellbore")
         ).test();
 
-        ArrayOfLogChannelAxis.build(
+        ArrayOf.build(
                 List.of(
                         LogChannelAxis.build(
                                 "a123",
@@ -1413,7 +1413,7 @@ public class LogTest {
                 (BsonArray) navigate(channel, "AxisDefinition")
         ).test();
 
-        ArrayOfPointMetadata.build(
+        ArrayOf.build(
                 List.of(
                         PointMetadata.build(
                                 "PointMetadata A1",
@@ -1435,7 +1435,7 @@ public class LogTest {
                                                 ExtensionNameValue.build("Name ENV A12", "ENVA12Uom", "ENVA12Value", "force per force", "2021-11-19T22:56:16Z", 815265218L, "Description in MetadataPropertyKindA12", null)
                                         )
                                 ),
-                                ArrayOfLogChannelAxis.build(
+                                ArrayOf.build(
                                         List.of(
                                                 LogChannelAxis.build("A1",182.38, 0.09187, 29881L, "AxisName A1", "AxisPropertyKind A1", "AxisUom A1"),
                                                 LogChannelAxis.build("A2",8129.011, 0.18725, 11762L, "AxisName A2", "AxisPropertyKind A2", "AxisUom A2")
@@ -1473,7 +1473,7 @@ public class LogTest {
                                                 ExtensionNameValue.build("Name ENV B12", "ENVB12Uom", "ENVB12Value", "electric charge per mass", "2017-12-19T20:26:12Z", 1181525218L, "Description in MetadataPropertyKindB12", null)
                                         )
                                 ),
-                                ArrayOfLogChannelAxis.build(
+                                ArrayOf.build(
                                         List.of(
                                                 LogChannelAxis.build("B1", 18.318, 101.19187, 33298811L, "AxisName B1", "AxisPropertyKind B1", "AxisUom B1"),
                                                 LogChannelAxis.build("B2", 1889.011119, 909.18725, 197112622L, "AxisName B2", "AxisPropertyKind B2", "AxisUom B2")
@@ -2517,7 +2517,7 @@ public class LogTest {
                 (BsonDocument) navigate(channel, "Wellbore")
         ).test();
 
-        ArrayOfLogChannelAxis.build(
+        ArrayOf.build(
                 List.of(
                         LogChannelAxis.build(
                                 "c123",
@@ -2541,7 +2541,7 @@ public class LogTest {
                 (BsonArray) navigate(channel, "AxisDefinition")
         ).test();
 
-        ArrayOfPointMetadata.build(
+        ArrayOf.build(
                 List.of(
                         PointMetadata.build(
                                 "PointMetadata D1",
@@ -2563,7 +2563,7 @@ public class LogTest {
                                                 ExtensionNameValue.build("Name ENV D12", "ENVB12Uom", "ENVD12Value", "magnetic flux density per length", "2013-02-19T20:22:10Z", 111552191L, "Description in MetadataPropertyKindD12", null)
                                         )
                                 ),
-                                ArrayOfLogChannelAxis.build(
+                                ArrayOf.build(
                                         List.of(
                                                 LogChannelAxis.build("D1", 11.3, 10.76, 3298819L, "AxisName D1", "AxisPropertyKind D1", "AxisUom D1"),
                                                 LogChannelAxis.build("D2", 18.119, 9179.25, 11897112L, "AxisName D2", "AxisPropertyKind D2", "AxisUom D2")
