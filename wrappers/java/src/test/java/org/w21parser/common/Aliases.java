@@ -10,6 +10,7 @@ import java.util.*;
 import static org.junit.Assert.*;
 import static org.w21parser.strictObject.BhaRunTest.navigate;
 
+//TODO deprecate it. Use ArrayOf<Alias> instead
 public class Aliases {
     private List<AliasField> aliasList = new ArrayList<>();
     private BsonArray aliasArray;

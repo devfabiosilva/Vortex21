@@ -6,7 +6,7 @@ import java.util.List;
 
 import static org.w21parser.common.Utils.*;
 
-public class Citation {
+public class Citation implements BsonDeserializable {
     private final String title;
     private final String originator;
     private final String creation;
@@ -16,7 +16,7 @@ public class Citation {
     private final String description;
     private final List<String> editorHistory;
     private final String descriptiveKeywords;
-    private final BsonDocument citation;
+    private BsonDocument citation;
 
     private Citation(String title, String originator, String creation, String format, String editor, String lastUpdate, String description, List<String> editorHistory, String descriptiveKeywords, BsonDocument citation) {
         this.title = title;
@@ -35,6 +35,11 @@ public class Citation {
         return new Citation(title, originator, creation, format, editor, lastUpdate, description, editorHistory, descriptiveKeywords, citation);
     }
 
+    public static Citation build(String title, String originator, String creation, String format, String editor, String lastUpdate, String description, List<String> editorHistory, String descriptiveKeywords) {
+        return new Citation(title, originator, creation, format, editor, lastUpdate, description, editorHistory, descriptiveKeywords, null);
+    }
+
+    @Override
     public void test() throws Exception {
         testString(title, "Title", citation);
         testString(originator, "Originator", citation);
@@ -45,5 +50,10 @@ public class Citation {
         testString(description, "Description", citation);
         testStringList(editorHistory, "EditorHistory", citation);
         testString(descriptiveKeywords, "DescriptiveKeywords", citation);
+    }
+
+    @Override
+    public void setBsonDocument(BsonDocument doc) {
+        this.citation = doc;
     }
 }

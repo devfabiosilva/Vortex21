@@ -10,7 +10,7 @@ import static org.w21parser.common.Utils.testStringList;
 import static org.w21parser.strictObject.BhaRunTest.navigate;
 import static org.junit.Assert.*;
 
-public class OSDUIntegration {
+public class OSDUIntegration implements BsonDeserializable{
     public final List<OSDULineageAssertion> lineageAssertions;
     public final List<String> ownerGroup;
     public final List<String> viewerGroup;
@@ -121,7 +121,8 @@ public class OSDUIntegration {
         testString(this.basin, "Basin", this.doc);
     }
 
-    public void setOSDUIntegration(BsonDocument doc) {
+    @Override
+    public void setBsonDocument(BsonDocument doc) {
         this.doc = doc;
     }
 }

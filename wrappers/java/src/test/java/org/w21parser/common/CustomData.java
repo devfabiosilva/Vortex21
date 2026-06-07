@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 import static org.w21parser.strictObject.BhaRunTest.navigate;
 
-public class CustomData {
+public class CustomData implements BsonDeserializable {
     public List<String> customDataValues;
     private BsonDocument doc;
 
@@ -20,6 +20,11 @@ public class CustomData {
         return new CustomData(customDataValues, doc);
     }
 
+    public static CustomData build(List<String> customDataValues) {
+        return new CustomData(customDataValues, null);
+    }
+
+    @Override
     public void test() throws Exception {
         BsonArray customData = (BsonArray) navigate(this.doc, "CustomData");
         if (this.customDataValues != null) {
@@ -29,5 +34,10 @@ public class CustomData {
                 assertEquals(this.customDataValues.get(i), customData.get(i).asString().getValue().trim());
         } else
             assertNull(customData);
+    }
+
+    @Override
+    public void setBsonDocument(BsonDocument doc) {
+        this.doc = doc;
     }
 }

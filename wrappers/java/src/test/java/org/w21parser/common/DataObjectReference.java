@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 import static org.w21parser.strictObject.BhaRunTest.navigate;
 
-public class DataObjectReference {
+public class DataObjectReference implements BsonDeserializable {
     private final String uuid;
     private final String objectVersion;
     private final String qualifiedType;
@@ -83,6 +83,7 @@ public class DataObjectReference {
         );
     }
 
+    @Override
     public void test() throws Exception {
         String actualUuid = (String)navigate(dataObjectReference, "Uuid");
         if (uuid != null) {
@@ -145,6 +146,12 @@ public class DataObjectReference {
             assertNull(actualExtensionNameValues);
     }
 
+    @Override
+    public void setBsonDocument(BsonDocument doc) {
+        this.dataObjectReference = doc;
+    }
+
+    //TODO remove
     public void setDataObjectReference(BsonDocument doc) {
         this.dataObjectReference = doc;
     }

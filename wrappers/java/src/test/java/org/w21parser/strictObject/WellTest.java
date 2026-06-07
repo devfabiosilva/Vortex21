@@ -4,6 +4,7 @@ import org.bson.BsonArray;
 import org.bson.BsonDocument;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,7 @@ import org.w21parser.common.*;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.w21parser.Vortex21StrictValidationTest.printW21Exception;
 import static org.w21parser.VortexNativeBindingTest.fromPath;
 import static org.w21parser.common.Utils.*;
@@ -572,6 +574,19 @@ public class WellTest {
                 ),
                 groundElevation
         ).test();
+    }
+
+    @Ignore
+    @Test
+    public void wellAbstractArrayOfWellSurfaceLocationTest() throws Exception {
+        BsonArray arrayOfWellSurfaceLocation = (BsonArray) navigate(this.wellDocument, "Well", "WellSurfaceLocation");
+        assertNotNull(arrayOfWellSurfaceLocation);
+        assertEquals(1, arrayOfWellSurfaceLocation.size());
+
+        BsonDocument item = arrayOfWellSurfaceLocation.get(0).asDocument();
+        assertEquals(1, item.size());
+        testString("rdw212:AbstractPosition", "#abstype", item);
+        //TODO refactor C code for abstract this object
     }
 
     @Test
