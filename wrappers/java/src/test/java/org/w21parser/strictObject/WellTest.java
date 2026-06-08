@@ -581,12 +581,12 @@ public class WellTest {
     public void wellAbstractArrayOfWellSurfaceLocationTest() throws Exception {
         BsonArray arrayOfWellSurfaceLocation = (BsonArray) navigate(this.wellDocument, "Well", "WellSurfaceLocation");
         assertNotNull(arrayOfWellSurfaceLocation);
-        assertEquals(1, arrayOfWellSurfaceLocation.size());
+        assertEquals(2, arrayOfWellSurfaceLocation.size());
 
         BsonDocument item = arrayOfWellSurfaceLocation.get(0).asDocument();
         assertEquals(1, item.size());
         testString("rdw212:AbstractPosition", "#abstype", item);
-        //TODO refactor C code for abstract this object
+        //TODO refactor C code for abstract these objects
     }
 
     @Test

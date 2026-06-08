@@ -966,6 +966,79 @@ bson_read_##type##_21_resume: \
   W21_RETURN \
 }
 
+//AQUI
+#define DETECT_ARRAY_ABSTRACT_TYPE_IN_ROOT_ELEMENT(objectParent, type, ...) \
+  if (w21_detect_abstract(soap, &document_in_array, CWS_CONST_BSON_KEY(#type), __VA_ARGS__, NULL)) { \
+    set_w21_error_message(soap, E_W21_ERROR_DETECT_ROOT_ARRAY_OF_ABSTRACT_TYPE, "Could detect root type of array of abstract attribute in " #objectParent); \
+    goto bson_read_array_of_abstract_root_##objectParent##_21_resume; \
+  }
+
+#define DETECT_ABSTRACT_TYPE_IN_TRANSIENT_ELEMENT(objectParent, type, ...) \
+  if (w21_detect_abstract(soap, bsonObject, CWS_CONST_BSON_KEY(#type), __VA_ARGS__, NULL)) { \
+    set_w21_error_message(soap, E_W21_ERROR_DETECT_ROOT_ABSTRACT_TYPE, "Could detect root type of array of abstract in transient attribute in " #objectParent); \
+    W21_RETURN; \
+  }
+
+#define BSON_READ_ARRAY_OF_ABSTRACT_OBJECT_ROOT_BUILDER_21_BEGIN(ns, type) \
+static \
+int bson_read_array_of_abstract_root_##type##_21( \
+  struct soap *soap, \
+  bson_t *bson, \
+  const char *key, int key_length, \
+  int numberOfObjectsInArray, \
+  struct ns##__##type *type \
+) \
+{ \
+\
+  if ((numberOfObjectsInArray < 1) || (type == NULL)) \
+    W21_RETURN; \
+\
+  bson_array_builder_t *bab; \
+\
+  DECLARE_CAPTURE_STAT \
+\
+  if (!bson_append_array_builder_begin(bson, key, key_length, &bab)) { \
+    set_w21_error_message(soap, E_W21_ERROR_BEGIN_ARRAY_OF_COMPLEX_ABSTRACT_OBJECT, "Could not build BSON complex abstract document array at %s of type " #type, key); \
+    W21_RETURN; \
+  } \
+\
+  bson_t document_in_array; \
+\
+  do { \
+    if (!type) { \
+      set_w21_error_message(soap, E_W21_ERROR_UNEXPECTED_NULL_POINTER_IN_COMPLEX_ABSTRACT_OBJECT_ARRAY, "Unexpected null pointer in complex abstract array at %s of type " #type, key); \
+      goto bson_read_array_of_abstract_root_##type##_21_resume_2; \
+    } \
+\
+    if (!bson_array_builder_append_document_begin(bab, &document_in_array)) { \
+      set_w21_error_message(soap, E_W21_ERROR_UNABLE_TO_CREATE_COMPLEX_ABSTRACT_DOCUMENT_IN_ARRAY, "Could not initialize complex abstract object document in array at %s of type " #type, key); \
+      goto bson_read_array_of_abstract_root_##type##_21_resume_2; \
+    }
+
+#define BSON_READ_ARRAY_OF_ABSTRACT_OBJECT_ROOT_BUILDER_21_END(type) \
+    if (!bson_array_builder_append_document_end(bab, &document_in_array)) { \
+      set_w21_error_message(soap, E_W21_ERROR_UNABLE_TO_END_COMPLEX_ABSTRACT_DOCUMENT_IN_ARRAY, "Could not end complex abstract object document in array at %s of type " #type, key); \
+      goto bson_read_array_of_abstract_root_##type##_21_resume_2; \
+    } \
+    ++type; \
+  } while ((--numberOfObjectsInArray) > 0); \
+\
+  CAPTURE_STAT_ON_SUCCESS_A(n, array) \
+\
+  if (!bson_append_array_builder_end(bson, bab)) \
+    set_w21_error_message(soap, E_W21_ERROR_END_ARRAY_OF_COMPLEX_ABSTRACT_OBJECT, "Could not end BSON complex abstract document array at %s of type " #type, key); \
+\
+  W21_RETURN \
+\
+bson_read_array_of_abstract_root_##type##_21_resume: \
+  bson_array_builder_append_document_end(bab, &document_in_array); \
+\
+bson_read_array_of_abstract_root_##type##_21_resume_2: \
+  bson_append_array_builder_end(bson, bab); \
+\
+  W21_RETURN \
+}
+
 #define BSON_READ_ABSTRACT_OBJECT_ROOT_BUILDER_21_BEGIN(ns, type) \
 static \
 int bson_read_abstract_root_##type##_21( \
@@ -1064,6 +1137,10 @@ bson_read_abstract_root_##type##_21_resume: \
   if (bson_read_abstract_root_##typeName##_21(soap, bsonType, CWS_CONST_BSON_KEY(#objectName), objectParent->objectName)) \
     goto onErrorGoto##_resume;
 
+#define READ_ARRAY_OF_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(bsonType, objectParent, objectName, typeName, onErrorGoto) \
+  if (bson_read_array_of_abstract_root_##typeName##_21(soap, bsonType, CWS_CONST_BSON_KEY(#objectName), objectParent->__size##objectName, objectParent->objectName)) \
+    goto onErrorGoto##_resume;
+
 #define SET_ABSTRACT_TYPE_IN_TRANSIENT_OBJECT(type) \
   if (!bson_append_utf8(bsonObject, KEY_USCORE_ABSTRACT_TYPE, CWS_CONST_BSON_KEY(#type))) { \
     set_w21_error_message(soap, E_W21_ERROR_SET_TYPE_IN_TRANSIENT_OBJECT, "Could not set type in transient object " #type); \
@@ -1139,12 +1216,24 @@ int bson_read_transient_##type##_21( \
   } \
   CAPTURE_STAT(double)
 
+#define READ_T_DOUBLE_NULLABLE_21_OR_ELSE_GOTO_RESUME(objectParent, objectName) \
+  if (objectParent->objectName) { \
+    if (!bson_append_double(bsonObject, CWS_CONST_BSON_KEY(#objectName), *objectParent->objectName)) { \
+      set_w21_error_message(soap, E_W21_ERROR_DOUBLE_NULLABLE_TRANSIENT_REQUIRED, "Could not add required nullable double in " #objectName " object at transient " #objectParent); \
+      W21_RETURN \
+    } \
+    CAPTURE_STAT(double) \
+  }
+
 #define READ_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(ns, bsonObj, objectParent, typeName, onErrorGoto) \
   if (bson_read_transient_##typeName##_21(soap, bsonObj, objectParent->ns##__##typeName)) \
     goto onErrorGoto##_resume;
 
 #define READ_O_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(ns, objectParent, typeName) \
   READ_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(ns, &child, objectParent, typeName, bson_read_abstract_root_##objectParent##_21)
+
+#define READ_A_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(ns, objectParent, typeName) \
+  READ_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(ns, &document_in_array, objectParent, typeName, bson_read_array_of_abstract_root_##objectParent##_21)
 
 //used for ROOT Witsml object
 #define READ_W_OBJECT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
@@ -1153,6 +1242,9 @@ int bson_read_transient_##type##_21( \
 //used for ROOT Witsml object
 #define READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
   READ_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(&root_document, objectParent, objectName, typeName, bson_read_##objectParent##21)
+
+#define READ_W_ARRAY_OF_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
+  READ_ARRAY_OF_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(&root_document, objectParent, objectName, typeName, bson_read_##objectParent##21)
 
 #define READ_A_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(objectParent, objectName, typeName) \
   READ_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(&document_in_array, objectParent, objectName, typeName, bson_read_array_of_##objectParent##_21)

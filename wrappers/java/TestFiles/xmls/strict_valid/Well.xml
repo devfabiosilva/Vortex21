@@ -398,13 +398,175 @@
    </rdw211:GroundElevation>
    <rdw211:WellSurfaceLocation xsi:type="rdw212:AbstractPosition">
    </rdw211:WellSurfaceLocation>
-<!--   <rdw211:WellSurfaceLocation xsi:type="rdw212:ProjectedCompoundPosition">-->
-<!--       <Coordinate1>182.188</Coordinate1>-->
-<!--       <Coordinate2>1726.199</Coordinate2>-->
-<!--       <VerticalCoordinate>300.101</VerticalCoordinate>-->
-<!--       <ProjectedCompoundCrs>-->
-
-<!--       </ProjectedCompoundCrs>-->
-<!--   </rdw211:WellSurfaceLocation>-->
+   <rdw211:WellSurfaceLocation xsi:type="rdw212:ProjectedCompoundPosition">
+       <Coordinate1>182.188</Coordinate1>
+       <Coordinate2>1726.199</Coordinate2>
+       <VerticalCoordinate>300.101</VerticalCoordinate>
+       <ProjectedCompoundCrs uuid="a53e4567-e89b-c2d3-a456-4266141f4071" schemaVersion="2.1a" objectVersion="123">
+           <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="F">
+               <rdw212:Identifier xsi:type="rdw212:String64">Identifier F</rdw212:Identifier>
+               <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt">IdentifierKind F</rdw212:IdentifierKind>
+               <rdw212:Description xsi:type="rdw212:String2000">Description F</rdw212:Description>
+               <rdw212:EffectiveDateTime xsi:type="rdw212:TimeStamp">2021-05-03T04:05:06Z</rdw212:EffectiveDateTime>
+               <rdw212:TerminationDateTime xsi:type="rdw212:TimeStamp">2021-11-25T19:29:41Z</rdw212:TerminationDateTime>
+           </rdw212:Aliases>
+           <rdw212:Aliases xsi:type="rdw212:ObjectAlias" authority="G">
+               <rdw212:Identifier xsi:type="rdw212:String64">Identifier G</rdw212:Identifier>
+               <rdw212:IdentifierKind xsi:type="rdw212:AliasIdentifierKindExt">IdentifierKind G</rdw212:IdentifierKind>
+               <rdw212:Description xsi:type="rdw212:String2000">Description G</rdw212:Description>
+               <rdw212:EffectiveDateTime xsi:type="rdw212:TimeStamp">2024-02-03T04:05:06Z</rdw212:EffectiveDateTime>
+               <rdw212:TerminationDateTime xsi:type="rdw212:TimeStamp">2024-09-22T19:29:41Z</rdw212:TerminationDateTime>
+           </rdw212:Aliases>
+           <rdw212:Citation xsi:type="rdw212:Citation">
+               <rdw212:Title xsi:type="rdw212:String256">Title Citation F</rdw212:Title>
+               <rdw212:Originator xsi:type="rdw212:String64">Originator F</rdw212:Originator>
+               <rdw212:Creation xsi:type="rdw212:TimeStamp">2013-11-12T11:25:38Z</rdw212:Creation>
+               <rdw212:Format xsi:type="rdw212:String2000">Format test G</rdw212:Format>
+               <rdw212:Editor xsi:type="rdw212:String64">Editor test G</rdw212:Editor>
+               <rdw212:LastUpdate xsi:type="rdw212:TimeStamp">2014-07-05T19:39:47Z</rdw212:LastUpdate>
+               <rdw212:Description xsi:type="rdw212:String2000">Desc G</rdw212:Description>
+               <rdw212:EditorHistory xsi:type="rdw212:String64">Edt Hst G1</rdw212:EditorHistory>
+               <rdw212:EditorHistory xsi:type="rdw212:String64">Edt Hst G2</rdw212:EditorHistory>
+               <rdw212:EditorHistory xsi:type="rdw212:String64">Edt Hst G3</rdw212:EditorHistory>
+               <rdw212:DescriptiveKeywords xsi:type="rdw212:String2000">Desc words with max 2000 characters long. Testing this message length G</rdw212:DescriptiveKeywords>
+           </rdw212:Citation>
+           <rdw212:Existence xsi:type="rdw212:ExistenceKindExt">Exst G</rdw212:Existence>
+           <rdw212:ObjectVersionReason xsi:type="rdw212:String2000">G Obj Version with max 2000 chars. Testing this message length</rdw212:ObjectVersionReason>
+           <rdw212:BusinessActivityHistory xsi:type="rdw212:String64">BusinessActivityHistory test G1</rdw212:BusinessActivityHistory>
+           <rdw212:BusinessActivityHistory xsi:type="rdw212:String64">BusinessActivityHistory test G2</rdw212:BusinessActivityHistory>
+           <rdw212:BusinessActivityHistory xsi:type="rdw212:String64">BusinessActivityHistory test G3</rdw212:BusinessActivityHistory>
+           <rdw212:OSDUIntegration xsi:type="rdw212:OSDUIntegration">
+               <rdw212:LineageAssertions xsi:type="rdw212:OSDULineageAssertion">
+                   <rdw212:ID xsi:type="rdw212:String256">ID_G</rdw212:ID>
+                   <rdw212:LineageRelationshipKind xsi:type="rdw212:OSDULineageRelationshipKind">direct</rdw212:LineageRelationshipKind>
+               </rdw212:LineageAssertions>
+               <rdw212:LineageAssertions xsi:type="rdw212:OSDULineageAssertion">
+                   <rdw212:ID xsi:type="rdw212:String256">ID_H</rdw212:ID>
+                   <rdw212:LineageRelationshipKind xsi:type="rdw212:OSDULineageRelationshipKind">indirect</rdw212:LineageRelationshipKind>
+               </rdw212:LineageAssertions>
+               <rdw212:LineageAssertions xsi:type="rdw212:OSDULineageAssertion">
+                   <rdw212:ID xsi:type="rdw212:String256">ID_I</rdw212:ID>
+                   <rdw212:LineageRelationshipKind xsi:type="rdw212:OSDULineageRelationshipKind">reference</rdw212:LineageRelationshipKind>
+               </rdw212:LineageAssertions>
+               <rdw212:OwnerGroup xsi:type="rdw212:String256">OwnerGroup test G1</rdw212:OwnerGroup>
+               <rdw212:OwnerGroup xsi:type="rdw212:String256">OwnerGroup test G2</rdw212:OwnerGroup>
+               <rdw212:OwnerGroup xsi:type="rdw212:String256">OwnerGroup test G3</rdw212:OwnerGroup>
+               <rdw212:OwnerGroup xsi:type="rdw212:String256">OwnerGroup test G4</rdw212:OwnerGroup>
+               <rdw212:ViewerGroup xsi:type="rdw212:String256">ViewerGroup test G1</rdw212:ViewerGroup>
+               <rdw212:ViewerGroup xsi:type="rdw212:String256">ViewerGroup test G2</rdw212:ViewerGroup>
+               <rdw212:ViewerGroup xsi:type="rdw212:String256">ViewerGroup test G3</rdw212:ViewerGroup>
+               <rdw212:ViewerGroup xsi:type="rdw212:String256">ViewerGroup test G4</rdw212:ViewerGroup>
+               <rdw212:ViewerGroup xsi:type="rdw212:String256">ViewerGroup test G5</rdw212:ViewerGroup>
+               <rdw212:LegalTags xsi:type="rdw212:String256">LegalTags test G1</rdw212:LegalTags>
+               <rdw212:LegalTags xsi:type="rdw212:String256">LegalTags test G2</rdw212:LegalTags>
+               <rdw212:LegalTags xsi:type="rdw212:String256">LegalTags test G3</rdw212:LegalTags>
+               <rdw212:OSDUGeoJSON xsi:type="xsd:string">{"test": 1234918, "teste2": "string"}</rdw212:OSDUGeoJSON>
+               <rdw212:WGS84Latitude xsi:type="rdw212:PlaneAngleMeasure" uom="Mrad">1.287</rdw212:WGS84Latitude>
+               <rdw212:WGS84Longitude xsi:type="rdw212:PlaneAngleMeasure" uom="ccgr">12.901331</rdw212:WGS84Longitude>
+               <rdw212:WGS84LocationMetadata xsi:type="rdw212:OSDUSpatialLocationIntegration">
+                   <rdw212:SpatialLocationCoordinatesDate xsi:type="rdw212:TimeStamp">2011-03-12T20:53:21Z</rdw212:SpatialLocationCoordinatesDate>
+                   <rdw212:QuantitativeAccuracyBand xsi:type="rdw212:String64">QuantitativeAccuracyBand test G</rdw212:QuantitativeAccuracyBand>
+                   <rdw212:QualitativeSpatialAccuracyType xsi:type="rdw212:String64">QualitativeSpatialAccuracyType test G</rdw212:QualitativeSpatialAccuracyType>
+                   <rdw212:CoordinateQualityCheckPerformedBy xsi:type="rdw212:String64">CoordinateQualityCheckPerformedBy test G</rdw212:CoordinateQualityCheckPerformedBy>
+                   <rdw212:CoordinateQualityCheckDateTime xsi:type="rdw212:TimeStamp">2011-12-15T18:39:47Z</rdw212:CoordinateQualityCheckDateTime>
+                   <rdw212:CoordinateQualityCheckRemark xsi:type="rdw212:String256">CoordinateQualityCheckRemark test H1</rdw212:CoordinateQualityCheckRemark>
+                   <rdw212:CoordinateQualityCheckRemark xsi:type="rdw212:String256">CoordinateQualityCheckRemark test H2</rdw212:CoordinateQualityCheckRemark>
+                   <rdw212:CoordinateQualityCheckRemark xsi:type="rdw212:String256">CoordinateQualityCheckRemark test H3</rdw212:CoordinateQualityCheckRemark>
+                   <rdw212:AppliedOperation xsi:type="rdw212:String256">AppliedOperation test H1</rdw212:AppliedOperation>
+                   <rdw212:AppliedOperation xsi:type="rdw212:String256">AppliedOperation test H2</rdw212:AppliedOperation>
+                   <rdw212:AppliedOperation xsi:type="rdw212:String256">AppliedOperation test H3</rdw212:AppliedOperation>
+               </rdw212:WGS84LocationMetadata>
+               <rdw212:Field xsi:type="rdw212:String64">Field test H</rdw212:Field>
+               <rdw212:Country xsi:type="rdw212:String64">Country test H</rdw212:Country>
+               <rdw212:State xsi:type="rdw212:String64">State test H</rdw212:State>
+               <rdw212:County xsi:type="rdw212:String64">County test H</rdw212:County>
+               <rdw212:City xsi:type="rdw212:String64">City test H</rdw212:City>
+               <rdw212:Region xsi:type="rdw212:String64">Region test H</rdw212:Region>
+               <rdw212:District xsi:type="rdw212:String64">District test H</rdw212:District>
+               <rdw212:Block xsi:type="rdw212:String64">Block test H</rdw212:Block>
+               <rdw212:Prospect xsi:type="rdw212:String64">Prospect test H</rdw212:Prospect>
+               <rdw212:Play xsi:type="rdw212:String64">Play test H</rdw212:Play>
+               <rdw212:Basin xsi:type="rdw212:String64">Basin test H</rdw212:Basin>
+           </rdw212:OSDUIntegration>
+           <rdw212:CustomData xsi:type="rdw212:CustomData">
+               <!-- extensibility element(s) -->
+               <testElement namespace="http://example2.com">
+                   <complexElement att="my attr 2">
+                       <value>712.561</value>
+                       <name>NameStrG</name>
+                   </complexElement>
+               </testElement>
+               <testElement2>
+                   Simple element 2
+               </testElement2>
+           </rdw212:CustomData>
+           <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+               <rdw212:Name xsi:type="rdw212:String64">Name G</rdw212:Name>
+               <rdw212:Value xsi:type="rdw212:StringMeasure" uom="ValueUomG">ValueG</rdw212:Value>
+               <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">api neutron</rdw212:MeasureClass>
+               <rdw212:DTim xsi:type="rdw212:TimeStamp">2012-03-16T22:20:17Z</rdw212:DTim>
+               <rdw212:Index xsi:type="xsd:long">908701198</rdw212:Index>
+               <rdw212:Description xsi:type="rdw212:String2000">Desc G</rdw212:Description>
+           </rdw212:ExtensionNameValue>
+           <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+               <rdw212:Name xsi:type="rdw212:String64">Name H</rdw212:Name>
+               <rdw212:Value xsi:type="rdw212:StringMeasure" uom="ValueUomH">ValueH</rdw212:Value>
+               <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">pressure squared per force time per area</rdw212:MeasureClass>
+               <rdw212:DTim xsi:type="rdw212:TimeStamp">2010-01-16T22:20:17Z</rdw212:DTim>
+               <rdw212:Index xsi:type="xsd:long">18965118</rdw212:Index>
+               <rdw212:Description xsi:type="rdw212:String2000">Desc H</rdw212:Description>
+           </rdw212:ExtensionNameValue>
+           <rdw211:VerticalCrs xsi:type="rdw212:DataObjectReference">
+               <rdw212:Uuid xsi:type="rdw212:UuidString">173e9567-f89b-1cd3-a456-4266141740f2</rdw212:Uuid>
+               <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in Operator J</rdw212:ObjectVersion>
+               <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">witsml20.WellJ</rdw212:QualifiedType>
+               <rdw212:Title xsi:type="rdw212:String2000">Title in Operator J</rdw212:Title>
+               <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIOperatorJ</rdw212:EnergisticsUri>
+               <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIOperatorJ1</rdw212:LocatorUrl>
+               <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIOperatorJ2</rdw212:LocatorUrl>
+               <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+                   <rdw212:Name xsi:type="rdw212:String64">Name J</rdw212:Name>
+                   <rdw212:Value xsi:type="rdw212:StringMeasure" uom="UomJ">ValueJ</rdw212:Value>
+                   <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">energy</rdw212:MeasureClass>
+                   <rdw212:DTim xsi:type="rdw212:TimeStamp">2011-08-05T19:38:27Z</rdw212:DTim>
+                   <rdw212:Index xsi:type="xsd:long">871277918</rdw212:Index>
+                   <rdw212:Description xsi:type="rdw212:String2000">Operator Desc J</rdw212:Description>
+               </rdw212:ExtensionNameValue>
+               <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+                   <rdw212:Name xsi:type="rdw212:String64">Name K</rdw212:Name>
+                   <rdw212:Value xsi:type="rdw212:StringMeasure" uom="UomK">ValueK</rdw212:Value>
+                   <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">force</rdw212:MeasureClass>
+                   <rdw212:DTim xsi:type="rdw212:TimeStamp">2011-01-12T11:32:27Z</rdw212:DTim>
+                   <rdw212:Index xsi:type="xsd:long">18787779</rdw212:Index>
+                   <rdw212:Description xsi:type="rdw212:String2000">Operator Desc K</rdw212:Description>
+               </rdw212:ExtensionNameValue>
+           </rdw211:VerticalCrs>
+           <rdw211:ProjectedCrs xsi:type="rdw212:DataObjectReference">
+               <rdw212:Uuid xsi:type="rdw212:UuidString">fe2f4567-e89b-12d3-a456-4266141740f5</rdw212:Uuid>
+               <rdw212:ObjectVersion xsi:type="rdw212:String64">ObjectVersion in Operator J</rdw212:ObjectVersion>
+               <rdw212:QualifiedType xsi:type="rdw212:QualifiedType">eml21.WellK</rdw212:QualifiedType>
+               <rdw212:Title xsi:type="rdw212:String2000">Title in Operator J</rdw212:Title>
+               <rdw212:EnergisticsUri xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIOperatorJ</rdw212:EnergisticsUri>
+               <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIOperatorJ1</rdw212:LocatorUrl>
+               <rdw212:LocatorUrl xsi:type="xsd:anyURI">http://www.example.com/schema/anyURIOperatorJ2</rdw212:LocatorUrl>
+               <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+                   <rdw212:Name xsi:type="rdw212:String64">Name K</rdw212:Name>
+                   <rdw212:Value xsi:type="rdw212:StringMeasure" uom="UomK">ValueK</rdw212:Value>
+                   <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">molar energy</rdw212:MeasureClass>
+                   <rdw212:DTim xsi:type="rdw212:TimeStamp">2009-01-05T19:39:27Z</rdw212:DTim>
+                   <rdw212:Index xsi:type="xsd:long">990281727</rdw212:Index>
+                   <rdw212:Description xsi:type="rdw212:String2000">Operator Desc K</rdw212:Description>
+               </rdw212:ExtensionNameValue>
+               <rdw212:ExtensionNameValue xsi:type="rdw212:ExtensionNameValue">
+                   <rdw212:Name xsi:type="rdw212:String64">Name M</rdw212:Name>
+                   <rdw212:Value xsi:type="rdw212:StringMeasure" uom="UomM">ValueM</rdw212:Value>
+                   <rdw212:MeasureClass xsi:type="rdw212:MeasureClass">potential difference per power drop</rdw212:MeasureClass>
+                   <rdw212:DTim xsi:type="rdw212:TimeStamp">2020-01-01T01:39:27Z</rdw212:DTim>
+                   <rdw212:Index xsi:type="xsd:long">87719819</rdw212:Index>
+                   <rdw212:Description xsi:type="rdw212:String2000">Operator Desc M</rdw212:Description>
+               </rdw212:ExtensionNameValue>
+           </rdw211:ProjectedCrs>
+       </ProjectedCompoundCrs>
+   </rdw211:WellSurfaceLocation>
   </rdw211:Well>
 

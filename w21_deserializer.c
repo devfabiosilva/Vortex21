@@ -1142,7 +1142,6 @@ BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(PassIndexedDepthInterval)
 //struct rdw212__AbstractInterval
 BSON_READ_ABSTRACT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbstractInterval)
 // ABSTRACT SPECIAL CASE
-//aqui
   DETECT_ABSTRACT_TYPE_IN_ROOT_ELEMENT(
     AbstractInterval, rdw212:AbstractInterval,
     &AbstractInterval->rdw212__AbstractPressureInterval,
@@ -3345,12 +3344,58 @@ BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractCompoundPosition)
   READ_O_OBJECT_21_OR_ELSE_GOTO_RESUME_B(rdw212, AbstractCompoundPosition, ProjectedCompoundPosition, ProjectedCompoundPosition)
 BSON_READ_OBJECT_BUILDER_21_END(AbstractCompoundPosition)
 
+//TODO remove it
 //struct rdw212__AbstractPosition
 BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractPosition)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME_B(rdw212, AbstractPosition, Abstract2dPosition, Abstract2dPosition)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME_B(rdw212, AbstractPosition, Abstract3dPosition, Abstract3dPosition)
   READ_A_OBJECT_21_OR_ELSE_GOTO_RESUME_B(rdw212, AbstractPosition, AbstractCompoundPosition, AbstractCompoundPosition)
 BSON_READ_ARRAY_OF_OBJECT_BUILDER_21_END(AbstractPosition)
+
+//aqui
+//struct rdw212__AbstractCartesian2dPosition
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbstractCartesian2dPosition)
+  DETECT_ABSTRACT_TYPE_IN_TRANSIENT_ELEMENT(AbstractCartesian2dPosition, rdw212:AbstractCartesian2dPosition
+    &AbstractCartesian2dPosition->rdw212__LocalEngineering2dPosition,
+    &AbstractCartesian2dPosition->rdw212__Projected2dPosition,
+    &AbstractCartesian2dPosition->rdw212__PublicLandSurveySystem2dPosition
+  )
+// TODO implement
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(AbstractCartesian2dPosition)
+
+//struct rdw212__Geographic2dPosition
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, Geographic2dPosition)
+  SET_ABSTRACT_TYPE_IN_TRANSIENT_OBJECT(rdw212:Geographic2dPosition)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(Geographic2dPosition, Latitude, PlaneAngleMeasureExt)
+  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(Geographic2dPosition, Longitude, PlaneAngleMeasureExt)
+  READ_T_DOUBLE_NULLABLE_21_OR_ELSE_GOTO_RESUME(Geographic2dPosition, Epoch)
+  READ_T_OBJECT_21_VOID(Geographic2dPosition, GeographicCrs, DataObjectReference)
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(AbstractCartesian2dPosition)
+
+//struct rdw212__Abstract2dPosition
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, Abstract2dPosition)
+  DETECT_ABSTRACT_TYPE_IN_TRANSIENT_ELEMENT(Abstract2dPosition, rdw212:Abstract2dPosition
+    &Abstract2dPosition->rdw212__AbstractCartesian2dPosition,
+    &Abstract2dPosition->rdw212__Geographic2dPosition
+  )
+// TRANSIENT SPECIAL CASE
+  READ_T_TRANSIENT_OBJECT_21_OR_ELSE_GOTO_RESUME(rdw212, Abstract2dPosition, AbstractCartesian2dPosition, AbstractCartesian2dPosition)
+  READ_T_TRANSIENT_OBJECT_21_VOID(rdw212, Abstract2dPosition, Geographic2dPosition, Geographic2dPosition)
+BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(Abstract2dPosition)
+
+//struct rdw212__AbstractPosition
+BSON_READ_ARRAY_OF_ABSTRACT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbstractPosition)
+  DETECT_ARRAY_ABSTRACT_TYPE_IN_ROOT_ELEMENT(AbstractPosition, rdw212:AbstractPosition,
+    &AbstractPosition->rdw212__Abstract2dPosition,
+    &AbstractPosition->rdw212__Abstract3dPosition,
+    &AbstractPosition->rdw212__AbstractCompoundPosition
+  )
+// TRANSIENT SPECIAL CASE
+  READ_A_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractPosition, Abstract2dPosition)
+// TODO implement
+//  READ_A_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractPosition, Abstract3dPosition)
+//  READ_A_TRANSIENT_OBJECT_IN_ABSTRACT_ROOT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractPosition, AbstractCompoundPosition)
+BSON_READ_ARRAY_OF_ABSTRACT_OBJECT_ROOT_BUILDER_21_END(AbstractPosition)
 
 //struct rdw212__AbstractPosition
 BSON_READ_OBJECT_BUILDER_21_BEGIN(rdw212, AbstractPosition)
@@ -6780,7 +6825,10 @@ WITSML21_OBJECT_BEGIN(rdw211, Well)
   // BEGIN ABSTRACT
   READ_W_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(Well, GroundElevation, AbstractElevation)
   // END ABSTRACT
-  READ_W_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(Well, WellSurfaceLocation, AbstractPosition)
+  // BEGIN ABSTRACT
+  READ_W_ARRAY_OF_ABSTRACT_OBJECT_ROOT_21_OR_ELSE_GOTO_RESUME(Well, WellSurfaceLocation, AbstractPosition)
+  // END ABSTRACT
+  //READ_W_ARRAY_OF_OBJECT_21_OR_ELSE_GOTO_RESUME(Well, WellSurfaceLocation, AbstractPosition) //TODO REMOVE
 WITSML21_OBJECT_END(Well)
 
 //struct rdw211__WellCMLedger

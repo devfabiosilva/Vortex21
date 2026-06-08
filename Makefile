@@ -7,7 +7,7 @@ STRIP=strip
 CURDIR=$(PWD)
 INCLUDEDIR=$(CURDIR)/core/include
 
-FLAG=-lpthread -Wno-stringop-truncation -O3 -fPIC -march=native -fno-plt -D$(STAT) -DCWS_$(ENDIAN)_ENDIAN
+FLAG=-lpthread -Wno-stringop-truncation -O3 -fPIC -march=native -fno-plt -fvisibility=hidden -Wl,--exclude-libs,libbson-shared-2.2.1.a -D$(STAT) -DCWS_$(ENDIAN)_ENDIAN
 #DEBUG_FLAG=-g -fsanitize=address,leak -DSOAP_DEBUG $(FLAG)
 
 MONGO_C_GIT=https://github.com/mongodb/mongo-c-driver.git

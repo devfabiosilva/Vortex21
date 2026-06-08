@@ -102133,6 +102133,9 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_out_rdw212__AbstractCartesian2dPosition(struct so
 
 SOAP_FMAC3 struct rdw212__AbstractCartesian2dPosition * SOAP_FMAC4 soap_in_rdw212__AbstractCartesian2dPosition(struct soap *soap, const char *tag, struct rdw212__AbstractCartesian2dPosition *a, const char *type)
 {
+	//W21 ABSTRACT BEGIN
+	W21_ABSTRACT_OBJECT_CHECK(rdw212__AbstractCartesian2dPosition, tag)
+	//W21 ABSTRACT END
 	size_t soap_flag_Coordinate1 = 1;
 	size_t soap_flag_Coordinate2 = 1;
 	int err = soap_element_begin_in(soap, tag, 0, type);
@@ -121416,6 +121419,9 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_out_rdw212__AbstractCompoundPosition(struct soap 
 
 SOAP_FMAC3 struct rdw212__AbstractCompoundPosition * SOAP_FMAC4 soap_in_rdw212__AbstractCompoundPosition(struct soap *soap, const char *tag, struct rdw212__AbstractCompoundPosition *a, const char *type)
 {
+	//W21 ABSTRACT BEGIN
+	W21_ABSTRACT_OBJECT_CHECK(rdw212__AbstractCompoundPosition, tag)
+	//W21 ABSTRACT END
 	int err = soap_element_begin_in(soap, tag, 0, type);
 	if (err && err != SOAP_TYPE)
 		return NULL;
@@ -174830,6 +174836,9 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_out_rdw212__Abstract3dPosition(struct soap *soap,
 
 SOAP_FMAC3 struct rdw212__Abstract3dPosition * SOAP_FMAC4 soap_in_rdw212__Abstract3dPosition(struct soap *soap, const char *tag, struct rdw212__Abstract3dPosition *a, const char *type)
 {
+	//W21 ABSTRACT BEGIN
+	W21_ABSTRACT_OBJECT_CHECK(rdw212__Abstract3dPosition, tag)
+	//W21 ABSTRACT END
 	int err = soap_element_begin_in(soap, tag, 0, type);
 	if (err && err != SOAP_TYPE)
 		return NULL;
@@ -187474,6 +187483,9 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_out_rdw212__Abstract2dPosition(struct soap *soap,
 
 SOAP_FMAC3 struct rdw212__Abstract2dPosition * SOAP_FMAC4 soap_in_rdw212__Abstract2dPosition(struct soap *soap, const char *tag, struct rdw212__Abstract2dPosition *a, const char *type)
 {
+	//W21 ABSTRACT BEGIN
+	W21_ABSTRACT_OBJECT_CHECK(rdw212__Abstract2dPosition, tag)
+	//W21 ABSTRACT END
 	int err = soap_element_begin_in(soap, tag, 0, type);
 	if (err && err != SOAP_TYPE)
 		return NULL;
