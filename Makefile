@@ -24,7 +24,10 @@ LIBDIR=$(CURDIR)/core/lib
 JNI_LIB_PATH=wrappers/java
 JNI_LIB=libw21parser.so
 
-GO_LIB_PATH=$(CURDIR)/wrappers/go/c_src/lib
+GO_BASE_PATH=$(CURDIR)/wrappers/go
+GO_SRC_PATH=$(GO_BASE_PATH)/c_src
+GO_LIB_PATH=$(GO_SRC_PATH)/lib
+GO_INCLUDE_PATH=$(GO_SRC_PATH)/include
 GO_LIB=libw21go.so
 
 all: main
@@ -63,7 +66,7 @@ ifneq ("$(wildcard $(GO_LIB_PATH)/$(GO_LIB))","")
 	@echo "Alread compiled $(GO_LIB). Skipping ..."
 else
 	@echo "Compiling ..."
-	@$(CC) -o $(GO_LIB_PATH)/$(GO_LIB) -shared $(GO_FLAG) w21_validator.c w21_deserializer.c core/cws_bson_utils.c core/cws_utils.c w21_config.c w21_events.c w21_input.c w21_messages.c stdsoap2.c  witsml21C_o3_native_shared.o -I. -Icore/include -lbson-shared-2.2.1 -Lcore/lib -DNOHTTP -DVERGEN -D$(STAT) -Wall
+	@$(CC) -o $(GO_LIB_PATH)/$(GO_LIB) -shared $(GO_FLAG) w21_validator.c w21_deserializer.c core/cws_bson_utils.c core/cws_utils.c w21_config.c w21_events.c w21_input.c w21_messages.c stdsoap2.c  witsml21C_o3_native_shared.o $(GO_SRC_PATH)/w21go.c -I. -I$(GO_INCLUDE_PATH) -Icore/include -lbson-shared-2.2.1 -Lcore/lib -DNOHTTP -DVERGEN -D$(STAT) -Wall
 	@echo "Finished"
 endif
 

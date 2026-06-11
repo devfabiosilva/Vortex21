@@ -399,7 +399,7 @@ struct c_json_str_t *w21_get_json(struct soap *soap)
         );
     }
 
-    // Don't overlaps last error message
+    // Does not overlap last error message
     return NULL;
 }
 
@@ -434,7 +434,7 @@ struct c_bson_serialized_t *w21_bson_serialize(struct soap *soap)
         );
     }
 
-    // Don't overlaps last error message
+    // Does not overlap last error message
     return NULL;
 }
 
