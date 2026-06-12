@@ -31,9 +31,23 @@ int go_get_w21_error(struct soap *soap)
 
 int go_w21_enable_input_rules_validator(struct soap *soap)
 {
-  if (soap)
-    return w21_enable_input_rules_validator(soap);
-
-  return E_GO_W21_ERROR_INVALID_W21_HANDLER;
+  return (soap)?w21_enable_input_rules_validator(soap):E_GO_W21_ERROR_INVALID_W21_HANDLER;
 }
 
+// 0 is OK, else (can not parse or already parsed). struct soap *soap MUST BE NOT NULL
+int go_w21_can_parse(struct soap *soap)
+{
+  DECLARE_W21_CONFIG
+  if (config->error == 0) {
+    if (config->in_object) {
+      if (config->in_bson == NULL)
+        return 0;
+      
+      return E_GO_W21_ERROR_BSON_OBJECT_ALREADY_ALLOC;
+    }
+    
+    return E_GO_W21_ERROR_STREAM_OR_FILE_NOT_PARSED_YET;  
+  }
+
+  return config->error;
+}
