@@ -219,7 +219,7 @@ const char *w21_get_object_name(enum w21_object_e type)
 const char *w21_get_input_object_name(struct soap *soap)
 {
     DECLARE_W21_CONFIG
-    if (config->error == 0) { 
+    if (config->error == 0) {
         if (config->object_type != W21_OBJECT_NONE) {
             if (config->object_type != W21_OBJECT_AutoDetect)
                 return w21_get_object_name(config->object_type);

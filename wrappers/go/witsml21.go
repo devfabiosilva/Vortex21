@@ -38,11 +38,11 @@ type W21Config struct {
 
 func W21ConfigNew(inOptions int, outOptions int) (*W21Config, error) {
 	var nativeSoap *C.struct_soap
-	status := C.go_w21_config_new(
+	status := int(C.go_w21_config_new(
 		(**C.struct_soap)(unsafe.Pointer(&nativeSoap)),
 		C.uint64_t(inOptions),
 		C.uint64_t(outOptions),
-	)
+	))
 
 	if status == 0 {
 		return &W21Config{cSoapPtr: nativeSoap, withStatistics: true}, nil
@@ -85,45 +85,6 @@ func (w21 *W21Config) ReadFromStream(witsml21Data []byte) (int) {
 	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER)
 }
 
-//TODO REMOVE
-func (w21 *W21Config)ToBsonBytes() (int ,[]byte) {
-	w21.mu.Lock()
-	defer w21.mu.Unlock()
-
-	if w21.cSoapPtr != nil {
-		w21.cBsonPtr = C.w21_bson_serialize(w21.cSoapPtr)
-
-		if w21.cBsonPtr != nil {
-			// unsafe.Slice = ZERO COPY from C
-			return int(C.go_get_w21_error(w21.cSoapPtr)), unsafe.Slice((*byte)(unsafe.Pointer(w21.cBsonPtr.bson)), int(w21.cBsonPtr.bson_size))
-		}
-
-		return int(C.go_get_w21_error(w21.cSoapPtr)), nil
-	}
-
-	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
-}
-
-//TODO REMOVE
-func (w21 *W21Config)ToJson() (int, []byte) {
-	w21.mu.Lock()
-	defer w21.mu.Unlock()
-
-	if w21.cSoapPtr != nil {
-		w21.cJsonPtr = C.w21_get_json(w21.cSoapPtr)
-
-		err := int(C.go_get_w21_error(w21.cSoapPtr))
-		if w21.cJsonPtr != nil {
-			// unsafe.Slice = ZERO COPY from C
-			return err, unsafe.Slice((*byte)(unsafe.Pointer(w21.cJsonPtr.json)), int(w21.cJsonPtr.json_len))
-		}
-
-		return err, nil
-	}
-
-	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
-}
-
 func (w21 *W21Config)EnableValidator() (int) {
 	w21.mu.Lock()
 	defer w21.mu.Unlock()
@@ -135,16 +96,32 @@ func (w21 *W21Config)EnableValidator() (int) {
 	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER)
 }
 
-func (w21 *W21Config)Parse() (int) {
+func (w21 *W21Config)Parse() (int, []byte) {
 	w21.mu.Lock()
 	defer w21.mu.Unlock()
 
-	if (w21.cSoapPtr != nil) {
-		if (w21.withStatistics) {
+	if w21.cSoapPtr != nil {
+		if w21.withStatistics {
 			w21.errorStatParse = int(C.w21_hard_summary_parse_begin(w21.cSoapPtr))
 		}
 
-		ret := int(C.bson_read_AutoDetect21(w21.cSoapPtr))
+		var ret int
+
+		if w21.cBsonPtr == nil && w21.cJsonPtr == nil {
+			ret = int(C.bson_read_AutoDetect21(w21.cSoapPtr))
+		}
+
+		var cByteArray []byte
+		if w21.cBsonPtr == nil && ret == 0 {
+			w21.cBsonPtr = C.w21_bson_serialize(w21.cSoapPtr)
+
+			ret = int(C.go_get_w21_error(w21.cSoapPtr))
+		}
+
+		if w21.cBsonPtr != nil {
+			// unsafe.Slice = ZERO COPY from C
+			cByteArray = unsafe.Slice((*byte)(unsafe.Pointer(w21.cBsonPtr.bson)), int(w21.cBsonPtr.bson_size))
+		}
 
 		if (w21.withStatistics && w21.errorStatParse == 0) {
 			if (ret == 0) {
@@ -154,10 +131,51 @@ func (w21 *W21Config)Parse() (int) {
 			}
 		}
 
-		return ret
+		return ret, cByteArray
 	}
 
-	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER)
+	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
+}
+
+func (w21 *W21Config)ParseJson() (int, []byte) {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	if w21.cSoapPtr != nil {
+		if w21.withStatistics {
+			w21.errorStatParseJson = int(C.w21_hard_summary_parse_json_begin(w21.cSoapPtr))
+		}
+
+		var ret int
+
+		if w21.cBsonPtr == nil && w21.cJsonPtr == nil {
+			ret = int(C.bson_read_AutoDetect21(w21.cSoapPtr))
+		}
+
+		var cByteArray []byte
+		if w21.cJsonPtr == nil && ret == 0 {
+			w21.cJsonPtr = C.w21_get_json(w21.cSoapPtr)
+
+			ret = int(C.go_get_w21_error(w21.cSoapPtr))
+		}
+
+		// unsafe.Slice = ZERO COPY from C
+		if (w21.cJsonPtr != nil) {
+			cByteArray = unsafe.Slice((*byte)(unsafe.Pointer(w21.cJsonPtr.json)), int(w21.cJsonPtr.json_len))
+		}
+
+		if (w21.withStatistics && w21.errorStatParseJson == 0) {
+			if (ret == 0) {
+				w21.errorStatParseJson = int(C.w21_hard_summary_parse_json_end(w21.cSoapPtr))
+			} else {
+				w21.errorStatParseJson = ret
+			}
+		}
+
+		return ret, cByteArray
+	}
+
+	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
 }
 
 func (w21 *W21Config)EnableStatistics() {
@@ -188,6 +206,23 @@ func (w21 *W21Config)Recycle() {
 	w21.errorStatRead = 0
 	w21.errorStatParse = 0
 	w21.errorStatParseJson = 0
+}
+
+func (w21 *W21Config)GetObjectName() (string, error) {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	var ret *C.char
+	if (w21.cSoapPtr != nil) {
+		ret = C.w21_get_input_object_name(w21.cSoapPtr)
+	}
+
+	if (ret != nil) {
+		return C.GoString(ret), nil
+	}
+
+	return "", fmt.Errorf("unable to retrieve object name (was it parsed?)")
+
 }
 
 func main() {
@@ -222,13 +257,7 @@ func main() {
 		return
 	}
 
-	status = w21Conf.Parse()
-	if (status != 0) {
-		fmt.Printf("BSON parsing error %d", status)
-		return
-	}
-
-	status, bsonBytes := w21Conf.ToBsonBytes()
+	status, bsonBytes := w21Conf.Parse()
 	if status == 0 {
 		fmt.Printf("Bytes loaded %d\n", len(bsonBytes))
 
@@ -255,10 +284,17 @@ func main() {
 	// TODO: implement it
 	fmt.Println("Loaded!")
 
-	status, jsonBytes := w21Conf.ToJson()
+	status, jsonBytes := w21Conf.ParseJson()
 	if (status == 0) {
 		fmt.Printf("STRING %s", string(jsonBytes))
 	} else {
 		fmt.Printf("Error @ JSON STRING %d", status)
+	}
+
+	ret, err := w21Conf.GetObjectName()
+	if (err == nil) {
+		fmt.Println("\n" + ret + "\n")
+	} else {
+		fmt.Println("Error %v", err)
 	}
 }
