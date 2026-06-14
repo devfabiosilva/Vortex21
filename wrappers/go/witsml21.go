@@ -12,8 +12,6 @@ package main
 #include <go_w21_errors.h>
 #include <w21_input.h>
 #include <w21_deserializer.h>
-
-int w21_hard_summary_read_begin(struct soap *);
 */
 import "C"
 import (
@@ -23,6 +21,22 @@ import (
 	"sync"
 	"go.mongodb.org/mongo-driver/v2/bson"
 )
+
+type W21Statistics struct {
+	total int
+    costs int
+	strings int
+	shorts int
+	ints int
+	long64s int
+	enums int
+	arrays int
+	booleans int
+	doubles int
+	date_times int
+	event_types int
+	measures int
+}
 
 type W21Config struct {
 	mu       			sync.Mutex
@@ -34,6 +48,8 @@ type W21Config struct {
 	errorStatRead 		int
 	errorStatParse 		int
 	errorStatParseJson 	int
+
+	statistics 			*W21Statistics
 }
 
 func W21ConfigNew(inOptions int, outOptions int) (*W21Config, error) {
@@ -57,7 +73,7 @@ func (w21 *W21Config) ReadFromStream(witsml21Data []byte) (int) {
 
 	if (w21.cSoapPtr != nil) {
 		var cPtr *C.char
-		if len(witsml21Data) > 0 {
+		if witsml21Data != nil {
 			cPtr = (*C.char)(unsafe.Pointer(&witsml21Data[0]))
 		}
 
@@ -90,10 +106,33 @@ func (w21 *W21Config)EnableValidator() (int) {
 	defer w21.mu.Unlock()
 
 	if (w21.cSoapPtr != nil) {
-		return int(C.go_w21_enable_input_rules_validator(w21.cSoapPtr))
+		return int(C.w21_enable_input_rules_validator(w21.cSoapPtr))
 	}
 
 	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER)
+}
+
+func (w21 *W21Config)DisableValidator() (int) {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	if (w21.cSoapPtr != nil) {
+		C.w21_disable_input_rules_validator(w21.cSoapPtr)
+		return 0
+	}
+
+	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER)
+}
+
+func (w21 *W21Config)IsValidatorEnabled() (bool) {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	if (w21.cSoapPtr != nil) {
+		return C.go_is_validator_enabled(w21.cSoapPtr) != 0
+	}
+
+	return false // fail safe
 }
 
 func (w21 *W21Config)Parse() (int, []byte) {
@@ -101,23 +140,28 @@ func (w21 *W21Config)Parse() (int, []byte) {
 	defer w21.mu.Unlock()
 
 	if w21.cSoapPtr != nil {
+		if w21.cBsonPtr != nil {
+			// unsafe.Slice = ZERO COPY from C
+			return 0, unsafe.Slice((*byte)(unsafe.Pointer(w21.cBsonPtr.bson)), int(w21.cBsonPtr.bson_size))
+		}
+
 		if w21.withStatistics {
 			w21.errorStatParse = int(C.w21_hard_summary_parse_begin(w21.cSoapPtr))
 		}
 
 		var ret int
 
-		if w21.cBsonPtr == nil && w21.cJsonPtr == nil {
+		if w21.cJsonPtr == nil {
 			ret = int(C.bson_read_AutoDetect21(w21.cSoapPtr))
 		}
 
-		var cByteArray []byte
-		if w21.cBsonPtr == nil && ret == 0 {
+		if ret == 0 {
 			w21.cBsonPtr = C.w21_bson_serialize(w21.cSoapPtr)
 
 			ret = int(C.go_get_w21_error(w21.cSoapPtr))
 		}
 
+		var cByteArray []byte
 		if w21.cBsonPtr != nil {
 			// unsafe.Slice = ZERO COPY from C
 			cByteArray = unsafe.Slice((*byte)(unsafe.Pointer(w21.cBsonPtr.bson)), int(w21.cBsonPtr.bson_size))
@@ -142,23 +186,28 @@ func (w21 *W21Config)ParseJson() (int, []byte) {
 	defer w21.mu.Unlock()
 
 	if w21.cSoapPtr != nil {
+		if w21.cJsonPtr != nil {
+			// unsafe.Slice = ZERO COPY from C
+			return 0, unsafe.Slice((*byte)(unsafe.Pointer(w21.cJsonPtr.json)), int(w21.cJsonPtr.json_len))
+		}
+
 		if w21.withStatistics {
 			w21.errorStatParseJson = int(C.w21_hard_summary_parse_json_begin(w21.cSoapPtr))
 		}
 
 		var ret int
 
-		if w21.cBsonPtr == nil && w21.cJsonPtr == nil {
+		if w21.cBsonPtr == nil {
 			ret = int(C.bson_read_AutoDetect21(w21.cSoapPtr))
 		}
 
-		var cByteArray []byte
-		if w21.cJsonPtr == nil && ret == 0 {
+		if ret == 0 {
 			w21.cJsonPtr = C.w21_get_json(w21.cSoapPtr)
 
 			ret = int(C.go_get_w21_error(w21.cSoapPtr))
 		}
 
+		var cByteArray []byte
 		// unsafe.Slice = ZERO COPY from C
 		if (w21.cJsonPtr != nil) {
 			cByteArray = unsafe.Slice((*byte)(unsafe.Pointer(w21.cJsonPtr.json)), int(w21.cJsonPtr.json_len))
@@ -173,6 +222,46 @@ func (w21 *W21Config)ParseJson() (int, []byte) {
 		}
 
 		return ret, cByteArray
+	}
+
+	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
+}
+
+func (w21 *W21Config)GetStatistics() (int, *W21Statistics) {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	if (!w21.withStatistics) {
+		return int(C.E_GO_W21_ERROR_STATISTICS_DISABLED), nil
+	}
+
+	if w21.statistics != nil {
+		return 0, w21.statistics
+	}
+
+	if w21.cSoapPtr != nil {
+		if w21.cBsonPtr != nil || w21.cJsonPtr != nil {
+			cStatistics	:= C.w21_get_statistics(w21.cSoapPtr)
+			w21.statistics = &W21Statistics{
+				costs: int(cStatistics.costs),
+				strings: int(cStatistics.strings),
+				shorts: int(cStatistics.shorts),
+				ints: int(cStatistics.ints),
+				long64s: int(cStatistics.long64s),
+				enums: int(cStatistics.enums),
+				arrays: int(cStatistics.arrays),
+				booleans: int(cStatistics.booleans),
+				doubles: int(cStatistics.doubles),
+				date_times: int(cStatistics.date_times),
+				event_types: int(cStatistics.event_types),
+				measures: int(cStatistics.measures),
+				total: int(cStatistics.total),
+			}
+
+			return 0, w21.statistics
+		}
+
+		return int(C.E_GO_W21_ERROR_BSON_OBJECT_NOT_PARSED_YET), nil
 	}
 
 	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
@@ -206,9 +295,11 @@ func (w21 *W21Config)Recycle() {
 	w21.errorStatRead = 0
 	w21.errorStatParse = 0
 	w21.errorStatParseJson = 0
+
+	w21.statistics = nil
 }
 
-func (w21 *W21Config)GetObjectName() (string, error) {
+func (w21 *W21Config)GetObjectName() (int, string) {
 	w21.mu.Lock()
 	defer w21.mu.Unlock()
 
@@ -218,10 +309,10 @@ func (w21 *W21Config)GetObjectName() (string, error) {
 	}
 
 	if (ret != nil) {
-		return C.GoString(ret), nil
+		return 0, C.GoString(ret)
 	}
 
-	return "", fmt.Errorf("unable to retrieve object name (was it parsed?)")
+	return int(C.E_GO_W21_ERROR_UNABLE_TO_GET_OBJECT_NAME_STRING), ""
 
 }
 
@@ -291,10 +382,14 @@ func main() {
 		fmt.Printf("Error @ JSON STRING %d", status)
 	}
 
-	ret, err := w21Conf.GetObjectName()
-	if (err == nil) {
+	a, ret := w21Conf.GetObjectName()
+	if (a == 0) {
 		fmt.Println("\n" + ret + "\n")
 	} else {
-		fmt.Println("Error %v", err)
+		fmt.Println("Error %d", a)
 	}
+
+	_, stat := w21Conf.GetStatistics()
+	fmt.Printf("\nStatistics %v\n", stat)
+	fmt.Printf("\nStruct %v\n", w21Conf)
 }

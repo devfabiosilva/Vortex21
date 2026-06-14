@@ -28,7 +28,7 @@ public class W21ParserLoader {
 
     static {
         try {
-            System.loadLibrary("w21parser");
+            System.loadLibrary("w21java11");
         } catch (Throwable e) {
             System.out.println("JNI example load library error.");
             System.out.println(e.getMessage());

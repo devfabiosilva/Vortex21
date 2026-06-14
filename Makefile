@@ -22,7 +22,7 @@ MONGO_C_DIR=$(CURDIR)/third-party/mongo-c-driver
 LIBDIR=$(CURDIR)/core/lib
 
 JNI_LIB_PATH=wrappers/java
-JNI_LIB=libw21parser.so
+JNI_LIB=libw21java11.so
 
 GO_BASE_PATH=$(CURDIR)/wrappers/go
 GO_SRC_PATH=$(GO_BASE_PATH)/c_src
