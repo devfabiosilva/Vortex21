@@ -38,11 +38,20 @@ type W21Statistics struct {
 	measures int
 }
 
+type W21StatPhase1 struct {
+	cpb 		float64
+	totalNanos 	uint64
+	totalCycles	uint64
+	totalMem	int64
+}
+
 type W21Config struct {
 	mu       			sync.Mutex
 	cSoapPtr 			*C.struct_soap
 	cBsonPtr 			*C.struct_c_bson_serialized_t
 	cJsonPtr 			*C.struct_c_json_str_t
+
+	streamSize			int // Witsml 2.1 string or file (size in memory)
 
 	withStatistics 		bool
 	errorStatRead 		int
@@ -50,6 +59,7 @@ type W21Config struct {
 	errorStatParseJson 	int
 
 	statistics 			*W21Statistics
+	statisticsPhase1 	*W21StatPhase1
 }
 
 func W21ConfigNew(inOptions int, outOptions int) (*W21Config, error) {
@@ -75,6 +85,7 @@ func (w21 *W21Config) ReadFromStream(witsml21Data []byte) (int) {
 		var cPtr *C.char
 		if witsml21Data != nil {
 			cPtr = (*C.char)(unsafe.Pointer(&witsml21Data[0]))
+			w21.streamSize = len(witsml21Data)
 		}
 
 		if (w21.withStatistics) {
@@ -129,7 +140,7 @@ func (w21 *W21Config)IsValidatorEnabled() (bool) {
 	defer w21.mu.Unlock()
 
 	if (w21.cSoapPtr != nil) {
-		return C.go_is_validator_enabled(w21.cSoapPtr) != 0
+		return C.go_w21_is_validator_enabled(w21.cSoapPtr) != 0
 	}
 
 	return false // fail safe
@@ -297,6 +308,10 @@ func (w21 *W21Config)Recycle() {
 	w21.errorStatParseJson = 0
 
 	w21.statistics = nil
+
+	w21.statisticsPhase1 = nil
+
+	w21.streamSize = 0
 }
 
 func (w21 *W21Config)GetObjectName() (int, string) {
@@ -314,6 +329,43 @@ func (w21 *W21Config)GetObjectName() (int, string) {
 
 	return int(C.E_GO_W21_ERROR_UNABLE_TO_GET_OBJECT_NAME_STRING), ""
 
+}
+
+func (w21 *W21Config) GetStatisticsPhase1() (int, *W21StatPhase1) {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	if (!w21.withStatistics) {
+		return int(C.E_GO_W21_ERROR_STATISTICS_DISABLED), nil
+	}
+
+	if (w21.statisticsPhase1 != nil) {
+		return 0, w21.statisticsPhase1
+	}
+
+	if (w21.cSoapPtr != nil) {
+		if (C.go_w21_has_witsml21(w21.cSoapPtr)) {
+			if (w21.errorStatRead == 0) {
+				if (w21.streamSize == 0) {
+					return int(C.E_GO_W21_ERROR_READ_WITSML21_PHASE1_STREAM_SIZE_ZERO), nil
+				}
+				pha1_stat := C.go_w21_get_stat_phases(w21.cSoapPtr)
+				w21.statisticsPhase1 = &W21StatPhase1{
+					cpb: float64(uint64(pha1_stat.in_total_cycles)) / float64(w21.streamSize),
+					totalNanos: uint64(pha1_stat.in_total_nanos),
+					totalCycles: uint64(pha1_stat.in_total_cycles),
+					totalMem: int64(pha1_stat.in_mem_delta),
+				}
+				return 0, w21.statisticsPhase1
+			}
+
+			return w21.errorStatRead, nil
+		}
+
+		return int(C.E_GO_W21_ERROR_WITSML21_NOT_PARSED_YET), nil
+	}
+
+	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
 }
 
 func main() {
@@ -391,5 +443,9 @@ func main() {
 
 	_, stat := w21Conf.GetStatistics()
 	fmt.Printf("\nStatistics %v\n", stat)
+
+	_, staPha1 := w21Conf.GetStatisticsPhase1()
+	fmt.Printf("\nStatistics Phase 1 %v\n", staPha1)
+
 	fmt.Printf("\nStruct %v\n", w21Conf)
 }

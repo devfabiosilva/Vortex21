@@ -5,7 +5,9 @@
 
 int go_w21_config_new(struct soap **, uint64_t, uint64_t);
 int go_get_w21_error(struct soap *);
-uint64_t go_is_validator_enabled(struct soap *);
+uint64_t go_w21_is_validator_enabled(struct soap *);
+bool go_w21_has_witsml21(struct soap *);
+struct hard_stat_t *go_w21_get_stat_phases(struct soap *);
 
 #endif
 
