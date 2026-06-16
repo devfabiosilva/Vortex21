@@ -20,6 +20,8 @@ import (
 	"unsafe"
 	"os"
 	"sync"
+	"runtime"
+	"time"
 //	"go.mongodb.org/mongo-driver/v2/bson"
 )
 
@@ -518,6 +520,86 @@ func (w21 *W21Config) GetStatisticsTotal() (int, *W21StatPhase) {
 	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
 }
 
+func runBenchmark(id int, iter int, config *W21Config, xmlData []byte, wg *sync.WaitGroup) {
+	defer wg.Done()
+
+	fmt.Printf("[Goroutine %d] Initializing %d iterations...\n", id, iter)
+	for i := 0; i < iter; i++ {
+		config.Recycle()
+		
+		status := config.ReadFromStream(xmlData)
+		if status != 0 {
+			fmt.Printf("[Goroutine %d] Stream error: %d\n", id, status)
+			return
+		}
+
+		status, _ = config.Parse()
+		if status != 0 {
+			fmt.Printf("[Goroutine %d] Parser error: %d\n", id, status)
+			return
+		}
+	}
+
+	_, staPha1 := config.GetStatisticsPhase1()
+	fmt.Printf("\nStatistics Phase 1 %v\n", staPha1)
+	_, staPha2 := config.GetStatisticsPhase2Bson()
+	fmt.Printf("\nStatistics Phase 2 (BSON) %v\n", staPha2)
+	_, staPha2Json := config.GetStatisticsPhase2Json()
+	fmt.Printf("\nStatistics Phase 2 (JSON string) %v\n", staPha2Json)
+	_, staTotal := config.GetStatisticsTotal()
+	fmt.Printf("\nStatistics Total (Phase 1 + Phase 2) %v\n", staTotal)
+	fmt.Printf("[Goroutine %d] Done!\n", id)
+}
+
+func main() {
+
+	xmlContent, err := os.ReadFile("../java/TestFiles/xmls/strict_valid/OpsReport.xml")
+	if err != nil {
+		fmt.Printf("\nRead file error: %v", err)
+		return
+	}
+
+	w21Conf1, err1 := W21ConfigNew(C.SOAP_XML_STRICT|C.SOAP_XML_IGNORENS, 0)
+	if err1 != nil {
+		fmt.Println("Err1:", err1)
+		return
+	}
+
+	w21Conf2, err2 := W21ConfigNew(C.SOAP_XML_STRICT|C.SOAP_XML_IGNORENS, 0)
+	if err2 != nil {
+		fmt.Println("Err2:", err2)
+		return
+	}
+
+	defer func() {
+		fmt.Printf("\nDestroying C WITSML 2.1 instance 1 at %p ...", w21Conf1.cSoapPtr)
+		C.w21_config_free((**C.struct_soap)(unsafe.Pointer(&w21Conf1.cSoapPtr)))
+		fmt.Printf("\nPointer after free: C WITSML 2.1 instance 1 at %p ...", w21Conf1.cSoapPtr)
+		
+		fmt.Printf("\nDestroying C WITSML 2.1 instance 2 at %p ...", w21Conf2.cSoapPtr)
+		C.w21_config_free((**C.struct_soap)(unsafe.Pointer(&w21Conf2.cSoapPtr)))
+		fmt.Printf("\nPointer after free: C WITSML 2.1 instance 2 at %p ...", w21Conf2.cSoapPtr)
+	}()
+
+	runtime.GOMAXPROCS(2)
+
+	var wg sync.WaitGroup
+	wg.Add(2)
+
+	start := time.Now()
+	iter := 10000
+
+	go runBenchmark(1, iter, w21Conf1, xmlContent, &wg)
+
+	go runBenchmark(2, iter, w21Conf2, xmlContent, &wg)
+
+	wg.Wait()
+
+	elapsed := time.Since(start)
+	fmt.Printf("\n Total concurrent time: %s\n", elapsed)
+}
+
+/*
 func main () {
 	// Testing wrapper
 	w21Conf, err := W21ConfigNew(C.SOAP_XML_STRICT|C.SOAP_XML_IGNORENS, 0)
@@ -553,6 +635,7 @@ func main () {
 		}
 
 		status, _ := w21Conf.Parse()
+*/
 /*
 		if status == 0 {
 
@@ -572,16 +655,18 @@ func main () {
 
 		} else {
 		 */
-		if status != 0 {
+/*
+		 if status != 0 {
 			fmt.Printf("Error bytes %d", status)
 			return
 		}
+*/
 		/*status, _ = w21Conf.ParseJson()
 		if status != 0 {
 			fmt.Printf("Error JSON bytes %d", status)
 			return
 		}*/
-	}
+/*	}
 
 	_, staPha1 := w21Conf.GetStatisticsPhase1()
 	fmt.Printf("\nStatistics Phase 1 %v\n", staPha1)
@@ -592,6 +677,7 @@ func main () {
 	_, staTotal := w21Conf.GetStatisticsTotal()
 	fmt.Printf("\nStatistics Total (Phase 1 + Phase 2) %v\n", staTotal)
 }
+*/
 /*
 func main() {
 	// Testing wrapper
