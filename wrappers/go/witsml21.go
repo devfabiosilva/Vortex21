@@ -4,9 +4,10 @@ package main
 //go build -asan -o parser_test witsml21.go
 //-fsanitize=address,leak
 //nm -D libw21parser.so | grep " T " | wc -l
+//-fsanitize=address,leak
 
 /*
-#cgo CFLAGS: -O3 -march=native -DWITH_STATISTICS -I${SRCDIR}/c_src/include/ -I${SRCDIR}/../.. -I${SRCDIR}/../../core/include -fsanitize=address,leak
+#cgo CFLAGS: -O3 -march=native -DWITH_STATISTICS -I${SRCDIR}/c_src/include/ -I${SRCDIR}/../.. -I${SRCDIR}/../../core/include
 #cgo LDFLAGS: -L${SRCDIR}/c_src/lib -lw21go
 #include <w21go.h>
 #include <go_w21_errors.h>
@@ -19,7 +20,7 @@ import (
 	"unsafe"
 	"os"
 	"sync"
-	"go.mongodb.org/mongo-driver/v2/bson"
+//	"go.mongodb.org/mongo-driver/v2/bson"
 )
 
 type W21Statistics struct {
@@ -38,7 +39,7 @@ type W21Statistics struct {
 	measures int
 }
 
-type W21StatPhase1 struct {
+type W21StatPhase struct {
 	cpb 		float64
 	totalNanos 	uint64
 	totalCycles	uint64
@@ -46,20 +47,23 @@ type W21StatPhase1 struct {
 }
 
 type W21Config struct {
-	mu       			sync.Mutex
-	cSoapPtr 			*C.struct_soap
-	cBsonPtr 			*C.struct_c_bson_serialized_t
-	cJsonPtr 			*C.struct_c_json_str_t
+	mu       				sync.Mutex
+	cSoapPtr 				*C.struct_soap
+	cBsonPtr 				*C.struct_c_bson_serialized_t
+	cJsonPtr 				*C.struct_c_json_str_t
 
-	streamSize			int // Witsml 2.1 string or file (size in memory)
+	streamSize				int // Witsml 2.1 string or file (size in memory)
 
-	withStatistics 		bool
-	errorStatRead 		int
-	errorStatParse 		int
-	errorStatParseJson 	int
+	withStatistics 			bool
+	errorStatRead 			int
+	errorStatParse 			int
+	errorStatParseJson 		int
 
-	statistics 			*W21Statistics
-	statisticsPhase1 	*W21StatPhase1
+	statistics 				*W21Statistics
+	statisticsPhase1 		*W21StatPhase
+	statisticsPhase2Bson	*W21StatPhase
+	statisticsPhase2Json	*W21StatPhase
+	statisticsTotal			*W21StatPhase
 }
 
 func W21ConfigNew(inOptions int, outOptions int) (*W21Config, error) {
@@ -310,6 +314,9 @@ func (w21 *W21Config)Recycle() {
 	w21.statistics = nil
 
 	w21.statisticsPhase1 = nil
+	w21.statisticsPhase2Bson = nil
+	w21.statisticsPhase2Json = nil
+	w21.statisticsTotal = nil
 
 	w21.streamSize = 0
 }
@@ -331,7 +338,7 @@ func (w21 *W21Config)GetObjectName() (int, string) {
 
 }
 
-func (w21 *W21Config) GetStatisticsPhase1() (int, *W21StatPhase1) {
+func (w21 *W21Config) GetStatisticsPhase1() (int, *W21StatPhase) {
 	w21.mu.Lock()
 	defer w21.mu.Unlock()
 
@@ -350,7 +357,7 @@ func (w21 *W21Config) GetStatisticsPhase1() (int, *W21StatPhase1) {
 					return int(C.E_GO_W21_ERROR_READ_WITSML21_PHASE1_STREAM_SIZE_ZERO), nil
 				}
 				pha1_stat := C.go_w21_get_stat_phases(w21.cSoapPtr)
-				w21.statisticsPhase1 = &W21StatPhase1{
+				w21.statisticsPhase1 = &W21StatPhase{
 					cpb: float64(uint64(pha1_stat.in_total_cycles)) / float64(w21.streamSize),
 					totalNanos: uint64(pha1_stat.in_total_nanos),
 					totalCycles: uint64(pha1_stat.in_total_cycles),
@@ -368,6 +375,224 @@ func (w21 *W21Config) GetStatisticsPhase1() (int, *W21StatPhase1) {
 	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
 }
 
+func (w21 *W21Config) GetStatisticsPhase2Bson() (int, *W21StatPhase) {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	if (!w21.withStatistics) {
+		return int(C.E_GO_W21_ERROR_STATISTICS_DISABLED), nil
+	}
+
+	if (w21.statisticsPhase2Bson != nil) {
+		return 0, w21.statisticsPhase2Bson
+	}
+
+	if (w21.cSoapPtr != nil) {
+		if (w21.cBsonPtr != nil) {
+			if (w21.errorStatParse == 0) {
+				if (w21.streamSize == 0) {
+					return int(C.E_GO_W21_ERROR_READ_WITSML21_PHASE1_STREAM_SIZE_ZERO), nil
+				}
+				pha2_stat := C.go_w21_get_stat_phases(w21.cSoapPtr)
+				w21.statisticsPhase2Bson = &W21StatPhase{
+					cpb: float64(uint64(pha2_stat.in_parse_total_cycles)) / float64(w21.streamSize),
+					totalNanos: uint64(pha2_stat.in_parse_total_nanos),
+					totalCycles: uint64(pha2_stat.in_parse_total_cycles),
+					totalMem: int64(pha2_stat.in_parse_mem_delta),
+				}
+				return 0, w21.statisticsPhase2Bson
+			}
+
+			return w21.errorStatParse, nil
+		}
+
+		return int(C.E_GO_W21_ERROR_BSON_PHASE2_NOT_PARSED_YET), nil
+	}
+
+	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
+}
+
+func (w21 *W21Config) GetStatisticsPhase2Json() (int, *W21StatPhase) {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	if (!w21.withStatistics) {
+		return int(C.E_GO_W21_ERROR_STATISTICS_DISABLED), nil
+	}
+
+	if (w21.statisticsPhase2Json != nil) {
+		return 0, w21.statisticsPhase2Json
+	}
+
+	if (w21.cSoapPtr != nil) {
+		if (w21.cJsonPtr != nil) {
+			if (w21.errorStatParseJson == 0) {
+				if (w21.streamSize == 0) {
+					return int(C.E_GO_W21_ERROR_READ_WITSML21_PHASE1_STREAM_SIZE_ZERO), nil
+				}
+				pha2_stat := C.go_w21_get_stat_phases(w21.cSoapPtr)
+				w21.statisticsPhase2Json = &W21StatPhase{
+					cpb: float64(uint64(pha2_stat.in_parse_json_total_cycles)) / float64(w21.streamSize),
+					totalNanos: uint64(pha2_stat.in_parse_json_total_nanos),
+					totalCycles: uint64(pha2_stat.in_parse_json_total_cycles),
+					totalMem: int64(pha2_stat.in_parse_json_mem_delta),
+				}
+				return 0, w21.statisticsPhase2Json
+			}
+
+			return w21.errorStatParseJson, nil
+		}
+
+		return int(C.E_GO_W21_ERROR_JSON_PHASE2_NOT_PARSED_YET), nil
+	}
+
+	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
+}
+
+func (w21 *W21Config) GetStatisticsTotal() (int, *W21StatPhase) {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	if (!w21.withStatistics) {
+		return int(C.E_GO_W21_ERROR_STATISTICS_DISABLED), nil
+	}
+
+	if (w21.statisticsTotal != nil) {
+		return 0, w21.statisticsTotal
+	}
+
+	if (w21.cSoapPtr != nil) {
+		if C.go_w21_has_witsml21(w21.cSoapPtr) {
+			if w21.errorStatRead != 0 {
+				return w21.errorStatRead, nil
+			}
+
+			if w21.statisticsPhase1 == nil {
+				return -1, nil
+			}
+
+			ret := *w21.statisticsPhase1
+			if w21.cBsonPtr != nil {
+				if (w21.errorStatParse != 0) {
+					return w21.errorStatParse, nil
+				}
+
+				if w21.statisticsPhase2Bson == nil {
+					return -1, nil
+				}
+
+				ret.cpb = ret.cpb + w21.statisticsPhase2Bson.cpb
+				ret.totalNanos = ret.totalNanos + w21.statisticsPhase2Bson.totalNanos
+				ret.totalCycles = ret.totalCycles + w21.statisticsPhase2Bson.totalCycles
+
+				if w21.statisticsPhase2Bson.totalMem > ret.totalMem {
+					ret.totalMem = w21.statisticsPhase2Bson.totalMem
+				}
+			}
+
+			if w21.cJsonPtr != nil {
+				if (w21.errorStatParseJson != 0) {
+					return w21.errorStatParseJson, nil
+				}
+
+				if w21.statisticsPhase2Json == nil {
+					return -1, nil
+				}
+
+				ret.cpb = ret.cpb + w21.statisticsPhase2Json.cpb
+				ret.totalNanos = ret.totalNanos + w21.statisticsPhase2Json.totalNanos
+				ret.totalCycles = ret.totalCycles + w21.statisticsPhase2Json.totalCycles
+
+				if w21.statisticsPhase2Json.totalMem > ret.totalMem {
+					ret.totalMem = w21.statisticsPhase2Json.totalMem
+				}
+			}
+
+			w21.statisticsTotal = &ret
+			return 0, w21.statisticsTotal
+		}
+
+		return int(C.E_GO_W21_ERROR_WITSML21_NOT_PARSED_YET), nil
+	}
+
+	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
+}
+
+func main () {
+	// Testing wrapper
+	w21Conf, err := W21ConfigNew(C.SOAP_XML_STRICT|C.SOAP_XML_IGNORENS, 0)
+	if err != nil {
+		fmt.Println("Err:", err)
+		return
+	}
+
+	defer func() {
+		fmt.Printf("\nDestroying C WITSML 2.1 instance at %p ...", w21Conf.cSoapPtr)
+		C.w21_config_free((**C.struct_soap)(unsafe.Pointer(&w21Conf.cSoapPtr)))
+		fmt.Printf("\nPointer after free: C WITSML 2.1 instance at %p ...", w21Conf.cSoapPtr)
+	}()
+
+	status := w21Conf.EnableValidator()
+	if (status != 0) {
+		fmt.Printf("\nUnable to enable validator %d", status)
+		return
+	}
+
+	xmlContent, err := os.ReadFile("../java/TestFiles/xmls/strict_valid/OpsReport.xml")
+	if err != nil {
+		fmt.Printf("\nRead file error: %v", err)
+		return
+	}
+
+	for i := 0; i < 10000; i++ {
+		w21Conf.Recycle()
+		status = w21Conf.ReadFromStream(xmlContent)
+		if (status != 0) {
+			fmt.Printf("Error %d", status)
+			return
+		}
+
+		status, _ := w21Conf.Parse()
+/*
+		if status == 0 {
+
+			var bsonDocumentoGo bson.D
+
+			err = bson.Unmarshal(bsonBytes, &bsonDocumentoGo)
+			if err != nil {
+				fmt.Printf("Bytes to BSON error: %v\n", err)
+				return
+			}
+
+			jsonBytes, err := bson.MarshalExtJSON(bsonDocumentoGo, true, false)
+			if err != nil {
+				fmt.Printf("JSON format error: %v\n", err)
+				return
+			}
+
+		} else {
+		 */
+		if status != 0 {
+			fmt.Printf("Error bytes %d", status)
+			return
+		}
+		/*status, _ = w21Conf.ParseJson()
+		if status != 0 {
+			fmt.Printf("Error JSON bytes %d", status)
+			return
+		}*/
+	}
+
+	_, staPha1 := w21Conf.GetStatisticsPhase1()
+	fmt.Printf("\nStatistics Phase 1 %v\n", staPha1)
+	_, staPha2 := w21Conf.GetStatisticsPhase2Bson()
+	fmt.Printf("\nStatistics Phase 2 (BSON) %v\n", staPha2)
+	_, staPha2Json := w21Conf.GetStatisticsPhase2Json()
+	fmt.Printf("\nStatistics Phase 2 (JSON string) %v\n", staPha2Json)
+	_, staTotal := w21Conf.GetStatisticsTotal()
+	fmt.Printf("\nStatistics Total (Phase 1 + Phase 2) %v\n", staTotal)
+}
+/*
 func main() {
 	// Testing wrapper
 	w21Conf, err := W21ConfigNew(C.SOAP_XML_STRICT|C.SOAP_XML_IGNORENS, 0)
@@ -449,3 +674,4 @@ func main() {
 
 	fmt.Printf("\nStruct %v\n", w21Conf)
 }
+*/
