@@ -233,10 +233,13 @@ const char *w21_get_input_object_name(struct soap *soap)
 int w21_config_new(struct soap **soap, uint64_t in_config, uint64_t out_config)
 {
     *soap = NULL;
-    W21_CONFIG *config = (W21_CONFIG *)malloc(sizeof(W21_CONFIG));
+    //W21_CONFIG *config = (W21_CONFIG *)malloc(sizeof(W21_CONFIG));
 
-    if (!config)
-        return E_W21_UNABLE_TO_CREATE_CONFIG;
+//    if (!config)
+//        return E_W21_UNABLE_TO_CREATE_CONFIG;
+    W21_CONFIG *config;
+    if (posix_memalign((void **)&config, 64, sizeof(W21_CONFIG)))
+      return E_W21_UNABLE_TO_CREATE_CONFIG;
 
     memset((void *)config, 0, sizeof(W21_CONFIG));
 
