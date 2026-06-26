@@ -41,3 +41,17 @@ struct hard_stat_t *go_w21_get_stat_phases(struct soap *soap)
   DECLARE_W21_CONFIG
   return &config->hardware_statistics;
 }
+
+char *go_w21_get_msg(size_t *len, struct soap *soap)
+{
+  DECLARE_W21_CONFIG
+  *len = config->detail_message_len;
+  return &config->detail_message[0];
+}
+
+char *go_w21_get_xml_msg(size_t *len, struct soap *soap)
+{
+  DECLARE_W21_CONFIG
+  *len = config->detail_message_xml_len;
+  return &config->detail_message_xml[0];
+}

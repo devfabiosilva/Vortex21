@@ -451,6 +451,43 @@ func (w21 *W21Config) GetStatisticsPhase2Json() (int, *W21StatPhase) {
 	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
 }
 
+func (w21 *W21Config) GetLastError() int {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	if (w21.cSoapPtr != nil)  {
+		return int(C.go_get_w21_error(w21.cSoapPtr))
+	}
+
+	return -1;
+}
+
+func (w21 *W21Config) GetDetails() string {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	if w21.cSoapPtr != nil {
+		var cLen C.size_t
+		ret := C.go_w21_get_msg(&cLen, w21.cSoapPtr)
+		return C.GoStringN(ret, C.int(cLen))
+	}
+
+	return "Unable to retrieve WISTML 2.1 error details"
+}
+
+func (w21 *W21Config) GetXmlDetails() string {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	if w21.cSoapPtr != nil {
+		var cLen C.size_t
+		ret := C.go_w21_get_xml_msg(&cLen, w21.cSoapPtr)
+		return C.GoStringN(ret, C.int(cLen))
+	}
+
+	return "Unable to retrieve WISTML 2.1 error XML details"
+}
+
 func (w21 *W21Config) GetStatisticsTotal() (int, *W21StatPhase) {
 	w21.mu.Lock()
 	defer w21.mu.Unlock()
