@@ -73,3 +73,9 @@ dkms.conf
 # Golang
 parser_test
 
+
+# dotNET
+*.pdb
+bin/
+obj/
+

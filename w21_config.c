@@ -232,7 +232,12 @@ const char *w21_get_input_object_name(struct soap *soap)
 
 int w21_config_new(struct soap **soap, uint64_t in_config, uint64_t out_config)
 {
-    *soap = NULL;
+    if (soap == NULL)
+      return E_W21_INVALID_REFERENCE_POINTER;
+
+    if (*soap != NULL)
+      return E_W21_CONFIG_ALREDY_ALLOCD;
+
     //W21_CONFIG *config = (W21_CONFIG *)malloc(sizeof(W21_CONFIG));
 
 //    if (!config)
@@ -298,7 +303,7 @@ if (config->in_object) { \
 
 void w21_config_free(struct soap **soap)
 {
-    if (*soap) {
+    if ((soap != NULL) && (*soap != NULL)) {
         W21_CONFIG *config = (W21_CONFIG *)(*soap)->user;
 
         W21_COMMON_IN_FREE
