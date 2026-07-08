@@ -1,0 +1,31 @@
+name: Generate CementJobEvaluation Filled XML
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'xmls/CementJobEvaluation.xml'
+      - 'scripts/generate_cement_job_evaluation_filled.py'
+      - '.github/workflows/generate-cement-job-evaluation.yml'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate filled XML
+        run: python3 scripts/generate_cement_job_evaluation_filled.py
+
+      - name: Upload generated XML
+        uses: actions/upload-artifact@v4
+        with:
+          name: cement-job-evaluation-filled-xml
+          path: xmls/CementJobEvaluationFilled.xml
