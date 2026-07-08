@@ -83,6 +83,29 @@ Vortex21.
   (`539e4567-e89b-12f3-a456-42661417b000`) — confirmar isso no XSD
   correspondente antes de replicar esse padrão pra outros tipos.
 
+# Regra de ouro nº 5 — objetos grandes: gerar e validar em blocos
+
+- Sintoma observado: em documentos longos, a formatação (aspas de atributo,
+  aderência às regras de valor default) degrada conforme a resposta cresce —
+  o início do documento sai correto, a segunda metade acumula erros como
+  `uom=m"` (faltando aspa de abertura) ou `0.0` não substituído mesmo com a
+  Regra nº 2 aplicável. Isso não é falha pontual, é padrão esperado em
+  geração longa de uma vez só.
+- **Nunca gerar um objeto grande completo em uma única resposta.** Quebrar o
+  preenchimento em blocos menores, um por vez, delimitados por elementos de
+  primeiro nível ou grupos coesos (ex.: até o fim de `<Citation>`, depois só
+  `<OSDUIntegration>`, depois o restante dos campos escalares).
+- Cada bloco gerado deve ser validado (XML bem-formado, aspas corretas,
+  Regra nº 2 aplicada) **antes** de seguir para o próximo bloco — não
+  acumular blocos não revisados.
+- Threshold prático: se o esqueleto tiver mais de ~50-80 linhas ou múltiplos
+  objetos complexos aninhados (como `OSDUIntegration`, `DataObjectReference`
+  repetido), tratar como candidato a quebra em blocos por padrão, mesmo sem
+  pedido explícito do usuário.
+- Objetos muito grandes (ex.: 200KB+) devem ser quebrados de forma ainda mais
+  granular — o custo de retrabalho de corrigir um bloco pequeno é muito menor
+  que o de re-gerar o documento inteiro por causa de um erro na metade.
+
 # O que NÃO fazer
 
 - Não modificar o arquivo de entrada.

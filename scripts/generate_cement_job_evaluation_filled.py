@@ -75,24 +75,12 @@ def fill_empty_text_nodes(xml_text: str) -> str:
     return pattern.sub(repl, xml_text)
 
 
-def fill_empty_attributes(xml_text: str) -> str:
-    def repl(match: re.Match[str]) -> str:
-        attr_name = match.group("name")
-        if attr_name in ATTR_VALUES:
-            return match.group(0).replace(match.group("value"), ATTR_VALUES[attr_name], 1)
-        return match.group(0)
-
-    pattern = re.compile(r"(?P<name>\b[a-zA-Z_:.-]+)=\"(?P<value>\")")
-    return pattern.sub(repl, xml_text)
-
-
 def main() -> None:
     if not SRC.exists():
         raise FileNotFoundError(f"Input file not found: {SRC}")
 
     xml_text = SRC.read_text(encoding="utf-8")
     xml_text = fill_empty_text_nodes(xml_text)
-    xml_text = fill_empty_attributes(xml_text)
     xml_text = xml_text.replace('authority=""', 'authority="authority-001"')
     xml_text = xml_text.replace('uom=""', 'uom="m"')
     xml_text = xml_text.replace('<rdw212:ObjectVersion xsi:type="rdw212:String64"></rdw212:ObjectVersion>', '<rdw212:ObjectVersion xsi:type="rdw212:String64">object-version-001</rdw212:ObjectVersion>')
