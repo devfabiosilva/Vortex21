@@ -27,6 +27,16 @@ Vortex21.
   Não regenere, não "melhore", não normalize valor que já existe.
 - Só gere dado novo para elementos/atributos que estão vazios (`<Tag></Tag>`,
   `<Tag/>`, ou atributo `attr=""`).
+- **Exceção — campos numéricos com valor default do tipo:** o gSoap serializa
+  campo numérico vazio (`double`, `int`, `long`) usando o valor default do
+  tipo primitivo, não uma tag vazia — ou seja, `<Campo>0.0</Campo>` ou
+  `<Campo>0</Campo>` pode significar "vazio", igual a `<Campo></Campo>`
+  significa vazio pra campo string. **Trate `0.0`/`0` em campo numérico como
+  candidato a vazio e gere um valor sintético**, a menos que o XSD confirme
+  que `0.0`/`0` é um valor de negócio legítimo e intencional para aquele
+  campo específico (ex.: uma medida cujo zero é fisicamente válido) — nesse
+  caso, checar o XSD (Regra nº 4) antes de decidir, nunca assumir de cara que
+  é "vazio disfarçado" sem confirmar.
 - A estrutura XML (ordem de elementos, namespaces, hierarquia, nomes de tag)
   é fixa e vem do esqueleto. Nunca adicione, remova ou renomeie elementos que
   não existam no original — exceto ao duplicar blocos repetíveis (regra 3).
@@ -34,8 +44,7 @@ Vortex21.
 # Regra de ouro nº 3 — cardinalidade de blocos repetíveis (arrays)
 
 - Quando um elemento pode se repetir (ex.: `<Aliases>`), gere **pelo menos 2
-  instâncias** e no máximo 5 instâncias do bloco, cada uma com valores
-  **distintos entre si**.
+  instâncias** do bloco, cada uma com valores distintos entre si.
 - Nenhum valor pode se repetir entre instâncias do mesmo bloco nem entre
   blocos diferentes no mesmo documento — cada string/valor gerado deve ser
   único no arquivo inteiro (evita falso-positivo em teste de comparação por
@@ -77,7 +86,8 @@ Vortex21.
 # O que NÃO fazer
 
 - Não modificar o arquivo de entrada.
-- Não preencher campo que já tem valor.
+- Não preencher campo que já tem valor real (mas não deixar `0.0`/`0` sem
+  checar se é default disfarçado de vazio — ver exceção da Regra nº 2).
 - Não gerar cardinalidade "achando" — confirmar quando em dúvida.
 - Não repetir valor gerado em nenhum outro campo do mesmo documento.
 - Não inventar formato de campo sem confirmar a regra/regex esperada.
