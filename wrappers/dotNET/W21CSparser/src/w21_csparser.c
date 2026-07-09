@@ -16,3 +16,13 @@ int cs_w21_config_new(struct soap **soap, uint64_t in_config, uint64_t out_confi
 
     return E_CS_W21_INSTANCE_ALREADY_INITIALIZED;
 }
+
+uint64_t cs_w21_get_xml_strict()
+{
+    return (uint64_t)SOAP_XML_STRICT;
+}
+
+uint64_t cs_w21_get_xml_ignorens()
+{
+    return (uint64_t)SOAP_XML_IGNORENS;
+}

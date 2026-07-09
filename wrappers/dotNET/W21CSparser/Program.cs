@@ -17,8 +17,17 @@ public class MainApp {
 
     private static void InstanceInitAndFinishTest()
     {
-        using W21Parser parser = new(); 
-        parser.Init();
+        using W21Parser parser = new();
+        var (error, errorException) = parser.TryInit(W21Parser.XmlIgnoreNS|W21Parser.XmlStrict, 0);
+
+        if (error != 0)
+        {
+            Console.WriteLine(errorException?.Message);
+            Console.WriteLine($"Fault string message: {errorException?.FaultString}");
+            Console.WriteLine($"Detailed fault string message: {errorException?.XmlFaultDetail}");
+            return;
+        }
+
         parser.Recycle();
     }
 
