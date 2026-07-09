@@ -236,7 +236,7 @@ int w21_config_new(struct soap **soap, uint64_t in_config, uint64_t out_config)
       return E_W21_INVALID_REFERENCE_POINTER;
 
     if (*soap != NULL)
-      return E_W21_CONFIG_ALREDY_ALLOCD;
+      return E_W21_CONFIG_ALREADY_ALLOCD;
 
     //W21_CONFIG *config = (W21_CONFIG *)malloc(sizeof(W21_CONFIG));
 

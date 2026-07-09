@@ -1,15 +1,34 @@
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.Marshalling;
+using System.Text;
 using W21CSparser.exceptions;
+
+[assembly: DisableRuntimeMarshalling]
 
 namespace W21CSparser.parser;
 
 public partial class W21Parser: IDisposable
 {
     nint _soap = nint.Zero;
-    public void Test()
+
+    [StructLayout(LayoutKind.Sequential)]
+    private struct W21ErrorFieldsNative
     {
-        Console.WriteLine($"Teste {this.ToString()}");
+        public int error;
+        public nint Tag;
+        public nint Message;
     }
+
+    public struct W21ErrorFields
+    {
+        public int error;
+        public string Tag;
+        public string Message;
+    }
+
+    [LibraryImport("w21cs", EntryPoint = "cs_w21_get_error_detail")]
+    private static partial nint GetErrorDetailNative(int error);
 
     [LibraryImport("w21cs", EntryPoint = "cs_w21_get_xml_strict")]
     private static partial ulong GetXmlStrict();
@@ -43,12 +62,13 @@ public partial class W21Parser: IDisposable
         W21Exception? ex = null;
 
         if (err != 0) {
+            W21ErrorFields w21ErrorFields = GetErrorDetail(err);
             string errMsg = $"Native function cs_w21_config_new failed with error code {err}. Possible causes: check correct in options, out options, already initialized or memory available";
             ex = new W21Exception(
                 message: "C WITSML 2.1 memory allocate init failed. See faultstring and xmlfaultdetail for details", 
                 error: err,
                 faultstring: errMsg,
-                xmlfaultdetail: $"<WITSML21_ERROR code={err}>{errMsg}</WITSML21_ERROR>"
+                xmlfaultdetail: $"<WITSML21_ERROR code={err}>\n{errMsg}\nError tag: {w21ErrorFields.Tag}\nDetail: {w21ErrorFields.Message}</WITSML21_ERROR>"
             );
         }
 
@@ -78,5 +98,25 @@ public partial class W21Parser: IDisposable
             W21ConfigFree(ref _soap);
             _soap = nint.Zero;
         }
+    }
+
+    public W21ErrorFields GetErrorDetail(int err)
+    {
+        nint structPtr = GetErrorDetailNative(err); // Return always non null
+        W21ErrorFields w21ErrorFields = new();
+    
+        w21ErrorFields.error = err;
+
+        W21ErrorFieldsNative nativeFields = Marshal.PtrToStructure<W21ErrorFieldsNative>(structPtr);
+        unsafe
+        {
+            var spanTag = MemoryMarshal.CreateReadOnlySpanFromNullTerminated((byte*)(nativeFields.Tag));
+            w21ErrorFields.Tag = Encoding.UTF8.GetString(spanTag);
+
+            var spanMsg = MemoryMarshal.CreateReadOnlySpanFromNullTerminated((byte*)(nativeFields.Message));
+            w21ErrorFields.Message = Encoding.UTF8.GetString(spanMsg);
+        }
+
+        return w21ErrorFields;
     }
 }

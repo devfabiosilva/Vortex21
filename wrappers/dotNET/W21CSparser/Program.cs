@@ -18,7 +18,7 @@ public class MainApp {
     private static void InstanceInitAndFinishTest()
     {
         using W21Parser parser = new();
-        var (error, errorException) = parser.TryInit(W21Parser.XmlIgnoreNS|W21Parser.XmlStrict, 0);
+        var (error, errorException) = parser.TryInit(1+W21Parser.XmlIgnoreNS|W21Parser.XmlStrict, 0);
 
         if (error != 0)
         {
