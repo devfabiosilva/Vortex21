@@ -16,6 +16,7 @@ Vortex21 follows a "Write Once, Run Everywhere" philosophy at the native level. 
 | **Node.js** | N-API Addons | High-concurrency cloud services and real-time dashboards. |
 | **Rust** | FFI (Foreign Function Interface) | Memory-safe systems programming with native speed. |
 | **Go** | CGO | Scalable microservices and high-performance backend tools. |
+| **.NET**| Native extension | Wrapper for .NET/C# |
 | **PHP** | Native Extension / FFI | Web portals and legacy enterprise integration. |
 
 ## The Unified Logic Architecture
