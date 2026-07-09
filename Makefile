@@ -15,6 +15,8 @@ JAVA_FLAG=-fvisibility=hidden $(FLAG)
 
 GO_FLAG=$(FLAG)
 
+CS_FLAG=$(FLAG)
+
 MONGO_C_GIT=https://github.com/mongodb/mongo-c-driver.git
 MONGO_C_BRANCH=2.2.1
 MONGO_C_DIR=$(CURDIR)/third-party/mongo-c-driver
@@ -29,6 +31,12 @@ GO_SRC_PATH=$(GO_BASE_PATH)/c_src
 GO_LIB_PATH=$(GO_SRC_PATH)/lib
 GO_INCLUDE_PATH=$(GO_SRC_PATH)/include
 GO_LIB=libw21go.so
+
+CS_BASE_PATH=$(CURDIR)/wrappers/dotNET/W21CSparser
+CS_SRC_PATH=$(CS_BASE_PATH)/src
+CS_LIB_PATH=$(CS_BASE_PATH)/libs
+CS_INCLUDE_PATH=$(CS_BASE_PATH)/include
+CS_LIB=libw21cs.so
 
 all: main
 
@@ -67,6 +75,16 @@ ifneq ("$(wildcard $(GO_LIB_PATH)/$(GO_LIB))","")
 else
 	@echo "Compiling ..."
 	@$(CC) -o $(GO_LIB_PATH)/$(GO_LIB) -shared $(GO_FLAG) w21_validator.c w21_deserializer.c core/cws_bson_utils.c core/cws_utils.c w21_config.c w21_events.c w21_input.c w21_messages.c stdsoap2.c  witsml21C_o3_native_shared.o $(GO_SRC_PATH)/w21go.c -I. -I$(GO_INCLUDE_PATH) -Icore/include -lbson-shared-2.2.1 -Lcore/lib -DNOHTTP -DVERGEN -D$(STAT) -Wall
+	@echo "Finished"
+endif
+
+cs: witsml21C_o3_native_shared
+	@echo "Compiling .NET/C# wrapper"
+ifneq ("$(wildcard $(CS_LIB_PATH)/$(CS_LIB))","")
+	@echo "Alread compiled $(CS_LIB). Skipping ..."
+else
+	@echo "Compiling ..."
+	@$(CC) -o $(CS_LIB_PATH)/$(CS_LIB) -shared $(CS_FLAG) w21_validator.c w21_deserializer.c core/cws_bson_utils.c core/cws_utils.c w21_config.c w21_events.c w21_input.c w21_messages.c stdsoap2.c  witsml21C_o3_native_shared.o $(CS_SRC_PATH)/w21_csparser.c -I. -I$(CS_INCLUDE_PATH) -Icore/include -lbson-shared-2.2.1 -Lcore/lib -DNOHTTP -DVERGEN -D$(STAT) -Wall
 	@echo "Finished"
 endif
 
@@ -121,5 +139,13 @@ ifneq ("$(wildcard $(GO_LIB_PATH)/$(GO_LIB))","")
 	@echo "Finished"
 else
 	@echo "Nothing to do on removing $(GO_LIB)"
+endif
+
+ifneq ("$(wildcard $(CS_LIB_PATH)/$(CS_LIB))","")
+	@echo "Removing $(CS_LIB)..."
+	rm -v $(CS_LIB_PATH)/$(CS_LIB)
+	@echo "Finished"
+else
+	@echo "Nothing to do on removing $(CS_LIB)"
 endif
 

@@ -11,13 +11,13 @@ public partial class W21Parser: IDisposable
         Console.WriteLine($"Teste {this.ToString()}");
     }
 
-    [LibraryImport("w21go", EntryPoint = "w21_config_new")]
+    [LibraryImport("w21cs", EntryPoint = "cs_w21_config_new")]
     private static partial int W21ConfigNew(ref nint soap, ulong in_opts, ulong out_opts);
 
-    [LibraryImport("w21go", EntryPoint = "w21_config_free")]
+    [LibraryImport("w21cs", EntryPoint = "w21_config_free")]
     private static partial void W21ConfigFree(ref nint soap);
 
-    [LibraryImport("w21go", EntryPoint = "w21_recycle")]
+    [LibraryImport("w21cs", EntryPoint = "w21_recycle")]
     private static partial void W21Recycle(nint soap);
 
     ~W21Parser() => CleanUp();
