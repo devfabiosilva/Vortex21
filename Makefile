@@ -38,7 +38,7 @@ CS_LIB_PATH=$(CS_BASE_PATH)/libs
 CS_INCLUDE_PATH=$(CS_BASE_PATH)/include
 CS_LIB=libw21cs.so
 
-all: main
+all: main go cs
 
 witsml21C_o3_native_shared: install_bson
 ifneq ("$(wildcard $(CURDIR)/witsml21C_o3_native_shared.o)","")
@@ -53,7 +53,7 @@ main: witsml21C_o3_native_shared
 ifneq ("$(wildcard $(CURDIR)/$(JNI_LIB_PATH)/$(JNI_LIB))","")
 	@echo "Nothing to do. $(JNI_LIB)"
 else
-	@echo "Compiling ..."
+	@echo "Compiling Java 11 wrapper"
 	@$(CC) -o $(JNI_LIB_PATH)/$(JNI_LIB) -shared $(JAVA_FLAG) -I/usr/lib/jvm/java-11-openjdk-amd64/include -I/usr/lib/jvm/java-11-openjdk-amd64/include/linux w21_validator.c w21_deserializer.c core/cws_bson_utils.c core/cws_utils.c w21_config.c w21_events.c w21_input.c w21_messages.c w21_errors.c stdsoap2.c  witsml21C_o3_native_shared.o wrappers/java/parser.c -I. -Icore/include -Iwrappers/java -lbson-shared-2.2.1 -Lcore/lib -DNOHTTP -DVERGEN -D$(STAT) -Wall
 	strip --strip-unneeded $(JNI_LIB_PATH)/$(JNI_LIB)
 	@echo "Finished"
@@ -72,9 +72,8 @@ endif
 go: witsml21C_o3_native_shared
 	@echo "Compiling Golang wrapper"
 ifneq ("$(wildcard $(GO_LIB_PATH)/$(GO_LIB))","")
-	@echo "Alread compiled $(GO_LIB). Skipping ..."
+	@echo "Already compiled $(GO_LIB). Skipping ..."
 else
-	@echo "Compiling ..."
 	@$(CC) -o $(GO_LIB_PATH)/$(GO_LIB) -shared $(GO_FLAG) w21_validator.c w21_deserializer.c core/cws_bson_utils.c core/cws_utils.c w21_config.c w21_events.c w21_input.c w21_messages.c w21_errors.c stdsoap2.c witsml21C_o3_native_shared.o $(GO_SRC_PATH)/w21go.c -I. -I$(GO_INCLUDE_PATH) -Icore/include -lbson-shared-2.2.1 -Lcore/lib -DNOHTTP -DVERGEN -D$(STAT) -Wall
 	strip --strip-unneeded $(GO_LIB_PATH)/$(GO_LIB)
 	@echo "Finished"
@@ -83,9 +82,8 @@ endif
 cs: witsml21C_o3_native_shared
 	@echo "Compiling .NET/C# wrapper"
 ifneq ("$(wildcard $(CS_LIB_PATH)/$(CS_LIB))","")
-	@echo "Alread compiled $(CS_LIB). Skipping ..."
+	@echo "Already compiled $(CS_LIB). Skipping ..."
 else
-	@echo "Compiling ..."
 	@$(CC) -o $(CS_LIB_PATH)/$(CS_LIB) -shared $(CS_FLAG) w21_validator.c w21_deserializer.c core/cws_bson_utils.c core/cws_utils.c w21_config.c w21_events.c w21_input.c w21_messages.c w21_errors.c stdsoap2.c witsml21C_o3_native_shared.o $(CS_SRC_PATH)/w21_csparser.c -I. -I$(CS_INCLUDE_PATH) -Icore/include -lbson-shared-2.2.1 -Lcore/lib -DNOHTTP -DVERGEN -D$(STAT) -Wall
 	strip --strip-unneeded $(CS_LIB_PATH)/$(CS_LIB)
 	@echo "Finished"
