@@ -24,6 +24,9 @@ static W21_ERROR_DETAIL w21_error_list[] =
     SET_W21_ERROR_DETAIL(E_W21_ERROR_COULD_NOT_BUILD_UTF8_STRING_ARRAY, "Input mode: Unable to build UTF-8 string array")
     SET_W21_ERROR_DETAIL(E_W21_ERROR_COULD_NOT_ADD_UTF8_STRING_IN_ARRAY, "Input mode: Could not add UTF-8 string into an array")
     SET_W21_ERROR_DETAIL(E_W21_ERROR_UTF8_STRING_IN_ARRAY_NULL, "Input mode: NULL UTF-8. Could not add in array")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_UTF8_STRING_END_ARRAY, "In: array of UTF-8 string could be not finished")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_BSON_ALREADY_ALLOC, "Input: BSON object is already alloc'd")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_REFERENCE_IN_BSON_OBJECT, "In: Could not reference BSON object")
     // TODO Add error tag and description to allow human understand what 
     // is happening without undestand parser structure
     {0, NULL, NULL}
