@@ -15,20 +15,43 @@ void set_w21_error_message(struct soap *soap, int error, char *fmt, ...)
 
   config->error = error;
 
+  int len;
+
   va_start(args, fmt);
-  config->detail_message_len = vsnprintf(config->detail_message, DEFAULT_DETAIL_MESSAGE_LEN, fmt, args);
+  len = vsnprintf(config->detail_message, DEFAULT_DETAIL_MESSAGE_LEN, fmt, args);
   va_end(args);
+
+#define UNABLE_SET_MESSAGE_ERROR "Unable to set detail message"
+#define UNABLE_SET_MESSAGE_XML_ERROR "Unable to set detail XML message"
+  if (len < 0) {
+    strncpy(config->detail_message, UNABLE_SET_MESSAGE_ERROR, sizeof(config->detail_message));
+    strncpy(config->detail_message_xml, UNABLE_SET_MESSAGE_XML_ERROR, sizeof(config->detail_message_xml));
+    return;
+  }
+
+  config->detail_message_len = (size_t)len;
 
   if (config->detail_message_len > DEFAULT_DETAIL_MESSAGE_LEN) {
     config->detail_message[DEFAULT_DETAIL_MESSAGE_LEN] = 0;
     config->detail_message_len = DEFAULT_DETAIL_MESSAGE_LEN;
   }
 
-  config->detail_message_xml_len = snprintf(
+  len = snprintf(
     config->detail_message_xml, DEFAULT_DETAIL_MESSAGE_XML_LEN,
     CW21_ERROR_MESSAGE_DETAILED,
     error, (int)config->detail_message_len, config->detail_message
   );
+
+  if (len < 0) {
+    strncpy(config->detail_message, UNABLE_SET_MESSAGE_ERROR, sizeof(config->detail_message));
+    strncpy(config->detail_message_xml, UNABLE_SET_MESSAGE_XML_ERROR, sizeof(config->detail_message_xml));
+    return;
+  }
+
+#undef UNABLE_SET_MESSAGE_ERROR
+#undef UNABLE_SET_MESSAGE_XML_ERROR
+
+  config->detail_message_xml_len = (size_t)len;
 
   if (config->detail_message_xml_len > DEFAULT_DETAIL_MESSAGE_XML_LEN) {
     config->detail_message_xml[DEFAULT_DETAIL_MESSAGE_XML_LEN] = 0;
