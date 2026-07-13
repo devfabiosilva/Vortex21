@@ -24,7 +24,10 @@ void set_w21_error_message(struct soap *soap, int error, char *fmt, ...)
 #define UNABLE_SET_MESSAGE_ERROR "Unable to set detail message"
 #define UNABLE_SET_MESSAGE_XML_ERROR "Unable to set detail XML message"
   if (len < 0) {
+set_w21_error_message_fail:
+    config->detail_message_len = sizeof(UNABLE_SET_MESSAGE_ERROR) - 1;
     strncpy(config->detail_message, UNABLE_SET_MESSAGE_ERROR, sizeof(config->detail_message));
+    config->detail_message_xml_len = sizeof(UNABLE_SET_MESSAGE_XML_ERROR) - 1;
     strncpy(config->detail_message_xml, UNABLE_SET_MESSAGE_XML_ERROR, sizeof(config->detail_message_xml));
     return;
   }
@@ -42,11 +45,8 @@ void set_w21_error_message(struct soap *soap, int error, char *fmt, ...)
     error, (int)config->detail_message_len, config->detail_message
   );
 
-  if (len < 0) {
-    strncpy(config->detail_message, UNABLE_SET_MESSAGE_ERROR, sizeof(config->detail_message));
-    strncpy(config->detail_message_xml, UNABLE_SET_MESSAGE_XML_ERROR, sizeof(config->detail_message_xml));
-    return;
-  }
+  if (len < 0)
+    goto set_w21_error_message_fail;
 
 #undef UNABLE_SET_MESSAGE_ERROR
 #undef UNABLE_SET_MESSAGE_XML_ERROR
