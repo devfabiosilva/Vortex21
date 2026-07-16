@@ -10,6 +10,29 @@
 #include <w21_validator.h>
 #include <witsml21Stub.h>
 
+#define CWS_MAJOR 0
+#define CWS_MINOR 1
+#define CWS_REVISION 0
+// BETA 1 for beta or 0 for release
+#define _CWS_BETA 0x8000000000000000
+
+#define CWS_BETA(val) ((val)?_CWS_BETA:0)
+
+#define MAJOR(val) (int)((val >> 24) & 0xFFFFULL)
+#define MINOR(val) (int)((val >> 16) & 0xFFFFULL)
+#define REV(val) (int)(val & 0xFFFFULL)
+#define CWS_VERSION(major, minor, rev) (uint64_t)((major)<<24|(minor)<<16|(rev))
+
+#define CWS_BUILD_DATE_GMT3 -3
+#define _CWS_BUILD_DATE 202607151739
+#define CWS_BUILD_DATE(gmt) ( (uint64_t)((gmt >= 0) ? ((uint64_t)(uint8_t)gmt) : (((uint64_t)(gmt & 0x7F) | 0x80ULL))) << 56 ) | ( _CWS_BUILD_DATE )
+
+uint64_t cws_version();
+const char *cws_version_str(uint64_t *);
+uint64_t cws_build_date();
+const char *cws_build_date_str(uint64_t *);
+
+
 #define SET_W21_ENUM_OBJ(obj) W21_OBJECT_##obj = SOAP_TYPE_rdw211__##obj
 
 enum w21_object_e {

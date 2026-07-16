@@ -4,6 +4,65 @@
 #include <time.h>
 #include <malloc.h>
 
+inline uint64_t cws_version()
+{
+  return CWS_BETA(1) | CWS_VERSION(CWS_MAJOR, CWS_MINOR, CWS_REVISION);
+}
+
+inline uint64_t cws_build_date()
+{
+  return CWS_BUILD_DATE(CWS_BUILD_DATE_GMT3);
+}
+
+const char *cws_build_date_str(uint64_t *build_date)
+{
+  uint64_t bd;
+  static char bd_str[32];
+  bd_str[31] = 0;
+
+  if (build_date == NULL)
+    bd = cws_build_date();
+  else
+    bd = *build_date;
+
+  int gmt = (int)((bd >> 56) & 0xFF);
+
+  bd &= ~(0xFF00000000000000);
+
+  if (gmt & 0x80) {
+    gmt &= 0x7F;
+    gmt *= -1;
+  }
+
+  snprintf(bd_str, sizeof(bd_str)-1, "%lu-gmt: %d", bd, gmt);
+
+  return bd_str;
+}
+
+const char *cws_version_str(uint64_t *version)
+{
+  uint64_t ver;
+  static char version_str[32];
+  version_str[31] = 0;
+
+  if (version == NULL)
+    ver = cws_version();
+  else
+    ver = *version;
+
+  const char *fmt = "%d.%d.%d";
+  int maj = MAJOR(ver);
+  int min = MINOR(ver);
+  int rev = REV(ver);
+
+  if (ver & _CWS_BETA)
+    fmt = "%d.%d.%d-beta";
+
+  snprintf(version_str, sizeof(version_str)-1, fmt, maj, min, rev);
+
+  return version_str;
+}
+
 _Static_assert(W21_OBJECT_NONE == 0, "W21_OBJECT_NONE must be zero");
 _Static_assert(W21_OBJECT_AutoDetect == 1, "W21_OBJECT_AutoDetect must be 1");
 #define W21_OBJ_ASSERT(obj) \
