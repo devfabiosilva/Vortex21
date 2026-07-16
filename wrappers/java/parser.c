@@ -3642,4 +3642,63 @@ JNIEXPORT jint JNICALL Java_org_w21parser_W21ParserLoader_jniStatTotal(
   W21_JNI_DOC_STAT_PARSE(jniStatTotal, total)
 }
 
+/*
+ * Class:     org_w21parser_W21ParserLoader
+ * Method:    jniGetBuildVersion
+ * Signature: ()J
+ */
+JNIEXPORT jlong JNICALL Java_org_w21parser_W21ParserLoader_jniGetBuildDate(JNIEnv *env, jobject thisObject)
+{
+    return cws_build_date();
+}
+
+/*
+ * Class:     org_w21parser_W21ParserLoader
+ * Method:    jniGetVersion
+ * Signature: ()J
+ */
+JNIEXPORT jlong JNICALL Java_org_w21parser_W21ParserLoader_jniGetVersion(JNIEnv *env, jobject thisObject)
+{
+    return (jlong)cws_version();
+}
+
+/*
+ * Class:     org_w21parser_W21ParserLoader
+ * Method:    jniGetVersionStr
+ * Signature: ()Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_org_w21parser_W21ParserLoader_jniGetVersionStr(JNIEnv *env, jobject thisObject)
+{
+  jstring jCWS_Version = NULL;
+  JNI_W21_EXECUTE_ACTION_RET(
+    jniGetVersionStr,
+    jCWS_Version = (*env)->NewStringUTF(env, cws_version_str(NULL));
+    if (jCWS_Version == NULL)
+      throw_21_default_exception(env, "Unable to check version string");
+
+    ,
+    jCWS_Version
+  )
+}
+
+/*
+ * Class:     org_w21parser_W21ParserLoader
+ * Method:    jniGetBuildVersionStr
+ * Signature: ()Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_org_w21parser_W21ParserLoader_jniGetBuildDateStr(JNIEnv *env, jobject thisObject)
+{
+  jstring jCWS_BuildDate = NULL;
+
+  JNI_W21_EXECUTE_ACTION_RET(
+    jniGetBuildDateStr,
+    jCWS_BuildDate = (*env)->NewStringUTF(env, cws_build_date_str(NULL));
+    if (jCWS_BuildDate == NULL)
+      throw_21_default_exception(env, "Unable to check version string");
+
+    ,
+    jCWS_BuildDate
+  )
+}
+
 #undef W21_PARSER_MAGIC

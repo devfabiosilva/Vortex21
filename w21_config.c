@@ -17,8 +17,9 @@ inline uint64_t cws_build_date()
 const char *cws_build_date_str(uint64_t *build_date)
 {
   uint64_t bd;
-  static char bd_str[32];
-  bd_str[31] = 0;
+  static char bd_str[96];
+
+  memset(bd_str, 0, sizeof(bd_str));
 
   if (build_date == NULL)
     bd = cws_build_date();
@@ -30,11 +31,13 @@ const char *cws_build_date_str(uint64_t *build_date)
   bd &= ~(0xFF00000000000000);
 
   if (gmt & 0x80) {
-    gmt &= 0x7F;
+    gmt = ~(gmt);
+    gmt += 1;
+    gmt &= 0xFF;
     gmt *= -1;
   }
 
-  snprintf(bd_str, sizeof(bd_str)-1, "%lu-gmt: %d", bd, gmt);
+  snprintf(bd_str, sizeof(bd_str)-1, "%lu-GMT: %d", bd, gmt);
 
   return bd_str;
 }
@@ -42,8 +45,9 @@ const char *cws_build_date_str(uint64_t *build_date)
 const char *cws_version_str(uint64_t *version)
 {
   uint64_t ver;
-  static char version_str[32];
-  version_str[31] = 0;
+  static char version_str[96];
+
+  memset(version_str, 0, sizeof(version_str));
 
   if (version == NULL)
     ver = cws_version();

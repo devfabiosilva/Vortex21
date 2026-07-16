@@ -18,10 +18,10 @@
 
 #define CWS_BETA(val) ((val)?_CWS_BETA:0)
 
-#define MAJOR(val) (int)((val >> 24) & 0xFFFFULL)
+#define MAJOR(val) (int)((val >> 32) & 0xFFFFULL)
 #define MINOR(val) (int)((val >> 16) & 0xFFFFULL)
 #define REV(val) (int)(val & 0xFFFFULL)
-#define CWS_VERSION(major, minor, rev) (uint64_t)((major)<<24|(minor)<<16|(rev))
+#define CWS_VERSION(major, minor, rev) (uint64_t)(((uint64_t)major)<<32|(minor)<<16|(rev))
 
 #define CWS_BUILD_DATE_GMT3 -3
 #define _CWS_BUILD_DATE 202607151739

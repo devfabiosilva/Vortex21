@@ -129,6 +129,19 @@ public class W21ParserLoader {
     private native void jniInputRulesValidatorEnable() throws W21Exception;
     private native void jniInputRulesValidatorDisable();
 
+    public static native long jniGetBuildDate();
+    public static native long jniGetVersion();
+    private native String jniGetVersionStr() throws Exception;
+    private native String jniGetBuildDateStr() throws Exception;
+
+    public String getVersionStr() throws Exception {
+        return this.jniGetVersionStr();
+    }
+
+    public String getBuildDateStr() throws Exception {
+        return this.jniGetBuildDateStr();
+    }
+
     public String getInputObjectName() throws W21Exception {
         return this.jniInGetObjectName();
     }
