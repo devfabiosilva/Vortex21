@@ -28,7 +28,9 @@ EXAMPLES_PATH=$(CURDIR)/examples
 #JNI_LIB_PATH=wrappers/java
 JNI_LIB_PATH=wrappers/java/src/main/resources
 JNI_LIB=libw21java11.so
-JAVA_EXEMPLES=$(EXAMPLES_PATH)/java
+JAVA_EXAMPLES=$(EXAMPLES_PATH)/java
+JAVA_SIMPLE_EXAMPLE=$(JAVA_EXAMPLES)/app/SimpleExample
+JAVA_SIMPLE_EXAMPLE_EXECUTE_JAR=java -jar SimpleExample-1.0-SNAPSHOT.jar
 
 GO_BASE_PATH=$(CURDIR)/wrappers/go
 GO_SRC_PATH=$(GO_BASE_PATH)/c_src
@@ -70,6 +72,11 @@ mvn_install: jni
 	@echo "Running maven ..."
 	pwd && cd $(CURDIR)/wrappers/java && pwd && mvn -U clean install
 	@echo "Finished ..."
+
+java_examples: mvn_install
+	@echo "Running example $(JAVA_SIMPLE_EXAMPLE) ..."
+	pwd && cd $(JAVA_SIMPLE_EXAMPLE) && pwd && mvn clean install && cd target && $(JAVA_SIMPLE_EXAMPLE_EXECUTE_JAR) ../LogInvalid.xml && $(JAVA_SIMPLE_EXAMPLE_EXECUTE_JAR) ../Log.xml && $(JAVA_SIMPLE_EXAMPLE_EXECUTE_JAR) ../OpsReport.xml
+	@echo "Java Examples finished"
 
 .PHONY:
 install_bson:
@@ -144,9 +151,21 @@ ifneq ("$(wildcard $(CURDIR)/$(JNI_LIB_PATH)/$(JNI_LIB))","")
 	@echo "Cleaning maven ..."
 	cd $(CURDIR)/wrappers/java && mvn -U clean
 	@echo "Cleaning Java examples"
-	cd $(JAVA_EXEMPLES)/app/SimpleExample && mvn clean
-	rm -v $(JAVA_EXEMPLES)/app/SimpleExample/*.bson
-	rm -v $(JAVA_EXEMPLES)/app/SimpleExample/*.json
+	cd $(JAVA_EXAMPLES)/app/SimpleExample && mvn clean
+ ifneq ("$(wildcard $(JAVA_EXAMPLES)/app/SimpleExample/*.bson)","")
+	@echo "Removing *.bson documents in Vortex21 JAVA samples"
+	rm -v $(JAVA_EXAMPLES)/app/SimpleExample/*.bson
+ else
+	@echo "No *.bson document found in Vortex21 JAVA samples"
+ endif
+
+ ifneq ("$(wildcard $(JAVA_EXAMPLES)/app/SimpleExample/*.json)","")
+
+	rm -v $(JAVA_EXAMPLES)/app/SimpleExample/*.json
+ else
+	@echo "No *.json document found in Vortex21 JAVA samples"
+ endif
+
 	@echo "Finished"
 else
 	@echo "Nothing to do on removing $(JNI_LIB)"

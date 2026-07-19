@@ -4,17 +4,17 @@
 #include <time.h>
 #include <malloc.h>
 
-inline uint64_t cws_version()
+inline uint64_t w21_version()
 {
-  return CWS_BETA(1) | CWS_VERSION(CWS_MAJOR, CWS_MINOR, CWS_REVISION);
+  return W21_BETA(1) | W21_VERSION(W21_MAJOR, W21_MINOR, W21_REVISION);
 }
 
-inline uint64_t cws_build_date()
+inline uint64_t w21_build_date()
 {
-  return CWS_BUILD_DATE(CWS_BUILD_DATE_GMT3);
+  return W21_BUILD_DATE(W21_BUILD_DATE_GMT3);
 }
 
-const char *cws_build_date_str(uint64_t *build_date)
+const char *w21_build_date_str(uint64_t *build_date)
 {
   uint64_t bd;
   static char bd_str[96];
@@ -22,7 +22,7 @@ const char *cws_build_date_str(uint64_t *build_date)
   memset(bd_str, 0, sizeof(bd_str));
 
   if (build_date == NULL)
-    bd = cws_build_date();
+    bd = w21_build_date();
   else
     bd = *build_date;
 
@@ -42,7 +42,7 @@ const char *cws_build_date_str(uint64_t *build_date)
   return bd_str;
 }
 
-const char *cws_version_str(uint64_t *version)
+const char *w21_version_str(uint64_t *version)
 {
   uint64_t ver;
   static char version_str[96];
@@ -50,7 +50,7 @@ const char *cws_version_str(uint64_t *version)
   memset(version_str, 0, sizeof(version_str));
 
   if (version == NULL)
-    ver = cws_version();
+    ver = w21_version();
   else
     ver = *version;
 
@@ -59,7 +59,7 @@ const char *cws_version_str(uint64_t *version)
   int min = MINOR(ver);
   int rev = REV(ver);
 
-  if (ver & _CWS_BETA)
+  if (ver & _W21_BETA)
     fmt = "%d.%d.%d-beta";
 
   snprintf(version_str, sizeof(version_str)-1, fmt, maj, min, rev);

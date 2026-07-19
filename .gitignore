@@ -79,3 +79,6 @@ parser_test
 bin/
 obj/
 
+*.xml.bson
+*.xml.json
+

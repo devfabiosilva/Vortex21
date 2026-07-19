@@ -3,7 +3,6 @@ package org.example;
 import org.w21parser.W21Exception;
 import org.w21parser.W21ParserLoader;
 
-import javax.sound.midi.Soundbank;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,15 +17,13 @@ public class Main {
     public static void main(String[] args)  {
         System.out.println("Welcome to Vortex21 0.1.0 beta version tester");
 
-        if (args.length > 0) {
-            if (args.length > 1) {
-                System.out.println("Too many arguments");
-                return;
-            }
+        if (args.length > 1)
+            System.out.println("Too many arguments\n");
+        else if (args.length > 0) {
 
             String file = args[0];
-
             W21ParserLoader parser = null;
+
             try {
                 parser = W21ParserLoader.begin()
                         .withInputWitsmlStrict()    // Entering restrict mode (Energistics standards)
