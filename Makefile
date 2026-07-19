@@ -70,12 +70,22 @@ endif
 
 mvn_install: jni
 	@echo "Running maven ..."
+ifneq ("$(wildcard $(CURDIR)/wrappers/java/target)","")
+	@echo "Library already compiled. Skipping ..."
+else
 	pwd && cd $(CURDIR)/wrappers/java && pwd && mvn -U clean install
 	@echo "Finished ..."
+endif
 
 java_examples: mvn_install
 	@echo "Running example $(JAVA_SIMPLE_EXAMPLE) ..."
+ifneq ("$(wildcard $(JAVA_SIMPLE_EXAMPLE)/target)","")
+	@echo "Already compiled. Skip"
+	pwd && cd $(JAVA_SIMPLE_EXAMPLE) && cd target && $(JAVA_SIMPLE_EXAMPLE_EXECUTE_JAR) ../LogInvalid.xml && $(JAVA_SIMPLE_EXAMPLE_EXECUTE_JAR) ../Log.xml && $(JAVA_SIMPLE_EXAMPLE_EXECUTE_JAR) ../OpsReport.xml
+else
 	pwd && cd $(JAVA_SIMPLE_EXAMPLE) && pwd && mvn clean install && cd target && $(JAVA_SIMPLE_EXAMPLE_EXECUTE_JAR) ../LogInvalid.xml && $(JAVA_SIMPLE_EXAMPLE_EXECUTE_JAR) ../Log.xml && $(JAVA_SIMPLE_EXAMPLE_EXECUTE_JAR) ../OpsReport.xml
+endif
+
 	@echo "Java Examples finished"
 
 .PHONY:

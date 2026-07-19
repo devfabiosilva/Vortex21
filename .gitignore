@@ -11,6 +11,7 @@ perf.data
 test_perf
 wrappers/java/target/
 wrappers/java/.idea/
+examples/java/app/SimpleExample/target/
 *.jar
 
 # C third-party libraries
