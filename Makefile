@@ -23,8 +23,12 @@ MONGO_C_DIR=$(CURDIR)/third-party/mongo-c-driver
 
 LIBDIR=$(CURDIR)/core/lib
 
-JNI_LIB_PATH=wrappers/java
+EXAMPLES_PATH=$(CURDIR)/examples
+
+#JNI_LIB_PATH=wrappers/java
+JNI_LIB_PATH=wrappers/java/src/main/resources
 JNI_LIB=libw21java11.so
+JAVA_EXEMPLES=$(EXAMPLES_PATH)/java
 
 GO_BASE_PATH=$(CURDIR)/wrappers/go
 GO_SRC_PATH=$(GO_BASE_PATH)/c_src
@@ -38,7 +42,8 @@ CS_LIB_PATH=$(CS_BASE_PATH)/libs
 CS_INCLUDE_PATH=$(CS_BASE_PATH)/include
 CS_LIB=libw21cs.so
 
-all: main go cs
+# all: jni go cs
+all: mvn_install
 
 witsml21C_o3_native_shared: install_bson
 ifneq ("$(wildcard $(CURDIR)/witsml21C_o3_native_shared.o)","")
@@ -49,7 +54,7 @@ else
 	@echo "witsml21C_o3_native_shared.o finished"
 endif
 
-main: witsml21C_o3_native_shared
+jni: witsml21C_o3_native_shared
 ifneq ("$(wildcard $(CURDIR)/$(JNI_LIB_PATH)/$(JNI_LIB))","")
 	@echo "Nothing to do. $(JNI_LIB)"
 else
@@ -58,6 +63,13 @@ else
 	strip --strip-unneeded $(JNI_LIB_PATH)/$(JNI_LIB)
 	@echo "Finished"
 endif
+
+# $(($(nproc) - 1))
+
+mvn_install: jni
+	@echo "Running maven ..."
+	pwd && cd $(CURDIR)/wrappers/java && pwd && mvn -U clean install
+	@echo "Finished ..."
 
 .PHONY:
 install_bson:
@@ -129,6 +141,12 @@ clean:
 ifneq ("$(wildcard $(CURDIR)/$(JNI_LIB_PATH)/$(JNI_LIB))","")
 	@echo "Removing  $(JNI_LIB)..."
 	rm -v $(CURDIR)/$(JNI_LIB_PATH)/$(JNI_LIB)
+	@echo "Cleaning maven ..."
+	cd $(CURDIR)/wrappers/java && mvn -U clean
+	@echo "Cleaning Java examples"
+	cd $(JAVA_EXEMPLES)/app/SimpleExample && mvn clean
+	rm -v $(JAVA_EXEMPLES)/app/SimpleExample/*.bson
+	rm -v $(JAVA_EXEMPLES)/app/SimpleExample/*.json
 	@echo "Finished"
 else
 	@echo "Nothing to do on removing $(JNI_LIB)"

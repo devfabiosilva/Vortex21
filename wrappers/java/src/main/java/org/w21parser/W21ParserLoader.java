@@ -10,8 +10,7 @@ import org.bson.codecs.RawBsonDocumentCodec;
 import org.bson.io.ByteBufferBsonInput;
 import org.w21parser.telemetry.W21TelemetrySummary21;
 
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.channels.FileChannel;
@@ -25,7 +24,7 @@ import java.util.concurrent.Executors;
 import static org.w21parser.W21Errors.W21_INVALID_BSON_PARSING_OPTION;
 
 public class W21ParserLoader {
-
+/*
     static {
         try {
             System.loadLibrary("w21java11");
@@ -35,73 +34,36 @@ public class W21ParserLoader {
             throw e;
         }
     }
-    /*
-    public static void main(String[] args) {
-        W21ParserLoader parser1;
+*/
+    static {
         try {
-            parser1 = W21ParserLoader.begin().
-                    withInputRulesValidator().withInputWitsmlStrict().
-                    withResourceStats().withIgnoreInputWitsmlNS().build();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return;
-        }
+            String libName = "/libw21java11.so";
+            InputStream is = W21ParserLoader.class.getResourceAsStream(libName);
 
-        try {
-            parser1.readFromFile("../../xmls/OpsReport2.xml");
+            if (is == null) {
+                throw new RuntimeException("Native Linux x86_64 library not found.");
+            }
 
-            Object obj = parser1.parse();
-            System.out.println("Obj " + obj.toString());
-            System.out.println(parser1.loadStatistics());
-        } catch (W21Exception e) {
-            System.out.println("Error " + e.getMessage() + "\nfaultdetail: " + e.getFaultstring() + "\nxmlfaultdetail: " + e.getXMLfaultdetail());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } finally {
-            if (parser1 != null)
-                parser1.close();
-        }
-    }
-    */
+            // Creating temp libw21java11.so
+            File tempLib = File.createTempFile("libw21java11", ".so");
+            tempLib.deleteOnExit(); // Delete on exit
 
-    public static void main(String[] args) throws Exception {
-        int numThreads = 2;
-        ExecutorService executor = Executors.newFixedThreadPool(numThreads);
-        for (int i = 0; i < numThreads; i++) {
-            executor.submit(() -> {
-                // 1. instance
-                W21ParserLoader loader;
-                try {
-                    loader = W21ParserLoader.begin().withInputRulesValidator().withInputWitsmlStrict().withIgnoreInputWitsmlNS().withResourceStats().build();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    return;
+            // Copy all bytes to temporary folder
+            try (OutputStream os = new FileOutputStream(tempLib)) {
+                byte[] buffer = new byte[4096];
+                int length;
+                while ((length = is.read(buffer)) != -1) {
+                    os.write(buffer, 0, length);
                 }
-                try {
+            }
+            is.close();
 
-                    // 2. Initialize JNI
-                    // loader.jniInit();
+            // Load C Witsml 2.1 (Vortex21)
+            System.load(tempLib.getAbsolutePath());
 
-                    System.out.println("=== Iniciando Teste de Stress WITSML 2.1 ===");
-
-                    // 3. Call Benchmark
-                    loader.benchmarkPerformanceRealista();
-
-                    // 4. Close with security
-                    // loader.jniClose();
-
-                    System.out.println("=== Teste Finalizado com Sucesso ===");
-
-                } catch (Exception e) {
-                    System.err.println("Erro durante a execução do benchmark:");
-                    e.printStackTrace();
-                } finally {
-                    loader.close();
-                }
-            });
+        } catch (Exception e) {
+            throw new RuntimeException("Fail on loading Vortex21 native library", e);
         }
-        executor.shutdown();
-        //executor.awaitTermination(10, TimeUnit.MINUTES);
     }
 
     private final CharsetEncoder encoder;
@@ -3279,10 +3241,9 @@ public class W21ParserLoader {
     }
 
     public enum W21OutputType {
-        //RAW_BSON,      // RawBsonDocument (Zero-Copy/Lazy)
-        BSON,           // Bson Object
-        BSON_BYTE_ARRAY, // save/send
-        //MAP             // mapper TODO remove it
+        //RAW_BSON,         // RawBsonDocument (Zero-Copy/Lazy)
+        BSON,               // Bson Object
+        BSON_BYTE_ARRAY,    // save/send
     }
 
     public enum W21Object {
@@ -3779,7 +3740,48 @@ public class W21ParserLoader {
         throw new W21Exception("WITSML 2.1 document and resources statistics are not initialized", W21Errors.W21_LOAD_STATISTICS_NOT_INITIALIZED, null, null);
     }
 
-    public void benchmarkPerformanceRealista() throws Exception {
+    /* UNCOMMENT FOR BENCHMARK
+    public static void main(String[] args) throws Exception {
+        int numThreads = 2;
+        ExecutorService executor = Executors.newFixedThreadPool(numThreads);
+        for (int i = 0; i < numThreads; i++) {
+            executor.submit(() -> {
+                // 1. instance
+                W21ParserLoader loader;
+                try {
+                    loader = W21ParserLoader.begin().withInputRulesValidator().withInputWitsmlStrict().withIgnoreInputWitsmlNS().withResourceStats().build();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return;
+                }
+                try {
+
+                    // 2. Initialize JNI
+                    // loader.jniInit();
+
+                    System.out.println("=== Iniciando Teste de Stress WITSML 2.1 ===");
+
+                    // 3. Call Benchmark
+                    loader.benchmarkPerformanceRealista();
+
+                    // 4. Close with security
+                    // loader.jniClose();
+
+                    System.out.println("=== Teste Finalizado com Sucesso ===");
+
+                } catch (Exception e) {
+                    System.err.println("Erro durante a execução do benchmark:");
+                    e.printStackTrace();
+                } finally {
+                    loader.close();
+                }
+            });
+        }
+        executor.shutdown();
+        //executor.awaitTermination(10, TimeUnit.MINUTES);
+    }
+
+    private void benchmarkPerformanceRealista() throws Exception {
         // 1. Prepare
         String xmlContent = Files.readString(Paths.get("../../xmls/OpsReport2.xml"));
         this.bbXml.clear();
@@ -3821,4 +3823,6 @@ public class W21ParserLoader {
         System.out.println(this.loadStatistics());
         this.close();
     }
+
+     */
 }
