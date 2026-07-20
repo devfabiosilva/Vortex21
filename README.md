@@ -222,7 +222,7 @@ The engine transparently maps complex, heavily nested WITSML 2.1 XML models into
 }
 ```
 
-##⚠️ Known Issues & Environment Behaviors
+## ⚠️ Known Issues & Environment Behaviors
 
 ### Extended JSON String Serialization (Textual Dumps)
 When using optional helper utilities to export binary BSON into human-readable Extended JSON text, the string formatter (`libbson 2.3.3` core) may inherit the host system's local decimal separator (`LC_NUMERIC`) during float-to-string slow-path conversions.
