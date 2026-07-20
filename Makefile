@@ -44,6 +44,12 @@ CS_LIB_PATH=$(CS_BASE_PATH)/libs
 CS_INCLUDE_PATH=$(CS_BASE_PATH)/include
 CS_LIB=libw21cs.so
 
+C_LIB=libw21.so
+C_LIB_PATH=$(CURDIR)
+
+C_SIMPLE_EXAMPLE_PATH=$(CURDIR)/examples/c/shared
+C_SIMPLE_EXAMPLE_EXECUTE=vortex21
+
 # all: jni go cs
 all: mvn_install
 
@@ -54,6 +60,16 @@ else
 	@echo "Compiling witsml21C_o3_native_shared.o. It can take a little longer ..."
 	@$(CC) -c -o witsml21C_o3_native_shared.o $(FLAG) -I. -Icore/include witsml21C.c -DNOHTTP -Wall
 	@echo "witsml21C_o3_native_shared.o finished"
+endif
+
+c_lib: witsml21C_o3_native_shared
+ifneq ("$(wildcard $(C_LIB_PATH)/$(C_LIB))","")
+	@echo "Nothing to do $(C_LIB)"
+else
+	@echo "Compiling C lib ..."
+	@$(CC) -o $(C_LIB_PATH)/$(C_LIB) -shared $(FLAG) w21_validator.c w21_deserializer.c core/cws_bson_utils.c core/cws_utils.c w21_config.c w21_events.c w21_input.c w21_messages.c w21_errors.c stdsoap2.c witsml21C_o3_native_shared.o -I. -Icore/include -lbson-shared-${MONGO_C_BRANCH} -Lcore/lib -DNOHTTP -DVERGEN -D$(STAT) -Wall
+	strip --strip-unneeded $(C_LIB_PATH)/$(C_LIB)
+	@echo "Finished"
 endif
 
 jni: witsml21C_o3_native_shared
@@ -85,8 +101,19 @@ ifneq ("$(wildcard $(JAVA_SIMPLE_EXAMPLE)/target)","")
 else
 	pwd && cd $(JAVA_SIMPLE_EXAMPLE) && pwd && mvn clean install && cd target && $(JAVA_SIMPLE_EXAMPLE_EXECUTE_JAR) ../LogInvalid.xml && $(JAVA_SIMPLE_EXAMPLE_EXECUTE_JAR) ../Log.xml && $(JAVA_SIMPLE_EXAMPLE_EXECUTE_JAR) ../OpsReport.xml
 endif
-
 	@echo "Java Examples finished"
+
+c_examples: c_lib
+	@echo "Running example C examples ..."
+ifneq ("$(wildcard $(C_SIMPLE_EXAMPLE_PATH)/$(C_SIMPLE_EXAMPLE_EXECUTE))","")
+	@echo "Already compiled. Skip"
+	pwd && cd $(C_SIMPLE_EXAMPLE_PATH) && LD_LIBRARY_PATH=$(C_LIB_PATH):$$LD_LIBRARY_PATH ./"$(C_SIMPLE_EXAMPLE_EXECUTE)" Log.xml
+else
+	@$(CC) -o $(C_SIMPLE_EXAMPLE_PATH)/$(C_SIMPLE_EXAMPLE_EXECUTE) $(FLAG) $(C_SIMPLE_EXAMPLE_PATH)/main.c -I. -Icore/include -Wall -L. -lw21 
+	pwd && cd $(C_SIMPLE_EXAMPLE_PATH) && LD_LIBRARY_PATH=$(C_LIB_PATH):$$LD_LIBRARY_PATH ./"$(C_SIMPLE_EXAMPLE_EXECUTE)" Log.xml
+endif
+	@echo "C Examples finished"
+
 
 .PHONY:
 install_bson:
@@ -195,5 +222,21 @@ ifneq ("$(wildcard $(CS_LIB_PATH)/$(CS_LIB))","")
 	@echo "Finished"
 else
 	@echo "Nothing to do on removing $(CS_LIB)"
+endif
+
+ifneq ("$(wildcard $(C_LIB_PATH)/$(C_LIB))","")
+	@echo "Removing $(C_LIB)..."
+	rm -v $(C_LIB_PATH)/$(C_LIB)
+	@echo "Finished"
+else
+	@echo "Nothing to do on removing $(C_LIB)"
+endif
+
+ifneq ("$(wildcard $(C_SIMPLE_EXAMPLE_PATH)/$(C_SIMPLE_EXAMPLE_EXECUTE))","")
+	@echo "Cleaning C examples ..."
+	rm -v $(C_SIMPLE_EXAMPLE_PATH)/$(C_SIMPLE_EXAMPLE_EXECUTE)
+	@echo "Cleaned C examples"
+else
+	@echo "Nothing to do with C examples"
 endif
 
