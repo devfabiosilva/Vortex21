@@ -18,6 +18,9 @@ examples/java/app/SimpleExample/target/
 third-party/mongo-c-driver/
 core/include/bson
 
+# Force .jar in beta test
+!examples/java/app/SimpleExample/compiled/*.jar
+
 # Object files
 *.o
 *.ko
