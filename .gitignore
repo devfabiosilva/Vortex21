@@ -21,6 +21,9 @@ core/include/bson
 # Force .jar in beta test
 !examples/java/app/SimpleExample/compiled/*.jar
 
+
+examples/c/shared/vortex21
+
 # Object files
 *.o
 *.ko
