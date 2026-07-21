@@ -3,10 +3,34 @@
 #include <cws_utils.h>
 #include <w21_input.h>
 #include <w21_deserializer.h>
+//#include <locale.h>
 
 int main(int argc, char **argv)
 {
   printf("\nVortex 21 WITSML 2.1 BSON parser\n");
+
+//Testing locale effect on JSON string format
+/*
+  if (setlocale(LC_ALL, "pt_BR.UTF-8") == NULL) {
+    // Fallback
+    setlocale(LC_ALL, "Portuguese_Brazil"); 
+    printf("\nUnable to set locale");
+    return -10;
+  }
+*/
+/*
+import org.bson.json.JsonWriterSettings;
+import org.bson.json.JsonMode;
+
+
+JsonWriterSettings settings = JsonWriterSettings.builder()
+    .outputMode(JsonMode.RELAXED)
+    .build();
+
+String jsonString = seuBsonDocument.toJson(settings);
+
+*/
+  //printf("Número com vírgula: %'.2f\n", 1234567.89);
 
   if (argc > 2)
     printf("\nToo many arguments\n");

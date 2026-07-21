@@ -786,11 +786,13 @@ BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(ReferencePointTvdInterval)
 //struct rdw212__AbstractTvdInterval
 BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbstractTvdInterval)
 // TRANSIENT SPECIAL CASE
-  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Comment)
-  READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, TvdMin)
-  READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, TvdMax)
-  READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Uom)
-  READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Trajectory, DataObjectReference)
+  if ((AbstractTvdInterval->rdw212__DatumTvdInterval == NULL) && (AbstractTvdInterval->rdw212__ReferencePointTvdInterval)) {
+    READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Comment)
+    READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, TvdMin)
+    READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, TvdMax)
+    READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Uom)
+    READ_T_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Trajectory, DataObjectReference)
+  }
   READ_T_TRANSIENT_OBJECT_21_OR_ELSE_GOTO_RESUME(rdw212, AbstractTvdInterval, DatumTvdInterval, DatumTvdInterval)
   READ_T_TRANSIENT_OBJECT_21_VOID(rdw212, AbstractTvdInterval, ReferencePointTvdInterval, ReferencePointTvdInterval)
 BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(AbstractTvdInterval)
