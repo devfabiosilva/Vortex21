@@ -786,7 +786,7 @@ BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_END(ReferencePointTvdInterval)
 //struct rdw212__AbstractTvdInterval
 BSON_READ_TRANSIENT_OBJECT_ROOT_BUILDER_21_BEGIN(rdw212, AbstractTvdInterval)
 // TRANSIENT SPECIAL CASE
-  if ((AbstractTvdInterval->rdw212__DatumTvdInterval == NULL) && (AbstractTvdInterval->rdw212__ReferencePointTvdInterval)) {
+  if ((AbstractTvdInterval->rdw212__DatumTvdInterval == NULL) && (AbstractTvdInterval->rdw212__ReferencePointTvdInterval == NULL)) {
     READ_T_UTF8_OBJECT_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, Comment)
     READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, TvdMin)
     READ_T_DOUBLE_21_OR_ELSE_GOTO_RESUME(AbstractTvdInterval, TvdMax)
