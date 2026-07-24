@@ -34,7 +34,10 @@ public class MainApp {
             return;
         }
 
-        byte[] stream = File.ReadAllBytes("bin/Debug/net8.0/OpsReport.xml");
+        Console.WriteLine($"Before BSON/JSON parsing {parser.GetObjectName()}");
+
+        byte[] stream = File.ReadAllBytes("bin/Debug/net8.0/Log.xml");
+
         var (res, ex) = parser.ReadFromStream(stream);
         if (res == false)
         {
@@ -52,7 +55,10 @@ public class MainApp {
             Console.WriteLine($"Detailed fault string message: {ex1?.XmlFaultDetail}");
         }
 
+        Console.WriteLine($"After BSON/JSON parsing {parser.GetObjectName()}");
         Console.WriteLine(result);
+        Console.WriteLine($"Version: {parser.GetVersionString()}");
+        Console.WriteLine($"Build date: {parser.GetBuildDateString()}");
         parser.Recycle();
     }
 

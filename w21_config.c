@@ -301,10 +301,6 @@ int w21_config_new(struct soap **soap, uint64_t in_config, uint64_t out_config)
     if (*soap != NULL)
       return E_W21_CONFIG_ALREADY_ALLOCD;
 
-    //W21_CONFIG *config = (W21_CONFIG *)malloc(sizeof(W21_CONFIG));
-
-//    if (!config)
-//        return E_W21_UNABLE_TO_CREATE_CONFIG;
     W21_CONFIG *config;
     if (posix_memalign((void **)&config, 64, sizeof(W21_CONFIG)))
       return E_W21_UNABLE_TO_CREATE_CONFIG;

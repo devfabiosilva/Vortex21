@@ -94,3 +94,24 @@ int32_t cs_w21_get_bson_ser(struct soap *soap, uint8_t **bson)
 
     return res;
 }
+
+const char *cs_w21_get_input_object_name(struct soap *soap)
+{
+    const char *res = w21_get_input_object_name(soap);
+
+    if (res)
+        return res;
+
+    return "Object not parsed yet or unknown object";
+}
+
+const char *cs_w21_version_str()
+{
+    return w21_version_str(NULL);
+}
+
+const char *cs_w21_build_date_str()
+{
+    return w21_build_date_str(NULL);
+}
+

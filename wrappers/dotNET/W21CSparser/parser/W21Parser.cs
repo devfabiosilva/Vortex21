@@ -68,6 +68,16 @@ public partial class W21Parser: IDisposable
 
     [LibraryImport("w21cs", EntryPoint = "cs_w21_get_fault_error")]
     private static partial int GetFaultErrorNative(nint soap);
+
+    [LibraryImport("w21cs", EntryPoint = "cs_w21_get_input_object_name")]
+    private static partial nint _GetObjectName(nint soap);
+
+    [LibraryImport("w21cs", EntryPoint = "cs_w21_version_str")]
+    private static partial nint _GetVersionString();
+
+    [LibraryImport("w21cs", EntryPoint = "cs_w21_build_date_str")]
+    private static partial nint _GetBuildDateString();
+ 
     public static readonly ulong XmlStrict = GetXmlStrict();
     public static readonly ulong XmlIgnoreNS = GetXmlIgnoreNS();
 
@@ -216,6 +226,66 @@ public partial class W21Parser: IDisposable
         }
 
         return w21ErrorFields;
+    }
+
+    public string GetObjectName()
+    {
+        _mutex.Wait();
+        string res;
+        try
+        {
+            if (_soap != nint.Zero)
+            {
+                unsafe
+                {
+                    var cStrPtr = MemoryMarshal.CreateReadOnlySpanFromNullTerminated((byte*)(_GetObjectName(_soap)));
+                    res = Encoding.UTF8.GetString(cStrPtr);
+                }
+            } else 
+                res = "Invalid pointer or parser already closed";
+        } finally
+        {
+            _mutex.Release();
+        }
+        return res;
+    }
+
+    public string GetVersionString()
+    {
+        _mutex.Wait();
+        string res;
+        try
+        {
+            unsafe
+            {
+                var cStrPtr = MemoryMarshal.CreateReadOnlySpanFromNullTerminated((byte*)_GetVersionString());
+                res = Encoding.UTF8.GetString(cStrPtr);
+            }
+        } finally
+        {
+            _mutex.Release();
+        }
+
+        return res;
+    }
+ 
+     public string GetBuildDateString()
+    {
+        _mutex.Wait();
+        string res;
+        try
+        {
+            unsafe
+            {
+                var cStrPtr = MemoryMarshal.CreateReadOnlySpanFromNullTerminated((byte*)_GetBuildDateString());
+                res = Encoding.UTF8.GetString(cStrPtr);
+            }
+        } finally
+        {
+            _mutex.Release();
+        }
+
+        return res;
     }
 
     public (bool success, W21Exception? ErrorEx) ReadFromStream(byte []stream)
