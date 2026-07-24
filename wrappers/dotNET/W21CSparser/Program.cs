@@ -35,7 +35,6 @@ public class MainApp {
         }
 
         byte[] stream = File.ReadAllBytes("bin/Debug/net8.0/OpsReport.xml");
-        //byte[] stream = Encoding.UTF8.GetBytes("<Log />");
         var (res, ex) = parser.ReadFromStream(stream);
         if (res == false)
         {
@@ -44,6 +43,16 @@ public class MainApp {
             Console.WriteLine($"Detailed fault string message: {ex?.XmlFaultDetail}");
         }
 
+        var (result, ex1) = parser.ParseAsJSON();
+
+        if (ex1 != null)
+        {
+            Console.WriteLine(ex1?.Message);
+            Console.WriteLine($"Fault string message: {ex1?.FaultString}");
+            Console.WriteLine($"Detailed fault string message: {ex1?.XmlFaultDetail}");
+        }
+
+        Console.WriteLine(result);
         parser.Recycle();
     }
 

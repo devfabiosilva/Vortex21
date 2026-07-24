@@ -8,6 +8,10 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Bson" Version="3.10.0" />
+  </ItemGroup>
+
   <!--ItemGroup>
     <None Include="libs/libvortex21.so">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

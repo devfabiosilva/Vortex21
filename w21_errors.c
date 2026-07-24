@@ -27,6 +27,10 @@ static W21_ERROR_DETAIL w21_error_list[] =
     SET_W21_ERROR_DETAIL(E_W21_ERROR_UTF8_STRING_END_ARRAY, "In: array of UTF-8 string could be not finished")
     SET_W21_ERROR_DETAIL(E_W21_ERROR_BSON_ALREADY_ALLOC, "Input: BSON object is already alloc'd")
     SET_W21_ERROR_DETAIL(E_W21_ERROR_REFERENCE_IN_BSON_OBJECT, "In: Could not reference BSON object")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_ADD_UTF8_IN_ABSTRACT_ROOT_OBJECT, "In: Unable add UTF-8 in abstract root object")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_SET_UTF8_STRING_IN_TRANSIENT_BSON, "In: Unable set UTF-8 string in transient object")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_ADD_REQUIRED_DOUBLE_IN_ABSTRACT_ROOT_OBJECT, "In: Non null double required in abstract root object error")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_DETECT_ROOT_ABSTRACT_TYPE, "In: Could not detect root abstract type")
     // TODO Add error tag and description to allow human understand what 
     // is happening without undestand parser structure
     {0, NULL, NULL}

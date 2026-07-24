@@ -73,3 +73,24 @@ char *cs_w21_get_fault_string_xml(struct soap *soap)
   DECLARE_W21_CONFIG
   return &config->detail_message_xml[0];
 }
+
+uint32_t cs_w21_get_fault_error(struct soap *soap)
+{
+    DECLARE_W21_CONFIG
+    return (uint32_t)config->error;
+}
+
+int32_t cs_w21_get_bson_ser(struct soap *soap, uint8_t **bson)
+{
+    int32_t res;
+    struct c_bson_serialized_t *bson_ser = w21_bson_serialize(soap);
+    if (bson_ser != NULL) {
+        *bson = bson_ser->bson;
+        res = (int32_t)bson_ser->bson_size;
+    } else {
+        *bson = NULL;
+        res = -1;
+    }
+
+    return res;
+}

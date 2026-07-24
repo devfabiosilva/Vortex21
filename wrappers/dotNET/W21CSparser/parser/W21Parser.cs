@@ -2,6 +2,9 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using W21CSparser.exceptions;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+//dotnet add package MongoDB.Bson
 
 [assembly: DisableRuntimeMarshalling]
 
@@ -57,6 +60,14 @@ public partial class W21Parser: IDisposable
     [LibraryImport("w21cs", EntryPoint = "w21_enable_input_rules_validator")]
     private static partial int EnableInputValidatorNative(nint soap);
 
+    [LibraryImport("w21cs", EntryPoint = "bson_read_AutoDetect21")]
+    private static partial int ParseNative(nint soap);
+
+    [LibraryImport("w21cs", EntryPoint = "cs_w21_get_bson_ser")]
+    private static unsafe partial int GetBsonSerializedNative(nint soap, out byte *bson);
+
+    [LibraryImport("w21cs", EntryPoint = "cs_w21_get_fault_error")]
+    private static partial int GetFaultErrorNative(nint soap);
     public static readonly ulong XmlStrict = GetXmlStrict();
     public static readonly ulong XmlIgnoreNS = GetXmlIgnoreNS();
 
@@ -260,5 +271,88 @@ public partial class W21Parser: IDisposable
         }
 
         return (ex == null, ex);
+    }
+
+    public (byte []success, W21Exception? ex) Parse()
+    {
+         _mutex.Wait();
+
+        W21Exception? ex = null;
+        byte []ret = [];
+        try
+        {
+            if (_soap != nint.Zero)
+            {
+                int err = ParseNative(_soap);
+                if (err == 0)
+                {
+
+                    unsafe
+                    {
+                        int bson_size = GetBsonSerializedNative(_soap, out byte *bson);
+
+                        if (bson != null)
+                        {
+                             ret = new byte[bson_size];
+                             Span<byte> nativeByte = new Span<byte>(bson, bson_size);
+                             nativeByte.CopyTo(ret);
+
+                        } else
+                        {
+                            ex = new W21Exception(
+                                message: "GetBsonSerializedNative: Unable parsing BSON binary error. See faultstring for details",
+                                error: GetFaultErrorNative(_soap),
+                                faultstring: _GetFaultDetail(),
+                                xmlfaultdetail: _GetFaultDetailXML()
+                            );
+                        }
+                    }
+                } else
+                {
+                    ex = new W21Exception(
+                        message: "Parsing BSON binary error. See faultstring for details",
+                        error: err,
+                        faultstring: _GetFaultDetail(),
+                        xmlfaultdetail: _GetFaultDetailXML()
+                    );
+                }
+            } else
+            {
+                ex = new W21Exception(
+                    message: "Unable to parse as BSON binary. Closed instance or invalid C pointer",
+                    error: -1,
+                    "",
+                    ""
+                );
+            }
+        } finally
+        {
+            _mutex.Release();   
+        }
+
+        return (ret, ex);
+    }
+
+    public (BsonDocument? bson, W21Exception? ex) ParseAsBSON()
+    {
+        BsonDocument? doc = null;
+        var (ret, ex) = Parse();
+        if (ex == null)
+        {
+            doc = BsonSerializer.Deserialize<BsonDocument>(ret);
+        }
+        return (doc, ex);
+    }
+
+    public (string? json, W21Exception? ex) ParseAsJSON()
+    {
+        string? result = null;
+        var (res, ex) = ParseAsBSON();
+        if (ex == null)
+        {
+            result = res.ToJson();
+        }
+
+        return (result, ex);
     }
 }
