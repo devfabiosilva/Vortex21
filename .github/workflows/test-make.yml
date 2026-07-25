@@ -91,8 +91,17 @@ jobs:
           mkdir -p "$CCACHE_DIR"
 
           JOBS=${{ steps.jobs.outputs.JOBS }}
-          echo "Running: make -j$JOBS c_examples java_examples"
+          echo "Preparing target directories and debug listing..."
+          # Garantir que o diretório destino para o .so exista
+          mkdir -p wrappers/java/src/main/resources
+          echo "PWD: $(pwd)"
+          ls -la wrappers || true
+          ls -la wrappers/java || true
+          ls -la wrappers/java/src || true
+          ls -la wrappers/java/src/main || true
+          ls -la wrappers/java/src/main/resources || true
 
+          echo "Running: make -j$JOBS c_examples java_examples"
           # stdbuf for line-buffering; tee streams to UI and saves build.log
           stdbuf -oL -eL make -j"$JOBS" c_examples java_examples 2>&1 | tee build.log
 
