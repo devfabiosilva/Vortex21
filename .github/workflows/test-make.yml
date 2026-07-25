@@ -5,18 +5,34 @@ on:
     branches: ["main", "master"]
   pull_request:
     branches: ["main", "master"]
+  workflow_dispatch:
 
 jobs:
   build-and-test:
     name: Build and run examples
     runs-on: ubuntu-latest
     timeout-minutes: 360
+    env:
+      # Set to 'true' to force rebuild of libbson even if cache exists (can be overridden by .env)
+      FORCE_REBUILD: 'false'
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Load .env file
+        run: |
+          ENV_PATH=".github/workflows/.env"
+          if [ -f "$ENV_PATH" ]; then
+            echo "Loading $ENV_PATH into environment (GITHUB_ENV)"
+            # Skip empty lines and comments, append VAR=VAL lines to GITHUB_ENV
+            grep -v '^[[:space:]]*#' "$ENV_PATH" | grep -v '^[[:space:]]*$' \
+              | while IFS= read -r line; do echo "$line" >> $GITHUB_ENV; done
+          else
+            echo "$ENV_PATH not found; skipping"
+          fi
 
       - name: Show environment
         run: |
@@ -37,20 +53,50 @@ jobs:
       - name: Setup ccache and install build deps (includes OpenJDK 11)
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential pkg-config cmake libssl-dev default-jdk maven ccache openjdk-11-jdk
+          sudo apt-get install -y build-essential pkg-config cmake libssl-dev default-jdk maven ccache openjdk-11-jdk git ca-certificates python3
           # Increase ccache size (optional)
           ccache --max-size=5G || true
 
-      - name: Cache compiled core and ccache
-        id: cache-core
+      - name: Restore prebuilt libbson (cache)
+        id: libbson-cache
         uses: actions/cache@v4
         with:
-          # Ajuste 'path/to/witsml21C.c' para o caminho real do arquivo se desejar invalidar cache quando ele mudar.
-          key: ${{ runner.os }}-core-${{ hashFiles('core/**', 'wrappers/java/**', 'path/to/witsml21C.c') }}
+          # Ajuste estes paths para os arquivos/fonte que compõem o libbson/mongo-c-driver no seu repo.
+          # Inclua um arquivo de versão (core/libbson.version) para controlar quando invalidar o cache.
+          key: ${{ runner.os }}-libbson-${{ hashFiles('vendor/libbson/**', 'vendor/mongo-c-driver/**', 'core/libbson.version') }}
           path: |
             core/lib
             core/include
             ~/.ccache
+
+      - name: Show restored libbson state (debug)
+        run: |
+          echo "Cache hit? ${{ steps.libbson-cache.outputs.cache-hit }}"
+          echo "core/lib listing:"
+          ls -la core/lib || true
+          echo "core/include listing:"
+          ls -la core/include || true
+
+      - name: Build libbson (only on cache miss or forced)
+        if: steps.libbson-cache.outputs.cache-hit != 'true' || env.FORCE_REBUILD == 'true'
+        run: |
+          set -o pipefail
+          echo "Cache miss or forced rebuild: building libbson/mongoc..."
+          # Garantir ccache no PATH e compilers canônicos
+          export PATH="/usr/lib/ccache:$PATH"
+          export CC=gcc
+          export CXX=g++
+          export CCACHE_DIR="${HOME}/.ccache"
+          mkdir -p "$CCACHE_DIR"
+          # Comando para compilar/install do libbson (ajuste se necessário)
+          make install_bson 2>&1 | tee install_bson.log
+
+      - name: Upload install_bson log (only when built)
+        if: steps.libbson-cache.outputs.cache-hit != 'true' || env.FORCE_REBUILD == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: install-bson-log
+          path: install_bson.log
 
       - name: Determine parallel jobs (-j)
         id: jobs
@@ -129,3 +175,9 @@ jobs:
         run: |
           echo "Listing wrappers/java:"
           ls -la wrappers/java || true
+
+      - name: ccache stats (helpful to evaluate cache effectiveness)
+        if: always()
+        run: |
+          echo "ccache stats:"
+          ccache -s || true
