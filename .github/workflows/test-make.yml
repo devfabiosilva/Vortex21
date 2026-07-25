@@ -34,18 +34,18 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-maven-
 
-      - name: Setup ccache, JDK11 and install build deps
+      - name: Setup ccache and install build deps (includes OpenJDK 11)
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential pkg-config cmake libssl-dev openjdk-11-jdk maven ccache
-          # Increase ccache size
+          sudo apt-get install -y build-essential pkg-config cmake libssl-dev default-jdk maven ccache openjdk-11-jdk
+          # Increase ccache size (optional)
           ccache --max-size=5G || true
 
       - name: Cache compiled core and ccache
         id: cache-core
         uses: actions/cache@v4
         with:
-          # Ajuste os paths na hashFiles() para os arquivos que realmente influenciam a build do core/witsml
+          # Ajuste 'path/to/witsml21C.c' para o caminho real do arquivo se desejar invalidar cache quando ele mudar.
           key: ${{ runner.os }}-core-${{ hashFiles('core/**', 'wrappers/java/**', 'path/to/witsml21C.c') }}
           path: |
             core/lib
@@ -62,35 +62,38 @@ jobs:
 
       - name: Build and run c_examples + java_examples (streamed, logged)
         run: |
+          set -o pipefail
+
           # Detect JAVA_HOME (works quando javac está instalado)
-          JAVA_HOME="$(dirname $(dirname $(readlink -f $(which javac))))"
-          echo "Detected JAVA_HOME=$JAVA_HOME"
-          export JAVA_HOME
+          if which javac >/dev/null 2>&1; then
+            JAVA_HOME="$(dirname $(dirname $(readlink -f $(which javac))))"
+            echo "Detected JAVA_HOME=$JAVA_HOME"
+            export JAVA_HOME
 
-          # Ensure JNI include paths are available to compiler
-          JNI_INC1="$JAVA_HOME/include"
-          JNI_INC2="$JAVA_HOME/include/linux"
-          echo "Using JNI includes: $JNI_INC1 and $JNI_INC2"
+            JNI_INC1="$JAVA_HOME/include"
+            JNI_INC2="$JAVA_HOME/include/linux"
+            echo "Using JNI includes: $JNI_INC1 and $JNI_INC2"
 
-          # Enable ccache for gcc/g++
-          export CC="ccache gcc"
-          export CXX="ccache g++"
+            # Export flags so Makefile picks up the JNI headers if it doesn't use JAVA_HOME
+            export CFLAGS="${CFLAGS} -I${JNI_INC1} -I${JNI_INC2}"
+            export CXXFLAGS="${CXXFLAGS} -I${JNI_INC1} -I${JNI_INC2}"
+            export CPPFLAGS="${CPPFLAGS} -I${JNI_INC1} -I${JNI_INC2}"
+          else
+            echo "javac not found in PATH; JNI includes will not be set"
+          fi
+
+          # Ensure ccache wrapper is used via PATH and compilers are canonical names
+          export PATH="/usr/lib/ccache:$PATH"
+          export CC=gcc
+          export CXX=g++
+
           export CCACHE_DIR="${HOME}/.ccache"
           mkdir -p "$CCACHE_DIR"
-
-          # Append JNI include flags so Makefile's compilation picks them up.
-          # Algumas Makefiles usam CFLAGS/CXXFLAGS ou CPPFLAGS; export ambos.
-          export CFLAGS="${CFLAGS} -I${JNI_INC1} -I${JNI_INC2}"
-          export CXXFLAGS="${CXXFLAGS} -I${JNI_INC1} -I${JNI_INC2}"
-          export CPPFLAGS="${CPPFLAGS} -I${JNI_INC1} -I${JNI_INC2}"
-
-          # Optionally expose JAVA_HOME to Makefile (caso ele use)
-          export JAVA_HOME
 
           JOBS=${{ steps.jobs.outputs.JOBS }}
           echo "Running: make -j$JOBS c_examples java_examples"
 
-          # Use stdbuf to reduce buffering and tee to save full log
+          # stdbuf for line-buffering; tee streams to UI and saves build.log
           stdbuf -oL -eL make -j"$JOBS" c_examples java_examples 2>&1 | tee build.log
 
       - name: Upload build log
@@ -114,4 +117,6 @@ jobs:
 
       - name: Print wrappers/java listing
         if: always()
-        run: ls -la wrappers/java || true
+        run: |
+          echo "Listing wrappers/java:"
+          ls -la wrappers/java || true
