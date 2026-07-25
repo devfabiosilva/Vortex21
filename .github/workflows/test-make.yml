@@ -10,54 +10,98 @@ jobs:
   build-and-test:
     name: Build and run examples
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 360
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Show environment
+        run: |
+          echo "Runner: $RUNNER_OS"
+          nproc --all || true
+          uname -a
+          free -m || true
+          java -version || true
+          mvn -v || true
 
       - name: Cache Maven repository
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+          restore-keys: ${{ runner.os }}-maven-
 
-      - name: Cache core built libs/includes
+      - name: Setup ccache, JDK11 and install build deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential pkg-config cmake libssl-dev openjdk-11-jdk maven ccache
+          # Increase ccache size
+          ccache --max-size=5G || true
+
+      - name: Cache compiled core and ccache
+        id: cache-core
         uses: actions/cache@v4
         with:
+          # Ajuste os paths na hashFiles() para os arquivos que realmente influenciam a build do core/witsml
+          key: ${{ runner.os }}-core-${{ hashFiles('core/**', 'wrappers/java/**', 'path/to/witsml21C.c') }}
           path: |
             core/lib
             core/include
-          key: ${{ runner.os }}-core-${{ hashFiles('core/**') }}
-          restore-keys: |
-            ${{ runner.os }}-core-
-
-      - name: Install build dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential pkg-config cmake libssl-dev default-jdk maven
+            ~/.ccache
 
       - name: Determine parallel jobs (-j)
         id: jobs
         run: |
-          N=$(nproc --all)
-          if [ "$N" -gt 1 ]; then
-            JOBS=$((N-1))
-          else
-            JOBS=1
-          fi
+          N=$(nproc --all || echo 2)
+          if [ "$N" -gt 1 ]; then JOBS=$((N-1)); else JOBS=1; fi
           echo "Determined nproc=$N, using JOBS=$JOBS"
           echo "JOBS=$JOBS" >> $GITHUB_OUTPUT
 
-      - name: Build and run c_examples + java_examples
+      - name: Build and run c_examples + java_examples (streamed, logged)
         run: |
+          # Detect JAVA_HOME (works quando javac está instalado)
+          JAVA_HOME="$(dirname $(dirname $(readlink -f $(which javac))))"
+          echo "Detected JAVA_HOME=$JAVA_HOME"
+          export JAVA_HOME
+
+          # Ensure JNI include paths are available to compiler
+          JNI_INC1="$JAVA_HOME/include"
+          JNI_INC2="$JAVA_HOME/include/linux"
+          echo "Using JNI includes: $JNI_INC1 and $JNI_INC2"
+
+          # Enable ccache for gcc/g++
+          export CC="ccache gcc"
+          export CXX="ccache g++"
+          export CCACHE_DIR="${HOME}/.ccache"
+          mkdir -p "$CCACHE_DIR"
+
+          # Append JNI include flags so Makefile's compilation picks them up.
+          # Algumas Makefiles usam CFLAGS/CXXFLAGS ou CPPFLAGS; export ambos.
+          export CFLAGS="${CFLAGS} -I${JNI_INC1} -I${JNI_INC2}"
+          export CXXFLAGS="${CXXFLAGS} -I${JNI_INC1} -I${JNI_INC2}"
+          export CPPFLAGS="${CPPFLAGS} -I${JNI_INC1} -I${JNI_INC2}"
+
+          # Optionally expose JAVA_HOME to Makefile (caso ele use)
+          export JAVA_HOME
+
           JOBS=${{ steps.jobs.outputs.JOBS }}
           echo "Running: make -j$JOBS c_examples java_examples"
-          make -j"$JOBS" c_examples java_examples
+
+          # Use stdbuf to reduce buffering and tee to save full log
+          stdbuf -oL -eL make -j"$JOBS" c_examples java_examples 2>&1 | tee build.log
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: build.log
 
       - name: Upload build artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
@@ -68,8 +112,6 @@ jobs:
             core/include/**
             test-results/**
 
-      - name: Show summary (last lines of logs/artifacts)
+      - name: Print wrappers/java listing
         if: always()
-        run: |
-          echo "ls -R wrappers/java || true"
-          ls -R wrappers/java || true
+        run: ls -la wrappers/java || true
