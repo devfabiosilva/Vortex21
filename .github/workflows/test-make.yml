@@ -1,0 +1,75 @@
+name: Build & test (Makefile: c_examples + java_examples)
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main", "master"]
+
+jobs:
+  build-and-test:
+    name: Build and run examples
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Cache Maven repository
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Cache core built libs/includes
+        uses: actions/cache@v4
+        with:
+          path: |
+            core/lib
+            core/include
+          key: ${{ runner.os }}-core-${{ hashFiles('core/**') }}
+          restore-keys: |
+            ${{ runner.os }}-core-
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential pkg-config cmake libssl-dev default-jdk maven
+
+      - name: Determine parallel jobs (-j)
+        id: jobs
+        run: |
+          N=$(nproc --all)
+          if [ "$N" -gt 1 ]; then
+            JOBS=$((N-1))
+          else
+            JOBS=1
+          fi
+          echo "Determined nproc=$N, using JOBS=$JOBS"
+          echo "JOBS=$JOBS" >> $GITHUB_OUTPUT
+
+      - name: Build and run c_examples + java_examples
+        run: |
+          JOBS=${{ steps.jobs.outputs.JOBS }}
+          echo "Running: make -j$JOBS c_examples java_examples"
+          make -j"$JOBS" c_examples java_examples
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: |
+            wrappers/java/*.so
+            **/target/*.jar
+            core/lib/**
+            core/include/**
+            test-results/**
+
+      - name: Show summary (last lines of logs/artifacts)
+        if: always()
+        run: |
+          echo "ls -R wrappers/java || true"
+          ls -R wrappers/java || true
