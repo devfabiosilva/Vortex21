@@ -1,4 +1,4 @@
-name: Build & test (Makefile: c_examples + java_examples)
+name: "Build & test (Makefile: c_examples + java_examples)"
 
 on:
   push:
