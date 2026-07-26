@@ -20,9 +20,9 @@ import (
 	"unsafe"
 	"os"
 	"sync"
-	"runtime"
-	"time"
-//	"go.mongodb.org/mongo-driver/v2/bson"
+//	"runtime"
+//	"time"
+	"go.mongodb.org/mongo-driver/v2/bson"
 )
 
 type W21Statistics struct {
@@ -475,6 +475,30 @@ func (w21 *W21Config) GetDetails() string {
 	return "Unable to retrieve WISTML 2.1 error details"
 }
 
+func (w21 *W21Config) GetVersion() string {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	if w21.cSoapPtr != nil {
+		ret := C.w21_version_str(nil)
+		return C.GoString(ret)
+	}
+
+	return "Unable to retrieve Vortex21 version string"
+}
+
+func (w21 *W21Config) GetBuildDate() string {
+	w21.mu.Lock()
+	defer w21.mu.Unlock()
+
+	if w21.cSoapPtr != nil {
+		ret := C.w21_build_date_str(nil)
+		return C.GoString(ret)
+	}
+
+	return "Unable to retrieve Vortex21 build date string"
+}
+
 func (w21 *W21Config) GetXmlDetails() string {
 	w21.mu.Lock()
 	defer w21.mu.Unlock()
@@ -556,7 +580,7 @@ func (w21 *W21Config) GetStatisticsTotal() (int, *W21StatPhase) {
 
 	return int(C.E_GO_W21_ERROR_INVALID_W21_HANDLER), nil
 }
-
+/*
 func runBenchmark(id int, iter int, config *W21Config, xmlData []byte, wg *sync.WaitGroup) {
 	defer wg.Done()
 
@@ -635,7 +659,7 @@ func main() {
 	elapsed := time.Since(start)
 	fmt.Printf("\n Total concurrent time: %s\n", elapsed)
 }
-
+*/
 /*
 func main () {
 	// Testing wrapper
@@ -715,7 +739,7 @@ func main () {
 	fmt.Printf("\nStatistics Total (Phase 1 + Phase 2) %v\n", staTotal)
 }
 */
-/*
+
 func main() {
 	// Testing wrapper
 	w21Conf, err := W21ConfigNew(C.SOAP_XML_STRICT|C.SOAP_XML_IGNORENS, 0)
@@ -796,5 +820,7 @@ func main() {
 	fmt.Printf("\nStatistics Phase 1 %v\n", staPha1)
 
 	fmt.Printf("\nStruct %v\n", w21Conf)
+	fmt.Printf("\nVortex version %s\n", w21Conf.GetVersion())
+	fmt.Printf("\nVortex build date %s\n", w21Conf.GetBuildDate())
 }
-*/
+
