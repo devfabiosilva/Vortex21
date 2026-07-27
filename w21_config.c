@@ -4,6 +4,9 @@
 #include <time.h>
 #include <malloc.h>
 
+//ADD C LOCALE: Temporary implementation for mitigate this problem: https://jira.mongodb.org/browse/CDRIVER-6377
+#include <locale.h>
+
 inline uint64_t w21_version()
 {
   return W21_BETA(1) | W21_VERSION(W21_MAJOR, W21_MINOR, W21_REVISION);
@@ -451,9 +454,23 @@ struct c_json_str_t *w21_get_json(struct soap *soap)
             return c_json_str;
 
         if (config->in_bson != NULL) {
+            //ADD C LOCALE: Temporary implementation for mitigate this problem: https://jira.mongodb.org/browse/CDRIVER-6377
+            locale_t c_numeric = newlocale (LC_NUMERIC_MASK, "C", (locale_t) 0);
+            locale_t prev = uselocale(c_numeric);
+
+            if ((c_json_str->json = bson_as_relaxed_extended_json((const bson_t *)config->in_bson, &c_json_str->json_len))) {
+                uselocale (prev); /* restore */
+                freelocale (c_numeric);
+                return c_json_str;
+            }
+
+            uselocale (prev); /* restore */
+            freelocale (c_numeric);
+
+/*
             if ((c_json_str->json = bson_as_relaxed_extended_json((const bson_t *)config->in_bson, &c_json_str->json_len)))
                 return c_json_str;
-  
+*/  
             set_w21_error_message(soap, E_21_ERROR_UNABLE_TO_PARSE_XML_OBJECT_TO_JSON_STRING, "Could not parse WITSML 2.1 object %s to JSON string", W21_OBJ_TYPE_STR);
 
             return NULL;
