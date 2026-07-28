@@ -288,6 +288,20 @@ public partial class W21Parser: IDisposable
         return res;
     }
 
+    public (bool success, Exception? ErrorEx) ReadFromFile(string filename)
+    {
+        byte[] stream;
+
+        try {
+            stream = File.ReadAllBytes(filename);
+        } catch (Exception e)
+        {
+            return (false, e);
+        }
+
+        return ReadFromStream(stream);
+    }
+
     public (bool success, W21Exception? ErrorEx) ReadFromStream(byte []stream)
     {
 

@@ -1,4 +1,6 @@
-﻿using W21CSparser.parser;
+﻿using System.Runtime.CompilerServices;
+using W21CSparser.exceptions;
+using W21CSparser.parser;
 
 namespace W21CSparser;
 
@@ -60,6 +62,19 @@ public class MainApp {
         Console.WriteLine($"Version: {parser.GetVersionString()}");
         Console.WriteLine($"Build date: {parser.GetBuildDateString()}");
         parser.Recycle();
+
+        var (res3, ex3) = parser.ReadFromFile("bin/Debug/net8.0/OpsReport.xml");
+
+        if (ex3 != null)
+        {
+            if (ex is W21Exception)
+            {
+                Console.WriteLine(ex3?.Message);
+                Console.WriteLine($"From file: Fault string message: {((W21Exception?)ex3)?.FaultString}");
+                Console.WriteLine($"From file: Detailed fault string message: {((W21Exception?)ex3)?.XmlFaultDetail}");
+            } else
+                throw ex3;
+        }
     }
 
 }
