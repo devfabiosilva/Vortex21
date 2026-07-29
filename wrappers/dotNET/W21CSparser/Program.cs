@@ -67,13 +67,25 @@ public class MainApp {
 
         if (ex3 != null)
         {
-            if (ex is W21Exception)
+            if (ex3 is W21Exception)
             {
                 Console.WriteLine(ex3?.Message);
                 Console.WriteLine($"From file: Fault string message: {((W21Exception?)ex3)?.FaultString}");
                 Console.WriteLine($"From file: Detailed fault string message: {((W21Exception?)ex3)?.XmlFaultDetail}");
             } else
                 throw ex3;
+        }
+
+        W21Parser.W21ReadStatistics? readStatistics = parser.readWITSML21Statistics();
+        if (readStatistics != null) {
+            Console.WriteLine($"Stats CPB {readStatistics?.CPB}");
+            Console.WriteLine($"Stats CPU Cycles {readStatistics?.CPUCycles}");
+            Console.WriteLine($"Stats Throughput MB/s {readStatistics?.Throughput}");
+            Console.WriteLine($"Stats Total Time (ms) {readStatistics?.TotalTime}");
+            Console.WriteLine($"Stats Used Memory MB {readStatistics?.TotalMem/(1024*1024.0)} (Bytes) {readStatistics?.TotalMem}");
+        } else
+        {
+            Console.WriteLine("Unable to get hardware statistics for phase 1");
         }
     }
 

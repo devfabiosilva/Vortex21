@@ -28,7 +28,24 @@ public partial class W21Parser: IDisposable
         public int error;
         public string Tag;
         public string Message;
+    } 
+
+    public struct W21ReadStatistics
+    {
+        public int statErr;
+        public Double CPB; // Cycles per bytes
+        public UInt64 CPUCycles; // CPU cycles
+        public UInt64 TotalNanos; // time in ns
+        public UInt64 TotalMem; // Total used memory in bytes
+        public Double Throughput; // in MB/s
+        public Double TotalTime; // in ms
+        public Double UsedMemory; // in MB
+        public Double TotalSize; // in MB
+        public int StreamSize; // in Bytes
+
     }
+
+    private W21ReadStatistics w21ReadStatistics = default;
 
     [LibraryImport("w21cs", EntryPoint = "cs_w21_get_error_detail")]
     private static partial nint GetErrorDetailNative(int error);
@@ -77,7 +94,19 @@ public partial class W21Parser: IDisposable
 
     [LibraryImport("w21cs", EntryPoint = "cs_w21_build_date_str")]
     private static partial nint _GetBuildDateString();
- 
+
+
+    [LibraryImport("w21cs", EntryPoint = "w21_hard_summary_read_begin")]
+    private static partial int HardwareReadStatisticBeginNative(nint soap);
+
+    [LibraryImport("w21cs", EntryPoint = "cs_w21_hard_summary_read_end")]
+    private static partial int HardwareReadStatisticEndNative(
+            nint soap,
+            out UInt64 inTotalCycles,
+            out UInt64 inTotalNanos,
+            out UInt64 inMemDelta
+        );
+
     public static readonly ulong XmlStrict = GetXmlStrict();
     public static readonly ulong XmlIgnoreNS = GetXmlIgnoreNS();
 
@@ -180,6 +209,8 @@ public partial class W21Parser: IDisposable
     public void Recycle()
     {
         _mutex.Wait();
+
+        w21ReadStatistics = default;
         try {
             if (_soap != nint.Zero)
             {
@@ -318,9 +349,21 @@ public partial class W21Parser: IDisposable
                     {
                         fixed (byte *pByte = stream)
                         {
+                            int statErr = HardwareReadStatisticBeginNative(_soap);
                             int err = ReadFromStreamNative(_soap, pByte, (nint)stream.Length);
 
-                            if (err != 0)
+                            if (err == 0)
+                            {
+                                if (statErr == 0)
+                                {
+                                    statErr = HardwareReadStatisticEndNative(
+                                        _soap,
+                                        out w21ReadStatistics.CPUCycles,
+                                        out w21ReadStatistics.TotalNanos,
+                                        out w21ReadStatistics.TotalMem
+                                    );
+                                }
+                            } else
                             {
                                 ex = new W21Exception(
                                     message: "ReadFromStream error. See faultstring for details", 
@@ -329,6 +372,9 @@ public partial class W21Parser: IDisposable
                                     xmlfaultdetail: _GetFaultDetailXML()
                                 );
                             }
+
+                            w21ReadStatistics.StreamSize = stream.Length;
+                            w21ReadStatistics.statErr = statErr;
                         }
                     }
                 } else
@@ -357,6 +403,28 @@ public partial class W21Parser: IDisposable
         return (ex == null, ex);
     }
 
+    public W21ReadStatistics? readWITSML21Statistics()
+    {
+        if (w21ReadStatistics.statErr == 0)
+        {
+            if (w21ReadStatistics.CPB == 0.0)
+            {
+                if (w21ReadStatistics.StreamSize > 0) {
+                    w21ReadStatistics.CPB = (Double)w21ReadStatistics.CPUCycles / (Double)w21ReadStatistics.StreamSize;
+    
+                    w21ReadStatistics.TotalSize = (Double)w21ReadStatistics.StreamSize/((Double)1024*1024);
+
+                    if (w21ReadStatistics.TotalNanos > 0) {
+                        w21ReadStatistics.Throughput = w21ReadStatistics.TotalSize / (Double)(w21ReadStatistics.TotalNanos * 1E-9);
+                        w21ReadStatistics.TotalTime = w21ReadStatistics.TotalNanos * 1E-6;
+                    }
+                }
+
+            }
+            return w21ReadStatistics;
+        }
+        return null;
+    }
     public (byte []success, W21Exception? ex) Parse()
     {
          _mutex.Wait();

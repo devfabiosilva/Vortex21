@@ -115,3 +115,26 @@ const char *cs_w21_build_date_str()
     return w21_build_date_str(NULL);
 }
 
+int cs_w21_hard_summary_read_end(
+    struct soap *soap,
+    uint64_t *in_total_cycles,
+    uint64_t *in_total_nanos,
+    uint64_t *in_mem_delta
+)
+{
+    int err = w21_hard_summary_read_end(soap);
+
+    DECLARE_W21_CONFIG
+
+    if (err == 0) {
+        *in_total_cycles = config->hardware_statistics.in_total_cycles;
+        *in_total_nanos = config->hardware_statistics.in_total_nanos;
+        *in_mem_delta = config->hardware_statistics.in_mem_delta;
+    } else {
+        *in_total_cycles = 0;
+        *in_total_nanos = 0;
+        *in_mem_delta = 0;
+    }
+
+    return err;
+}
