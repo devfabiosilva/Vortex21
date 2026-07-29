@@ -138,3 +138,53 @@ int cs_w21_hard_summary_read_end(
 
     return err;
 }
+
+int cs_w21_hard_summary_parse_end(
+    struct soap *soap,
+    uint64_t *in_total_cycles,
+    uint64_t *in_total_nanos,
+    uint64_t *in_mem_delta
+)
+{
+    int err = w21_hard_summary_parse_end(soap);
+
+    DECLARE_W21_CONFIG
+
+    if (err == 0) {
+        *in_total_cycles = config->hardware_statistics.in_parse_total_cycles;
+        *in_total_nanos = config->hardware_statistics.in_parse_total_nanos;
+        *in_mem_delta = config->hardware_statistics.in_parse_mem_delta;
+    } else {
+        *in_total_cycles = 0;
+        *in_total_nanos = 0;
+        *in_mem_delta = 0;
+    }
+
+    return err;
+}
+
+/*
+int cs_w21_hard_summary_parse_json_end(
+    struct soap *soap,
+    uint64_t *in_total_cycles,
+    uint64_t *in_total_nanos,
+    uint64_t *in_mem_delta
+)
+{
+    int err = w21_hard_summary_parse_json_end(soap);
+
+    DECLARE_W21_CONFIG
+
+    if (err == 0) {
+        *in_total_cycles = config->hardware_statistics.in_parse_json_total_cycles;
+        *in_total_nanos = config->hardware_statistics.in_parse_json_total_nanos;
+        *in_mem_delta = config->hardware_statistics.in_parse_json_mem_delta;
+    } else {
+        *in_total_cycles = 0;
+        *in_total_nanos = 0;
+        *in_mem_delta = 0;
+    }
+
+    return err;
+}
+*/

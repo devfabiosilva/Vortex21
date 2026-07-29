@@ -32,6 +32,7 @@ public partial class W21Parser: IDisposable
 
     public struct W21ReadStatistics
     {
+        public bool Processed; // Is already processed
         public int statErr;
         public Double CPB; // Cycles per bytes
         public UInt64 CPUCycles; // CPU cycles
@@ -46,6 +47,7 @@ public partial class W21Parser: IDisposable
     }
 
     private W21ReadStatistics w21ReadStatistics = default;
+    private W21ReadStatistics w21ParseStatistics = default;
 
     [LibraryImport("w21cs", EntryPoint = "cs_w21_get_error_detail")]
     private static partial nint GetErrorDetailNative(int error);
@@ -95,12 +97,22 @@ public partial class W21Parser: IDisposable
     [LibraryImport("w21cs", EntryPoint = "cs_w21_build_date_str")]
     private static partial nint _GetBuildDateString();
 
-
     [LibraryImport("w21cs", EntryPoint = "w21_hard_summary_read_begin")]
     private static partial int HardwareReadStatisticBeginNative(nint soap);
 
     [LibraryImport("w21cs", EntryPoint = "cs_w21_hard_summary_read_end")]
     private static partial int HardwareReadStatisticEndNative(
+            nint soap,
+            out UInt64 inTotalCycles,
+            out UInt64 inTotalNanos,
+            out UInt64 inMemDelta
+        );
+
+    [LibraryImport("w21cs", EntryPoint = "w21_hard_summary_parse_begin")]
+    private static partial int HardwareParseStatisticBeginNative(nint soap);
+
+    [LibraryImport("w21cs", EntryPoint = "cs_w21_hard_summary_parse_end")]
+    private static partial int HardwareParseStatisticEndNative(
             nint soap,
             out UInt64 inTotalCycles,
             out UInt64 inTotalNanos,
@@ -211,6 +223,7 @@ public partial class W21Parser: IDisposable
         _mutex.Wait();
 
         w21ReadStatistics = default;
+        w21ParseStatistics = default;
         try {
             if (_soap != nint.Zero)
             {
@@ -349,7 +362,12 @@ public partial class W21Parser: IDisposable
                     {
                         fixed (byte *pByte = stream)
                         {
-                            int statErr = HardwareReadStatisticBeginNative(_soap);
+                            int statErr = -1;
+                            if (!w21ReadStatistics.Processed)
+                            {
+                                statErr = HardwareReadStatisticBeginNative(_soap);                                
+                            }
+
                             int err = ReadFromStreamNative(_soap, pByte, (nint)stream.Length);
 
                             if (err == 0)
@@ -362,6 +380,8 @@ public partial class W21Parser: IDisposable
                                         out w21ReadStatistics.TotalNanos,
                                         out w21ReadStatistics.TotalMem
                                     );
+
+                                    w21ReadStatistics.Processed = statErr == 0;
                                 }
                             } else
                             {
@@ -405,7 +425,7 @@ public partial class W21Parser: IDisposable
 
     public W21ReadStatistics? readWITSML21Statistics()
     {
-        if (w21ReadStatistics.statErr == 0)
+        if (w21ReadStatistics.Processed && w21ReadStatistics.statErr == 0)
         {
             if (w21ReadStatistics.CPB == 0.0)
             {
@@ -425,6 +445,30 @@ public partial class W21Parser: IDisposable
         }
         return null;
     }
+
+    public W21ReadStatistics? parseStatistics()
+    {
+        if (w21ParseStatistics.Processed && w21ParseStatistics.statErr == 0)
+        {
+            if (w21ParseStatistics.CPB == 0.0)
+            {
+                if (w21ParseStatistics.StreamSize > 0) {
+                    w21ParseStatistics.CPB = (Double)w21ParseStatistics.CPUCycles / (Double)w21ParseStatistics.StreamSize;
+    
+                    w21ParseStatistics.TotalSize = (Double)w21ParseStatistics.StreamSize/((Double)1024*1024);
+
+                    if (w21ParseStatistics.TotalNanos > 0) {
+                        w21ParseStatistics.Throughput = w21ParseStatistics.TotalSize / (Double)(w21ParseStatistics.TotalNanos * 1E-9);
+                        w21ParseStatistics.TotalTime = w21ParseStatistics.TotalNanos * 1E-6;
+                    }
+                }
+
+            }
+            return w21ParseStatistics;
+        }
+        return null;
+    }
+
     public (byte []success, W21Exception? ex) Parse()
     {
          _mutex.Wait();
@@ -435,6 +479,13 @@ public partial class W21Parser: IDisposable
         {
             if (_soap != nint.Zero)
             {
+                int statErr = -1;
+
+                if (!w21ParseStatistics.Processed)
+                {
+                    statErr = HardwareParseStatisticBeginNative(_soap);
+                }
+
                 int err = ParseNative(_soap);
                 if (err == 0)
                 {
@@ -443,6 +494,16 @@ public partial class W21Parser: IDisposable
                     {
                         int bson_size = GetBsonSerializedNative(_soap, out byte *bson);
 
+                        if (statErr == 0)
+                        {
+                            statErr = HardwareParseStatisticEndNative(_soap,
+                                out w21ParseStatistics.CPUCycles,
+                                out w21ParseStatistics.TotalNanos,
+                                out w21ParseStatistics.TotalMem
+                            );
+                            w21ParseStatistics.Processed = (statErr == 0);
+                            w21ParseStatistics.StreamSize = bson_size;
+                        }
                         if (bson != null)
                         {
                              ret = new byte[bson_size];
@@ -468,6 +529,7 @@ public partial class W21Parser: IDisposable
                         xmlfaultdetail: _GetFaultDetailXML()
                     );
                 }
+                w21ParseStatistics.statErr = statErr;
             } else
             {
                 ex = new W21Exception(

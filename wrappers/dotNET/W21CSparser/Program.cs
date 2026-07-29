@@ -87,6 +87,28 @@ public class MainApp {
         {
             Console.WriteLine("Unable to get hardware statistics for phase 1");
         }
+
+        var (result4, ex4) = parser.ParseAsJSON();
+
+        if (ex4 != null)
+        {
+            Console.WriteLine(ex4?.Message);
+            Console.WriteLine($"Fault string message: {ex4?.FaultString}");
+            Console.WriteLine($"Detailed fault string message: {ex4?.XmlFaultDetail}");
+        }
+
+        W21Parser.W21ReadStatistics? parseStatistics = parser.parseStatistics();
+        if (parseStatistics != null) {
+            Console.WriteLine($"Stats BSON CPB {parseStatistics?.CPB}");
+            Console.WriteLine($"Stats BSON CPU Cycles {parseStatistics?.CPUCycles}");
+            Console.WriteLine($"Stats BSON Throughput MB/s {parseStatistics?.Throughput}");
+            Console.WriteLine($"Stats BSON Total Time (ms) {parseStatistics?.TotalTime}");
+            Console.WriteLine($"Stats BSON Used Memory MB {parseStatistics?.TotalMem/(1024*1024.0)} (Bytes) {parseStatistics?.TotalMem}");
+        } else
+        {
+            Console.WriteLine("Unable to get hardware statistics for phase 2 (BSON)");
+        }
+
     }
 
 }
