@@ -4,6 +4,7 @@ using System.Text;
 using W21CSparser.exceptions;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
+using System.ComponentModel.Design.Serialization;
 //dotnet add package MongoDB.Bson
 
 [assembly: DisableRuntimeMarshalling]
@@ -14,6 +15,41 @@ public partial class W21Parser: IDisposable
 {
     nint _soap = nint.Zero;
     private readonly SemaphoreSlim _mutex = new(1, 1);
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct W21DocumentStatisticsNative
+    {
+        public Int32 costs;
+        public Int32 strings;
+        public Int32 shorts;
+        public Int32 ints;
+        public Int32 long64s;
+        public Int32 enums;
+        public Int32 arrays;
+        public Int32 booleans;
+        public Int32 doubles;
+        public Int32 date_times;
+        public Int32 measures;
+        public Int32 event_types;
+        public Int32 total;
+    }
+
+    public struct W21DocumentStatistics
+    {
+        public Int32 costs;
+        public Int32 strings;
+        public Int32 shorts;
+        public Int32 ints;
+        public Int32 long64s;
+        public Int32 enums;
+        public Int32 arrays;
+        public Int32 booleans;
+        public Int32 doubles;
+        public Int32 date_times;
+        public Int32 measures;
+        public Int32 event_types;
+        public Int32 total;
+    }
 
     [StructLayout(LayoutKind.Sequential)]
     private struct W21ErrorFieldsNative
@@ -97,6 +133,12 @@ public partial class W21Parser: IDisposable
     [LibraryImport("w21cs", EntryPoint = "cs_w21_build_date_str")]
     private static partial nint _GetBuildDateString();
 
+    [LibraryImport("w21cs", EntryPoint = "cs_w21_get_statistics_size")]
+    private static partial Int32 GetStatisticsStructSizeNative();
+
+    [LibraryImport("w21cs", EntryPoint = "w21_get_statistics")]
+    private static partial nint GetStatisticsNative(nint soap);
+
     [LibraryImport("w21cs", EntryPoint = "w21_hard_summary_read_begin")]
     private static partial int HardwareReadStatisticBeginNative(nint soap);
 
@@ -121,7 +163,6 @@ public partial class W21Parser: IDisposable
 
     public static readonly ulong XmlStrict = GetXmlStrict();
     public static readonly ulong XmlIgnoreNS = GetXmlIgnoreNS();
-
 
     public int EnableInputValidator()
     {
@@ -187,12 +228,24 @@ public partial class W21Parser: IDisposable
     }
     ~W21Parser() => CleanUp();
 
+    private void NativeConsistencyCheck()
+    {
+        int statisticsStructSize = (int)GetStatisticsStructSizeNative();
+        int managedSize = Marshal.SizeOf<W21DocumentStatistics>();
+        if (statisticsStructSize != managedSize)
+            throw new InvalidOperationException(
+                $"[Vortex21 Mismatch] C# W21DocumentStatistics size ({managedSize} bytes) " +
+                $"does not match Native C size ({statisticsStructSize} bytes)!"
+            );   
+    }
+
     /// <summary>
     /// Initializes native C WITSML 2.1 instance for validating and parsing WITSML documents.
     /// </summary>
     /// <exception cref="W21Exception">Exceptions is created with detailed message when native method fails (error != 0). </exception>
     public (int error, W21Exception? ErrorEx) TryInit(ulong inputOptions, ulong outputOptions)
     {
+        NativeConsistencyCheck();
         _mutex.Wait();
         try {
             int err = W21ConfigNew(ref _soap, inputOptions, outputOptions);
@@ -467,6 +520,49 @@ public partial class W21Parser: IDisposable
             return w21ParseStatistics;
         }
         return null;
+    }
+
+    public W21DocumentStatistics? documentStatistics()
+    {
+        W21DocumentStatistics? ret = null;
+        _mutex.Wait();
+        try
+        {
+            unsafe
+            {
+                if (_soap != nint.Zero)
+                {
+                    nint ptr = GetStatisticsNative(_soap);
+                    if (ptr != nint.Zero)
+                    {
+                        W21DocumentStatisticsNative nativeFields = Marshal.PtrToStructure<W21DocumentStatisticsNative>(ptr);
+                        ret = new W21DocumentStatistics
+                        {
+                            arrays = nativeFields.arrays,
+                            booleans = nativeFields.booleans,
+                            costs = nativeFields.costs,
+                            date_times = nativeFields.date_times,
+                            doubles = nativeFields.doubles,
+                            enums = nativeFields.enums,
+                            event_types = nativeFields.event_types,
+                            ints = nativeFields.ints,
+                            long64s = nativeFields.long64s,
+                            measures = nativeFields.measures,
+                            shorts = nativeFields.shorts,
+                            strings = nativeFields.strings,
+                            total = nativeFields.total
+                        };
+                    }
+
+                }
+            }
+            
+        } finally
+        {
+            _mutex.Release();
+        }
+
+        return ret;
     }
 
     public (byte []success, W21Exception? ex) Parse()

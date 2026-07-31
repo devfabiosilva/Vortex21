@@ -1,6 +1,6 @@
-﻿using System.Runtime.CompilerServices;
-using W21CSparser.exceptions;
+﻿using W21CSparser.exceptions;
 using W21CSparser.parser;
+using static W21CSparser.parser.W21Parser;
 
 namespace W21CSparser;
 
@@ -109,6 +109,31 @@ public class MainApp {
             Console.WriteLine("Unable to get hardware statistics for phase 2 (BSON)");
         }
 
+        W21DocumentStatistics? documentStatistics = parser.documentStatistics();
+
+        if (documentStatistics != null)
+        {
+            Console.WriteLine(
+                "\nDocument Statistics:" +
+                $"\n\tArays: {documentStatistics?.arrays}" +
+                $"\n\tBooleans: {documentStatistics?.booleans}" +
+                $"\n\tCosts: {documentStatistics?.costs}" +
+                $"\n\tDate times: {documentStatistics?.date_times}" +
+                $"\n\tDoubles: {documentStatistics?.doubles}" +
+                $"\n\tEnums: {documentStatistics?.enums}" +
+                $"\n\tEvent types: {documentStatistics?.event_types}" +
+                $"\n\tInts: {documentStatistics?.ints}" +
+                $"\n\tLong64s: {documentStatistics?.long64s}" +
+                $"\n\tMeasures: {documentStatistics?.measures}" +
+                $"\n\tShorts: {documentStatistics?.shorts}" +
+                $"\n\tStrings: {documentStatistics?.strings}" +
+                $"\n\tTotal: {documentStatistics?.total}"
+            );            
+        } else
+        {
+            Console.WriteLine("\nDocument Statistics: Error or not parsed yet\n");
+        }
+        
     }
 
 }

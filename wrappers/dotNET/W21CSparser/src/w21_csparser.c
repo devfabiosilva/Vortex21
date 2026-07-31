@@ -164,27 +164,23 @@ int cs_w21_hard_summary_parse_end(
 }
 
 /*
-int cs_w21_hard_summary_parse_json_end(
-    struct soap *soap,
-    uint64_t *in_total_cycles,
-    uint64_t *in_total_nanos,
-    uint64_t *in_mem_delta
-)
+void cs_w21_get_statistics(struct soap *soap)
 {
-    int err = w21_hard_summary_parse_json_end(soap);
+    //stat ALWAYS non null
+    struct statistics_t *stat = w21_get_statistics(soap);
 
-    DECLARE_W21_CONFIG
-
-    if (err == 0) {
-        *in_total_cycles = config->hardware_statistics.in_parse_json_total_cycles;
-        *in_total_nanos = config->hardware_statistics.in_parse_json_total_nanos;
-        *in_mem_delta = config->hardware_statistics.in_parse_json_mem_delta;
-    } else {
-        *in_total_cycles = 0;
-        *in_total_nanos = 0;
-        *in_mem_delta = 0;
-    }
-
-    return err;
 }
 */
+int32_t cs_w21_get_statistics_size()
+{
+    return (int32_t)sizeof(struct statistics_t);
+}
+
+struct statistics_t *cs_w21_get_statistics(struct soap *soap)
+{
+    DECLARE_W21_CONFIG
+    if ((config->error == 0) && (config->in_bson != NULL))
+        return w21_get_statistics(soap);
+
+    return NULL;
+}
