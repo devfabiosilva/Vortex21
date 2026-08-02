@@ -133,6 +133,18 @@ public class MainApp {
         {
             Console.WriteLine("\nDocument Statistics: Error or not parsed yet\n");
         }
+
+        W21Parser.W21ReadStatistics? totalStatistics = parser.totalStatistics();
+        if (parseStatistics != null) {
+            Console.WriteLine($"Total Stats BSON CPB {totalStatistics?.CPB}");
+            Console.WriteLine($"Total Stats BSON CPU Cycles {totalStatistics?.CPUCycles}");
+            Console.WriteLine($"Total Stats BSON Throughput MB/s {totalStatistics?.Throughput}");
+            Console.WriteLine($"Total Stats BSON Total Time (ms) {totalStatistics?.TotalTime}");
+            Console.WriteLine($"Total Stats BSON Used Memory MB {totalStatistics?.TotalMem/(1024*1024.0)} (Bytes) {totalStatistics?.TotalMem}");
+        } else
+        {
+            Console.WriteLine("Unable to get hardware total statistics for phase 2 (BSON)");
+        }
         
     }
 

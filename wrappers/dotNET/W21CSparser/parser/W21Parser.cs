@@ -4,7 +4,6 @@ using System.Text;
 using W21CSparser.exceptions;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
-using System.ComponentModel.Design.Serialization;
 //dotnet add package MongoDB.Bson
 
 [assembly: DisableRuntimeMarshalling]
@@ -84,6 +83,7 @@ public partial class W21Parser: IDisposable
 
     private W21ReadStatistics w21ReadStatistics = default;
     private W21ReadStatistics w21ParseStatistics = default;
+    private W21ReadStatistics totalStat = default;
 
     [LibraryImport("w21cs", EntryPoint = "cs_w21_get_error_detail")]
     private static partial nint GetErrorDetailNative(int error);
@@ -277,6 +277,7 @@ public partial class W21Parser: IDisposable
 
         w21ReadStatistics = default;
         w21ParseStatistics = default;
+        totalStat = default;
         try {
             if (_soap != nint.Zero)
             {
@@ -476,6 +477,57 @@ public partial class W21Parser: IDisposable
         return (ex == null, ex);
     }
 
+    public W21ReadStatistics? totalStatistics()
+    {
+        if (totalStat.Processed)
+            return totalStat;
+
+        bool returnStat = false;
+        totalStat = default;
+
+        if (w21ReadStatistics.Processed && w21ReadStatistics.statErr == 0)
+        {
+            //totalStat.CPB = w21ReadStatistics.CPB;
+            totalStat.CPUCycles = w21ReadStatistics.CPUCycles;
+            totalStat.StreamSize = w21ReadStatistics.StreamSize;
+            totalStat.UsedMemory = w21ReadStatistics.UsedMemory;
+            totalStat.TotalNanos = w21ReadStatistics.TotalNanos;
+            totalStat.TotalMem = w21ReadStatistics.TotalMem;
+            returnStat = true;
+        }
+
+        if (w21ParseStatistics.Processed && w21ParseStatistics.statErr == 0)
+        {
+            //totalStat.CPB += w21ParseStatistics.CPB;
+            totalStat.CPUCycles += w21ParseStatistics.CPUCycles;
+            //We don't count StreamSize here. StreamSize is always the input of WITSML XML stream present at w21ReadStatistics.StreamSize
+            //totalStat.StreamSize += w21ParseStatistics.StreamSize;
+            totalStat.UsedMemory += w21ParseStatistics.UsedMemory;
+            totalStat.TotalNanos += w21ParseStatistics.TotalNanos;
+            totalStat.TotalMem += w21ParseStatistics.TotalMem;
+            returnStat = true;
+        }
+
+        if (returnStat)
+        {
+            if (totalStat.StreamSize > 0)
+            {
+                totalStat.CPB = (Double)totalStat.CPUCycles / (Double)totalStat.StreamSize;
+                totalStat.TotalSize = (Double)totalStat.StreamSize / (1024*1024);
+
+                if (totalStat.TotalNanos > 0) {
+                    totalStat.Throughput = totalStat.TotalSize / (Double)(totalStat.TotalNanos * 1E-9);
+                    totalStat.TotalTime = totalStat.TotalNanos * 1E-6;
+                }
+            }
+            totalStat.Processed = true;
+
+            return totalStat;
+        }
+
+        return null;
+    }
+
     public W21ReadStatistics? readWITSML21Statistics()
     {
         if (w21ReadStatistics.Processed && w21ReadStatistics.statErr == 0)
@@ -598,7 +650,8 @@ public partial class W21Parser: IDisposable
                                 out w21ParseStatistics.TotalMem
                             );
                             w21ParseStatistics.Processed = (statErr == 0);
-                            w21ParseStatistics.StreamSize = bson_size;
+                            //w21ParseStatistics.StreamSize = bson_size;
+                            w21ParseStatistics.StreamSize = w21ReadStatistics.StreamSize; // By definition of input
                         }
                         if (bson != null)
                         {
