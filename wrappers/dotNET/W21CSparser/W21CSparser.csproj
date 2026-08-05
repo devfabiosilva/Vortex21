@@ -12,10 +12,11 @@
     <PackageReference Include="MongoDB.Bson" Version="3.10.0" />
   </ItemGroup>
 
-  <!--ItemGroup>
-    <None Include="libs/libvortex21.so">
+  <ItemGroup>
+    <None Include="libs/libw21cs.so">
+      <Link>libw21cs.so</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup-->
+  </ItemGroup>
 
 </Project>

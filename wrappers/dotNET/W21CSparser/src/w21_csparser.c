@@ -163,14 +163,6 @@ int cs_w21_hard_summary_parse_end(
     return err;
 }
 
-/*
-void cs_w21_get_statistics(struct soap *soap)
-{
-    //stat ALWAYS non null
-    struct statistics_t *stat = w21_get_statistics(soap);
-
-}
-*/
 int32_t cs_w21_get_statistics_size()
 {
     return (int32_t)sizeof(struct statistics_t);
