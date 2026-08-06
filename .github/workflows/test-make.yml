@@ -192,7 +192,7 @@ jobs:
           echo "Compiling C library wrapper for .NET 8.0.x"
           make -j$JOBS cs
           echo "Running .NET 8.0 unit tests..."
-          cd wrapper/dotNET/W21CSparser
+          cd wrappers/dotNET
           dotnet test --logger "console;verbosity=detailed" 2>&1 | tee dotnet-test.log
 
       - name: Upload .NET test log
@@ -200,5 +200,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dotnet-test-log
-          path: wrapper/dotNET/W21CSparser/dotnet-test.log
+          path: wrappers/dotNET/dotnet-test.log
 
