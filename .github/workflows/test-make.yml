@@ -195,7 +195,7 @@ jobs:
           cd wrapper/dotNET/W21CSparser
           dotnet test --logger "console;verbosity=detailed" 2>&1 | tee dotnet-test.log
 
-     - name: Upload .NET test log
+      - name: Upload .NET test log
         if: always()
         uses: actions/upload-artifact@v4
         with:
