@@ -27,4 +27,16 @@
     <ProjectReference Include="..\W21CSparser\W21CSparser.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="testXmls/Log.xml">
+      <Link>Log.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="testXmls/LogInvalid.xml">
+      <Link>LogInvalid.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
