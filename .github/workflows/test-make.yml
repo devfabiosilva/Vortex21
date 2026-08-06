@@ -181,3 +181,24 @@ jobs:
         run: |
           echo "ccache stats:"
           ccache -s || true
+
+      - name: Setup .NET 8.0
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Run .NET unit tests
+        run: |
+          echo "Compiling C library wrapper for .NET 8.0.x"
+          make -j$JOBS cs
+          echo "Running .NET 8.0 unit tests..."
+          cd wrapper/dotNET/W21CSparser
+          dotnet test --logger "console;verbosity=detailed" 2>&1 | tee dotnet-test.log
+
+     - name: Upload .NET test log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dotnet-test-log
+          path: wrapper/dotNET/W21CSparser/dotnet-test.log
+
