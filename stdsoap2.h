@@ -54,8 +54,6 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 
 #define GSOAP_VERSION 208139
 
-//CWS 202608151711
-#include <cws_memory.h>
 
 #ifdef WITH_SOAPDEFS_H
 # include "soapdefs.h"          /* include user-defined stuff in soapdefs.h */
@@ -1834,9 +1832,7 @@ typedef unsigned short soap_ssl_flags;
 #endif
 
 #ifndef SOAP_MALLOC                     /* use libc malloc */
-//# define SOAP_MALLOC(soap, size) malloc((size))
-//CWS 202608151712
-# define SOAP_MALLOC(soap, size) cws_malloc((size))
+# define SOAP_MALLOC(soap, size) malloc((size))
 #endif
 
 #ifndef SOAP_FREE                       /* use libc free */
@@ -1844,9 +1840,7 @@ typedef unsigned short soap_ssl_flags;
 #endif
 
 #ifndef SOAP_MALLOC_UNMANAGED           /* use libc malloc to alloc soap context with soap_new() */
-//# define SOAP_MALLOC_UNMANAGED(size) malloc((size))
-//CWS 202608151713
-# define SOAP_MALLOC_UNMANAGED(size) cws_malloc((size))
+# define SOAP_MALLOC_UNMANAGED(size) malloc((size))
 #endif
 
 #ifndef SOAP_FREE_UNMANAGED             /* use libc free to free soap context with soap_free() */
