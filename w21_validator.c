@@ -44,7 +44,8 @@ static bool validate_rdw212__regex(struct soap *soap, char *value, const char *t
 static int constructor_rdw212__regex(struct soap *soap, regex_t **regex, const char *pattern, const char *type)
 {
 
-  if ((*regex = (regex_t *)malloc(sizeof(regex_t)))) {
+  //if ((*regex = (regex_t *)malloc(sizeof(regex_t)))) {
+  if (posix_memalign((void **)regex, 64, sizeof(regex_t)) == 0) {
     int ret = regcomp(*regex, pattern, REG_EXTENDED | REG_NOSUB);
     if (ret == 0) W21_RETURN
 
@@ -60,6 +61,7 @@ static int constructor_rdw212__regex(struct soap *soap, regex_t **regex, const c
     );
 
   } else {
+    *regex = NULL;
     set_w21_error_message(
       soap, E_21_ERROR_REGEX_INITIALIZE_COMPILE,
       "Could not initialize compile regex for %s type with pattern \"%s\". No memory",
@@ -168,7 +170,8 @@ int w21_enable_input_rules_validator(struct soap *soap)
 
   if (config->validators == NULL) {
 
-    if ((config->validators = (struct w21_validation_t *)malloc(VALIDATORS_LIST_SIZE))) {
+    //if ((config->validators = (struct w21_validation_t *)malloc(VALIDATORS_LIST_SIZE))) {
+    if (posix_memalign((void **)&config->validators, 64, VALIDATORS_LIST_SIZE) == 0) {
       ssize_t n = NUMBER_OF_VALIDATORS_LIST_ELEMENTS;
 
       memcpy((void *)config->validators, (void *)&VALIDATORS_LIST, VALIDATORS_LIST_SIZE);
@@ -184,6 +187,7 @@ int w21_enable_input_rules_validator(struct soap *soap)
 
       config->in_config |= ENABLE_REGEX_VALIDATOR;
     } else {
+      config->validators = NULL;
       set_w21_error_message(
         soap, E_21_ERROR_ENABLE_INPUT_VALIDATOR, 
         "Could not enable regex validator in WITSML 2.1. Regex validator is disabled"
