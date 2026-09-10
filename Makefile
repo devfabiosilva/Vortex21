@@ -8,7 +8,7 @@ CURDIR=$(PWD)
 INCLUDEDIR=$(CURDIR)/core/include
 
 MONGO_C_GIT=https://github.com/mongodb/mongo-c-driver.git
-MONGO_C_BRANCH=2.3.1
+MONGO_C_BRANCH=2.5.2
 MONGO_C_DIR=$(CURDIR)/third-party/mongo-c-driver
 
 FLAG=-lpthread -Wno-stringop-truncation -O3 -fPIC -march=native -fno-plt -Wl,--exclude-libs,libbson-shared-${MONGO_C_BRANCH}.a -D$(STAT) -DCWS_$(ENDIAN)_ENDIAN
