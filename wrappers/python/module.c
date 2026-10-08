@@ -1,24 +1,12 @@
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
+#include <modules_macros.h>
 
 typedef struct {
   PyObject_HEAD
   struct soap *soap;
   int err;
 } Py_W21_CONFIG;
-
-#ifdef PY_SOAP_DEBUG
- #define Py_W21_DEBUG(std, ...) \
-    fprintf(std, __VA_ARGS__);
-#else
- #define Py_W21_DEBUG(std, ...)
-#endif
-
-#define Py_W21_ERROR(err_msg, errNumber) \
- {\
-   PyErr_SetString(PyExc_Exception, err_msg);\
-    return errNumber;\
- }
 
 static PyObject *c_obj_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
 {
@@ -47,13 +35,6 @@ static int c_obj_init(PyTypeObject *self, PyObject *args, PyObject *kwds)
     args, kwds, "|ip", kwlist,
     &rule, &versionCheckDisable
   )) Py_W21_ERROR("Error on parse WITSML2.1 BSON parser", -498)
-
-  if (!(act=py_cws_check_action(rule)))
-    Py_W21_ERROR("Invalid action rule", -499)
-  else if ((void *)act!=(void *)CONST_TYPE[0].name) {
-    snprintf(msg, sizeof(msg), "Rule %s not implemented yet", act);
-    Py_W21_ERROR(msg, -500)
-  }
 
   Py_W21_DEBUG(stdout, "Initializing config %s\n", py_cws_check_action(rule))
 
