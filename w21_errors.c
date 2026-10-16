@@ -1,9 +1,6 @@
 #include <w21_errors.h>
 #include <stddef.h>
 
-#define SET_W21_ERROR_DETAIL(tag, descr) \
-    { tag, #tag, descr },
-
 static W21_ERROR_DETAIL w21_error_list[] = 
 {
     SET_W21_ERROR_DETAIL(E_W21_ERROR_MESSAGE_NOT_INITIALIZED, "Message error handle was not initialized correctly")
@@ -31,11 +28,19 @@ static W21_ERROR_DETAIL w21_error_list[] =
     SET_W21_ERROR_DETAIL(E_W21_ERROR_SET_UTF8_STRING_IN_TRANSIENT_BSON, "In: Unable set UTF-8 string in transient object")
     SET_W21_ERROR_DETAIL(E_W21_ERROR_ADD_REQUIRED_DOUBLE_IN_ABSTRACT_ROOT_OBJECT, "In: Non null double required in abstract root object error")
     SET_W21_ERROR_DETAIL(E_W21_ERROR_DETECT_ROOT_ABSTRACT_TYPE, "In: Could not detect root abstract type")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_DATE_TIME_NULLABLE, "In: Error in date/time nullable parsing")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_DATE_TIME, "In: Error in date/time parsing")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_LONG64_NULLABLE, "In: Error in long nullable parsing")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_ENUM_NULLABLE, "In: Error in enum nullable parsing")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_MEASURE_WITH_ENUM, "In: Error in measure with enumerator parsing")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_MEASURE_UOM_ATTRIBUTE_WITH_ENUM, "In: Error in measure uom attribute with enum parsing")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_MEASURE_APPEND_DOUBLE, "In: Error in measure append double parsing")
+    SET_W21_ERROR_DETAIL(E_W21_ERROR_END_APPEND_DOUBLE, "In: Error end append double object parsing")
     // TODO Add error tag and description to allow human understand what 
     // is happening without undestand parser structure
     {0, NULL, NULL}
 };
-#undef SET_W21_ERROR_DETAIL
+//#undef SET_W21_ERROR_DETAIL
 
 W21_ERROR_DETAIL *w21_get_error_detail(int error)
 {

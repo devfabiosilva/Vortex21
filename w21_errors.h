@@ -1,6 +1,9 @@
 #ifndef ERRORS_H
  #define ERRORS_H
 
+#define SET_W21_ERROR_DETAIL(tag, descr) \
+    { tag, #tag, descr },
+
 #define E_W21_ERROR_MESSAGE_NOT_INITIALIZED 100
 #define E_W21_UNABLE_TO_CATCH_GSOAP_ERROR 101
 #define E_W21_UNABLE_TO_CREATE_CONFIG 102

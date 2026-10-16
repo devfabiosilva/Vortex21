@@ -14,5 +14,8 @@
     return errNumber;\
  }
 
+#define PyGET_CWS_SOAP ((Py_W21_CONFIG *)self)->soap
+#define PyW21_ERR ((Py_W21_CONFIG *)self)->error
+
 #endif
 
