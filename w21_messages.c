@@ -62,6 +62,8 @@ set_w21_error_message_fail:
 #define W21_MESG_SANITIZE \
   if (len >= W21_MESSAGE_SANITIZE_SIZE) \
     strcpy(&soap->tmpbuf[W21_MESSAGE_SANITIZE_SIZE - sizeof(STR_CONTINUE)], STR_CONTINUE); \
+  else if (len < 0) \
+    strcpy(soap->tmpbuf, "PRINTF ERROR!"); \
 \
   return soap->tmpbuf;
 

@@ -29,7 +29,8 @@ static int c_obj_init(PyTypeObject *self, PyObject *args, PyObject *kwds)
 {
   char *kwlist[] = {"input rule", "output rule", "regex validator enable", NULL};
 
-  uint64_t input_rule = 0, output_rule = 0, bool regex_validator = true;
+  uint64_t input_rule = 0, output_rule = 0;
+  bool regex_validator = true;
 
   if (!PyArg_ParseTupleAndKeywords(
     args, kwds, "|ip", kwlist,

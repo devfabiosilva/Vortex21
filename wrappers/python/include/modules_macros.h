@@ -11,7 +11,7 @@
 #define Py_W21_ERROR(err_msg, errNumber) \
  {\
    PyErr_SetString(PyExc_Exception, err_msg);\
-    return errNumber;\
+   return errNumber;\
  }
 
 #define PyGET_CWS_SOAP ((Py_W21_CONFIG *)self)->soap
