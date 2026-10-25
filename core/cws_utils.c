@@ -1,5 +1,6 @@
 #include <bson/bson.h>
 #include <cws_utils.h>
+#include <w21_errors.h>
 
 int readText(const char **text, size_t *text_len, const char *filename)
 {
@@ -58,7 +59,7 @@ readText_exit1:
 inline
 void readTextFree(const char **text)
 {
-  if (*text) {
+  if ((text != NULL) && (*text != NULL)) {
     free((void *)(*text));
     (*text)=NULL;
   }
@@ -75,6 +76,30 @@ void cws_version(struct cws_version_t *version)
   version->version=_binary_version_bson_start;
   version->versionSize=_binary_version_bson_end - _binary_version_bson_start;
 
+}
+
+int w21_alloc(void **mem, size_t mem_size)
+{
+  if ((mem != NULL) && (*mem == NULL) && (mem_size > 0)) {
+    int err = posix_memalign(mem, 64, mem_size);
+
+    if (err == 0)
+      explicit_bzero(*mem, mem_size);
+    else
+      *mem = NULL;
+
+    return err;
+  }
+
+  return W21_UNABLE_TO_ALLOCATE_USER_MEMORY;
+}
+
+inline void w21_free(void **mem)
+{
+  if ((mem != NULL) && (*mem != NULL)) {
+    free(*mem);
+    *mem = NULL;
+  }
 }
 #endif
 

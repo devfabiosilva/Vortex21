@@ -327,6 +327,13 @@ int w21_config_new(struct soap **soap, uint64_t in_config, uint64_t out_config)
         return E_W21_ERROR_CREATE_IN_BSON_OBJECT;
     }
 
+    if ((config->locale = newlocale(LC_NUMERIC_MASK, "C", (locale_t)0)) == 0) {
+        cws_bson_free(&config->in_bson_object_alloc);
+        soap_free(*soap);
+        free((void *)config);
+        return E_W21_ERROR_INITIALIZE_JSON_LOCALE;
+    }
+
     (*soap)->is = NULL;
     (*soap)->os = NULL;
 
@@ -343,6 +350,9 @@ int w21_config_new(struct soap **soap, uint64_t in_config, uint64_t out_config)
 }
 
 #define W21_COMMON_IN_FREE \
+freelocale(config->locale); \
+config->locale = (locale_t)0; \
+\
 if (config->in_json_str.json) { \
     bson_free(config->in_json_str.json); \
     config->in_json_str.json = NULL; \
@@ -454,24 +464,21 @@ struct c_json_str_t *w21_get_json(struct soap *soap)
             return c_json_str;
 
         if (config->in_bson != NULL) {
-            //ADD C LOCALE: Temporary implementation for mitigate this problem: https://jira.mongodb.org/browse/CDRIVER-6377
-            locale_t c_numeric = newlocale (LC_NUMERIC_MASK, "C", (locale_t) 0);
-            locale_t prev = uselocale(c_numeric);
 
-            if ((c_json_str->json = bson_as_relaxed_extended_json((const bson_t *)config->in_bson, &c_json_str->json_len))) {
-                uselocale (prev); /* restore */
-                freelocale (c_numeric);
-                return c_json_str;
+            locale_t prev = uselocale(config->locale);
+
+            if (prev != (locale_t)0) {
+                if ((c_json_str->json = bson_as_relaxed_extended_json((const bson_t *)config->in_bson, &c_json_str->json_len))) {
+                    uselocale (prev); /* restore */
+                    return c_json_str;
+                }
+
+                uselocale(prev); /* restore */
+                set_w21_error_message(soap, E_21_ERROR_UNABLE_TO_PARSE_XML_OBJECT_TO_JSON_STRING, "Could not parse WITSML 2.1 object %s to JSON string", W21_OBJ_TYPE_STR);
+            } else {
+                //uselocale (prev); /* prev = 0 (error) UNABLE TO RESTORE */
+                set_w21_error_message(soap, E_21_ERROR_UNABLE_TO_RESTORE_LOCALE_XML_OBJECT_TO_JSON_STRING, "Could not parse WITSML 2.1 object %s to JSON string. Unable to restore previous locale", W21_OBJ_TYPE_STR);
             }
-
-            uselocale (prev); /* restore */
-            freelocale (c_numeric);
-
-/*
-            if ((c_json_str->json = bson_as_relaxed_extended_json((const bson_t *)config->in_bson, &c_json_str->json_len)))
-                return c_json_str;
-*/  
-            set_w21_error_message(soap, E_21_ERROR_UNABLE_TO_PARSE_XML_OBJECT_TO_JSON_STRING, "Could not parse WITSML 2.1 object %s to JSON string", W21_OBJ_TYPE_STR);
 
             return NULL;
         }

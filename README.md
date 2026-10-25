@@ -222,14 +222,14 @@ The engine transparently maps complex, heavily nested WITSML 2.1 XML models into
 }
 ```
 
-## ⚠️ Known Issues & Environment Behaviors
+~~## ⚠️ Known Issues & Environment Behaviors~~
 
-### Extended JSON String Serialization (Textual Dumps)
-When using optional helper utilities to export binary BSON into human-readable Extended JSON text, the string formatter (`libbson 2.2.3` core) may inherit the host system's local decimal separator (`LC_NUMERIC`) during float-to-string slow-path conversions. See details [here](https://jira.mongodb.org/browse/CDRIVER-6377)
+~~### Extended JSON String Serialization (Textual Dumps)~~
+~~When using optional helper utilities to export binary BSON into human-readable Extended JSON text, the string formatter (`libbson 2.2.3` core) may inherit the host system's local decimal separator (`LC_NUMERIC`) during float-to-string slow-path conversions. See details [here](https://jira.mongodb.org/browse/CDRIVER-6377)~~
 
-*   **Impact:** Complex floating-point expressions may render a comma `,` instead of a dot `.` inside textual JSON representations (e.g., in `relaxed` or `canonical` modes), violating strict RFC 8259 syntax specifications for text engines. **The use of JSON strings is discouraged. For fast performance, use BSON instead.**
+~~*   **Impact:** Complex floating-point expressions may render a comma `,` instead of a dot `.` inside textual JSON representations (e.g., in `relaxed` or `canonical` modes), violating strict RFC 8259 syntax specifications for text engines.~~**The use of JSON strings is discouraged. For fast performance, use BSON instead.**~~
 
-*   **Status & Mitigation:** Production-level BSON binary data remains 100% accurate, safe, and completely unaffected. This issue is isolated strictly to the third-party visual text export module. A compliance ticket is scheduled for the upstream repository, and thread-level locale isolation (`uselocale`) is targeted for the next sprint.
+~~*   **Status & Mitigation:** Production-level BSON binary data remains 100% accurate, safe, and completely unaffected. This issue is isolated strictly to the third-party visual text export module. A compliance ticket is scheduled for the upstream repository, and thread-level locale isolation (`uselocale`) is targeted for the next sprint.~~
 
 ## Project Vision
 

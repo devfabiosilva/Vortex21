@@ -32,5 +32,8 @@ struct cws_version_t {
 void cws_version(struct cws_version_t *);
 #endif
 
+int w21_alloc(void **, size_t);
+void w21_free(void **);
+
 #endif
 

@@ -6,6 +6,7 @@
 #include <stdsoap2.h>
 #include <stdbool.h>
 #include <core/include/cws_bson_utils.h>
+#include <locale.h>
 #include <core/include/cws_utils.h>
 #include <w21_validator.h>
 #include <witsml21Stub.h>
@@ -236,6 +237,7 @@ typedef struct w21_config_t {
   uint64_t in_config; //INPUT: (Witsml 2.1 config << 32) | (gSoap config)
   struct w21_validation_t *current_validation; // NULLABLE. If ENABLE_REGEX_VALIDATOR, on w21_validate will call validation. If valid, PASS else REGEX ERROR 
   struct w21_validation_t *validators; // NULLABLE. Not null if ENABLE_REGEX_VALIDATOR. Array of initialized validators. Must be free.
+  locale_t locale; // Locale. See https://jira.mongodb.org/browse/CDRIVER-6377
   WISML21_CONTRACT witsml21_contract; // INPUT: Input contract
 #ifdef WITH_STATISTICS
   struct statistics_t statistics; // INPUT: Statistics of parsed document
