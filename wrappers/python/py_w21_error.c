@@ -9,7 +9,7 @@ static W21_ERROR_DETAIL py_w21_error_detail_list[] =
 };
 
 static W21_ERROR_DETAIL _py_w21_unknown_error = {
-    .err = 0,
+    .err = -10000,
     .tag = "<NOT FOUND TAG>",
     .detail = "Unknown error"
 };
